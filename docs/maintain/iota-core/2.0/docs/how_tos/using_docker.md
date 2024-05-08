@@ -30,10 +30,6 @@ It includes everything required to set up a public node accessible by wallets an
 - [inx-dashboard](https://github.com/iotaledger/inx-dashboard) - Node dashboard.
 - [inx-indexer](https://github.com/iotaledger/inx-indexer) - Indexer extension for wallets and applications.
 - [inx-mqtt](https://github.com/iotaledger/inx-mqtt) - MQTT extension providing the Event API.
-- [inx-participation](https://github.com/iotaledger/inx-participation) - Participation extension providing on-tangle-voting.
-- [inx-poi](https://github.com/iotaledger/inx-poi) - Extension to generate proofs of _inclusion_.
-- [inx-spammer](https://github.com/iotaledger/inx-spammer) - Network spammer.
-- [wasp](https://github.com/iotaledger/wasp) - L2 Node for IOTA Smart Contracts.
 
 ## Requirements
 
@@ -46,7 +42,6 @@ It includes everything required to set up a public node accessible by wallets an
 - `14626 UDP` - Used for the IOTA-Core autopeering.
 - `80 TCP` - Used for HTTP. _(can be changed, see below)_
 - `443 TCP` - Used for HTTPS. _(optional if not using HTTPS)_
-- `4000 TCP/UDP` - Used for Wasp gossip. _(optional if not using Wasp)_
 
 5. [curl](https://curl.se/).
 
@@ -57,21 +52,9 @@ It includes everything required to set up a public node accessible by wallets an
 Once you have completed all the installation [requirements](#requirements), you can download one of the latest releases, depending on the network you want to join, by running the following command:
 
 <Tabs groupId="network" queryString>
-<TabItem value="iota" label="IOTA">
+<TabItem value="testnet" label="Testnet IOTA 2.0">
 
-```sh
-mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/iota | tar -zx
-```
-
-</TabItem>
-<TabItem value="shimmer" label="Shimmer">
-
-```sh
-mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/shimmer | tar -zx
-```
-
-</TabItem>
-<TabItem value="testnet" label="Testnet">
+TODO: Replace with link to iota2 node docker setup.
 
 ```sh
 mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/testnet | tar -zx
@@ -90,7 +73,7 @@ To access your IOTA-Core dashboard, a set of credentials need to be configured.
 Run the following command to generate a password hash and salt for the dashboard:
 
 ```sh
-docker compose run hornet tools pwd-hash
+docker compose run iota-core tools pwd-hash
 ```
 
 Copy the output of the command for the next step.
@@ -119,31 +102,11 @@ You can configure your node to either use HTTP or HTTPS. For publicly exposed no
 
 :::
 
-:::info
-
-Activating a Wasp node isn't enough to fully participate in a smart contract chain. You don't need a standalone Wasp node if you're using our ShimmerEVM chain. For setting up your own chain, see our guide for the required steps: [Set Up a Chain](/wasp/how-tos/setting-up-a-chain/)
-
-:::
-
 <Tabs groupId="network" queryString>
-<TabItem value="iota" label="IOTA">
+<TabItem value="testnet" label="Testnet IOTA 2.0">
 
 ```sh reference
-https://github.com/iotaledger/node-docker-setup/blob/main/iota/env_template
-```
-
-</TabItem>
-<TabItem value="shimmer" label="Shimmer">
-
-```sh reference
-https://github.com/iotaledger/node-docker-setup/blob/main/shimmer/env_template
-```
-
-</TabItem>
-<TabItem value="testnet" label="Testnet">
-
-```sh reference
-https://github.com/iotaledger/node-docker-setup/blob/main/testnet/env_template
+https://github.com/iotaledger/node-docker-setup/blob/feat/iota-core/testnet_iota-2.0/env_template
 ```
 
 </TabItem>
@@ -162,7 +125,7 @@ See [peering](../references/peering.md) for more information.
 
 ### 4. Create the `data` folder
 
-All files used by the IOTA-Core, the INX extensions, Wasp, Traefik & co will be stored in a directory called `data`.
+All files used by the IOTA-Core, the INX extensions, Traefik & co will be stored in a directory called `data`.
 Docker image runs under user with user id `65532` and group id `65532`, so this directory needs to have the correct permissions to be accessed by the containers.
 To create this directory with correct permissions run the contained script:
 
@@ -189,10 +152,6 @@ After starting the node you will be able to access your services at the followin
 - API: `https://node.your-domain.com/api/routes`
 - IOTA-Core Dashboard: `https://node.your-domain.com/dashboard`
 - Grafana: `https://node.your-domain.com/grafana` _(optional if using "monitoring" profile)_
-- Legacy-API: `https://node.your-domain.com/api/core/v0/info` _(optional if using "history-legacy" profile)_
-- Chrysalis-API: `https://node.your-domain.com/api/core/v1/info` _(optional if using "history-chrysalis" profile)_
-- Wasp API: `https://node.your-domain.com/wasp/api` _(optional if using "wasp" profile)_
-- Wasp Dashboard: `https://node.your-domain.com/wasp/dashboard` _(optional if using "wasp" profile)_
 
 :::warning
 
@@ -202,7 +161,7 @@ Password: `admin`
 
 :::
 
-You can configure your wallet software to use `https://node.your-domain.com`
+You can configure your wallet software to use `https://node.your-domain.com`.
 
 #### HTTP
 
@@ -211,10 +170,6 @@ After starting the node you will be able to access your services at the followin
 - API: `http://localhost/api/routes`
 - IOTA-Core Dashboard: `http://localhost/dashboard`
 - Grafana: `http://localhost/grafana` _(optional if using "monitoring" profile)_
-- Legacy-API: `http://localhost/api/core/v0/info` _(optional if using "history-legacy" profile)_
-- Chrysalis-API: `http://localhost/api/core/v1/info` _(optional if using "history-chrysalis" profile)_
-- Wasp API: `http://localhost/wasp/api` _(optional if using "wasp" profile)_
-- Wasp Dashboard: `http://localhost/wasp/dashboard` _(optional if using "wasp" profile)_
 
 :::note
 
@@ -222,14 +177,14 @@ If you changed the default `HTTP_PORT` value, you will need to add the port to t
 
 :::
 
-You can configure your wallet software to use `http://localhost`
+You can configure your wallet software to use `http://localhost`.
 
 ### Displaying Log Output
 
 You can display the IOTA-Core logs by running:
 
 ```sh
-docker compose logs -f hornet
+docker compose logs -f iota-core
 ```
 
 - `-f`
@@ -245,16 +200,16 @@ docker compose down
 
 ### Tools
 
-To access the tools provided inside HORNET you can use:
+To access the tools provided inside IOTA-Core you can use:
 
 ```sh
-docker compose run hornet tool <tool-name>
+docker compose run iota-core tool <tool-name>
 ```
 
 To see the list of tools included run:
 
 ```sh
-docker compose run hornet tool -h
+docker compose run iota-core tool -h
 ```
 
 ## JWT Auth
@@ -262,7 +217,7 @@ docker compose run hornet tool -h
 To generate a JWT token to be used to access protected routes you can run:
 
 ```sh
-docker compose run hornet tool jwt-api --databasePath data/p2pstore
+docker compose run iota-core tool jwt-api --databasePath data/p2pstore
 ```
 
 - If you changed the `restAPI.jwtAuth.salt` value in the `config.json`, then you need to pass that value as a parameter as `--salt <restAPI.jwtAuth.salt value from your config.json>`

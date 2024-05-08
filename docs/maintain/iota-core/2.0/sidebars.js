@@ -35,6 +35,11 @@ module.exports = {
             },
             {
               type: 'doc',
+              id: 'how_tos/validator_setup',
+              label: 'Become a validator',
+            },
+            {
+              type: 'doc',
               id: 'how_tos/post_installation',
               label: 'Post Installation',
             },
