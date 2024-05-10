@@ -24,8 +24,8 @@ This contract offers significant advantages for optimizing transaction processin
 
 :::tip
 
-TIP: You can find the ABI of the contract [here](https://www.multicall3.com/abi).
-
+You can find the ABI of the contract in the [Multicall3 website](https://www.multicall3.com/abi).
+ 
 :::
 
 
@@ -33,26 +33,31 @@ TIP: You can find the ABI of the contract [here](https://www.multicall3.com/abi)
 
 ### Function: aggregate
 
+#### Description:
+ This function aggregates the results of multiple function calls made to different contracts within a single transaction.
+
 ```solidity 
 function aggregate(Call[] calldata calls) public payable returns (uint256 blockNumber, bytes[] memory returnData);
 ```
-- Description: This function aggregates the results of multiple function calls made to different contracts within a single transaction.
 
 
 |Parameter Name | Description|
 |-----------|---------------------------------------------------------------------
 | calls (Call[] calldata)    | An array of Call structs. Each Call struct contains the target contract address (address) and the encoded function call data (bytes).| 
 
-- Return Values:
+#### Return Values:
   - blockNumber (uint256): The block number where the calls were executed.
   - returnData (bytes[] memory): An array of bytes containing the return data from each call.
 
 ### Function: tryAggregate
 
+#### Description:
+ This function performs a similar function to `aggregate` but allows individual calls to fail without halting the entire execution.
+
+
 ```solidity 
 function tryAggregate(bool requireSuccess, Call[] calldata calls) public payable returns (Result[] memory returnData);
 ```
-- Description: This function performs a similar function to `aggregate` but allows individual calls to fail without halting the entire execution.
 
 | Parameter Name | Description                                                                 |
 |----------------|-----------------------------------------------------------------------------|
@@ -60,10 +65,14 @@ function tryAggregate(bool requireSuccess, Call[] calldata calls) public payable
 | calls (Call[] calldata) | An array of Call structs. Each Call struct contains the target contract address (address) and the encoded function call data (bytes). |
 
 
-- Return Values:
+#### Return Values:
 returnData (Result[] memory): An array of Result structs. Each Result struct contains a bool indicating success (success) and the return data for the corresponding call (bytes returnData).
 
 ### Function: tryBlockAndAggregate
+
+#### Description:
+ This function combines features of `tryAggregate` and retrieves additional block information.
+
 
 ```solidity 
 function tryBlockAndAggregate(bool requireSuccess, Call[] calldata calls)
@@ -71,24 +80,23 @@ function tryBlockAndAggregate(bool requireSuccess, Call[] calldata calls)
     payable
     returns (uint256 blockNumber, bytes32 blockHash, Result[] memory returnData);
 ```
-- Description: This function combines features of `tryAggregate` and retrieves additional block information.
 
 | Parameter Name | Description                                                                 |
 |----------------|-----------------------------------------------------------------------------|
 | requireSuccess (bool) | A boolean flag indicating whether all calls must succeed (true) or if failures are allowed (false). |
 | calls (Call[] calldata) | An array of Call structs. Each Call struct contains the target contract address (address) and the encoded function call data (bytes). |
 
-- Return Values:
+#### Return Values:
   - blockNumber (uint256): The block number where the calls were executed.
   - blockHash (bytes32): The hash of the block where the calls were executed.
   - returnData (Result[] memory): An array of Result structs, as defined in tryAggregate.
 
 
-
-
 ### Function: blockAndAggregate
-- ## Description:
+
+#### Description:
 This function is a simplified version of `tryBlockAndAggregate` that always requires all calls to succeed.
+
 ```solidity 
 function blockAndAggregate(Call[] calldata calls)
     public
@@ -100,14 +108,14 @@ function blockAndAggregate(Call[] calldata calls)
 |-----------|---------------------------------------------------------------------
 | calls (Call[] calldata)    | An array of Call structs, as defined in aggregate.| 
 
-- Return Values:
+#### Return Values:
   - blockNumber (uint256): The block number where the calls were executed.
   - blockHash (bytes32):  The hash of the block where the calls were executed.
   - returnData (Result[] memory): An array of Result structs, as defined in tryAggregate.
 
 
 ### Function: aggregate3
-- ## Description:
+#### Description:
 This function aggregates calls similar to `aggregate` but allows specifying whether failures are allowed for each call individually.
 
 ```solidity 
@@ -118,12 +126,12 @@ function aggregate3(Call3[] calldata calls) public payable returns (Result[] mem
 |-----------|---------------------------------------------------------------------
 | calls (Call[] calldata)    | An array of Call3 structs. Each Call3 struct includes the target contract address (address), a flag indicating if failure is allowed (bool allowFailure), and the encoded function call data (bytes callData).| 
 
-- Return Values:
+#### Return Values:
   - returnData (Result[] memory): An array of Result structs, as defined in `tryAggregate`.
 
 
 ### Function: aggregate3Value
-- ## Description:
+#### Description:
 This function aggregates calls with a specified value for each call, allowing sending funds along with the call data. It ensures the total sent value matches the sum of individual call values.
 
 
@@ -135,7 +143,7 @@ function aggregate3Value(Call3Value[] calldata calls) public payable returns (Re
 |-----------|---------------------------------------------------------------------
 | calls (Call[] calldata)    | An array of Call3Value structs. Each Call3Value struct includes the target contract address (address), a flag indicating if failure is allowed (bool allowFailure), the value to send along with the call (uint256 value), and the encoded function call data (bytes callData).
  
-- Return Values:
+#### Return Values:
   - returnData (Result[] memory): An array of Result structs, as defined in `tryAggregate`.
 
 
