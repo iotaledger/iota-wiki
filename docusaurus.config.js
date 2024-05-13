@@ -249,12 +249,23 @@ module.exports = async () => {
             id: 'openapi',
             docsPluginId: 'apis', // e.g. "classic" or the plugin-content-docs id
             config: {
-              coreApiShimmer: {
+              coreApiV2: {
                 specPath:
                   'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml',
                 outputDir: path.resolve(
                   __dirname,
                   'docs/build/apis/docs/core/v2',
+                ),
+                sidebarOptions: {
+                  groupPathsBy: 'tag',
+                },
+              },
+              coreApiV3: {
+                specPath:
+                  'https://raw.githubusercontent.com/iotaledger/tips/tip48/tips/TIP-0048/openapi3-core.yaml',
+                outputDir: path.resolve(
+                  __dirname,
+                  'docs/build/apis/docs/core/v3',
                 ),
                 sidebarOptions: {
                   groupPathsBy: 'tag',
