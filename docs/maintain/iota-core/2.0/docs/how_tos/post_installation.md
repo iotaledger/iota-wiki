@@ -1,5 +1,5 @@
 ---
-description: Introducing the IOTA-core nodes configuration files and their settings.
+description: Introducing the IOTA-core node configuration files and their settings.
 image: /img/icons/iota/iota_core.png
 tags:
   - IOTA Node
