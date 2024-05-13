@@ -111,12 +111,19 @@ Then, enter a wallet alias of your choice.
 
 ## Create an Account
 
+:::tip Connect to a Node
+
+The following sections assume you have already set up your [CLI Wallet](#set-up-the-cli-wallet), 
+and [connected it to a node](#4-connect-to-a-node).
+
+:::
+
 ### 1. Create an Implicit Account
 
 You can create an implicit account by running the following command:
 
 ```
-./wallet implicit-account-creation-address
+implicit-account-creation-address
 ``` 
 
 Please copy the implicit address returned by the command.
@@ -127,7 +134,7 @@ You can enter the address at the [Testnet Faucet](https://faucet.nova-testnet.io
 following command
 
 ```bash
-./wallet faucet {implicit-address} --url https://faucet.nova-testnet.iotaledger.net/api/enqueue
+faucet {implicit-address} --url https://faucet.nova-testnet.iotaledger.net/api/enqueue
 ```
 
 ### 3. Sync With the Node
@@ -136,8 +143,8 @@ After creating and funding your implicit account, you should use the `sync` and 
 retrieve the implicit account creation output.
 
 ```bash 
-./wallet sync
-./wallet implicit-accounts
+sync
+implicit-accounts
 ```
 
 You should run this until the BIC changes from `None` to `Some(0)`, then copy the `Output Id`.
@@ -156,8 +163,8 @@ You can now `sync` with the node and run the `accounts` command to ensure an acc
 Credit of `0`, which is the case if it displays `Some(0)` instead of `None`.
 
 ```bash
-./wallet sync
-./wallet accounts
+sync
+accounts
 ```
 
 You now have a block issuer account and can send transactions as you wish if you have enough Mana available.
@@ -183,8 +190,8 @@ available accounts and choose an account you want to use as a validator to issue
 its `Account ID` and `Account Address`.
 
 ```bash
-./wallet sync
-./wallet account
+sync
+account
 ```
 
 ### 3. Add the Account as a Block Issuer
@@ -196,7 +203,7 @@ The public key needs to have the `0x` prefix.
 :::
 
 ```bash
-./wallet add-block-issuer-key {Account ID} {ed25519 public key}
+add-block-issuer-key {Account ID} {ed25519 public key}
 ```
 
 ### 4. Verify
@@ -205,9 +212,9 @@ You can verify you successfully added the key by running the `sync` and `account
 the `Output ID` of the account and run the `output {Output ID}` command.
 
 ```bash
-./wallet sync
-./wallet account
-./wallet output {Output ID}
+sync
+account
+output {Output ID}
 ```
 
 You can find the `block_issuer_keys` list in the `features` section of the retrieved output. It should show two entries
@@ -229,8 +236,8 @@ To start staking, you first need to run the `sync` and `accounts` commands and t
 account you want to use as a validator.
 
 ```bash
-./wallet sync
-./wallet account
+sync
+account
 ```
 
 ### 2. Decide Your Stake Amount
@@ -240,7 +247,7 @@ you can stake. Decide how much you want to stake. The `Stake Amount` can be anyt
 displayed `amount`.
 
 ```bash
-./wallet output {Output ID}
+output {Output ID}
 ```
 
 :::tip
@@ -260,7 +267,7 @@ You can use the following command to start staking:
 
 ```
 
-./wallet begin-staking {Account ID} {Stake Amount} {Fixed Cost}
+begin-staking {Account ID} {Stake Amount} {Fixed Cost}
 
 ```
 
