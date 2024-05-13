@@ -3,7 +3,7 @@ description: Getting started with the recommended requirements and installation 
 image: /img/icons/iota/iota_core.png
 tags:
   - IOTA Node
-  - IOTA-core Node
+  - IOTA-Core Node
   - Linux
   - macOS
   - Windows

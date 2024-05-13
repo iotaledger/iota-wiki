@@ -3,7 +3,7 @@ description: Learn how to install and run a iota-CORE node using Docker.
 image: /img/icons/iota/iota_core.png
 tags:
   - IOTA Node
-  - IOTA-core Node
+  - IOTA-Core Node
   - Docker
   - Install
   - Run
@@ -17,9 +17,9 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import LinuxCommands from '@site/docs/_admonitions/_linux-commands.md';
 
-# Install IOTA-core using Docker
+# Install IOTA-Core using Docker
 
-This article guides the recommended setup to run an IOTA-core node.
+This article guides the recommended setup to run an IOTA-Core node.
 It includes everything required to set up a public node accessible by wallets and applications:
 
 - [IOTA-core](https://github.com/iotaledger/iota-core)

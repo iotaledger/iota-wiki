@@ -3,7 +3,7 @@ description: Learn how to become a validator.
 image: /img/icons/iota/iota_core.png
 tags:
   - IOTA Node
-  - IOTA-core Node
+  - IOTA-Core Node
   - Docker
   - Install
   - Run
@@ -286,7 +286,7 @@ The account is now registered as a validator. Next, you must set up the infrastr
 
 ## Prepare the Validator Plugin
 
-Running a validator requires running a full IOTA-core node. You can follow the steps outlined in the [how to install using Docker guide](./using_docker.md) to setup the node. 
+Running a validator requires running a full IOTA-Core node. You can follow the steps outlined in the [how to install using Docker guide](./using_docker.md) to setup the node. 
 
 Follow the next steps after successfully setting up the node or while setting it up at your choice.
 
