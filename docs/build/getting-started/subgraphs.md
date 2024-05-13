@@ -24,8 +24,9 @@ dynamic user interfaces and interactions in your applications.
 
 ## Subgraph Components and Operations
 
-Subgraphs are built on [GraphQL](https://graphql.org/) APIs, enabling you to query on-chain transaction data efficiently. 
-This feature is particularly useful for developers working with complex smart contracts requiring detailed frontend 
+Subgraphs are built on [GraphQL](https://graphql.org/) APIs, enabling you to query on-chain transaction data
+efficiently.
+This feature is particularly useful for developers working with complex smart contracts requiring detailed frontend
 interfaces. For instance, querying transactions within a specific liquidity pool becomes straightforward with subgraphs.
 By defining a schema and indexing event data, you can utilize the generated GraphQL API for effective data querying.
 
@@ -43,8 +44,8 @@ crucial for structuring your data to support efficient queries.
 ### Subgraph Mappings
 
 Mappings process incoming blockchain events, specified in your [manifest](#subgraph-manifest), and store them
-according to your [schema](#subgraph-schema). 
-These [AssemblyScript](https://www.assemblyscript.org/) codes are essential for translating raw blockchain data into a 
+according to your [schema](#subgraph-schema).
+These [AssemblyScript](https://www.assemblyscript.org/) codes are essential for translating raw blockchain data into a
 format your application can easily query.
 
 ## Popular Use Cases for Subgraphs
@@ -54,7 +55,8 @@ ability to index and query data effectively.
 
 * **Custom Smart Contract Indexing**: Ideal for developers needing to index data for unique smart contracts, especially
   those creating frontend interfaces.
-* **Decentralized Finance (DeFi)**: Subgraphs provide real-time data on token prices, liquidity, and more, enhancing DeFi
+* **Decentralized Finance (DeFi)**: Subgraphs provide real-time data on token prices, liquidity, and more, enhancing
+  DeFi
   applications.
 * **Non-fungible Tokens (NFTs)**: They allow for efficient querying of NFT ownership, transaction history, and off-chain
   data.
@@ -67,13 +69,14 @@ ability to index and query data effectively.
 Subgraphs offer a developer-friendly approach to blockchain data indexing, compatible with various blockchains and
 enhancing application security and resilience.
 
-* **Ease of Use**: With familiar tools like AssemblyScript and GraphQL, subgraphs are accessible to developers, simplifying
+* **Ease of Use**: With familiar tools like AssemblyScript and GraphQL, subgraphs are accessible to developers,
+  simplifying
   the backend data management.
-* **Cross-Blockchain Compatibility**: They work across multiple EVM-compatible networks, allowing applications to operate
+* **Cross-Blockchain Compatibility**: They work across multiple EVM-compatible networks, allowing applications to
+  operate
   seamlessly on different blockchains.
 * **Security and Decentralization**: Opting for decentralized querying with subgraphs can reduce reliance on single data
   sources, increasing application robustness.
-
 
 ## Subgraph Providers and Tools
 
@@ -83,4 +86,9 @@ enhancing application security and resilience.
 subgraphs.
 It supports scalable, cost-effective solutions for blockchain data management, catering to diverse developer needs.
 
-## TODO add info about the nakama repo, how to use archive nodes and RPC URL
+:::tip Wasp Access Nodes
+
+You can find more information on how to connect to an access node in the 
+[#nodesharing channel](https://discordapp.com/channels/397872799483428865/398600007378272256) on the [IOTA Discord](https://discord.iota.org/).
+
+:::
