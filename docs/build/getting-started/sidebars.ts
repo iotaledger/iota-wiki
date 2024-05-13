@@ -16,9 +16,125 @@ module.exports = {
       },
       items: [
         {
+          type: 'category',
+          label: 'EVM Tools',
+          collapsed: false,
+          link: {
+            type: 'generated-index',
+            title: 'EVM Tools',
+            slug: '/tools/evm',
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'IOTA',
+              collapsed: false,
+              link: {
+                type: 'generated-index',
+                title: 'IOTA EVM Tools',
+                slug: '/tools/evm/iota',
+              },
+              items: [
+                {
+                  label: 'Explorer',
+                  type: 'link',
+                  href: 'https://explorer.evm.iota.org',
+                },
+                {
+                  label: 'Toolkit',
+                  type: 'link',
+                  href: 'https://evm-toolkit.evm.iotaledger.net',
+                },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'IOTA Testnet',
+              collapsed: false,
+              link: {
+                type: 'generated-index',
+                title: 'IOTA Testnet EVM Tools',
+                slug: '/tools/evm/iota-testnet',
+              },
+              items: [
+                {
+                  label: 'Explorer',
+                  type: 'link',
+                  href: 'https://explorer.evm.testnet.iota.org',
+                },
+                {
+                  label: 'Toolkit & Faucet',
+                  type: 'link',
+                  href: 'https://evm-toolkit.evm.testnet.iotaledger.net',
+                },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Shimmer',
+              collapsed: true,
+              link: {
+                type: 'generated-index',
+                title: 'ShimmerEVM Tools',
+                slug: '/tools/evm/shimmer',
+              },
+              items: [
+                {
+                  label: 'Explorer',
+                  type: 'link',
+                  href: 'https://explorer.evm.shimmer.network',
+                },
+                {
+                  label: 'Toolkit',
+                  type: 'link',
+                  href: 'https://evm-toolkit.evm.shimmer.network',
+                },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Shimmer Testnet',
+              collapsed: true,
+              link: {
+                type: 'generated-index',
+                title: 'ShimmerEVM Testnet Tools',
+                slug: '/tools/evm/shimmer-testnet',
+              },
+              items: [
+                {
+                  label: 'Explorer',
+                  type: 'link',
+                  href: 'https://explorer.evm.testnet.shimmer.network',
+                },
+                {
+                  label: 'EVM Testnet Toolkit & Faucet',
+                  type: 'link',
+                  href: 'https://evm-toolkit.evm.testnet.shimmer.network/',
+                },
+              ],
+            },
+            {
+              label: 'Oracles for IOTA EVM and ShimmerEVM',
+              type: 'doc',
+              id: 'oracles',
+            },
+            {
+              type: 'link',
+              label: 'WASP CLI',
+              description: 'Wasp CLI is a command line tool for interacting with the Wasp node.',
+              href: '/wasp/how-tos/wasp-cli',
+            },
+          ],
+        },
+        {
+          label: 'Explorer',
           type: 'link',
-          label: 'IOTA Sandbox',
-          href: '/iota-sandbox/welcome',
+          href: 'https://explorer.iota.org',
+        },
+        {
+          label: 'IOTA Testnet Faucet',
+          type: 'link',
+          href: 'https://faucet.testnet.iotaledger.net',
         },
         {
           type: 'link',
@@ -27,53 +143,8 @@ module.exports = {
         },
         {
           type: 'link',
-          label: 'WASP CLI',
-          href: '/wasp/how-tos/wasp-cli',
-        },
-        {
-          label: 'Schema Tool',
-          type: 'link',
-          href: '/isc/schema/introduction',
-        },
-        {
-          label: 'Explorer',
-          type: 'link',
-          href: 'https://explorer.iota.org',
-        },
-        {
-          label: 'IOTA EVM Explorer',
-          type: 'link',
-          href: 'https://explorer.evm.iota.org',
-        },
-        {
-          label: 'IOTA EVM Toolkit',
-          type: 'link',
-          href: 'https://evm-toolkit.evm.iotaledger.net/',
-        },
-        {
-          label: 'Shimmer EVM Explorer',
-          type: 'link',
-          href: 'https://explorer.evm.shimmer.network/',
-        },
-        {
-          label: 'Shimmer EVM Toolkit',
-          type: 'link',
-          href: 'https://evm-toolkit.evm.shimmer.network/',
-        },
-        {
-          label: 'EVM Testnet Toolkit & Faucet',
-          type: 'link',
-          href: 'https://evm-toolkit.evm.testnet.shimmer.network/',
-        },
-        {
-          label: 'Oracles for IOTA EVM and ShimmerEVM',
-          type: 'doc',
-          id: 'oracles',
-        },
-        {
-          label: 'Testnet Faucet',
-          type: 'link',
-          href: 'https://faucet.testnet.shimmer.network',
+          label: 'IOTA Sandbox',
+          href: '/iota-sandbox/welcome',
         },
       ],
     },
