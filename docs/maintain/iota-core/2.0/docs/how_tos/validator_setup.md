@@ -336,10 +336,10 @@ docker logs -f inx-validator
 If the logs don't show any errors, you should be good to go. The network will select you as a validator if your stake is
 high enough. You can check the stake requirements as follows: The total pool stake, which consists of
 your `Stake Amount` and all the stake that is delegated to your account, must be greater than the _Pool Stake_ of the
-last entry in the [validator list]( https://explorer.nova-testnet.iotaledger.net/alphanet/validators/). Note that this list
+last entry in the [validator list](https://explorer.iota.org/iota2-testnet/validators/). Note that this list
 might change every epoch, so the stake requirements might also change.
 
 You can check your _Total pool stake_ by taking the `Account Address`, opening the following URL, and checking
 the `Validation` tab:
 
-`https://explorer.nova-testnet.iotaledger.net/alphanet/addr/{Account Address}`
+`https://explorer.iota.org/iota2-testnet/addr/ {Account Address}`
