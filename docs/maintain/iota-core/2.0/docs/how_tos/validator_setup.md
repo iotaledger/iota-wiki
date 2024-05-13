@@ -45,9 +45,10 @@ command `echo 0xff`.
 
 ## Set Up the CLI Wallet
 
-You can download the CLI Wallet from the following link:
-TODO: Link to CLI Wallet binaries once released, or keep the below manual instructions. (Those require Rust to be
-installed).
+You can download the latest release of the CLI Wallet from the following link:
+https://github.com/iotaledger/iota-sdk/releases
+
+After downloading, copy the binary to your current directory.
 
 ### Build From Source
 
@@ -292,10 +293,28 @@ You must modify the `.env` file in the following ways:
 
 ### 2. Allot Mana to the Account
 
-The selected account needs Mana to issue a candidacy announcement to the network. It must be _allotted_ to the account. You can do this using the `allot-mana` command in the CLI wallet or the developer tools in Firefly.
+The selected account needs Mana to issue candidacy announcements to the network. The Mana must be _allotted_ to the account. You can do this using the `allot-mana` command in the CLI wallet or the developer tools in Firefly. In the CLI Wallet, first check how much Mana can be allotted using `sync`, which shows you a `ManaBalance`:
+
+```
+ManaBalance {
+    total: DecayedMana {
+        stored: 1861687,
+        potential: 19380254,
+    },
+    available: DecayedMana {
+        stored: 1861687,
+        potential: 19380254,
+    },
+    rewards: 0,
+},
+```
+
+Set `Mana` as `stored + potential` from the `available` section.
+
+Now we allot the Mana to our account. If you happen to have multiple accounts, you also need to specify the ID of the account that will be used as the validator account.
 
 ```bash
-./wallet allot-mana
+allot-mana {Mana}
 ```
 
 ### 3. Verify the `inx-validator`
