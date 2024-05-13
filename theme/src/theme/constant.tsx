@@ -12,7 +12,7 @@ export const Networks = {
     protocol: 'IOTA 2.0',
     httpRestApi: 'https://api.nova-testnet.iotaledger.net/',
     eventApi: 'wss://api.nova-testnet.iotaledger.net:443 (MQTT 3.1, /mqtt)',
-    permaNodeApi: 'https://api.nova-testnet.iotaledger.net/',
+    permaNodeApi: 'https://chronicle.nova-testnet.iotaledger.net',
     explorer: 'https://explorer.iota.org/iota2-testnet',
     faucet: 'https://faucet.nova-testnet.iotaledger.net',
   },
