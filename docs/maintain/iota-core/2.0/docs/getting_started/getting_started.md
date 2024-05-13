@@ -30,7 +30,7 @@ should have the following minimum specs:
 The amount of storage you will need will depend on whether and how often you plan on _pruning_ old data from your local
 database.
 
-The IOTA-Core exposes different functionality on different ports:
+IOTA-Core exposes different functionality on different ports:
 
 - `15600 TCP` - Gossip protocol port.
 - `14626 UDP` - Autopeering port (optional).
@@ -42,13 +42,13 @@ the [`config.json`](../how_tos/post_installation.md) file.
 
 ## Operating System
 
-The IOTA-Core is written in Go and can be deployed on all major platforms.
-The [recommended setup](../how_tos/using_docker.md) uses Docker to run the IOTA-Core together with some INX extensions
+The IOTA-Core software is written in Go and can be deployed on all major platforms.
+The [recommended setup](../how_tos/using_docker.md) uses Docker to run IOTA-Core together with some INX extensions
 secured behind a [Traefik](https://traefik.io) SSL reverse proxy.
 
 ## Configuration
 
-The IOTA-Core uses two JSON configuration files that you can tweak based on your deployment requirements:
+IOTA-Core uses two JSON configuration files that you can tweak based on your deployment requirements:
 
 - `config.json` - Includes all core configuration parameters.
 - `peering.json` - Includes connection details to node neighbors (peers).

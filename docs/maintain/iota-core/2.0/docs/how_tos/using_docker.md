@@ -17,14 +17,14 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import LinuxCommands from '@site/docs/_admonitions/_linux-commands.md';
 
-# Install the IOTA-core using Docker
+# Install IOTA-core using Docker
 
 This article guides the recommended setup to run an IOTA-core node.
 It includes everything required to set up a public node accessible by wallets and applications:
 
 - [IOTA-core](https://github.com/iotaledger/iota-core)
 - [Traefik](https://traefik.io) - Reverse proxy using SSL certificates to secure access to the node API and dashboard.
-- [Prometheus](https://prometheus.io) - Metrics scraper configured to collect all metrics from the IOTA-Core and INX extensions.
+- [Prometheus](https://prometheus.io) - Metrics scraper configured to collect all metrics from IOTA-Core and INX extensions.
 - [Grafana](https://grafana.com) - Data visualizer that can be used to display the metrics collected by Prometheus.
 - [inx-dashboard](https://github.com/iotaledger/inx-dashboard) - Node dashboard.
 - [inx-indexer](https://github.com/iotaledger/inx-indexer) - Indexer extension for wallets and applications.
@@ -37,8 +37,8 @@ It includes everything required to set up a public node accessible by wallets an
 3. A registered domain name pointing to the public IP address of your server. _(optional if not using HTTPS)_
 4. Opening up the following ports in your server's firewall:
 
-- `15600 TCP` - Used for the IOTA-Core gossip.
-- `14626 UDP` - Used for the IOTA-Core autopeering.
+- `15600 TCP` - Used for IOTA-Core gossip.
+- `14626 UDP` - Used for IOTA-Core autopeering.
 - `80 TCP` - Used for HTTP. _(can be changed, see below)_
 - `443 TCP` - Used for HTTPS. _(optional if not using HTTPS)_
 
@@ -123,7 +123,7 @@ This step is recommended but optional if you are using autopeering.
 
 ### 4. Create the `data` folder
 
-All files used by the IOTA-Core, the INX extensions, Traefik & co will be stored in a directory called `data`.
+All files used by IOTA-Core, the INX extensions, Traefik & co will be stored in a directory called `data`.
 Docker image runs under user with user id `65532` and group id `65532`, so this directory needs to have the correct permissions to be accessed by the containers.
 To create this directory with correct permissions, run the contained script:
 
@@ -135,7 +135,7 @@ To create this directory with correct permissions, run the contained script:
 
 ### Starting the node
 
-You can start the IOTA-Core node and INX extensions by running:
+You can start IOTA-Core node and INX extensions by running:
 
 ```sh
 docker compose up -d
@@ -179,7 +179,7 @@ You can configure your wallet software to use `http://localhost`.
 
 ### Displaying Log Output
 
-You can display the IOTA-Core logs by running:
+You can display IOTA-Core logs by running:
 
 ```sh
 docker compose logs -f iota-core
@@ -198,7 +198,7 @@ docker compose down
 
 ### Tools
 
-To access the IOTA-Core tools, you can use the following command:
+To access IOTA-Core tools, you can use the following command:
 
 ```sh
 docker compose run iota-core tool <tool-name>
