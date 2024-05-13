@@ -38,7 +38,7 @@ module.exports = {
         {
           label: 'Explorer',
           type: 'link',
-          href: 'https://explorer.shimmer.network',
+          href: 'https://explorer.iota.org',
         },
         {
           label: 'IOTA EVM Explorer',

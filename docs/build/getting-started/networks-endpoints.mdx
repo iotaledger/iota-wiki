@@ -4,6 +4,7 @@ tags:
   - mainnet
   - shimmer
   - public testnet
+  - iota 2.0
   - MQTT
   - REST API
   - HTTP
@@ -75,7 +76,6 @@ This network is subject to occasional resets (no data retention) which are usual
 <AddToMetaMaskButton {...Networks['iota_testnet']} />
 
 <NetworkInfo.Evm {...Networks['iota_testnet']}/>
-
 #### Additional Info
 
 <NetworkInfo.EvmCustom {...Networks['iota_testnet']}/>
@@ -128,3 +128,16 @@ This network is subject to occasional resets (no data retention) which are usual
 #### Additional Info
 
 <NetworkInfo.EvmCustom {...Networks['shimmer_testnet']} />
+
+
+## IOTA 2.0 Testnet
+
+[The IOTA 2.0 Testnet](https://explorer.iota.org/iota2-testnet) acts as a test bed for builders without any real world value.
+
+:::info
+
+This network is subject to occasional resets (no data retention) which are usually announced with a one-week grace period.
+
+:::
+
+<NetworkInfo.L1 {...Networks['iota_2_testnet']} />
