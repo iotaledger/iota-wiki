@@ -50,17 +50,11 @@ It includes everything required to set up a public node accessible by wallets an
 
 Once you have completed all the installation [requirements](#requirements), you can download one of the latest releases, depending on the network you want to join, by running the following command:
 
-<Tabs groupId="network" queryString>
-<TabItem value="testnet" label="Testnet IOTA 2.0">
-
 TODO: Replace with link to iota2 node docker setup.
 
 ```sh
 mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/testnet | tar -zx
 ```
-
-</TabItem>
-</Tabs>
 
 ## Prepare
 
