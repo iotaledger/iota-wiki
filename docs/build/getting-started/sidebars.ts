@@ -121,7 +121,8 @@ module.exports = {
             {
               type: 'link',
               label: 'WASP CLI',
-              description: 'Wasp CLI is a command line tool for interacting with the Wasp node.',
+              description:
+                'Wasp CLI is a command line tool for interacting with the Wasp node.',
               href: '/wasp/how-tos/wasp-cli',
             },
           ],
