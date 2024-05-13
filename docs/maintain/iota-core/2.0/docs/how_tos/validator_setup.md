@@ -248,7 +248,7 @@ displayed `amount`.
 The higher your `Stake Amount`, the more likely you will be selected for the validator committee, so
 setting `Stake Amount = amount` is preferred.
 
-```
+:::
 
 ### 3. Decide on a `Fixed Cost`
 
