@@ -13,7 +13,7 @@ module.exports = {
   docs: [
     {
       type: 'category',
-      label: 'IOTA-core',
+      label: 'IOTA-Core',
       collapsed: false,
       items: [
         {

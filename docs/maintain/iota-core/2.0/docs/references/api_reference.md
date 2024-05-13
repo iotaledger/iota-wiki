@@ -3,7 +3,7 @@ description: Links to the REST API reference and the Node event API reference.
 image: /img/icons/iota/iota_core.png
 tags:
   - IOTA Node
-  -  IOTA-Core Node
+  - IOTA-Core Node
   - REST API
   - API
   - Reference

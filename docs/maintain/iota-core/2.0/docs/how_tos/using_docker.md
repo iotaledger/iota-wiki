@@ -95,15 +95,9 @@ You can configure your node to either use HTTP or HTTPS. For publicly exposed no
 
 :::
 
-<Tabs groupId="network" queryString>
-<TabItem value="testnet" label="Testnet IOTA 2.0">
-
 ```sh reference
 https://github.com/iotaledger/node-docker-setup/blob/feat/iota-core/testnet_iota-2.0/env_template
 ```
-
-</TabItem>
-</Tabs>
 
 ### 3. Setup neighbors
 

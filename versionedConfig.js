@@ -133,7 +133,7 @@ exports.maintainPluginsConfig = [
     versions: [
       {
         label: '2.0',
-        badges: ['IOTA', 'Shimmer'],
+        badges: ['Testnet'],
       },
     ],
   },

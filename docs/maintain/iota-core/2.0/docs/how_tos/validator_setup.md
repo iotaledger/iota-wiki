@@ -46,7 +46,7 @@ command `echo 0xff`.
 ## Set Up the CLI Wallet
 
 You can download the latest release of the CLI Wallet from the following link:
-https://github.com/iotaledger/iota-sdk/releases
+https://github.com/iotaledger/iota-sdk/releases/tag/cli-wallet-v2.0.0-alpha.1
 
 After downloading, copy the binary to your current directory.
 
@@ -199,7 +199,9 @@ account
 You can add the account as a block issuer using the following command:
 
 :::note
+
 The public key needs to have the `0x` prefix.
+
 :::
 
 ```bash
@@ -265,10 +267,8 @@ This value is not particularly important for the Testnet. A recommended value is
 
 You can use the following command to start staking:
 
-```
-
+```sh
 begin-staking {Account ID} {Stake Amount} {Fixed Cost}
-
 ```
 
 You can verify you successfully started staking by running the `sync` and `accounts` commands, copying the `Output ID` of the account, and then running `output {Output ID}`. You should be able to find the `StakingFeature`  within the `features` section. It should show the `Stake Amount` and `Fixed Cost` you just entered. It should look like this, but with the values you entered:
@@ -342,4 +342,4 @@ might change every epoch, so the stake requirements might also change.
 You can check your _Total pool stake_ by taking the `Account Address`, opening the following URL, and checking
 the `Validation` tab:
 
-`https://explorer.iota.org/iota2-testnet/addr/ {Account Address}`
+`https://explorer.iota.org/iota2-testnet/addr/{Account Address}`

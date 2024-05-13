@@ -3,8 +3,8 @@ description: The IOTA-Core is a powerful, easy to install node software written 
 image: /img/icons/iota/iota_core.png
 tags:
   - IOTA Node
-  - IOTA-core Node
-  - IOTA-core
+  - IOTA-Core Node
+  - IOTA-Core
   - IOTA
   - Node Software
   - Welcome
