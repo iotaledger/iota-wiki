@@ -5,18 +5,20 @@ image: /img/logo/WASP_logo_dark.png
 
 # MultiSig Wallet
 :::note TL;DR;
-Safe Wallet is IOTA's exclusive [MultiSig](https://safe.iotaledger.net/welcome) wallet. The term “
+
+Safe Wallet is a [MultiSig](https://safe.iotaledger.net/welcome) wallet. The term “
   multisig” is short for "multisignature".
 
 :::
 
 The security of cryptocurrency demands greater attention as digital assets gain traction. Individuals and organizations need robust strategies to safeguard their funds. Multisignature (multisig) wallets are emerging as a powerful cybersecurity tool in crypto.
 
-Decentralized digital assets require a different approach to security than traditional finance. Thankfully, innovative technologies like multisig wallets provide an extra layer of protection, allowing you to trade cryptocurrencies on chains like [Shimmer EVM](https://explorer.evm.shimmer.network/) or [IOTA](https://explorer.evm.iota.org/).
+Decentralized digital assets require a different approach to security than traditional finance. Thankfully, innovative technologies like multisig wallets provide an extra layer of protection, allowing you to trade cryptocurrencies on chains like [Shimmer EVM](https://explorer.evm.shimmer.network/) or [IOTA EVM](https://explorer.evm.iota.org/).
 
 ![IOTA Sandbox](/img/get-started/safe/safe.png)
 
 ## Why Are Multisig Wallets More Secure?
+
 Traditional crypto wallets rely on a single signature for transactions, making them vulnerable if that key is compromised. Multisig wallets offer superior security by requiring multiple approvals before funds can be moved. This added layer of verification significantly reduces the risk of unauthorized transactions, even if a hacker gains access to one of your keys.
 
 ## Use Cases for multisig Wallet
@@ -67,6 +69,9 @@ Learn more about safe accounts in the [Safe documentation](https://help.safe.glo
 :::
 
 ## IOTA has its own dedicated MultiSig wallet - [safe(Wallet)](https://safe.iotaledger.net/welcome)
+
 :::info Set Up a Safe Account
+
 You can find instructions on setting up a safe account in the [Safe documentation](https://help.safe.global/en/articles/40868-creating-a-safe-on-a-web-browser).
+
 :::

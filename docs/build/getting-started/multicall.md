@@ -8,7 +8,7 @@ image: /img/logo/WASP_logo_dark.png
 
 Multicall3 is a smart contract on the Ethereum Virtual Machine (EVM) that streamlines transactions. It allows you to bundle multiple calls to various contracts, for both reading and writing data, into a single transaction.
 
-This can be particularly useful when working with decentralized applications that require multiple contract interactions or when batching multiple calls to save on gas costs. To use the Multicall3 contract on Shimmer EVM, the Multicall3 contract is deployed at this address: [0xcA11bde05977b3631167028862bE2a173976CA11](https://explorer.evm.iota.org/address/0xcA11bde05977b3631167028862bE2a173976CA11?tab=write_contract).
+This can be particularly useful when working with decentralized applications that require multiple contract interactions or when batching multiple calls to save on gas costs. To use the Multicall3 contract on IOTA EVM, the Multicall3 contract is deployed at this address: [0xcA11bde05977b3631167028862bE2a173976CA11](https://explorer.evm.iota.org/address/0xcA11bde05977b3631167028862bE2a173976CA11?tab=write_contract).
 
 This contract offers significant advantages for optimizing transaction processing on L2 networks, also known as Layer 2 scaling solutions. Here's how Multicall3 enhances efficiency:
 
