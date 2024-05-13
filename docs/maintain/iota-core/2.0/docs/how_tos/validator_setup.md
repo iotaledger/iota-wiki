@@ -84,7 +84,7 @@ cp ../target/release/wallet wallet
 You can use the following command to connect your wallet to a Testnet node — alternatively, your node’s URL:
 
 ```bash
-./wallet init --node-url "https://api.iota2-testnet-domain"
+./wallet init --node-url "https://api.nova-testnet.iotaledger.net"
 ```
 
 #### 5. Configure Your Wallet
@@ -123,11 +123,11 @@ Please copy the implicit address returned by the command.
 
 ### 2. Fund Your Account
 
-You can enter the address at the [Testnet Faucet](https://faucet.iota2-testnet-domain/) to fund your account or run the
+You can enter the address at the [Testnet Faucet](https://faucet.nova-testnet.iotaledger.net/) to fund your account or run the
 following command
 
 ```bash
-./wallet faucet {implicit-address} --url https://faucet.iota2-testnet-domain/api/enqueue
+./wallet faucet {implicit-address} --url https://faucet.nova-testnet.iotaledger.net/api/enqueue
 ```
 
 ### 3. Sync With the Node
@@ -329,10 +329,10 @@ docker logs -f inx-validator
 If the logs don't show any errors, you should be good to go. The network will select you as a validator if your stake is
 high enough. You can check the stake requirements as follows: The total pool stake, which consists of
 your `Stake Amount` and all the stake that is delegated to your account, must be greater than the _Pool Stake_ of the
-last entry in the [validator list]( https://explorer.iota2-testnet-domain/alphanet/validators/). Note that this list
+last entry in the [validator list]( https://explorer.nova-testnet.iotaledger.net/alphanet/validators/). Note that this list
 might change every epoch, so the stake requirements might also change.
 
 You can check your _Total pool stake_ by taking the `Account Address`, opening the following URL, and checking
 the `Validation` tab:
 
-`https://explorer.iota2-testnet-domain/alphanet/addr/{Account Address}` 
+`https://explorer.nova-testnet.iotaledger.net/alphanet/addr/{Account Address}`
