@@ -99,9 +99,9 @@ Unless you have a ledger, select Stronghold.
 
 No.
 
-##### Select bip path
+##### Select BIP path
 
-Select any bip path of your choice (e.g., IOTA is fine)
+Select `Custom` as the BIP path and type `1/0/0/0`.
 
 ##### Do you want to set an alias for the new wallet?
 
@@ -154,7 +154,7 @@ You should run this until the BIC changes from `None` to `Some(0)`, then copy th
 You can transition your account by running the following command:
 
 ```bash
-./wallt implicit-account-transition {Output Id}
+implicit-account-transition {Output Id}
 ```
 
 ### 5. Sync With the Node
