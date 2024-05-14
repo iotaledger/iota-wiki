@@ -20,7 +20,7 @@ in order to address its linkability security concerns, at least when used in com
 
 ## Introduction
 
-`RevocationBitmap2022` allows for a simple and straightforward way for an issuer to invalidate an issued VC before it's expiration. This mechanism though
+`RevocationBitmap2022` allows for a simple and straightforward way for an issuer to invalidate an issued VC before its expiration. While this method prevents the analysis of usage by the issuer through hosting the revocation information on-chain
 comes with a high risk of linkability, which is especially relavant for bitmaps stored on-chain - where the storage space limits the maximum size for
 the revocation bitmap, reducing herd privacy.
 To address this privacy concern, `RevocationTimeframe2024` was designed as an extension that builds on top of `RevocationBitmap2022`, therefore sharing
