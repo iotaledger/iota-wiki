@@ -51,10 +51,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Programs & Funding',
-      items: [
-        'programs/touchpoint',
-        'programs/community-treasury',
-      ],
+      items: ['programs/touchpoint', 'programs/community-treasury'],
     },
     {
       type: 'category',
