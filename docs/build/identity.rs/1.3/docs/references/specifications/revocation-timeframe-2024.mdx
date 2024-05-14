@@ -21,7 +21,7 @@ in order to address its linkability security concerns, at least when used in com
 ## Introduction
 
 `RevocationBitmap2022` allows for a simple and straightforward way for an issuer to invalidate an issued VC before its expiration. While this method prevents the analysis of usage by the issuer through hosting the revocation information on-chain
-comes with a high risk of linkability, which is especially relavant for bitmaps stored on-chain - where the storage space limits the maximum size for
+it comes with a high risk of linkability by colluding verfiers as they can store the bitmap index and use it to identify users. Additionally verifiers can monitor the revocation information and at later point, outside of nay interaction, check the revocation status.
 To address this privacy concern, `RevocationTimeframe2024` was designed as an extension that builds on top of `RevocationBitmap2022`, therefore sharing
 most of its logic.
 
