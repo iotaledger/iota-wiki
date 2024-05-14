@@ -37,7 +37,7 @@ in which the credential is guaranted to be non-revoked. By having a validity tim
 the verifier can prove the credentials validity by verifying the credentials signature.
 
 The downside of this mechanism is that the holder of a credential using `RevocationTimeframe2024` has to contact the credentials issuer
-to update the signature - i.e. re-issue the credential - at the end of the credential's validity timeframe. Furthermore,
+to update the signature - i.e. re-issue the credential - at the end of the credentials validity timeframe. Furthermore,
 given as how a credential's validity timeframe proves the validity of the credential itself, the updates made by the issuer to the credential's status -
 i.e revoking or unrevoking it - won't be reflected on the credential until the start of a new validity timeframe. For this reason,
 issuers should choose a validity timeframe length with respect to how frequently they expect to change the credential's status;
