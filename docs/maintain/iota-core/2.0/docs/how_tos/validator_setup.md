@@ -46,7 +46,7 @@ command `echo 0xff`.
 ## Set Up the CLI Wallet
 
 You can download the latest release of the CLI Wallet from the following link:
-https://github.com/iotaledger/iota-sdk/releases/tag/cli-wallet-v2.0.0-alpha.1
+https://github.com/iotaledger/iota-sdk/releases/tag/cli-wallet-v2.0.0-beta.2
 
 After downloading, copy the binary to your current directory.
 
