@@ -38,7 +38,6 @@ It includes everything required to set up a public node accessible by wallets an
 4. Opening up the following ports in your server's firewall:
 
 - `15600 TCP` - Used for IOTA-Core gossip.
-- `14626 UDP` - Used for IOTA-Core autopeering.
 - `80 TCP` - Used for HTTP. _(can be changed, see below)_
 - `443 TCP` - Used for HTTPS. _(optional if not using HTTPS)_
 
