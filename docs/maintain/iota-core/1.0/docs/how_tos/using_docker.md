@@ -93,7 +93,7 @@ You can configure your node to either use HTTP or HTTPS. For publicly exposed no
 :::
 
 ```sh reference
-https://github.com/iotaledger/node-docker-setup/blob/feat/iota-core/testnet_iota-2.0/env_template
+https://github.com/iotaledger/node-docker-setup/blob/main/iota2-testnet/env_template
 ```
 
 ### 3. Setup neighbors

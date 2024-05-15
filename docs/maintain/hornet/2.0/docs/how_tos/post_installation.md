@@ -57,12 +57,6 @@ To generate a JWT-token to be used with the protected routes you can run:
 
 If you are running our [recommended setup](using_docker.md) then see [here](using_docker.md#tools).
 
-### Proof-of-Work
-
-If you are concerned with resource consumption, consider turning off `restAPI.pow.enabled`.
-This way, the clients must perform proof of work locally before submitting a block for broadcast.
-If you would like to offer proof of work to clients, consider increasing the `restAPI.pow.workerCount` to provide a faster block submission experience.
-
 ### Reverse Proxy
 
 We recommend that you provide your HTTP REST API behind a reverse proxy, such as [HAProxy](http://www.haproxy.org/), [Traefik](https://traefik.io/), [Nginx](https://www.nginx.com/), or [Apache](https://www.apache.org/) configured with TLS.

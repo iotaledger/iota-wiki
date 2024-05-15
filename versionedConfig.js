@@ -132,7 +132,7 @@ exports.maintainPluginsConfig = [
     subsection: 'maintain-layer-1',
     versions: [
       {
-        label: '2.0',
+        label: '1.0',
         badges: ['Testnet'],
       },
     ],

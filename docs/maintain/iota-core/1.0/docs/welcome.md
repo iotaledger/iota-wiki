@@ -19,7 +19,7 @@ It provides full-node capabilities, including full support for the latest networ
 By running your own node, you have the following benefits:
 
 - You have direct access to the IOTA network instead of having to connect to and trust someone else's node.
-- You help the network to become more distributed and resilient by validating blocks and _value transactions_.
+- You help the network to become more distributed and resilient by validating blocks and value transactions.
 
 ## Source Code
 

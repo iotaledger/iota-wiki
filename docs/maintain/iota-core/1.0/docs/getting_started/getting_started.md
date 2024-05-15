@@ -33,7 +33,6 @@ database.
 IOTA-Core exposes different functionality on different ports:
 
 - `15600 TCP` - Gossip protocol port.
-- `14626 UDP` - Autopeering port (optional).
 - `14265 TCP` - REST HTTP API port (optional).
 
 These ports are essential for flawless node operation. The REST HTTP API port is optional and is only needed if
