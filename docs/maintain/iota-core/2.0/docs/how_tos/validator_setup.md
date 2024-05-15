@@ -45,12 +45,20 @@ command `echo 0xff`.
 
 ## Set Up the CLI Wallet
 
+### 1a. Downlaod the latest Version
+
 You can download the latest release of the CLI Wallet from the following link:
-https://github.com/iotaledger/iota-sdk/releases/tag/cli-wallet-v2.0.0-alpha.1
+https://github.com/iotaledger/iota-sdk/releases/tag/cli-wallet-v2.0.0-beta.2
 
 After downloading, copy the binary to your current directory.
 
-### Build From Source
+### 1b. Build From Source
+
+:::info Pre-build Release
+
+If you already downloaded the pre-build release version, you can skip this section and continue with [Connect to a Node](#2-connect-to-a-node)
+
+:::
 
 Please follow the instructions to build the CLI Wallet from source:
 
@@ -79,7 +87,7 @@ For ease of access, you can copy the Wallet that you built into your current dir
 cp ../target/release/wallet wallet
 ```
 
-#### 4. Connect to a Node
+### 2. Connect to a Node
 
 You can use the following command to connect your wallet to a Testnet node — alternatively, your node’s URL:
 
@@ -87,23 +95,29 @@ You can use the following command to connect your wallet to a Testnet node — a
 ./wallet init --node-url "https://api.nova-testnet.iotaledger.net"
 ```
 
-#### 5. Configure Your Wallet
+### 3. Configure Your Wallet
 
 Once you’ve connected your wallet to a node, you must answer the following setup questions:
 
-##### Select secret manager.
+:::info Not Mentioned Questions
+
+The setup questions that aren't asked here you can configure however you prefer, there config doesn't matter for this how-to.
+
+:::
+
+#### Select secret manager.
 
 Unless you have a ledger, select Stronghold.
 
-##### Do you want to set the address of the new wallet?
+#### Do you want to set the address of the new wallet?
 
 No.
 
-##### Select BIP path
+#### Select BIP path
 
 Select `Custom` as the BIP path and type `1/0/0/0`.
 
-##### Do you want to set an alias for the new wallet?
+#### Do you want to set an alias for the new wallet?
 
 Yes.
 
@@ -114,7 +128,7 @@ Then, enter a wallet alias of your choice.
 :::tip Connect to a Node
 
 The following sections assume you have already set up your [CLI Wallet](#set-up-the-cli-wallet), 
-and [connected it to a node](#4-connect-to-a-node).
+and [connected it to a node](#2-connect-to-a-node).
 
 :::
 
@@ -191,7 +205,7 @@ its `Account ID` and `Account Address`.
 
 ```bash
 sync
-account
+accounts
 ```
 
 ### 3. Add the Account as a Block Issuer
