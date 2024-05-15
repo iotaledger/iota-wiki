@@ -45,7 +45,7 @@ command `echo 0xff`.
 
 ## Set Up the CLI Wallet
 
-### 1a. Downlaod the latest Version
+### 1a. Download the latest Version
 
 You can download the latest release of the CLI Wallet from the following link:
 https://github.com/iotaledger/iota-sdk/releases/tag/cli-wallet-v2.0.0-beta.2
@@ -163,9 +163,10 @@ implicit-accounts
 
 You should run this until the BIC changes from `None` to `Some(0)`, then copy the `Output Id`.
 
-### 4. Transition the Account
+### 4. Transition the Implicit Account to a Full Account
 
-You can transition your account by running the following command:
+You need to transition your implicit account to a full account to be able to become a validator by running the following
+command:
 
 ```bash
 implicit-account-transition {Output Id}
