@@ -6,19 +6,17 @@ import CodeBlock from '@theme/CodeBlock';
 function L1(props: NetworkProps) {
   return (
     <table>
-      <thead>
-        <tr>
-          <th>Base Token</th>
-          <th>Protocol</th>
-          <th>HTTP REST API</th>
-          <th>Event API</th>
-          <th>Permanode API</th>
-        </tr>
-      </thead>
       <tbody>
         <tr>
+          <th>Base Token</th>
           <td>{props.baseToken}</td>
+        </tr>
+        <tr>
+          <th>Protocol</th>
           <td>{props.protocol}</td>
+        </tr>
+        <tr>
+          <th>HTTP REST API</th>
           <td>
             <a
               href={props.httpRestApi}
@@ -28,7 +26,13 @@ function L1(props: NetworkProps) {
               <p>{props.httpRestApi}</p>
             </a>
           </td>
+        </tr>
+        <tr>
+          <th>Event API</th>
           <td>{props.eventApi}</td>
+        </tr>
+        <tr>
+          <th>Permanode API</th>
           <td>
             <a
               href={props.permaNodeApi}
@@ -47,27 +51,31 @@ function L1(props: NetworkProps) {
 function Evm(props: NetworkProps) {
   return (
     <table>
-      <thead>
-        <tr>
-          <th>Base Token</th>
-          <th>Protocol</th>
-          <th>Chain ID</th>
-          <th>RPC URL</th>
-          <th>Explorer</th>
-        </tr>
-      </thead>
       <tbody>
         <tr>
+          <th>Base Token</th>
           <td>{props.baseToken}</td>
+        </tr>
+        <tr>
+          <th>Protocol</th>
           <td>ISC / EVM</td>
+        </tr>
+        <tr>
+          <th>Chain ID</th>
           <td>
             <ChainId url={props.evm.rpcUrls[0]} />
           </td>
+        </tr>
+        <tr>
+          <th>RPC URL</th>
           <td>
             {props.evm.rpcUrls.map((url, index) => (
               <CodeBlock key={index}>{url}</CodeBlock>
             ))}
           </td>
+        </tr>
+        <tr>
+          <th>Explorer</th>
           <td>
             <a
               href={props.evm.blockExplorerUrls[0]}
@@ -78,6 +86,16 @@ function Evm(props: NetworkProps) {
             </a>
           </td>
         </tr>
+        <tr>
+          <th>
+            <a href={'/build/blastAPI/'}>Blast API URL</a>
+          </th>
+          <td>
+            {props.evm.BlastAPIUrls.map((url, index) => (
+              <CodeBlock key={index}>{url}</CodeBlock>
+            ))}
+          </td>
+        </tr>
       </tbody>
     </table>
   );
@@ -86,14 +104,9 @@ function Evm(props: NetworkProps) {
 function EvmCustom(props: NetworkProps) {
   return (
     <table>
-      <thead>
-        <tr>
-          <th>Chain Address</th>
-          <th>Alias ID</th>
-        </tr>
-      </thead>
       <tbody>
         <tr>
+          <th>Chain Address</th>
           <td>
             <a
               href={props.explorer + '/addr/' + props.evmCustom.chainAddress}
@@ -103,6 +116,9 @@ function EvmCustom(props: NetworkProps) {
               {props.evmCustom.chainAddress}
             </a>
           </td>
+        </tr>
+        <tr>
+          <th>Alias ID</th>
           <td>{props.evmCustom.aliasId}</td>
         </tr>
       </tbody>

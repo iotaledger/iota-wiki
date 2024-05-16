@@ -92,6 +92,28 @@ module.exports = {
               ],
             },
             {
+              label: 'Blast API',
+              type: 'doc',
+              id: 'blastAPI',
+            },
+            {
+              label: 'Oracles',
+              type: 'doc',
+              id: 'oracles',
+            },
+            {
+              label: 'Subgraphs',
+              type: 'doc',
+              id: 'subgraphs',
+            },
+            {
+              type: 'link',
+              label: 'WASP CLI',
+              description:
+                'Wasp CLI is a command line tool for interacting with the Wasp node.',
+              href: '/wasp/how-tos/wasp-cli',
+            },
+            {
               type: 'category',
               label: 'Shimmer Testnet',
               collapsed: true,
@@ -112,18 +134,6 @@ module.exports = {
                   href: 'https://evm-toolkit.evm.testnet.shimmer.network/',
                 },
               ],
-            },
-            {
-              label: 'Oracles for IOTA EVM and ShimmerEVM',
-              type: 'doc',
-              id: 'oracles',
-            },
-            {
-              type: 'link',
-              label: 'WASP CLI',
-              description:
-                'Wasp CLI is a command line tool for interacting with the Wasp node.',
-              href: '/wasp/how-tos/wasp-cli',
             },
           ],
         },

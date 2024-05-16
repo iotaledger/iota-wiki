@@ -78,15 +78,15 @@ import {ethers} from "ethers";
 import fetch from "node-fetch";
 
 // Provider
-const providerURL = "https://json-rpc.evm.shimmer.network"
+const providerURL = "https://json-rpc.evm.iota.network"
 const provider = new ethers.JsonRpcProvider(providerURL);
 
-//  Pyth Oracle contract on ShimmerEVM Mainnet
+//  Pyth Oracle contract on IOTA EVM Mainnet
 const contractAddress = '0xA2aa501b19aff244D90cc15a4Cf739D2725B5729';
 
 // Add Price Feed Ids obtained from https://pyth.network/developers/price-feed-ids#pyth-evm-stable
 const priceFeedIds = [
-    //SMR/USD
+    //IOTA/USD
     '0xaf5b9ac426ae79591fde6816bc3f043b5e06d5e442f52112f76249320df22449',
     //BTC/USD
     '0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43'
