@@ -173,6 +173,12 @@ To create this directory with correct permissions run the contained script:
 
 ## Run
 
+:::info Wasp Access Node
+
+If your are coming from the `Running an ISC Access Node` how-to, this guide ends here and you have to contine with the access node setup [here](/wasp/how-tos/running-an-access-node#download-the-chain-state).
+
+:::
+
 ### Starting the node
 
 You can start the HORNET node and INX extensions by running:
