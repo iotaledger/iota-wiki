@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 import React from 'react';
 import { facetNamesJson, allFacets } from '../../utils/searchConstant';
 import clsx from 'clsx';
