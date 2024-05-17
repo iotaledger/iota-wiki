@@ -1,0 +1,40 @@
+.dropdown {
+  position: absolute;
+  right: 22%;
+  top: 245%;
+  cursor: pointer;
+}
+.dropdownMenu {
+  width: 15%;
+  position: fixed;
+  right: 35%;
+  top: 18.75%;
+  left: 69%;
+  padding: 15px;
+}
+
+@media (max-width: 996px) {
+  .dropdown {
+    position: absolute;
+    right: 665%;
+    top: 459%;
+  }
+
+  .dropdownMenu {
+    left: 65%;
+  }
+}
+
+@media (max-width: 770px) {
+  .dropdown {
+    position: absolute;
+    right: 396%;
+    top: 253%;
+  }
+
+  .dropdownMenu {
+    position: absolute;
+    top: 101%;
+    left: -4%;
+  }
+}

@@ -1,11 +1,12 @@
-import React from 'react';
+/* eslint-disable */
 
-export const DropdownContent = ({
-  facetList,
-  selectedFacets,
-  setSelectedFacets,
-}) => {
-  const actualFacets = facetList[1];
+import React from 'react';
+import { facetNamesJson, allFacets } from '../../utils/searchConstant';
+import clsx from 'clsx';
+import styles from './styles.module.css';
+
+export const DropdownContent = ({ selectedFacets, setSelectedFacets }) => {
+  const actualFacets = allFacets[1];
   const handleCheckboxChange = (event) => {
     const { value, checked } = event.target;
     const updatedFacets = [...selectedFacets];
@@ -32,32 +33,16 @@ export const DropdownContent = ({
     setSelectedFacets(updatedFacets);
   };
   return (
-    <div
-      style={{
-        position: 'fixed',
-        right: '21%',
-        top: '9.7%',
-        cursor: 'pointer',
-      }}
-      className='dropdown dropdown--hoverable'
-    >
+    <div className={clsx('dropdown dropdown--hoverable', styles.dropdown)}>
       <button
-        style={{ background: 'transparent', border: 'transparent' }}
-        className='button button--primary'
+        className={clsx(
+          'button button--primary button--outline',
+          styles.filterButton,
+        )}
       >
         filter↓
       </button>
-
-      <ul
-        className='dropdown__menu'
-        style={{
-          width: '30vh',
-          position: 'fixed',
-          right: '30%',
-          top: '12.5%',
-          left: '69%',
-        }}
-      >
+      <ul className={clsx('dropdown__menu', styles.dropdownMenu)}>
         <label>
           <input
             type='checkbox'
@@ -70,14 +55,23 @@ export const DropdownContent = ({
         </label>
         {actualFacets.map((facet, index) => (
           <li key={index}>
-            <label>
+            <label
+              style={
+                facetNamesJson[facet] === 'Identity.rs 1.1' ||
+                facetNamesJson[facet] === 'Identity.rs 1.2'
+                  ? { marginLeft: '30px' }
+                  : {}
+              }
+            >
               <input
                 type='checkbox'
                 value={facet}
                 onChange={handleCheckboxChange}
                 checked={selectedFacets[1].includes(facet)}
               />
-              {facet.slice(15)}
+              {facetNamesJson.hasOwnProperty(facet)
+                ? facetNamesJson[facet]
+                : facet.slice(15)}
             </label>
           </li>
         ))}
