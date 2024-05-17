@@ -1,4 +1,11 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+/* eslint-disable */
+import React, {
+  useCallback,
+  useMemo,
+  useRef,
+  useState,
+  useContext,
+} from 'react';
 import { DocSearchButton, useDocSearchKeyboardEvents } from '@docsearch/react';
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
@@ -7,17 +14,13 @@ import {
   isRegexpStringMatch,
   useSearchLinkCreator,
 } from '@docusaurus/theme-common';
-import {
-  useAlgoliaContextualFacetFilters,
-  useSearchResultUrlProcessor,
-} from '@docusaurus/theme-search-algolia/client';
+import { useSearchResultUrlProcessor } from '@docusaurus/theme-search-algolia/client';
 import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { createPortal } from 'react-dom';
 import translations from '@theme/SearchTranslations';
-
-import { useSearch } from '../../utils/useSearch';
 import { DropdownContent } from './DropdownContent';
+import { SearchContext } from '@site/src/utils/SearchContext';
 
 let DocSearchModal = null;
 function Hit({ hit, children }) {
@@ -38,20 +41,10 @@ function ResultsFooter({ state, onClose }) {
   );
 }
 
-function mergeFacetFilters(f1, f2) {
-  const normalize = (f) => (typeof f === 'string' ? [f] : f);
-  return [...normalize(f1), ...normalize(f2)];
-}
 function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
-  const { selectedFacets, setSelectedFacets } = useSearch();
-
+  const { selectedFacets, setSelectedFacets } = useContext(SearchContext);
   const { siteMetadata } = useDocusaurusContext();
   const processSearchResultUrl = useSearchResultUrlProcessor();
-  const contextualSearchFacetFilters = useAlgoliaContextualFacetFilters();
-  const configFacetFilters = props.searchParameters?.facetFilters ?? [];
-  const facetFilters = contextualSearch
-    ? mergeFacetFilters(contextualSearchFacetFilters, configFacetFilters)
-    : configFacetFilters;
 
   const searchParameters = {
     ...props.searchParameters,
@@ -167,7 +160,6 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
       />
       {isOpen && (
         <DropdownContent
-          facetList={facetFilters}
           selectedFacets={selectedFacets}
           setSelectedFacets={setSelectedFacets}
         />
