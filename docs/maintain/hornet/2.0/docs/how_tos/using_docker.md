@@ -75,7 +75,7 @@ mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-s
 <TabItem value="testnet" label="Testnet">
 
 ```sh
-mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/testnet | tar -zx
+mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/iota2-testnet | tar -zx
 ```
 
 </TabItem>
