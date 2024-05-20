@@ -87,12 +87,16 @@ function Evm(props: NetworkProps) {
           </td>
         </tr>
         {props.evm.BlastAPIUrls &&
-            Object.keys(props.evm.BlastAPIUrls).map((keyName, index) => (
-              <tr key={index}>
-                <th><a href={'/build/blastAPI/'}>Blast API</a> {keyName} URL</th>
-                <td><CodeBlock> {props.evm.BlastAPIUrls[keyName]} </CodeBlock></td>
-              </tr>
-            ))}
+          Object.keys(props.evm.BlastAPIUrls).map((keyName, index) => (
+            <tr key={index}>
+              <th>
+                <a href={'/build/blastAPI/'}>Blast API</a> {keyName} URL
+              </th>
+              <td>
+                <CodeBlock> {props.evm.BlastAPIUrls[keyName]} </CodeBlock>
+              </td>
+            </tr>
+          ))}
       </tbody>
     </table>
   );

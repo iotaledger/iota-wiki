@@ -20,9 +20,10 @@ export const Networks = {
       ],
       blockExplorerUrls: ['https://explorer.evm.iota.org'],
       BlastAPIUrls: {
-        'RPC': 'https://iota-mainnet-evm.public.blastapi.io',
-        'WSS': 'wss://iota-mainnet-evm.public.blastapi.io',
-        'Archive RPC': 'https://iota-mainnet-evm.blastapi.io/e7596858-fc63-4a54-8727-b885a2af4ec8',
+        RPC: 'https://iota-mainnet-evm.public.blastapi.io',
+        WSS: 'wss://iota-mainnet-evm.public.blastapi.io',
+        'Archive RPC':
+          'https://iota-mainnet-evm.blastapi.io/e7596858-fc63-4a54-8727-b885a2af4ec8',
       },
     },
     evmCustom: {
@@ -63,9 +64,10 @@ export const Networks = {
       ],
       blockExplorerUrls: ['https://explorer.evm.testnet.iotaledger.net'],
       BlastAPIUrls: {
-        "RPC": "https://iota-testnet-evm.public.blastapi.io",
-        "WSS": "wss://iota-testnet-evm.public.blastapi.io",
-        "Archive RPC": "https://iota-testnet-evm.blastapi.io/e7596858-fc63-4a54-8727-b885a2af4ec8"
+        RPC: 'https://iota-testnet-evm.public.blastapi.io',
+        WSS: 'wss://iota-testnet-evm.public.blastapi.io',
+        'Archive RPC':
+          'https://iota-testnet-evm.blastapi.io/e7596858-fc63-4a54-8727-b885a2af4ec8',
       },
     },
     evmCustom: {

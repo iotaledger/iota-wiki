@@ -27,7 +27,7 @@ module.exports = {
           items: [
             {
               type: 'category',
-              label: 'IOTA',
+              label: 'IOTA EVM',
               collapsed: false,
               link: {
                 type: 'generated-index',
@@ -49,7 +49,7 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'IOTA Testnet',
+              label: 'IOTA EVM Testnet',
               collapsed: false,
               link: {
                 type: 'generated-index',
@@ -70,8 +70,23 @@ module.exports = {
               ],
             },
             {
+              label: 'Blast API',
+              type: 'doc',
+              id: 'blastAPI',
+            },
+            {
+              label: 'Oracles',
+              type: 'doc',
+              id: 'oracles',
+            },
+            {
+              label: 'Subgraphs',
+              type: 'doc',
+              id: 'subgraphs',
+            },
+            {
               type: 'category',
-              label: 'Shimmer',
+              label: 'ShimmerEVM',
               collapsed: true,
               link: {
                 type: 'generated-index',
@@ -92,30 +107,8 @@ module.exports = {
               ],
             },
             {
-              label: 'Blast API',
-              type: 'doc',
-              id: 'blastAPI',
-            },
-            {
-              label: 'Oracles',
-              type: 'doc',
-              id: 'oracles',
-            },
-            {
-              label: 'Subgraphs',
-              type: 'doc',
-              id: 'subgraphs',
-            },
-            {
-              type: 'link',
-              label: 'WASP CLI',
-              description:
-                'Wasp CLI is a command line tool for interacting with the Wasp node.',
-              href: '/wasp/how-tos/wasp-cli',
-            },
-            {
               type: 'category',
-              label: 'Shimmer Testnet',
+              label: 'ShimmerEVM Testnet',
               collapsed: true,
               link: {
                 type: 'generated-index',
@@ -135,8 +128,16 @@ module.exports = {
                 },
               ],
             },
+            {
+              type: 'link',
+              label: 'WASP CLI',
+              description:
+                'Wasp CLI is a command line tool for interacting with the Wasp node.',
+              href: '/wasp/how-tos/wasp-cli',
+            },
           ],
         },
+
         {
           label: 'Explorer',
           type: 'link',
