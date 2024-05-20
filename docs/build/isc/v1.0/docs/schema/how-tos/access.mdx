@@ -1,0 +1,37 @@
+---
+description: "This article explains how to define access controls for functions using the optional 'access' subsection in the schema definition file."
+tags:
+  - Access Control
+  - Schema Tool
+  - Smart Contract
+  - AgentID
+  - Function Access
+image: /img/logo/WASP_logo_dark.png
+---
+
+# Limit Access
+
+You can define function access controls through the optional `access` subsection in the schema definition file.
+By default, functions are accessible to everyone. However, when specified, the `access` identifier restricts who can
+call a function.
+
+## Access Identifiers
+
+You can set access identifiers with **one** of the following options:
+
+- `self`: Restricts access to the smart contract itself.
+- `chain`: Allows only the chain owner to invoke the function.
+- Other: Specify an AgentID or AgentID[] variable in state storage, controlling the agent(s) permitted to call the
+  function.
+  You should provide a mechanism to initialize and manage this variable.
+
+The [Schema Tool](usage.mdx) handles the auto-generation of the code for access verification.
+
+## Usage Examples
+
+You can find examples in the schema definition file where the `owner` state variable operates as an access identifier.
+Functions such as `init` initialize the state variable, while `setOwner` can modify ownership,
+enhancing the security by limiting function access to the current owner.
+
+Remember to tailor access identifiers to individual functions as required,
+and establish multiple identifiers if necessary.

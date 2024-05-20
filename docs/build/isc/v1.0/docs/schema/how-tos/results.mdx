@@ -1,0 +1,85 @@
+---
+image: /img/logo/WASP_logo_dark.png
+description: "Understand how to outline function results using the 'results' subsection and how the Schema Tool aids in this process."
+tags:
+  - Function Results
+  - Schema Tool
+  - Results Subsection
+  - Mutable Structure
+  - Result Variables
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Define Function Results
+
+You can use the optional `results` subsection to detail the results a function can produce.
+This setup aligns with the field definitions seen in the [Params](params.mdx) subsection.
+
+## Schema Tool Features
+
+The [Schema Tool](usage.mdx) assists in this setup by:
+
+- Creating a mutable structure that includes proxies for each result variable found in the [Results](results.mdx) map.
+- Enabling users to assign values to result variables via this generated structure during the function call.
+
+:::note
+
+If the `results` subsection is not used, no structure will be created or conveyed to the function.
+
+:::
+
+For example, here is the structure generated for the mutable results for the `getFactor`
+function:
+
+<Tabs groupId="language" queryString>
+
+<TabItem value="go" label="Go">
+
+```go
+type MutableGetFactorResults struct {
+	proxy wasmtypes.Proxy
+}
+
+// relative division factor
+func (s MutableGetFactorResults) Factor() wasmtypes.ScMutableUint64 {
+	return wasmtypes.NewScMutableUint64(s.proxy.Root(ResultFactor))
+}
+```
+
+</TabItem>
+<TabItem value="rust" label="Rust">
+
+```rust
+#[derive(Clone)]
+pub struct MutableGetFactorResults {
+	pub(crate) proxy: Proxy,
+}
+
+impl MutableGetFactorResults {
+    // relative division factor
+    pub fn factor(&self) -> ScMutableUint64 {
+		ScMutableUint64::new(self.proxy.root(RESULT_FACTOR))
+	}
+}
+```
+
+</TabItem>
+<TabItem value="typescript" label="Typescript">
+
+```ts
+export class MutableGetFactorResults extends wasmtypes.ScProxy {
+  // relative division factor
+  factor(): wasmtypes.ScMutableUint64 {
+    return new wasmtypes.ScMutableUint64(this.proxy.root(sc.ResultFactor));
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+Note that the [Schema Tool](usage.mdx) will also generate an immutable version of the
+structure, suitable for accessing the results after by the caller of this smart contract
+function.
