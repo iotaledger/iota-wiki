@@ -78,6 +78,13 @@ enhancing application security and resilience.
 * **Security and Decentralization**: Opting for decentralized querying with subgraphs can reduce reliance on single data
   sources, increasing application robustness.
 
+## Subgraph Providers
+
+### Goldsky
+
+[Goldsky](https://goldsky.com/products/subgraphs) [supports IOTA EVM](https://docs.goldsky.com/chains/supported-networks).
+You can use their public API endpoints to access subgraph data.
+
 :::tip Blast API Archival Nodes
 
 You can use the convenient Blast API on IOTA EVM to access [archival nodes](blastAPI.md#archival-nodes).
@@ -90,3 +97,4 @@ You can find more information on how to connect to an access node in the
 [#nodesharing channel](https://discordapp.com/channels/397872799483428865/398600007378272256) on the [IOTA Discord](https://discord.iota.org/).
 
 :::
+
