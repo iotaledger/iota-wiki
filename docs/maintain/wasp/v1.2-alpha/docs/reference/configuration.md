@@ -15,6 +15,7 @@ tags:
   - reference
 ---
 
+
 # Core Configuration
 
 WASP uses a JSON standard format as a config file. If you are unsure about JSON syntax, you can find more information in the [official JSON specs](https://www.json.org).
@@ -22,7 +23,6 @@ WASP uses a JSON standard format as a config file. If you are unsure about JSON 
 You can change the path of the config file by using the `-c` or `--config` argument while executing `wasp` executable.
 
 For example:
-
 ```shell
 wasp -c config_defaults.json
 ```
@@ -57,18 +57,18 @@ wasp -h --full
 Example:
 
 ```json
-{
-  "app": {
-    "checkForUpdates": true,
-    "shutdown": {
-      "stopGracePeriod": "5m",
-      "log": {
-        "enabled": true,
-        "filePath": "shutdown.log"
+  {
+    "app": {
+      "checkForUpdates": true,
+      "shutdown": {
+        "stopGracePeriod": "5m",
+        "log": {
+          "enabled": true,
+          "filePath": "shutdown.log"
+        }
       }
     }
   }
-}
 ```
 
 ## <a id="logger"></a> 2. Logger
@@ -93,20 +93,22 @@ Example:
 Example:
 
 ```json
-{
-  "logger": {
-    "level": "info",
-    "disableCaller": true,
-    "disableStacktrace": false,
-    "stacktraceLevel": "panic",
-    "encoding": "console",
-    "encodingConfig": {
-      "timeEncoder": "rfc3339"
-    },
-    "outputPaths": ["stdout"],
-    "disableEvents": true
+  {
+    "logger": {
+      "level": "info",
+      "disableCaller": true,
+      "disableStacktrace": false,
+      "stacktraceLevel": "panic",
+      "encoding": "console",
+      "encodingConfig": {
+        "timeEncoder": "rfc3339"
+      },
+      "outputPaths": [
+        "stdout"
+      ],
+      "disableEvents": true
+    }
   }
-}
 ```
 
 ## <a id="inx"></a> 3. INX
@@ -120,16 +122,36 @@ Example:
 Example:
 
 ```json
-{
-  "inx": {
-    "address": "localhost:9029",
-    "maxConnectionAttempts": 30,
-    "targetNetworkName": ""
+  {
+    "inx": {
+      "address": "localhost:9029",
+      "maxConnectionAttempts": 30,
+      "targetNetworkName": ""
+    }
   }
-}
 ```
 
-## <a id="db"></a> 4. Database
+## <a id="cache"></a> 4. Cache
+
+| Name               | Description                            | Type    | Default value |
+| ------------------ | -------------------------------------- | ------- | ------------- |
+| cacheSize          | Cache size                             | string  | "64MiB"       |
+| cacheStatsInterval | Interval for printing cache statistics | string  | "30s"         |
+| enabled            | Whether the cache plugin is enabled    | boolean | true          |
+
+Example:
+
+```json
+  {
+    "cache": {
+      "cacheSize": "64MiB",
+      "cacheStatsInterval": "30s",
+      "enabled": true
+    }
+  }
+```
+
+## <a id="db"></a> 5. Database
 
 | Name                         | Description                              | Type    | Default value |
 | ---------------------------- | ---------------------------------------- | ------- | ------------- |
@@ -139,25 +161,27 @@ Example:
 
 ### <a id="db_chainstate"></a> ChainState
 
-| Name | Description                                  | Type   | Default value        |
-| ---- | -------------------------------------------- | ------ | -------------------- |
-| path | The path to the chain state databases folder | string | "waspdb/chains/data" |
+| Name      | Description                                  | Type   | Default value        |
+| --------- | -------------------------------------------- | ------ | -------------------- |
+| path      | The path to the chain state databases folder | string | "waspdb/chains/data" |
+| cacheSize | Size of the RocksDB block cache              | uint   | 33554432             |
 
 Example:
 
 ```json
-{
-  "db": {
-    "engine": "rocksdb",
-    "chainState": {
-      "path": "waspdb/chains/data"
-    },
-    "debugSkipHealthCheck": true
+  {
+    "db": {
+      "engine": "rocksdb",
+      "chainState": {
+        "path": "waspdb/chains/data",
+        "cacheSize": 33554432
+      },
+      "debugSkipHealthCheck": true
+    }
   }
-}
 ```
 
-## <a id="p2p"></a> 5. P2p
+## <a id="p2p"></a> 6. P2p
 
 | Name                      | Description                | Type   | Default value |
 | ------------------------- | -------------------------- | ------ | ------------- |
@@ -180,20 +204,20 @@ Example:
 Example:
 
 ```json
-{
-  "p2p": {
-    "identity": {
-      "privateKey": "",
-      "filePath": "waspdb/identity/identity.key"
-    },
-    "db": {
-      "path": "waspdb/p2pstore"
+  {
+    "p2p": {
+      "identity": {
+        "privateKey": "",
+        "filePath": "waspdb/identity/identity.key"
+      },
+      "db": {
+        "path": "waspdb/p2pstore"
+      }
     }
   }
-}
 ```
 
-## <a id="registries"></a> 6. Registries
+## <a id="registries"></a> 7. Registries
 
 | Name                                         | Description                      | Type   | Default value |
 | -------------------------------------------- | -------------------------------- | ------ | ------------- |
@@ -229,25 +253,25 @@ Example:
 Example:
 
 ```json
-{
-  "registries": {
-    "chains": {
-      "filePath": "waspdb/chains/chain_registry.json"
-    },
-    "dkShares": {
-      "path": "waspdb/dkshares"
-    },
-    "trustedPeers": {
-      "filePath": "waspdb/trusted_peers.json"
-    },
-    "consensusState": {
-      "path": "waspdb/chains/consensus"
+  {
+    "registries": {
+      "chains": {
+        "filePath": "waspdb/chains/chain_registry.json"
+      },
+      "dkShares": {
+        "path": "waspdb/dkshares"
+      },
+      "trustedPeers": {
+        "filePath": "waspdb/trusted_peers.json"
+      },
+      "consensusState": {
+        "path": "waspdb/chains/consensus"
+      }
     }
   }
-}
 ```
 
-## <a id="peering"></a> 7. Peering
+## <a id="peering"></a> 8. Peering
 
 | Name       | Description                                          | Type   | Default value  |
 | ---------- | ---------------------------------------------------- | ------ | -------------- |
@@ -257,73 +281,127 @@ Example:
 Example:
 
 ```json
-{
-  "peering": {
-    "peeringURL": "0.0.0.0:4000",
-    "port": 4000
+  {
+    "peering": {
+      "peeringURL": "0.0.0.0:4000",
+      "port": 4000
+    }
   }
-}
 ```
 
-## <a id="chains"></a> 8. Chains
+## <a id="chains"></a> 9. Chains
 
-| Name                             | Description                                                                                             | Type    | Default value |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------- | ------- | ------------- |
-| broadcastUpToNPeers              | Number of peers an offledger request is broadcasted to                                                  | int     | 2             |
-| broadcastInterval                | Time between re-broadcast of offledger requests                                                         | string  | "5s"          |
-| apiCacheTTL                      | Time to keep processed offledger requests in api cache                                                  | string  | "5m"          |
-| pullMissingRequestsFromCommittee | Whether or not to pull missing requests from other committee members                                    | boolean | true          |
-| deriveAliasOutputByQuorum        | False means we propose own AliasOutput, true - by majority vote.                                        | boolean | true          |
-| pipeliningLimit                  | -1 -- infinite, 0 -- disabled, X -- build the chain if there is up to X transactions unconfirmed by L1. | int     | -1            |
-| consensusDelay                   | Minimal delay between consensus runs.                                                                   | string  | "500ms"       |
+| Name                              | Description                                                                                                                                                                                                                   | Type    | Default value |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------- |
+| broadcastUpToNPeers               | Number of peers an offledger request is broadcasted to                                                                                                                                                                        | int     | 2             |
+| broadcastInterval                 | Time between re-broadcast of offledger requests; 0 value means that re-broadcasting is disabled                                                                                                                               | string  | "0s"          |
+| apiCacheTTL                       | Time to keep processed offledger requests in api cache                                                                                                                                                                        | string  | "5m"          |
+| pullMissingRequestsFromCommittee  | Whether or not to pull missing requests from other committee members                                                                                                                                                          | boolean | true          |
+| deriveAliasOutputByQuorum         | False means we propose own AliasOutput, true - by majority vote.                                                                                                                                                              | boolean | true          |
+| pipeliningLimit                   | -1 -- infinite, 0 -- disabled, X -- build the chain if there is up to X transactions unconfirmed by L1.                                                                                                                       | int     | -1            |
+| postponeRecoveryMilestones        | Number of milestones to wait until a chain transition is considered as rejected                                                                                                                                               | int     | 3             |
+| consensusDelay                    | Minimal delay between consensus runs.                                                                                                                                                                                         | string  | "500ms"       |
+| recoveryTimeout                   | Time after which another consensus attempt is made.                                                                                                                                                                           | string  | "20s"         |
+| redeliveryPeriod                  | The resend period for msg.                                                                                                                                                                                                    | string  | "2s"          |
+| printStatusPeriod                 | The period to print consensus instance status.                                                                                                                                                                                | string  | "3s"          |
+| consensusInstsInAdvance           |                                                                                                                                                                                                                               | int     | 3             |
+| awaitReceiptCleanupEvery          | For every this number AwaitReceipt will be cleaned up                                                                                                                                                                         | int     | 100           |
+| mempoolTTL                        | Time that requests are allowed to sit in the mempool without being processed                                                                                                                                                  | string  | "24h"         |
+| mempoolMaxOffledgerInPool         | Maximum number of off-ledger requests kept in the mempool                                                                                                                                                                     | int     | 2000          |
+| mempoolMaxOnledgerInPool          | Maximum number of on-ledger requests kept in the mempool                                                                                                                                                                      | int     | 1000          |
+| mempoolMaxTimedInPool             | Maximum number of timed on-ledger requests kept in the mempool                                                                                                                                                                | int     | 100           |
+| mempoolMaxOffledgerToPropose      | Maximum number of off-ledger requests to propose for the next block                                                                                                                                                           | int     | 500           |
+| mempoolMaxOnledgerToPropose       | Maximum number of on-ledger requests to propose for the next block (includes timed requests)                                                                                                                                  | int     | 100           |
+| mempoolOnLedgerRefreshMinInterval | Minimum interval to try to refresh the list of on-ledger requests after some have been dropped from the pool (this interval is introduced to avoid dropping/refreshing cycle if there are too many requests on L1 to process) | string  | "10m"         |
 
 Example:
 
 ```json
-{
-  "chains": {
-    "broadcastUpToNPeers": 2,
-    "broadcastInterval": "5s",
-    "apiCacheTTL": "5m",
-    "pullMissingRequestsFromCommittee": true,
-    "deriveAliasOutputByQuorum": true,
-    "pipeliningLimit": -1,
-    "consensusDelay": "500ms"
+  {
+    "chains": {
+      "broadcastUpToNPeers": 2,
+      "broadcastInterval": "0s",
+      "apiCacheTTL": "5m",
+      "pullMissingRequestsFromCommittee": true,
+      "deriveAliasOutputByQuorum": true,
+      "pipeliningLimit": -1,
+      "postponeRecoveryMilestones": 3,
+      "consensusDelay": "500ms",
+      "recoveryTimeout": "20s",
+      "redeliveryPeriod": "2s",
+      "printStatusPeriod": "3s",
+      "consensusInstsInAdvance": 3,
+      "awaitReceiptCleanupEvery": 100,
+      "mempoolTTL": "24h",
+      "mempoolMaxOffledgerInPool": 2000,
+      "mempoolMaxOnledgerInPool": 1000,
+      "mempoolMaxTimedInPool": 100,
+      "mempoolMaxOffledgerToPropose": 500,
+      "mempoolMaxOnledgerToPropose": 100,
+      "mempoolOnLedgerRefreshMinInterval": "10m"
+    }
   }
-}
 ```
 
-## <a id="statemanager"></a> 9. StateManager
+## <a id="snapshots"></a> 10. Snapshots
 
-| Name                              | Description                                                                                   | Type   | Default value |
-| --------------------------------- | --------------------------------------------------------------------------------------------- | ------ | ------------- |
-| blockCacheMaxSize                 | How many blocks may be stored in cache before old ones start being deleted                    | int    | 1000          |
-| blockCacheBlocksInCacheDuration   | How long should the block stay in block cache before being deleted                            | string | "1h"          |
-| blockCacheBlockCleaningPeriod     | How often should the block cache be cleaned                                                   | string | "1m"          |
-| stateManagerGetBlockRetry         | How often get block requests should be repeated                                               | string | "3s"          |
-| stateManagerRequestCleaningPeriod | How often requests waiting for response should be checked for expired context                 | string | "1s"          |
-| stateManagerTimerTickPeriod       | How often timer tick fires in state manager                                                   | string | "1s"          |
-| pruningMinStatesToKeep            | This number of states will always be available in the store; if 0 - store pruning is disabled | int    | 10000         |
-| pruningMaxStatesToDelete          | On single store pruning attempt at most this number of states will be deleted                 | int    | 1000          |
+| Name            | Description                                                                                                                                                                   | Type   | Default value |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------------- |
+| snapshotsToLoad | List of snapshots to load; can be either single block hash of a snapshot (if a single chain has to be configured) or list of '<chainID>:<blockHash>' to configure many chains | array  |               |
+| period          | How often state snapshots should be made: 1000 meaning "every 1000th state", 0 meaning "making snapshots is disabled"                                                         | uint   | 0             |
+| delay           | How many states should pass before snapshot is produced                                                                                                                       | uint   | 20            |
+| localPath       | The path to the snapshots folder in this node's disk                                                                                                                          | string | "waspdb/snap" |
+| networkPaths    | The list of paths to the remote (http(s)) snapshot locations; each of listed locations must contain 'INDEX' file with list of snapshot files                                  | array  |               |
 
 Example:
 
 ```json
-{
-  "stateManager": {
-    "blockCacheMaxSize": 1000,
-    "blockCacheBlocksInCacheDuration": "1h",
-    "blockCacheBlockCleaningPeriod": "1m",
-    "stateManagerGetBlockRetry": "3s",
-    "stateManagerRequestCleaningPeriod": "1s",
-    "stateManagerTimerTickPeriod": "1s",
-    "pruningMinStatesToKeep": 10000,
-    "pruningMaxStatesToDelete": 1000
+  {
+    "snapshots": {
+      "snapshotsToLoad": [],
+      "period": 0,
+      "delay": 20,
+      "localPath": "waspdb/snap",
+      "networkPaths": []
+    }
   }
-}
 ```
 
-## <a id="validator"></a> 10. Validator
+## <a id="statemanager"></a> 11. StateManager
+
+| Name                              | Description                                                                                                                                                                                                                          | Type   | Default value |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ | ------------- |
+| blockCacheMaxSize                 | How many blocks may be stored in cache before old ones start being deleted                                                                                                                                                           | int    | 1000          |
+| blockCacheBlocksInCacheDuration   | How long should the block stay in block cache before being deleted                                                                                                                                                                   | string | "1h"          |
+| blockCacheBlockCleaningPeriod     | How often should the block cache be cleaned                                                                                                                                                                                          | string | "1m"          |
+| stateManagerGetBlockNodeCount     | How many nodes should get block request be sent to                                                                                                                                                                                   | int    | 5             |
+| stateManagerGetBlockRetry         | How often get block requests should be repeated                                                                                                                                                                                      | string | "3s"          |
+| stateManagerRequestCleaningPeriod | How often requests waiting for response should be checked for expired context                                                                                                                                                        | string | "5m"          |
+| stateManagerStatusLogPeriod       | How often state manager status information should be written to log                                                                                                                                                                  | string | "1m"          |
+| stateManagerTimerTickPeriod       | How often timer tick fires in state manager                                                                                                                                                                                          | string | "1s"          |
+| pruningMinStatesToKeep            | This number of states will always be available in the store; if 0 - store pruning is disabled                                                                                                                                        | int    | 10000         |
+| pruningMaxStatesToDelete          | On single store pruning attempt at most this number of states will be deleted; NOTE: pruning takes considerable amount of time; setting this parameter large may seriously damage Wasp responsiveness if many blocks require pruning | int    | 10            |
+
+Example:
+
+```json
+  {
+    "stateManager": {
+      "blockCacheMaxSize": 1000,
+      "blockCacheBlocksInCacheDuration": "1h",
+      "blockCacheBlockCleaningPeriod": "1m",
+      "stateManagerGetBlockNodeCount": 5,
+      "stateManagerGetBlockRetry": "3s",
+      "stateManagerRequestCleaningPeriod": "5m",
+      "stateManagerStatusLogPeriod": "1m",
+      "stateManagerTimerTickPeriod": "1s",
+      "pruningMinStatesToKeep": 10000,
+      "pruningMaxStatesToDelete": 10
+    }
+  }
+```
+
+## <a id="validator"></a> 12. Validator
 
 | Name    | Description                                                                                                        | Type   | Default value |
 | ------- | ------------------------------------------------------------------------------------------------------------------ | ------ | ------------- |
@@ -332,49 +410,50 @@ Example:
 Example:
 
 ```json
-{
-  "validator": {
-    "address": ""
+  {
+    "validator": {
+      "address": ""
+    }
   }
-}
 ```
 
-## <a id="wal"></a> 11. Write-Ahead Logging
+## <a id="wal"></a> 13. Write-Ahead Logging
 
-| Name    | Description                                  | Type    | Default value |
-| ------- | -------------------------------------------- | ------- | ------------- |
-| enabled | Whether the "write-ahead logging" is enabled | boolean | true          |
-| path    | The path to the "write-ahead logging" folder | string  | "waspdb/wal"  |
+| Name        | Description                                                      | Type    | Default value |
+| ----------- | ---------------------------------------------------------------- | ------- | ------------- |
+| loadToStore | Load blocks from "write-ahead log" to the store on node start-up | boolean | false         |
+| enabled     | Whether the "write-ahead logging" is enabled                     | boolean | true          |
+| path        | The path to the "write-ahead logging" folder                     | string  | "waspdb/wal"  |
 
 Example:
 
 ```json
-{
-  "wal": {
-    "enabled": true,
-    "path": "waspdb/wal"
+  {
+    "wal": {
+      "loadToStore": false,
+      "enabled": true,
+      "path": "waspdb/wal"
+    }
   }
-}
 ```
 
-## <a id="webapi"></a> 12. Web API
+## <a id="webapi"></a> 14. Web API
 
-| Name                      | Description                                              | Type    | Default value  |
-| ------------------------- | -------------------------------------------------------- | ------- | -------------- |
-| enabled                   | Whether the web api plugin is enabled                    | boolean | true           |
-| bindAddress               | The bind address for the node web api                    | string  | "0.0.0.0:9090" |
-| [auth](#webapi_auth)      | Configuration for auth                                   | object  |                |
-| [limits](#webapi_limits)  | Configuration for limits                                 | object  |                |
-| debugRequestLoggerEnabled | Whether the debug logging for requests should be enabled | boolean | false          |
+| Name                      | Description                                                                                | Type    | Default value         |
+| ------------------------- | ------------------------------------------------------------------------------------------ | ------- | --------------------- |
+| enabled                   | Whether the web api plugin is enabled                                                      | boolean | true                  |
+| bindAddress               | The bind address for the node web api                                                      | string  | "0.0.0.0:9090"        |
+| [auth](#webapi_auth)      | Configuration for auth                                                                     | object  |                       |
+| indexDbPath               | Directory for storing indexes of historical data (only archive nodes will create/use them) | string  | "waspdb/chains/index" |
+| [limits](#webapi_limits)  | Configuration for limits                                                                   | object  |                       |
+| debugRequestLoggerEnabled | Whether the debug logging for requests should be enabled                                   | boolean | false                 |
 
 ### <a id="webapi_auth"></a> Auth
 
-| Name                        | Description                            | Type   | Default value |
-| --------------------------- | -------------------------------------- | ------ | ------------- |
-| scheme                      | Selects which authentication to choose | string | "jwt"         |
-| [jwt](#webapi_auth_jwt)     | Configuration for JWT Auth             | object |               |
-| [basic](#webapi_auth_basic) | Configuration for Basic Auth           | object |               |
-| [ip](#webapi_auth_ip)       | Configuration for IP-based Auth        | object |               |
+| Name                    | Description                            | Type   | Default value |
+| ----------------------- | -------------------------------------- | ------ | ------------- |
+| scheme                  | Selects which authentication to choose | string | "jwt"         |
+| [jwt](#webapi_auth_jwt) | Configuration for JWT Auth             | object |               |
 
 ### <a id="webapi_auth_jwt"></a> JWT Auth
 
@@ -382,62 +461,65 @@ Example:
 | -------- | ------------------ | ------ | ------------- |
 | duration | Jwt token lifetime | string | "24h"         |
 
-### <a id="webapi_auth_basic"></a> Basic Auth
-
-| Name     | Description                                     | Type   | Default value |
-| -------- | ----------------------------------------------- | ------ | ------------- |
-| username | The username which grants access to the service | string | "wasp"        |
-
-### <a id="webapi_auth_ip"></a> IP-based Auth
-
-| Name      | Description                                          | Type  | Default value |
-| --------- | ---------------------------------------------------- | ----- | ------------- |
-| whitelist | A list of ips that are allowed to access the service | array | 0.0.0.0       |
-
 ### <a id="webapi_limits"></a> Limits
 
-| Name                           | Description                                                                   | Type   | Default value |
-| ------------------------------ | ----------------------------------------------------------------------------- | ------ | ------------- |
-| timeout                        | The timeout after which a long running operation will be canceled             | string | "30s"         |
-| readTimeout                    | The read timeout for the HTTP request body                                    | string | "10s"         |
-| writeTimeout                   | The write timeout for the HTTP response body                                  | string | "1m"          |
-| maxBodyLength                  | The maximum number of characters that the body of an API call may contain     | string | "2M"          |
-| maxTopicSubscriptionsPerClient | Defines the max amount of subscriptions per client. 0 = deactivated (default) | int    | 0             |
-| confirmedStateLagThreshold     | The threshold that define a chain is unsynchronized                           | uint   | 2             |
+| Name                              | Description                                                                   | Type   | Default value |
+| --------------------------------- | ----------------------------------------------------------------------------- | ------ | ------------- |
+| timeout                           | The timeout after which a long running operation will be canceled             | string | "30s"         |
+| readTimeout                       | The read timeout for the HTTP request body                                    | string | "10s"         |
+| writeTimeout                      | The write timeout for the HTTP response body                                  | string | "1m"          |
+| maxBodyLength                     | The maximum number of characters that the body of an API call may contain     | string | "2M"          |
+| maxTopicSubscriptionsPerClient    | Defines the max amount of subscriptions per client. 0 = deactivated (default) | int    | 0             |
+| confirmedStateLagThreshold        | The threshold that define a chain is unsynchronized                           | uint   | 2             |
+| [jsonrpc](#webapi_limits_jsonrpc) | Configuration for jsonrpc                                                     | object |               |
+
+### <a id="webapi_limits_jsonrpc"></a> Jsonrpc
+
+| Name                                | Description                                                    | Type   | Default value |
+| ----------------------------------- | -------------------------------------------------------------- | ------ | ------------- |
+| maxBlocksInLogsFilterRange          | Maximum amount of blocks in eth_getLogs filter range           | int    | 1000          |
+| maxLogsInResult                     | Maximum amount of logs in eth_getLogs result                   | int    | 10000         |
+| websocketRateLimitMessagesPerSecond | The websocket rate limit (messages per second)                 | int    | 20            |
+| websocketRateLimitBurst             | The websocket burst limit                                      | int    | 5             |
+| websocketConnectionCleanupDuration  | Defines in which interval stale connections will be cleaned up | string | "5m"          |
+| websocketClientBlockDuration        | The duration a misbehaving client will be blocked              | string | "5m"          |
 
 Example:
 
 ```json
-{
-  "webapi": {
-    "enabled": true,
-    "bindAddress": "0.0.0.0:9090",
-    "auth": {
-      "scheme": "jwt",
-      "jwt": {
-        "duration": "24h"
+  {
+    "webapi": {
+      "enabled": true,
+      "bindAddress": "0.0.0.0:9090",
+      "auth": {
+        "scheme": "jwt",
+        "jwt": {
+          "duration": "24h"
+        }
       },
-      "basic": {
-        "username": "wasp"
+      "indexDbPath": "waspdb/chains/index",
+      "limits": {
+        "timeout": "30s",
+        "readTimeout": "10s",
+        "writeTimeout": "1m",
+        "maxBodyLength": "2M",
+        "maxTopicSubscriptionsPerClient": 0,
+        "confirmedStateLagThreshold": 2,
+        "jsonrpc": {
+          "maxBlocksInLogsFilterRange": 1000,
+          "maxLogsInResult": 10000,
+          "websocketRateLimitMessagesPerSecond": 20,
+          "websocketRateLimitBurst": 5,
+          "websocketConnectionCleanupDuration": "5m",
+          "websocketClientBlockDuration": "5m"
+        }
       },
-      "ip": {
-        "whitelist": ["0.0.0.0"]
-      }
-    },
-    "limits": {
-      "timeout": "30s",
-      "readTimeout": "10s",
-      "writeTimeout": "1m",
-      "maxBodyLength": "2M",
-      "maxTopicSubscriptionsPerClient": 0,
-      "confirmedStateLagThreshold": 2
-    },
-    "debugRequestLoggerEnabled": false
+      "debugRequestLoggerEnabled": false
+    }
   }
-}
 ```
 
-## <a id="profiling"></a> 13. Profiling
+## <a id="profiling"></a> 15. Profiling
 
 | Name        | Description                                       | Type    | Default value    |
 | ----------- | ------------------------------------------------- | ------- | ---------------- |
@@ -447,15 +529,15 @@ Example:
 Example:
 
 ```json
-{
-  "profiling": {
-    "enabled": false,
-    "bindAddress": "localhost:6060"
+  {
+    "profiling": {
+      "enabled": false,
+      "bindAddress": "localhost:6060"
+    }
   }
-}
 ```
 
-## <a id="profilingrecorder"></a> 14. ProfilingRecorder
+## <a id="profilingrecorder"></a> 16. ProfilingRecorder
 
 | Name    | Description                                     | Type    | Default value |
 | ------- | ----------------------------------------------- | ------- | ------------- |
@@ -464,14 +546,14 @@ Example:
 Example:
 
 ```json
-{
-  "profilingRecorder": {
-    "enabled": false
+  {
+    "profilingRecorder": {
+      "enabled": false
+    }
   }
-}
 ```
 
-## <a id="prometheus"></a> 15. Prometheus
+## <a id="prometheus"></a> 17. Prometheus
 
 | Name        | Description                                                  | Type    | Default value  |
 | ----------- | ------------------------------------------------------------ | ------- | -------------- |
@@ -481,10 +563,11 @@ Example:
 Example:
 
 ```json
-{
-  "prometheus": {
-    "enabled": true,
-    "bindAddress": "0.0.0.0:2112"
+  {
+    "prometheus": {
+      "enabled": true,
+      "bindAddress": "0.0.0.0:2112"
+    }
   }
-}
 ```
+
