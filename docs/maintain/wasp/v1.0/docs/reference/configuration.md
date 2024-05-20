@@ -333,7 +333,7 @@ Example:
 
 | Name            | Description                                                                                                                                                                   | Type   | Default value |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------------- |
-| snapshotsToLoad | List of snapshots to load; can be either single block hash of a snapshot (if a single chain has to be configured) or list of '<chainID>:<blockHash>' to configure many chains | array  |               |
+| snapshotsToLoad | List of snapshots to load; can be either single block hash of a snapshot (if a single chain has to be configured) or list of `<chainID>:<blockHash>` to configure many chains | array  |               |
 | period          | How often state snapshots should be made: 1000 meaning "every 1000th state", 0 meaning "making snapshots is disabled"                                                         | uint   | 0             |
 | delay           | How many states should pass before snapshot is produced                                                                                                                       | uint   | 20            |
 | localPath       | The path to the snapshots folder in this node's disk                                                                                                                          | string | "waspdb/snap" |
