@@ -26,10 +26,10 @@ undisclosed, whereas for SD-JWT VCs it's the issuer that decides which fields ma
 
 ## Concepts
 ### Issuance
-The issuer of a ZK-SD-VC creates the credential, signs it using the [BBS+](https://identity.foundation/bbs-signature/draft-irtf-cfrg-bbs-signatures.html) signature scheme
+The issuer of a ZK-SD-VC creates the credential, signs it using the [BBS+](https://www.ietf.org/archive/id/draft-irtf-cfrg-bbs-signatures-05.html) signature scheme
 and sends both the credential and the signature to the holder. To facilitate this process, the credential is first encoded 
 as a [JSON Proof Token](https://www.ietf.org/archive/id/draft-ietf-jose-json-proof-token-02.html) (JPT), which is then used as the payload of a 
-[JSON Web Proof](https://www.ietf.org/archive/id/draft-jmiller-jose-json-web-proof-00.html) (JWP) and sent to the holder as JPT. 
+[JSON Web Proof](https://www.ietf.org/archive/id/draft-ietf-jose-json-web-proof-02.html) (JWP) and sent to the holder as JPT. 
 :::note
 JWPs and JPTs can be reasoned about as the Zero Knowledge (ZK) based counterparts of JWSs and JWTs.
 :::
@@ -111,7 +111,7 @@ Here's an example presented JWP in its JPT JSON serialization format where the u
 ### Verification
 
 The verifier decodes the received JPT presentation and asserts the validity of the ZKP it contains, thus proving the
-authenticity and integrity of the presented credential, without knowledge of any of the undisclosed fields.
+authenticity and integrity of the presented credential, without knowledge of any of the undisclosed fields and of the issuer signature.
 
 <Tabs groupId="language" queryString>
 
