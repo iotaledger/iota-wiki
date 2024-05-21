@@ -12,13 +12,15 @@ import TabItem from '@theme/TabItem';
 
 # Running an ISC Access Node
 
-## Setup Wasp an Hornet
+## Set Up Wasp and Hornet
 
-First you have to [setup a normal Wasp Node](./running-a-node.md). Don't run `docker compose up` to start the docker containers yet. Continue with the following steps first:
+First, you should [set up a  Wasp Node](./running-a-node.md) but don't run `docker compose up` to start the docker containers yet. Continue with the following steps first:
 
-## Download the chain state
+### Download the Chain State
 
-You can configure how much of the state you wish to keep on your node, using the following setting: `stateManager.pruningMinStatesToKeep`. The default value is 10000 blocks.
+You can configure how much of the state you wish to keep on your node using the following setting: `stateManager.pruningMinStatesToKeep`. The default value is 10000 blocks.
+
+### Run a Non-archive Node
 
 If you wish to run a non-archive node (only keep the last N blocks), you must add `snapshots.networkPaths` to your config:
 
@@ -51,8 +53,11 @@ If you wish to run a non-archive node (only keep the last N blocks), you must ad
 </TabItem>
 </Tabs>
 
+### Run An Archive Node
+
 If you wish to have a full archive node you need to set `stateManager.pruningMinStatesToKeep` to `0` and can remove the `snapshots.networkPaths` option. 
-You can then download the historical state(this will take a while):
+
+You can then download the historical state using the following command (this will take a while):
 
 
 <Tabs groupId="network" queryString>
@@ -74,7 +79,7 @@ wget https://files.testnet.shimmer.network/dbs/wasp/latest-wasp_chains_wal.tgz -
 
 :::note Disk Space
 
-Operating as a full archive node require a lot of disk space, we recomment at least 500Gb of free space for now, to operate without issues
+Operating as a full archive node requires a lot of disk space. We recommend at least 500Gb of free space to operate without issues
 
 :::
 
@@ -84,27 +89,27 @@ Operating as a full archive node require a lot of disk space, we recomment at le
 docker compose up -d
 ```
 
-It will take a few minutes until the hornet node is synced
+It will take a few minutes until the hornet node is synced.
 
 You can check the sync status by following the logs with `docker logs -f hornet`, or in the web dashboard.
 
-## Download a Wasp-Cli fitting your Wasp Version
+## Download Wasp-Cli
 
-You can download and extract Wasp-Cli with:
+You can download and extract the Wasp-Cli that matches your Wasp version using the following command:
 
 ```
 curl -sL https://github.com/iotaledger/wasp/releases/download/v1.0.3/wasp-cli_1.0.3_Linux_x86_64.tar.gz | tar xzv
 ```
 
-## Use Wasp-Cli to obtain peering info
+## Use Wasp-Cli to Obtain Peering Info
 
-cd into the newly-downloaded wasp-cli directory:
+Change directory into the newly-downloaded `wasp-cli` directory:
 
 ```
 cd wasp-cli_1.0.3_Linux_x86_64/
 ```
 
-## Set L1 API Address
+## Set the L1 API Address
 
 ```sh
 ./wasp-cli set l1.apiaddress {NODE_HOST}
@@ -194,11 +199,11 @@ Send it together with your Ipv4 to node operators that you want to peer with.
 ./wasp-cli chain access-nodes add --peers=peer1,peer2
 ```
 
-## Check if Wasp synced
+## Check if Wasp Synced
 
-You can follow the progress by doing docker logs -f wasp. If you chose to create a full-archive node, this will take a long time (several minutes, maybe hours).
+You can follow the progress using `docker logs -f wasp`. If you chose to create a [full-archive node](#run-and-archive-node), this can take several minutes, maybe hours.
 
-## It's ready!
+## Test Your Endpoint
 
 You should have a working EVM JSON-RPC endpoint on:
 
