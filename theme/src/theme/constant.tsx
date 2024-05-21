@@ -19,12 +19,14 @@ export const Networks = {
         'wss://ws.json-rpc.evm.iotaledger.net',
       ],
       blockExplorerUrls: ['https://explorer.evm.iota.org'],
-      BlastAPIUrls: {
-        RPC: 'https://iota-mainnet-evm.public.blastapi.io',
-        WSS: 'wss://iota-mainnet-evm.public.blastapi.io',
-        'Archive RPC':
-          'https://iota-mainnet-evm.blastapi.io/e7596858-fc63-4a54-8727-b885a2af4ec8',
-      },
+      blastApiUrls: [
+        'https://iota-mainnet-evm.public.blastapi.io',
+        'wss://iota-mainnet-evm.public.blastapi.io',
+        {
+          'Archive RPC':
+            'https://iota-mainnet-evm.blastapi.io/e7596858-fc63-4a54-8727-b885a2af4ec8',
+        },
+      ],
     },
     evmCustom: {
       chainAddress:
@@ -63,12 +65,14 @@ export const Networks = {
         'wss://ws.json-rpc.evm.testnet.iotaledger.net',
       ],
       blockExplorerUrls: ['https://explorer.evm.testnet.iotaledger.net'],
-      BlastAPIUrls: {
-        RPC: 'https://iota-testnet-evm.public.blastapi.io',
-        WSS: 'wss://iota-testnet-evm.public.blastapi.io',
-        'Archive RPC':
-          'https://iota-testnet-evm.blastapi.io/e7596858-fc63-4a54-8727-b885a2af4ec8',
-      },
+      blastApiUrls: [
+        'https://iota-testnet-evm.public.blastapi.io',
+        'wss://iota-testnet-evm.public.blastapi.io',
+        {
+          'Archive RPC':
+            'https://iota-testnet-evm.blastapi.io/e7596858-fc63-4a54-8727-b885a2af4ec8',
+        },
+      ],
     },
     evmCustom: {
       chainAddress:
@@ -142,7 +146,7 @@ export interface AddEthereumChainParameter {
     decimals: number;
   };
   rpcUrls?: string[];
-  BlastAPIUrls?: object;
+  blastApiUrls?: Array<string | object>;
   blockExplorerUrls?: string[];
   iconUrls?: string[]; // Currently ignored.
 }
