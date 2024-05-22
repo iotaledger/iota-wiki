@@ -20,3 +20,10 @@ for dApps.
 Blast API includes archival nodes, which store all historical transaction data from the blockchain’s
 genesis block to the present. This allows developers to query and retrieve past information, which is essential for
 applications needing access to comprehensive blockchain histories.
+
+
+:::tip Blast API Endpoints
+
+You can find a full list of Blast API endpoints in the [Networks & Endpoints section](networks-endpoints.mdx).
+
+:::

@@ -11,6 +11,8 @@ tags:
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import OraclesContractData from '../_partials/_oracles_contract_data.md'
+
 
 # Introduction to Oracles in Blockchain
 
@@ -66,6 +68,8 @@ You can learn more about Supra Oracles in their [official documentation](https:/
 
 :::
 
+<OraclesContractData/>
+
 #### Example Code
 
 <Tabs groupId="language" queryString>
@@ -82,7 +86,7 @@ const providerURL = "https://json-rpc.evm.iota.network"
 const provider = new ethers.JsonRpcProvider(providerURL);
 
 //  Pyth Oracle contract on IOTA EVM Mainnet
-const contractAddress = '0xA2aa501b19aff244D90cc15a4Cf739D2725B5729';
+const contractAddress = '0x8D254a21b3C86D32F7179855531CE99164721933';
 
 // Add Price Feed Ids obtained from https://pyth.network/developers/price-feed-ids#pyth-evm-stable
 const priceFeedIds = [
