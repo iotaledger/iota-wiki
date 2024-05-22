@@ -78,10 +78,8 @@ function Evm(props: NetworkProps) {
         <tr>
           <th>
             <Admonition type='tip' title='Blast API URLs'>
-              This are highly scalable and fault-tolerant API endpoints provided
-              by our partner Blast. You can find more information about Blast
-              and how to apply for special Blast API endpoints{' '}
-              <a href={'/build/blastAPI/'}>here</a>.
+              <a href={'/build/blastAPI/'}>Blast API</a> provides highly scalable 
+              fault-tolerant API endpoints.
             </Admonition>
           </th>
           <td>
