@@ -310,7 +310,13 @@ function SearchPageContent() {
         <meta property='robots' content='noindex, follow' />
       </Head>
       <FilterDropdown
-        styleProps={{ right: '19%', top: '15.75%' }}
+        styleProps={
+          window.innerWidth < 1279
+            ? { right: '10%', top: '22.5%' }
+            : window.innerWidth < 1500
+            ? { right: '15.5%', top: '22.5%' }
+            : { right: '20%', top: '15.5%' }
+        }
         selectedFacets={selectedFacets}
         setSelectedFacets={setSelectedFacets}
       />
