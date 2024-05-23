@@ -5,6 +5,7 @@ import React, {
   useRef,
   useState,
   useContext,
+  useEffect,
 } from 'react';
 import { DocSearchButton, useDocSearchKeyboardEvents } from '@docsearch/react';
 import Head from '@docusaurus/Head';
@@ -19,8 +20,9 @@ import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { createPortal } from 'react-dom';
 import translations from '@theme/SearchTranslations';
-import { DropdownContent } from './DropdownContent';
+import { FilterDropdown } from './FilterDropdown';
 import { SearchContext } from '@site/src/utils/SearchContext';
+import { allFacets } from '@site/src/utils/searchConstant';
 
 let DocSearchModal = null;
 function Hit({ hit, children }) {
@@ -53,19 +55,20 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
   const history = useHistory();
   const searchContainer = useRef(null);
   const searchButtonRef = useRef(null);
+  const filterDropdownMenuRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const [initialQuery, setInitialQuery] = useState(undefined);
-  const importDocSearchModalIfNeeded = useCallback(() => {
+
+  const importDocSearchModalIfNeeded = useCallback(async (event) => {
     if (DocSearchModal) {
       return Promise.resolve();
     }
-    return Promise.all([
+    const [{ DocSearchModal: Modal }] = await Promise.all([
       import('@docsearch/react/modal'),
       import('@docsearch/react/style'),
       import('./styles.css'),
-    ]).then(([{ DocSearchModal: Modal }]) => {
-      DocSearchModal = Modal;
-    });
+    ]);
+    DocSearchModal = Modal;
   }, []);
 
   const onOpen = useCallback(() => {
@@ -77,8 +80,6 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
       );
       setIsOpen(true);
     });
-
-    DropdownContent;
   }, [importDocSearchModalIfNeeded, setIsOpen]);
 
   const onClose = useCallback(() => {
@@ -139,8 +140,27 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
     searchButtonRef,
   });
 
-  const helloDiv = document.createElement('div');
-  helloDiv.textContent = 'Hello!';
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleClickOutside = (event) => {
+      const filterDropdownMenu = document.querySelector('.dropdown__menu');
+      if (filterDropdownMenu && filterDropdownMenu.contains(event.target))
+        return;
+      if (
+        searchContainer.current &&
+        !searchContainer.current.contains(event.target)
+      ) {
+        setSelectedFacets(allFacets);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, onClose, setSelectedFacets]);
+
   return (
     <>
       <Head>
@@ -159,9 +179,10 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
         translations={translations.button}
       />
       {isOpen && (
-        <DropdownContent
+        <FilterDropdown
           selectedFacets={selectedFacets}
           setSelectedFacets={setSelectedFacets}
+          ref={filterDropdownMenuRef}
         />
       )}
 

@@ -29,6 +29,7 @@ import {
 import Layout from '@theme/Layout';
 import styles from './styles.module.css';
 import { SearchContext } from '@site/src/utils/SearchContext';
+import { FilterDropdown } from '../SearchBar/FilterDropdown';
 // Very simple pluralization: probably good enough for now
 function useDocumentsFoundPlural() {
   const { selectMessage } = usePluralForm();
@@ -124,7 +125,7 @@ function SearchPageContent() {
   const documentsFoundPlural = useDocumentsFoundPlural();
   const docsSearchVersionsHelpers = useDocsSearchVersionsHelpers();
   const [searchQuery, setSearchQuery] = useSearchQueryString();
-  const { selectedFacets } = useContext(SearchContext);
+  const { selectedFacets, setSelectedFacets } = useContext(SearchContext);
   const initialSearchResultState = {
     items: [],
     query: null,
@@ -286,7 +287,12 @@ function SearchPageContent() {
         makeSearch();
       }, 300);
     }
-  }, [searchQuery, docsSearchVersionsHelpers.searchVersions, makeSearch]);
+  }, [
+    searchQuery,
+    JSON.stringify(selectedFacets),
+    docsSearchVersionsHelpers.searchVersions,
+    makeSearch,
+  ]);
   useEffect(() => {
     if (!searchResultState.lastPage || searchResultState.lastPage === 0) {
       return;
@@ -303,7 +309,11 @@ function SearchPageContent() {
         */}
         <meta property='robots' content='noindex, follow' />
       </Head>
-
+      <FilterDropdown
+        styleProps={{ right: '19%', top: '15.75%' }}
+        selectedFacets={selectedFacets}
+        setSelectedFacets={setSelectedFacets}
+      />
       <div className='container margin-vert--lg'>
         <h1>{getTitle()}</h1>
 
@@ -466,9 +476,7 @@ function SearchPageContent() {
 export default function SearchPage() {
   return (
     <HtmlClassNameProvider className='search-page-wrapper'>
-      {/* <SearchProvider> */}
       <SearchPageContent />
-      {/* </SearchProvider> */}
     </HtmlClassNameProvider>
   );
 }
