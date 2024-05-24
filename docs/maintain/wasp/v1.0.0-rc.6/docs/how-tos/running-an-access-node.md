@@ -32,7 +32,7 @@ If you wish to run a non-archive node (only keep the last N blocks), you must ad
        - "--prometheus.enabled=true"
        - "--prometheus.bindAddress=wasp:9312"
 +      - "--stateManager.pruningMinStatesToKeep=10000"
-+      - "--snapshots.networkPaths=https://files.shimmer.network/?prefix=wasp_snapshots/smr1prxvwqvwf7nru5q5xvh5thwg54zsm2y4wfnk6yk56hj3exxkg92mx20wl3s/"
++      - "--snapshots.networkPaths=https://files.shimmer.shimmer.network/wasp_snapshots"
      profiles:
        - wasp
 ```
@@ -45,7 +45,7 @@ If you wish to run a non-archive node (only keep the last N blocks), you must ad
        - "--prometheus.enabled=true"
        - "--prometheus.bindAddress=wasp:9312"
 +      - "--stateManager.pruningMinStatesToKeep=10000"
-+      - "--snapshots.networkPaths=https://files.testnet.shimmer.network/?prefix=wasp_snapshots/rms1ppp00k5mmd2m8my8ukkp58nd3rskw6rx8l09aj35984k74uuc5u2cywn3ex/"
++      - "--snapshots.networkPaths=https://files.testnet.shimmer.network/wasp_snapshots"
      profiles:
        - wasp
 ```
