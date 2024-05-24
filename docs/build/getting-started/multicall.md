@@ -1,5 +1,5 @@
 ---
-description: 'It allows you to bundle multiple calls to various contracts, for both reading and writing data, into a single transaction.'
+description: 'Multicall3 allows you to bundle multiple calls to various contracts, for both reading and writing data, into a single transaction.'
 image: /img/logo/WASP_logo_dark.png
 ---
 
