@@ -31,6 +31,6 @@ Follow the instructions on the [hornet setup](/hornet/how_tos/using_docker/).
 
 :::note
 
-This is aimed at production-ready deployment. If you're looking to spawn a local node for testing/development, please see the [IOTA Sandbox](/iota-sandbox/welcome)
+This how-to is meant to be used for a production-ready deployment. For local testing or development, please see the [IOTA Sandbox](/iota-sandbox/welcome).
 
 :::

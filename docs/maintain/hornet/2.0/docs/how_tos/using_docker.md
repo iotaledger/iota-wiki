@@ -175,7 +175,7 @@ To create this directory with correct permissions run the contained script:
 
 :::info Wasp Access Node
 
-If your are coming from the `Running an ISC Access Node` how-to, this guide ends here and you have to contine with the access node setup [here](/wasp/how-tos/running-an-access-node#download-the-chain-state).
+If your are coming from the `Running an ISC Access Node` how-to, this guide ends here and you have to continue with the access node setup [here](/wasp/how-tos/running-an-access-node#download-the-chain-state).
 
 :::
 

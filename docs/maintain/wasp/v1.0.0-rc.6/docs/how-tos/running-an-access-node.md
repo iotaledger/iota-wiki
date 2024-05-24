@@ -190,7 +190,7 @@ Add the chain with its chain id and name:
 
 ## Activate
 
-Actiave the chain using its name:
+Activate the chain using its name:
 
 
 <Tabs groupId="network" queryString>
