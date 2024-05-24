@@ -4,9 +4,10 @@ image: /img/logo/WASP_logo_dark.png
 ---
 
 # MultiSig Wallet
+
 :::note TL;DR;
 
-Safe Wallet is a [MultiSig](https://safe.iotaledger.net/welcome) wallet. The term “
+[Safe Wallet](https://safe.iotaledger.net/welcome) is a multiSig wallet. The term “
   multisig” is short for "multisignature".
 
 :::
@@ -21,7 +22,7 @@ Decentralized digital assets require a different approach to security than tradi
 
 Traditional crypto wallets rely on a single signature for transactions, making them vulnerable if that key is compromised. Multisig wallets offer superior security by requiring multiple approvals before funds can be moved. This added layer of verification significantly reduces the risk of unauthorized transactions, even if a hacker gains access to one of your keys.
 
-## Use Cases for multisig Wallet
+## Use Cases for Multisig Wallet
 
 ### Shared Asset Security
 
