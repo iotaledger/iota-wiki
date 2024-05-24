@@ -83,7 +83,7 @@ Operating as a full archive node requires a lot of disk space. We recommend at l
 
 :::
 
-## Run Everything
+### Run Everything
 
 ```sh
 docker compose up -d
@@ -93,16 +93,15 @@ It will take a few minutes until the hornet node is synced.
 
 You can check the sync status by following the logs with `docker logs -f hornet`, or in the web dashboard.
 
-## Download Wasp-Cli
+## Use Wasp-Cli to configure the chain and add peers
+### Download Wasp-Cli
 
 You can download a Wasp-Cli that matches your Wasp version from the [Wasp releases](https://github.com/iotaledger/wasp/releases).
-You can use a command like this to download the Wasp-Cli:
+You can use a commands like the following to for example download version 1.0.3:
 
 ```sh
 curl -sL https://github.com/iotaledger/wasp/releases/download/v1.0.3/wasp-cli_1.0.3_Linux_x86_64.tar.gz | tar xzv
 ```
-
-## Use Wasp-Cli to Obtain Peering Info
 
 Change directory into the newly-downloaded `wasp-cli` directory:
 
@@ -110,7 +109,7 @@ Change directory into the newly-downloaded `wasp-cli` directory:
 cd wasp-cli_1.0.3_Linux_x86_64/
 ```
 
-## Set the L1 API Address
+### Set the L1 API Address
 
 Set the L1 API address. You can set it to what you configured as `NODE_HOST` in the `.env` file
 
@@ -118,7 +117,7 @@ Set the L1 API address. You can set it to what you configured as `NODE_HOST` in 
 ./wasp-cli set l1.apiaddress {NODE_HOST}
 ```
 
-## Set Wasp API Address
+### Set Wasp API Address
 
 Set the WASP API address. It is your configured `NODE_HOST` and the `/wasp/api` path.
 
@@ -126,7 +125,7 @@ Set the WASP API address. It is your configured `NODE_HOST` and the `/wasp/api` 
 ./wasp-cli wasp add my-node {NODE_HOST}/wasp/api
 ```
 
-## Login
+### Login
 
 Login to wasp using your credentials. You can update your current credentials or add new ones in the wasp dashboard.
 
@@ -139,7 +138,7 @@ Password: (default is wasp)
 Successfully authenticated
 ```
 
-## Obtain Peering Info
+### Obtain Peering Info
 
 Get your peering info which you will need to share with your peers:
 
@@ -154,11 +153,11 @@ PeeringURL: 0.0.0.0:4000
 Please note the PubKey: 0x20a56daa0b5e86b196c37f802089a2b6007a655a12337d287f7313a214af2ec0 output.
 Send it together with your domain/IP to node operators that you want to peer with.
 
-## Wait for the other party to peer
+### Wait for the other party to peer
 
 Wait until peer added you as trusted and access peer.
 
-## Use wasp-cli to add nodes as peers
+### Use wasp-cli to add nodes as peers
 
 Now you can add your peer as trusted peer.
 
@@ -167,7 +166,7 @@ Now you can add your peer as trusted peer.
 ./wasp-cli peering trust peer2 <pubkey> <URL>:<PORT>
 ```
 
-## Add Chain
+### Add Chain
 
 Add the chain with its chain id and name:
 
@@ -188,7 +187,7 @@ Add the chain with its chain id and name:
 </TabItem>
 </Tabs>
 
-## Activate
+### Activate
 
 Activate the chain using its name:
 
@@ -210,7 +209,7 @@ Activate the chain using its name:
 </TabItem>
 </Tabs>
 
-## Add Peers as Access Nodes of the Chain
+### Add Peers as Access Nodes of the Chain
 
 Add the peers as access nodes.
 
@@ -224,11 +223,11 @@ This is normally only needed for peers that you plan to add as access nodes to y
 ./wasp-cli chain access-nodes add --peers=peer1,peer2
 ```
 
-## Check if Wasp Synced
+### Check if Wasp Synced
 
 You can follow the progress using `docker logs -f wasp`. If you chose to create a [full-archive node](#run-and-archive-node), this can take several minutes, maybe hours.
 
-## Test Your Endpoint
+### Test Your Endpoint
 
 You should have a working EVM JSON-RPC endpoint on:
 
