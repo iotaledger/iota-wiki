@@ -90,7 +90,7 @@ module.exports = {
               id: 'safe',
             },
             {
-              label: 'Multicall',
+              label: 'Multicall3',
               type: 'doc',
               id: 'multicall',
             },
