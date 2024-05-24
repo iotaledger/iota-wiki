@@ -2,6 +2,7 @@ import React from 'react';
 import { ChainId } from '../ChainId';
 import { NetworkProps } from '../constant';
 import CodeBlock from '@theme/CodeBlock';
+import Admonition from '@theme/Admonition';
 
 function L1(props: NetworkProps) {
   return (
@@ -75,6 +76,27 @@ function Evm(props: NetworkProps) {
           </td>
         </tr>
         <tr>
+          <th>
+            <Admonition type='tip' title='Blast API URLs'>
+              <a href={'/build/blastAPI/'}>Blast API</a> provides highly scalable 
+              fault-tolerant API endpoints.
+            </Admonition>
+          </th>
+          <td>
+            {props.evm.blastApiUrls &&
+              props.evm.blastApiUrls.map((object, index) =>
+                typeof object === 'string' ? (
+                  <CodeBlock> {object as string} </CodeBlock>
+                ) : (
+                  <CodeBlock title={Object.keys(object)[0]}>
+                    {' '}
+                    {Object.values(object)[0]}{' '}
+                  </CodeBlock>
+                ),
+              )}
+          </td>
+        </tr>
+        <tr>
           <th>Explorer</th>
           <td>
             <a
@@ -86,17 +108,6 @@ function Evm(props: NetworkProps) {
             </a>
           </td>
         </tr>
-        {props.evm.BlastAPIUrls &&
-          Object.keys(props.evm.BlastAPIUrls).map((keyName, index) => (
-            <tr key={index}>
-              <th>
-                <a href={'/build/blastAPI/'}>Blast API</a> {keyName} URL
-              </th>
-              <td>
-                <CodeBlock> {props.evm.BlastAPIUrls[keyName]} </CodeBlock>
-              </td>
-            </tr>
-          ))}
       </tbody>
     </table>
   );
