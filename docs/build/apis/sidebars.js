@@ -48,6 +48,12 @@ const categories = [
         collapsed: true,
         items: './docs/core/v2/sidebar',
       },
+      {
+        type: 'category',
+        label: 'V3',
+        collapsed: true,
+        items: './docs/core/v3/sidebar',
+      },
     ],
   },
   {

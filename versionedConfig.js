@@ -125,6 +125,19 @@ exports.maintainPluginsConfig = [
     ],
   },
   {
+    id: 'iota-core',
+    label: 'IOTA-Core',
+    description: "IOTA's latest node software.",
+    icon: 'Iota20',
+    subsection: 'maintain-layer-1',
+    versions: [
+      {
+        label: '1.0',
+        badges: ['Testnet'],
+      },
+    ],
+  },
+  {
     id: 'wasp',
     label: 'Wasp',
     description: 'The node software to run an ISC network',

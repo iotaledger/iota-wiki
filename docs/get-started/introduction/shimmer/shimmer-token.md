@@ -38,7 +38,7 @@ participation, community engagement, and innovation within the Shimmer ecosystem
 ### IOTA Stakers Allocation
 
 A significant portion of the Shimmer tokens, accounting for 80% of the total supply, is allocated to IOTA stakers. This
-amounts to 1,450,896,407 SMR tokens. IOTA token holders who [staked their tokens had the opportunity](/get-started/introduction/iota/staking#iota-staking-for-smr-rewards) to receive SMR tokens as rewards for participating in the IOTA mainnet.
+amounts to 1,450,896,407 SMR tokens. IOTA token holders who staked their tokens had the opportunity to receive SMR tokens as rewards for participating in the IOTA mainnet.
 
 ### Community DAO Allocation
 
