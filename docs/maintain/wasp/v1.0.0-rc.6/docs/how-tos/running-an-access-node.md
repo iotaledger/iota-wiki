@@ -18,44 +18,15 @@ First, you should [set up a  Wasp Node](./running-a-node.md) but don't run `dock
 
 ### Download the Chain State
 
-You can configure how much of the state you wish to keep on your node using the following setting: `stateManager.pruningMinStatesToKeep`. The default value is 10000 blocks.
+You can configure how much of the state you wish to keep on your node by uncommenting and changing the `WASP_PRUNING_MIN_STATES_TO_KEEP` environment variable in the node-docker-setup. The default value is 10000 blocks.
 
 ### Run a Non-archive Node
 
-If you wish to run a non-archive node (only keep the last N blocks), you must add `snapshots.networkPaths` to your config:
-
-<Tabs groupId="network" queryString>
-<TabItem value="shimmer" label="ShimmerEVM">
-
-```diff docker-compose.yml
-       - "--wal.path=/app/waspdb/wal"
-       - "--prometheus.enabled=true"
-       - "--prometheus.bindAddress=wasp:9312"
-+      - "--stateManager.pruningMinStatesToKeep=10000"
-+      - "--snapshots.networkPaths=https://files.shimmer.shimmer.network/wasp_snapshots"
-     profiles:
-       - wasp
-```
-
-</TabItem>
-<TabItem value="shimmer_testnet" label="ShimmerEVM Testnet">
-
-```diff docker-compose.yml
-       - "--wal.path=/app/waspdb/wal"
-       - "--prometheus.enabled=true"
-       - "--prometheus.bindAddress=wasp:9312"
-+      - "--stateManager.pruningMinStatesToKeep=10000"
-+      - "--snapshots.networkPaths=https://files.testnet.shimmer.network/wasp_snapshots"
-     profiles:
-       - wasp
-```
-
-</TabItem>
-</Tabs>
+If you wish to run a non-archive node (only keep the last N blocks), you must uncomment `WASP_SNAPSHOT_NETWORK_PATHS`.
 
 ### Run An Archive Node
 
-If you wish to have a full archive node you need to set `stateManager.pruningMinStatesToKeep` to `0` and can remove the `snapshots.networkPaths` option. 
+If you wish to have a full archive node, you need to set `WASP_PRUNING_MIN_STATES_TO_KEEP` to `0` and comment `WASP_SNAPSHOT_NETWORK_PATHS` out.
 
 You can then download the historical state using the following command (this will take a while):
 
