@@ -84,6 +84,12 @@ cd wasp-cli_1.1.0_Linux_x86_64/
 
 Set the L1 API address. You can set it to what you configured as `NODE_HOST` in the `.env` file
 
+:::tip HTTP
+
+If you use the http setup, don't forget to replace `https` with `http`
+
+:::
+
 ```sh
 ./wasp-cli set l1.apiaddress https://{NODE_HOST}
 ```
