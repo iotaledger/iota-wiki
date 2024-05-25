@@ -1,10 +1,11 @@
 import React from 'react';
 import { useDoc } from '@docusaurus/theme-common/internal';
-import { DocMetadata } from '../../plugins/docs';
-import ReactMarkdown from 'react-markdown';
+import type { DocMetadata } from '../../plugins/docs/types.d.ts';
 import './styles.css';
 
 export default function DocBanner() {
+  const ReactMarkdown = require('react-markdown');
+
   const { bannerContent } = useDoc().metadata as DocMetadata;
 
   if (!bannerContent) return null;

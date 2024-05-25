@@ -1,7 +1,6 @@
 const path = require('path');
 const defaultSettings = require('../common/defaultContentPlugin');
 const fs = require('fs');
-const pluginDocs = require('../plugins/docs');
 
 /**
  * Merges multiple configuration objects into one object.
@@ -113,6 +112,7 @@ async function globStatic(pattern, cwd = __dirname) {
  * @param {import('@docusaurus/plugin-content-docs').Options} options
  */
 async function create_doc_plugin({ ...options }) {
+  const pluginDocs = (await import('../plugins/docs/index.mjs')).default;
   const setting = await defaultSettings();
 
   // Check if options has a rehypePlugin array

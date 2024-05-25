@@ -19,6 +19,8 @@ function findMainVersion(plugin, badge = MAIN_BADGE) {
  */
 function generatePluginConfig(pluginConfig, basePath) {
   return pluginConfig.flatMap((doc) => {
+    const mainVersion = findMainVersion(doc);
+
     return doc.versions.map((version) => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { label, badges, ...rest } = version;

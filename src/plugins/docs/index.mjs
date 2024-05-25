@@ -1,56 +1,14 @@
-import type { LoadContext, Plugin } from '@docusaurus/types';
 import docsPlugin, {
   validateOptions as docsValidateOptions,
-  PropVersionMetadata,
 } from '@docusaurus/plugin-content-docs';
 import fs from 'fs/promises';
 import path from 'path';
-import {
-  Options as DocsOptions,
-  PluginOptions as DocsPluginOptions,
-  LoadedContent as DocsLoadedContent,
-  DocMetadata as DocsDocMetadata,
-} from '@docusaurus/plugin-content-docs';
-import {
-  OptionValidationContext as DocsOptionValidationContext,
-  Validate,
-} from '@docusaurus/types';
 
-export type DocMetadata = DocsDocMetadata & {
-  bannerContent?: string;
-};
-
-export type LoadedContent = DocsLoadedContent & {
-  bannerContent?: string;
-};
-
-export type PluginOptions = DocsPluginOptions & {
-  globalSidebars: string[];
-  bannerPath?: string;
-};
-
-export type Options = Partial<PluginOptions>;
-
-export type OptionValidationContext = {
-  // Docusaurus does not export their schemas for us to use,
-  // so we just pass validate function on to the docs plugin validation.
-  validate: Validate<DocsOptions, DocsPluginOptions>;
-  options: PluginOptions;
-};
-
-declare module '@docusaurus/plugin-content-docs' {
-  export function validateOptions(
-    arg: DocsOptionValidationContext<DocsOptions, DocsPluginOptions>,
-  ): DocsPluginOptions;
-}
-export default async function pluginDocs(
-  context: LoadContext,
-  options: PluginOptions,
-): Promise<Plugin<LoadedContent>> {
+export default async function pluginDocs(context, options) {
   // Destructure to separate the Docusaurus docs plugin options
   // and initialize the Docusaurus docs plugin to wrap.
   const { bannerPath, globalSidebars, ...docsOptions } = options;
-  const plugin = await docsPlugin(context, docsOptions);
+  const plugin = await docsPlugin.default(context, docsOptions);
 
   return {
     ...plugin,
@@ -92,9 +50,9 @@ export default async function pluginDocs(
       const { bannerContent, ...docsContent } = content;
       const globalSidebarEntries = [];
 
-      const createData = async (name: string, data: string) => {
+      const createData = async (name, data) => {
         // Hook into the `createData` call to extract the sidebars we need.
-        const versionMetadata = JSON.parse(data) as PropVersionMetadata;
+        const versionMetadata = JSON.parse(data);
         if (versionMetadata.docsSidebars) {
           // We can do this, because all `createData` calls are assured
           // to resolve before `setGlobalData` is called.
@@ -117,7 +75,7 @@ export default async function pluginDocs(
         );
       };
 
-      const setGlobalData = (data: object) => {
+      const setGlobalData = (data) => {
         actions.setGlobalData({
           ...data,
           globalSidebars: Object.fromEntries(globalSidebarEntries),
@@ -137,10 +95,7 @@ export default async function pluginDocs(
   };
 }
 
-export function validateOptions({
-  validate,
-  options,
-}: OptionValidationContext): PluginOptions {
+export function validateOptions({ validate, options }) {
   const { bannerPath, globalSidebars = [], ...docsOptions } = options;
   return {
     ...docsValidateOptions({ validate, options: docsOptions }),
