@@ -68,16 +68,16 @@ You can check the sync status by following the logs with `docker logs -f hornet`
 ### Download Wasp-Cli
 
 You can download a Wasp-Cli that matches your Wasp version from the [Wasp releases](https://github.com/iotaledger/wasp/releases).
-You can use a commands like the following to for example download version 1.0.3:
+You can use a commands like the following to for example download version 1.1.0:
 
 ```sh
-curl -sL https://github.com/iotaledger/wasp/releases/download/v1.0.3/wasp-cli_1.0.3_Linux_x86_64.tar.gz | tar xzv
+curl -sL https://github.com/iotaledger/wasp/releases/download/v1.1.0/wasp-cli_1.1.0_Linux_x86_64.tar.gz | tar xzv
 ```
 
 Change directory into the newly-downloaded `wasp-cli` directory:
 
 ```sh
-cd wasp-cli_1.0.3_Linux_x86_64/
+cd wasp-cli_1.1.0_Linux_x86_64/
 ```
 
 ### Set the L1 API Address
@@ -85,7 +85,7 @@ cd wasp-cli_1.0.3_Linux_x86_64/
 Set the L1 API address. You can set it to what you configured as `NODE_HOST` in the `.env` file
 
 ```sh
-./wasp-cli set l1.apiaddress {NODE_HOST}
+./wasp-cli set l1.apiaddress https://{NODE_HOST}
 ```
 
 ### Set Wasp API Address
@@ -93,7 +93,7 @@ Set the L1 API address. You can set it to what you configured as `NODE_HOST` in 
 Set the WASP API address. It is your configured `NODE_HOST` and the `/wasp/api` path.
 
 ```sh
-./wasp-cli wasp add my-node {NODE_HOST}/wasp/api
+./wasp-cli wasp add my-node https://{NODE_HOST}/wasp/api
 ```
 
 ### Login
