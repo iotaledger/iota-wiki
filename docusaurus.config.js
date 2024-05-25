@@ -419,7 +419,7 @@ module.exports = async () => {
                 },
               ];
 
-              const paths = [];
+              let paths = [];
               for (const redirect of redirects) {
                 if (existingPath.startsWith(redirect.to)) {
                   paths.push(existingPath.replace(redirect.to, redirect.from));
