@@ -26,6 +26,11 @@ module.exports = {
           label: 'Run a Node',
         },
         {
+          type: 'doc',
+          id: 'how-tos/running-an-access-node',
+          label: 'Run an Access Node',
+        },
+        {
           id: 'how-tos/wasp-cli',
           label: 'Configure wasp-cli',
           type: 'doc',
