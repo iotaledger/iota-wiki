@@ -27,8 +27,10 @@ We recommend that you run the docker image on a server with:
 
 ## Set Up
 
-Clone and follow the instructions on the [node-docker-setup repo](https://github.com/iotaledger/node-docker-setup).
+Follow the instructions on the [hornet setup](/hornet/how_tos/using_docker/).
 
 :::note
-This is aimed at production-ready deployment. If you're looking to spawn a local node for testing/development, please see the [local-setup](https://github.com/iotaledger/wasp/tree/develop/tools/local-setup)
+
+This how-to is meant to be used for a production-ready deployment. For local testing or development, please see the [IOTA Sandbox](/iota-sandbox/welcome).
+
 :::
