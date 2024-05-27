@@ -129,6 +129,11 @@ module.exports = {
               ],
             },
             {
+              label: 'Oracles for IOTA EVM and ShimmerEVM',
+              type: 'doc',
+              id: 'oracles',
+            },
+            {
               type: 'link',
               label: 'WASP CLI',
               description:
