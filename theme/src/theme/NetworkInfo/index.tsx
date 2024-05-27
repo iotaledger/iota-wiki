@@ -75,16 +75,16 @@ function Evm(props: NetworkProps) {
             ))}
           </td>
         </tr>
-        <tr>
-          <th>
-            <Admonition type='tip' title='Blast API URLs'>
-              <a href={'/build/blastAPI/'}>Blast API</a> provides highly
-              scalable fault-tolerant API endpoints.
-            </Admonition>
-          </th>
-          <td>
-            {props.evm.blastApiUrls &&
-              props.evm.blastApiUrls.map((object, index) =>
+        {props.evm.blastApiUrls && (
+          <tr>
+            <th>
+              <Admonition type='tip' title='Blast API URLs'>
+                <a href={'/build/blastAPI/'}>Blast API</a> provides highly
+                scalable fault-tolerant API endpoints.
+              </Admonition>
+            </th>
+            <td>
+              {props.evm.blastApiUrls.map((object, index) =>
                 typeof object === 'string' ? (
                   <CodeBlock> {object as string} </CodeBlock>
                 ) : (
@@ -94,8 +94,9 @@ function Evm(props: NetworkProps) {
                   </CodeBlock>
                 ),
               )}
-          </td>
-        </tr>
+            </td>
+          </tr>
+        )}
         <tr>
           <th>Explorer</th>
           <td>
