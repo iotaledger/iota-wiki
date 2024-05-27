@@ -4,6 +4,21 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs groupId='network'>
+<TabItem value='iota_testnet' label='IOTA EVM Testnet'>
+
+<CodeBlock language="js">
+{`
+networks: {
+    'iotaevm-testnet': {
+        url: '${Networks['iota_testnet'].evm.rpcUrls[0]}',
+        chainId: ${parseInt(Networks['iota_testnet'].evm.chainId)},
+        accounts: [YOUR PRIVATE KEY],
+    },
+}
+`}
+</CodeBlock>
+
+</TabItem>
 <TabItem value='shimmer_testnet' label='ShimmerEVM Testnet'>
 
 <CodeBlock language="js">
@@ -19,14 +34,14 @@ networks: {
 </CodeBlock>
 
 </TabItem>
-<TabItem value='iota_testnet' label='IOTA EVM Testnet'>
+<TabItem value='iota' label='IOTA EVM'>
 
 <CodeBlock language="js">
 {`
 networks: {
-    'iotaevm-testnet': {
-        url: '${Networks['iota_testnet'].evm.rpcUrls[0]}',
-        chainId: ${parseInt(Networks['iota_testnet'].evm.chainId)},
+    'iotaevm': {
+        url: '${Networks['iota'].evm.rpcUrls[0]}',
+        chainId: ${parseInt(Networks['iota'].evm.chainId)},
         accounts: [YOUR PRIVATE KEY],
     },
 }

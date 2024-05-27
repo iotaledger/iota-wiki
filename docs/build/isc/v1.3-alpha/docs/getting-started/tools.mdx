@@ -34,7 +34,8 @@ directly with an IOTA Smart Contracts chain running EVM as long as you take a co
 
 1. Please make sure you use the correct JSON-RPC endpoint URL in your tooling for your chain. If you're running your own chain, you can find the JSON-RPC
 endpoint URL in the Wasp dashboard (`[URL]/wasp/dashboard` when using `node-docker-setup`).
-2. Please ensure you use the correct `Chain ID` configured while starting the JSON-RPC service. If you did not explicitly define this while starting the service, the default Chain ID will be <ChainId url='https://json-rpc.evm.shimmer.network'/>
+2. Please ensure you use the correct `Chain ID` configured while starting the JSON-RPC service. If you did not explicitly define this while starting the service, the default Chain ID will be <ChainId url='https://json-rpc.evm.iotaledger.net'/>
+for IOTA EVM, <ChainId url='https://json-rpc.evm.shimmer.network'/>
 for ShimmerEVM or <ChainId url='https://json-rpc.evm.testnet.shimmer.network' /> for the EVM Testnet.
 3. Fees are handled on the IOTA Smart Contracts chain level, not the EVM level. The chain will reject any requests with a different gas price than specified by the chain.
 
@@ -55,7 +56,11 @@ To use your EVM chain with MetaMask, simply open up MetaMask and click on the ne
 the bottom of this list, you will see the option `Add network`. On the new page you will see a list of popular network with the option `Add a network manually`.
 For example this would be the configs to add our different [EVM chains](/build/networks-endpoints):
 
-<Tabs groupId='network'>
+<Tabs>
+<TabItem value='iotaEVM' label='IOTA EVM'>
+<AddToMetaMaskButton {...Networks['iota']}/>
+<NetworkInfo.Evm {...Networks['iota']}/>
+</TabItem>
 <TabItem value='iotaEVMTestnet' label='IOTA EVM Testnet'>
 <AddToMetaMaskButton {...Networks['iota_testnet']}/>
 <NetworkInfo.Evm {...Networks['iota_testnet']}/>
