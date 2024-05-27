@@ -32,6 +32,20 @@ You can then download the historical state using the following command (this wil
 
 
 <Tabs groupId="network" queryString>
+<TabItem value="iota" label="IOTA EVM">
+
+```sh
+wget https://files.stardust-mainnet.iotaledger.net/dbs/wasp/latest-wasp_chains_wal.tgz -O - | tar xzv -C data/wasp
+```
+
+</TabItem>
+<TabItem value="iota_testnet" label="IOTA EVM Testnet">
+
+```sh
+wget https://files.iota-testnet.iotaledger.net/dbs/wasp/latest-wasp_chains_wal.tgz -O - | tar xzv -C data/wasp
+```
+
+</TabItem>
 <TabItem value="shimmer" label="ShimmerEVM">
 
 ```sh
@@ -148,6 +162,20 @@ Now you can add your peer as trusted peer.
 Add the chain with its chain id and name:
 
 <Tabs groupId="network" queryString>
+<TabItem value="iota" label="IOTA EVM">
+
+```sh
+./wasp-cli chain add iota-evm iota1pzt3mstq6khgc3tl0mwuzk3eqddkryqnpdxmk4nr25re2466uxwm28qqxu5
+```
+
+</TabItem>
+<TabItem value="iota_testnet" label="IOTA EVM Testnet">
+
+```sh
+./wasp-cli chain add iota-evm-testnet tst1pzxsrr7apqkdzz633dyntmvxwtyvk029p39te5j0m33q6946h7akzv663zu
+```
+
+</TabItem>
 <TabItem value="shimmer" label="ShimmerEVM">
 
 ```sh
@@ -170,6 +198,20 @@ Activate the chain using its name:
 
 
 <Tabs groupId="network" queryString>
+<TabItem value="iota" label="IOTA EVM">
+
+```sh
+./wasp-cli chain activate --chain iota-evm
+```
+
+</TabItem>
+<TabItem value="iota_testnet" label="IOTA EVM Testnet">
+
+```sh
+./wasp-cli chain activate --chain iota-evm-testnet
+```
+
+</TabItem>
 <TabItem value="shimmer" label="ShimmerEVM">
 
 ```sh
@@ -209,19 +251,32 @@ You can follow the progress using `docker logs -f wasp`. If you chose to create 
 You should have a working EVM JSON-RPC endpoint on:
 
 <Tabs groupId="network" queryString>
+<TabItem value="iota" label="IOTA EVM">
+
+```
+<NODE_HOST>/wasp/api/v1/chains/iota1pzt3mstq6khgc3tl0mwuzk3eqddkryqnpdxmk4nr25re2466uxwm28qqxu5/evm
+```
+
+</TabItem>
+<TabItem value="iota_testnet" label="IOTA EVM Testnet">
+
+```
+<NODE_HOST>/wasp/api/v1/chains/tst1pzxsrr7apqkdzz633dyntmvxwtyvk029p39te5j0m33q6946h7akzv663zu/evm
+```
+
+</TabItem>
+
 <TabItem value="shimmer" label="ShimmerEVM">
 
 ```
-<NODE_HOST>/wasp/api/v1/chains/smr1prxvwqvwf7nru5q5xvh5thwg54zsm2y4wfnk6yk56hj3exxkg92mx20wl3s
-/evm
+<NODE_HOST>/wasp/api/v1/chains/smr1prxvwqvwf7nru5q5xvh5thwg54zsm2y4wfnk6yk56hj3exxkg92mx20wl3s/evm
 ```
 
 </TabItem>
 <TabItem value="shimmer_testnet" label="ShimmerEVM Testnet">
 
 ```
-<NODE_HOST>/wasp/api/v1/chains/rms1ppp00k5mmd2m8my8ukkp58nd3rskw6rx8l09aj35984k74uuc5u2cywn3ex
-/evm
+<NODE_HOST>/wasp/api/v1/chains/rms1ppp00k5mmd2m8my8ukkp58nd3rskw6rx8l09aj35984k74uuc5u2cywn3ex/evm
 ```
 
 </TabItem>
