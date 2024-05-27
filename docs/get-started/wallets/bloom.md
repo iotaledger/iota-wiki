@@ -12,7 +12,7 @@ tags:
 ---
 
 Bloom is a desktop wallet with first-class security developed by former members of the Firefly team.
-Bloom supports the [IOTA](https://wiki.iota.org/build/networks-endpoints/#iota-mainnet) and
+Bloom supports the [IOTA](https://wiki.iota.org/build/networks-endpoints/#iota) and
 [Shimmer](https://wiki.iota.org/build/networks-endpoints/#shimmer) networks, as well as
 [ShimmerEVM](https://wiki.iota.org/build/networks-endpoints/#shimmerevm) in the same application. This means you can
 seamlessly transfer assets back and forth between Shimmer and ShimmerEVM without other tooling.

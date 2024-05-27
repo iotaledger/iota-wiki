@@ -6,6 +6,26 @@ export const Networks = {
     eventApi: 'wss://api.stardust-mainnet.iotaledger.net:443 (MQTT 3.1, /mqtt)',
     permaNodeApi: 'https://chronicle.stardust-mainnet.iotaledger.net',
     explorer: 'https://explorer.iota.org/mainnet',
+    evm: {
+      chainId: '0x2276',
+      chainName: 'IOTA EVM',
+      nativeCurrency: {
+        name: 'IOTA',
+        symbol: 'IOTA',
+        decimals: 18,
+      },
+      rpcUrls: [
+        'https://json-rpc.evm.iotaledger.net',
+        'wss://ws.json-rpc.evm.iotaledger.net',
+      ],
+      blockExplorerUrls: ['https://explorer.evm.iota.org'],
+    },
+    evmCustom: {
+      chainAddress:
+        'iota1pzt3mstq6khgc3tl0mwuzk3eqddkryqnpdxmk4nr25re2466uxwm28qqxu5',
+      aliasId:
+        '0x971dc160d5ae8c457f7eddc15a39035b6190130b4dbb5663550795575ae19db5',
+    },
   },
   iota_2_testnet: {
     baseToken: 'Testnet Token (no value)',
