@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDoc } from '@docusaurus/theme-common/internal';
-import { DocMetadata } from '@iota-wiki/plugin-docs';
+import { DocMetadata } from '../../../../src/plugins/docs';
 import ReactMarkdown from 'react-markdown';
 import './styles.css';
 

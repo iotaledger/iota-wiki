@@ -16,7 +16,6 @@
     "@artsy/to-title-case": "^1.1.0",
     "@docusaurus/theme-classic": "2.4.3",
     "@docusaurus/theme-common": "2.4.3",
-    "@iota-wiki/plugin-docs": "workspace:^",
     "@metamask/providers": "^10.2.1",
     "clsx": "^1.2.1",
     "html-react-parser": "^4.2.10",

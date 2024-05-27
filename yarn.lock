@@ -2835,7 +2835,6 @@ __metadata:
     "@docusaurus/remark-plugin-npm2yarn": ^2.4.3
     "@docusaurus/theme-common": 2.4.3
     "@iota-wiki/cli": "workspace:^"
-    "@iota-wiki/plugin-docs": "workspace:^"
     "@iota-wiki/theme": "workspace:^"
     "@mdx-js/react": ^1.6.21
     "@playwright/test": ^1.42.1
@@ -2892,16 +2891,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@iota-wiki/plugin-docs@workspace:^, @iota-wiki/plugin-docs@workspace:plugins/docs":
-  version: 0.0.0-use.local
-  resolution: "@iota-wiki/plugin-docs@workspace:plugins/docs"
-  dependencies:
-    "@docusaurus/plugin-content-docs": 2.4.3
-    "@docusaurus/types": 2.4.3
-    typescript: ^4.6.3
-  languageName: unknown
-  linkType: soft
-
 "@iota-wiki/theme@workspace:^, @iota-wiki/theme@workspace:theme":
   version: 0.0.0-use.local
   resolution: "@iota-wiki/theme@workspace:theme"
@@ -2910,7 +2899,6 @@ __metadata:
     "@docusaurus/theme-classic": 2.4.3
     "@docusaurus/theme-common": 2.4.3
     "@docusaurus/types": 2.4.3
-    "@iota-wiki/plugin-docs": "workspace:^"
     "@metamask/providers": ^10.2.1
     "@types/react": 18.2.71
     clsx: ^1.2.1
@@ -19390,7 +19378,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.5.4, typescript@npm:^4.6.3, typescript@npm:^4.9":
+"typescript@npm:^4.5.4, typescript@npm:^4.9":
   version: 4.9.5
   resolution: "typescript@npm:4.9.5"
   bin:
@@ -19400,7 +19388,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.5.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.9#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.5.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.9#~builtin<compat/typescript>":
   version: 4.9.5
   resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=bda367"
   bin:
