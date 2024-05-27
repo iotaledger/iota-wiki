@@ -1,3 +1,16 @@
+---
+description: Blast API is a decentralized platform providing scalable node infrastructure for accessing blockchain data, supporting multiple networks including IOTA EVM.
+keywords: 
+  - IOTA EVM
+  - blockchain API
+  - decentralized
+  - node infrastructure
+  - tools
+  - Blast api
+  - archive node
+image: /img/logo/WASP_logo_dark.png
+---
+
 # Blast API
 
 [Blast API](https://blastapi.io/) is a decentralized platform that provides reliable and scalable node infrastructure
