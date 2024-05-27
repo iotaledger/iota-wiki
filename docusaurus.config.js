@@ -444,7 +444,6 @@ module.exports = async () => {
       themes: [
         'docusaurus-theme-openapi-docs',
         '@saucelabs/theme-github-codeblock',
-        '@iota-wiki/theme',
       ],
       staticDirectories: [path.resolve(__dirname, 'static')],
     },
