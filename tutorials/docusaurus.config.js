@@ -126,8 +126,8 @@ module.exports = {
           'Connect to Shimmer EVM Testnet and Deploy a Solidity Smart Contract',
         description:
           'In this tutorial, we will connect to Shimmer EVM Testnet, connect Metamask to it, get funded and deploy a smart contract in Solidity.',
-        preview: '/connect-shimmerevm-testnet-and-deploy.png',
-        route: 'tutorials/shimmerevm-testnet-setup',
+        preview: '/connect-evm-testnet-and-deploy.png',
+        route: 'tutorials/evm-testnet-setup',
         tags: [
           'text',
           'shimmer',
@@ -143,11 +143,11 @@ module.exports = {
       '@iota-wiki/plugin-tutorial',
       {
         title:
-          'Tutorial - Deploy a Solidity Smart Contract on ShimmerEVM Testnet Using Hardhat',
+          'Tutorial - Deploy a Solidity Smart Contract on EVM Testnet Using Hardhat',
         description:
           'In this tutorial, you will learn how to set up Hardhat and use it to build, test and deploy a simple smart contract on ShimmerEVM.',
         preview: '/shimmerevm-hardhat.jpg',
-        route: 'tutorials/shimmerevm-testnet-hardhat',
+        route: 'tutorials/evm-testnet-hardhat',
         tags: [
           'text',
           'shimmer',

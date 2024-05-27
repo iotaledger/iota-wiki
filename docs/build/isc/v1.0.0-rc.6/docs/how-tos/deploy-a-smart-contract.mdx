@@ -2,11 +2,12 @@
 tags:
 - Smart Contract Deployment
 - Shimmer EVM
+- IOTA EVM
 - Remix IDE
 - Hardhat 
-- Shimmer EVM Testnet
+- EVM Testnet
 image: /img/logo/WASP_logo_dark.png
-description: 'Learn how to deploy smart contracts to Shimmer EVM and Shimmer EVM Testnet using popular tools like Remix and Hardhat.'
+description: 'Learn how to deploy smart contracts to IOTA EVM,  Shimmer EVM and EVM Testnet using popular tools like Remix and Hardhat.'
 ---
 import {AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
 import HardhatConfig from '../_partials/_hardhat_config.md';
@@ -165,7 +166,7 @@ often offered through block explorer APIs.
 3. If you have no compilation errors, you can deploy your contract by running the following command:
 
    ```bash
-   npx hardhat run scripts/deploy.js --network shimmerevm-testnet
+   npx hardhat run scripts/deploy.js --network evm-testnet
    ```
 
    **Expected output**:
@@ -176,7 +177,7 @@ often offered through block explorer APIs.
    ***** `0x123456789ABCDEFGHIJK123456789ABCDEFGHIJK` is the contract unlock address.
 
 4. You can verify your contract by visiting
-   the [ShimmerEVM Testnet Explorer](https://explorer.evm.testnet.shimmer.network/),
+   the [EVM Testnet Explorer](https://explorer.evm.testnet.shimmer.network/),
    and searching for the address from the previous step. If you access the `Contract` tab, you should be able to see
    your code and interact with your contract.
 

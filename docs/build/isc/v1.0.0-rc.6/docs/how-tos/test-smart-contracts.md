@@ -5,9 +5,9 @@ keywords:
 - Unit Tests
 - Integration Tests
 - Testing Frameworks
-- ShimmerEVM Testnet
+- EVM Testnet
 - Solidity Testing
-description: Learn how to test smart contracts before deploying them on public networks to avoid vulnerabilities and ensure functionality aligns with requirements using unit, and integration testing, alongside frameworks and testing with the IOTA Sandbox and the ShimmerEVM Testnet. 
+description: Learn how to test smart contracts before deploying them on public networks to avoid vulnerabilities and ensure functionality aligns with requirements using unit, and integration testing, alongside frameworks and testing with the IOTA Sandbox and the EVM Testnet. 
 ---
 
 # Testing Smart Contracts
@@ -91,18 +91,18 @@ expected.
 
 #### Tools
 
-You can use the [ShimmerEVM Testnet](/build/networks-endpoints/#testnet-evm) to conduct integration tests without
+You can use the [EVM Testnet](/build/networks-endpoints/#shimmerevm-testnet) to conduct integration tests without
 incurring any fees or the [IOTA Sandbox](/iota-sandbox/getting-started/) if you want to run the tests locally.
 
 ## Manual Testing
 
 Once you have a complete batch of [automated tests](#automated-testing), manually testing your contract to ensure it
 behaves as expected in the real world is still good practice. However, to avoid incurring fees or deploying a faulty
-contract, you can manually test your contract using a sandboxed local network and the Shimmer EVM Testnet.
+contract, you can manually test your contract using a sandboxed local network and the EVM Testnet.
 
 Testing using the [IOTA Sandbox](/iota-sandbox/getting-started/) serves well for the first stage of automated and manual
 integration tests, as you have complete control over the entire local network. Once you are confident about how your
-contract behaves locally, you can deploy and test on the [ShimmerEVM Testnet](/build/networks-endpoints/#testnet-evm),
-which replicates the ShimmerEVM network but also enables cost and risk-free interactions.
+contract behaves locally, you can deploy and test on the [EVM Testnet](/build/networks-endpoints/#shimmerevm-testnet),
+which replicates the IOTA EVM and ShimmerEVM networks, but also enables cost and risk-free interactions.
 
 

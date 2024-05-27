@@ -9,7 +9,7 @@ tags:
 
 # Exposed Metrics
 
-Refer to the [testnet endpoints description](/build/networks-endpoints/#testnet-evm) for access details.
+Refer to the [testnet endpoints description](/build/networks-endpoints/#shimmerevm-testnet) for access details.
 
 | Metric                                     | Description                                          |
 | ------------------------------------------ | ---------------------------------------------------- |
