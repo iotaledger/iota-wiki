@@ -156,8 +156,8 @@ module.exports = async () => {
     },
     plugins: [
       // Temporarily disabled because of Cookiebot blocking required scripts.
-      // path.resolve(__dirname, 'plugins', 'cookiebot'),
-      path.resolve(__dirname, 'plugins', 'matomo'),
+      // require('./src/plugins/cookiebot'),
+      require('./src/plugins/matomo'),
       [
         '@docusaurus/plugin-google-gtag',
         {
