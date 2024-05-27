@@ -1,5 +1,5 @@
 ---
-description: 'Learn about the role of in subgraphs in smart, how they can provide indexed blockchain data to your smart contracts.'
+description: 'Learn about the role of subgraphs in smart contracts and how they can provide indexed blockchain data to your smart contracts.'
 image: /img/logo/WASP_logo_dark.png
 tags:
   - Blockchain subgraphs
