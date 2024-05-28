@@ -1,23 +1,27 @@
+/**
+ * SWIZZLED VERSION: 2.4.3
+ * REASONS:
+ *  - Link to our own latest version.
+ */
 import React, { type ComponentType } from 'react';
 import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-import {
-  useActivePlugin,
-  useDocVersionSuggestions,
-  type GlobalVersion,
-} from '@docusaurus/plugin-content-docs/client';
+import { type GlobalVersion } from '@docusaurus/plugin-content-docs/client';
 import { ThemeClassNames } from '@docusaurus/theme-common';
-import {
-  useDocsPreferredVersion,
-  useDocsVersion,
-} from '@docusaurus/theme-common/internal';
+import { useDocsVersion } from '@docusaurus/theme-common/internal';
 import type { Props } from '@theme/DocVersionBanner';
 import type {
   VersionBanner,
   PropVersionMetadata,
 } from '@docusaurus/plugin-content-docs';
+import { useWikiPreferredVersion } from '@site/src/utils/wikiPreferredVersion';
+import { useLocation } from '@docusaurus/router';
+import {
+  useAllLatestVersion,
+  useCurrentDocPlugins,
+} from '@site/src/utils/wikiVersion';
 
 type BannerLabelComponentProps = {
   siteTitle: string;
@@ -122,15 +126,19 @@ function DocVersionBannerEnabled({
   const {
     siteConfig: { title: siteTitle },
   } = useDocusaurusContext();
-  const { pluginId } = useActivePlugin({ failfast: true })!;
+  const { pathname } = useLocation();
+  const pluginIds = useCurrentDocPlugins(pathname);
 
   const getVersionMainDoc = (version: GlobalVersion) =>
     version.docs.find((doc) => doc.id === version.mainDocId)!;
 
-  const { savePreferredVersionName } = useDocsPreferredVersion(pluginId);
+  const { savePreferredVersionName } = useWikiPreferredVersion(
+    pathname,
+    pluginIds,
+  );
 
-  const { latestDocSuggestion, latestVersionSuggestion } =
-    useDocVersionSuggestions(pluginId);
+  const latestVersionSuggestion = useAllLatestVersion(pluginIds);
+  const latestDocSuggestion = getVersionMainDoc(latestVersionSuggestion);
 
   // Try to link to same doc in latest version (not always possible), falling
   // back to main doc of latest version
