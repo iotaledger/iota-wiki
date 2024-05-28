@@ -7,7 +7,7 @@ const {
   maintainPluginsConfig,
 } = require('./versionedConfig');
 
-/** @type {import('../src/common/components/Switcher').Config} */
+/** @type {import('../src/components/Switcher').Config} */
 const config = {
   docs: [
     ...generateSwitcherConfig(buildPluginsConfig),

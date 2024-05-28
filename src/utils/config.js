@@ -1,5 +1,5 @@
 const path = require('path');
-const defaultSettings = require('../common/defaultContentPlugin');
+const defaultSettings = require('./defaultContentPlugin');
 const fs = require('fs');
 
 /**
