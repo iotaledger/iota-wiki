@@ -156,13 +156,8 @@ module.exports = {
                 },
                 {
                   type: 'doc',
-                  label: 'Mint a Native Token',
-                  id: 'how-tos/core-contracts/token/mint-token',
-                },
-                {
-                  type: 'doc',
-                  label: 'Register Token as ERC20',
-                  id: 'how-tos/core-contracts/token/register-token',
+                  label: 'Create a Native Token Foundary ',
+                  id: 'how-tos/core-contracts/token/create-native-token-foundary',
                 },
                 {
                   type: 'doc',
