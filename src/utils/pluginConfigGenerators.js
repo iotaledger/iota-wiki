@@ -28,7 +28,11 @@ function generatePluginConfig(pluginConfig, basePath) {
       // TODO: This could be removed once we don't use points in paths anymore.
       const plugin_name_path = doc.routeBasePath ? doc.routeBasePath : doc.id;
 
-      const extended_base_path = [basePath, plugin_name_path, ...(label ? [label] : [])].join('/');
+      const extended_base_path = [
+        basePath,
+        plugin_name_path,
+        ...(label ? [label] : []),
+      ].join('/');
 
       plugin = {
         id: doc.id + (label ? '-' + label.replace(/\./g, '-') : ''),

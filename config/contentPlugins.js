@@ -20,7 +20,10 @@ module.exports = async () => {
       ),
       routeBasePath: 'build',
     },
-    ...generatePluginConfig(buildPluginsConfig, path.resolve(__dirname, '../docs/build/')),
+    ...generatePluginConfig(
+      buildPluginsConfig,
+      path.resolve(__dirname, '../docs/build/'),
+    ),
     {
       id: 'introduction-docs-stardust',
       path: path.resolve(
