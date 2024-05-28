@@ -1,4 +1,4 @@
-import React, {type ComponentType} from 'react';
+import React, { type ComponentType } from 'react';
 import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
@@ -8,12 +8,12 @@ import {
   useDocVersionSuggestions,
   type GlobalVersion,
 } from '@docusaurus/plugin-content-docs/client';
-import {ThemeClassNames} from '@docusaurus/theme-common';
+import { ThemeClassNames } from '@docusaurus/theme-common';
 import {
   useDocsPreferredVersion,
   useDocsVersion,
 } from '@docusaurus/theme-common/internal';
-import type {Props} from '@theme/DocVersionBanner';
+import type { Props } from '@theme/DocVersionBanner';
 import type {
   VersionBanner,
   PropVersionMetadata,
@@ -30,12 +30,13 @@ function UnreleasedVersionLabel({
 }: BannerLabelComponentProps) {
   return (
     <Translate
-      id="theme.docs.versions.unreleasedVersionLabel"
+      id='theme.docs.versions.unreleasedVersionLabel'
       description="The label used to tell the user that he's browsing an unreleased doc version"
       values={{
         siteTitle,
         versionLabel: <b>{versionMetadata.label}</b>,
-      }}>
+      }}
+    >
       {
         'This is unreleased documentation for {siteTitle} {versionLabel} version.'
       }
@@ -49,12 +50,13 @@ function UnmaintainedVersionLabel({
 }: BannerLabelComponentProps) {
   return (
     <Translate
-      id="theme.docs.versions.unmaintainedVersionLabel"
+      id='theme.docs.versions.unmaintainedVersionLabel'
       description="The label used to tell the user that he's browsing an unmaintained doc version"
       values={{
         siteTitle,
         versionLabel: <b>{versionMetadata.label}</b>,
-      }}>
+      }}
+    >
       {
         'This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.'
       }
@@ -86,22 +88,24 @@ function LatestVersionSuggestionLabel({
 }) {
   return (
     <Translate
-      id="theme.docs.versions.latestVersionSuggestionLabel"
-      description="The label used to tell the user to check the latest version"
+      id='theme.docs.versions.latestVersionSuggestionLabel'
+      description='The label used to tell the user to check the latest version'
       values={{
         versionLabel,
         latestVersionLink: (
           <b>
             <Link to={to} onClick={onClick}>
               <Translate
-                id="theme.docs.versions.latestVersionLinkLabel"
-                description="The label used for the latest version suggestion link label">
+                id='theme.docs.versions.latestVersionLinkLabel'
+                description='The label used for the latest version suggestion link label'
+              >
                 latest version
               </Translate>
             </Link>
           </b>
         ),
-      }}>
+      }}
+    >
       {
         'For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).'
       }
@@ -116,16 +120,16 @@ function DocVersionBannerEnabled({
   versionMetadata: PropVersionMetadata;
 }): JSX.Element {
   const {
-    siteConfig: {title: siteTitle},
+    siteConfig: { title: siteTitle },
   } = useDocusaurusContext();
-  const {pluginId} = useActivePlugin({failfast: true})!;
+  const { pluginId } = useActivePlugin({ failfast: true })!;
 
   const getVersionMainDoc = (version: GlobalVersion) =>
     version.docs.find((doc) => doc.id === version.mainDocId)!;
 
-  const {savePreferredVersionName} = useDocsPreferredVersion(pluginId);
+  const { savePreferredVersionName } = useDocsPreferredVersion(pluginId);
 
-  const {latestDocSuggestion, latestVersionSuggestion} =
+  const { latestDocSuggestion, latestVersionSuggestion } =
     useDocVersionSuggestions(pluginId);
 
   // Try to link to same doc in latest version (not always possible), falling
@@ -140,11 +144,12 @@ function DocVersionBannerEnabled({
         ThemeClassNames.docs.docVersionBanner,
         'alert alert--warning margin-bottom--md',
       )}
-      role="alert">
+      role='alert'
+    >
       <div>
         <BannerLabel siteTitle={siteTitle} versionMetadata={versionMetadata} />
       </div>
-      <div className="margin-top--md">
+      <div className='margin-top--md'>
         <LatestVersionSuggestionLabel
           versionLabel={latestVersionSuggestion.label}
           to={latestVersionSuggestedDoc.path}
