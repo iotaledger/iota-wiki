@@ -109,10 +109,10 @@ project. Here's a step-by-step guide:
    ```
 5. Create a Hardhat Project by running the following command:
    ```bash
-   npx hardhat
+   npx hardhat init
    ```
 
-   Select "Create a basic sample project" when prompted and answer the setup questions (you can just press enter to
+   Select "Create a JavaScript project" when prompted and answer the setup questions (you can just press enter to
    accept defaults).
 
 ### 2. Add Your Contract
@@ -130,9 +130,7 @@ project. Here's a step-by-step guide:
        const Counter = await ethers.getContractFactory("Counter");
        const counter = await Counter.deploy();
    
-       await counter.deployed();
-   
-       console.log("Counter deployed to:", counter.address);
+       console.log("Counter deployed to:", await counter.getAddress());
    }
    
    main()
@@ -148,6 +146,28 @@ project. Here's a step-by-step guide:
 1. Add your preferred network parameters to the `hardhat.config.js`, for example:
 
 <HardhatConfig/>
+
+:::info Private Key
+
+How to export the MetaMask private key of an account?
+
+- Click on the logo in the upper right corner
+
+- Select the account you want to export
+
+- On the account page, click the menu (three dots) in the upper right corner, then click the "Account Details" button:
+
+- Click "Export Private Key"
+
+- To access your private key, you will now need to enter your wallet password. When done, click Confirm to continue.
+
+- Your private key will now be displayed. Click to copy it and save it in a safe place. (Note: For obvious reasons, we didn't show it in the screenshots below - but yours will be there.)
+
+- Click close icon on top to close the screen.
+
+Follow [this article](https://helpwithpenny.com/export-and-import-metamask-private-key/) for further detail.
+
+:::
 
 :::caution
 
