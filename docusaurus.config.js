@@ -247,6 +247,7 @@ module.exports = async () => {
           'docusaurus-plugin-openapi-docs',
           {
             id: 'openapi',
+            docsPlugin: './src/plugins/docs',
             docsPluginId: 'apis', // e.g. "classic" or the plugin-content-docs id
             config: {
               coreApiV2: {

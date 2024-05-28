@@ -1,7 +1,6 @@
 const path = require('path');
 const defaultSettings = require('../common/defaultContentPlugin');
 const fs = require('fs');
-const pluginDocs = require('../plugins/docs');
 
 /**
  * Merges multiple configuration objects into one object.
@@ -130,7 +129,7 @@ async function create_doc_plugin({ ...options }) {
   }
 
   return [
-    pluginDocs,
+    './src/plugins/docs',
     /** @type {import('../plugins/docs').Options} */
     ({
       ...setting,
