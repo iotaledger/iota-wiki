@@ -17,10 +17,6 @@ declare module '@theme/AddToMetaMaskButton' {
   export default function AddToMetaMaskButton(): JSX.Element;
 }
 
-declare module '@theme/DocBanner' {
-  export default function DocBanner(): JSX.Element;
-}
-
 declare module '@theme/NetworkInfo' {
   export default {
     IOTA: JSX.Element,
