@@ -85,6 +85,12 @@ enhancing application security and resilience.
 [Goldsky](https://goldsky.com/products/subgraphs) [supports IOTA EVM](https://docs.goldsky.com/chains/supported-networks).
 You can use their public API endpoints to access subgraph data.
 
+:::tip Run a Local Graph Node
+
+You can use [Nakama's Graph Node GitHub repository](https://github.com/nakamaio/graph-node) to run your own Graph Node.
+
+:::
+
 :::tip Blast API Archival Nodes
 
 You can use the convenient Blast API on IOTA EVM to access [archival nodes](blastAPI.md#archival-nodes).

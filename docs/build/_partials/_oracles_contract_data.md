@@ -1,6 +1,28 @@
-|Contract Type| Contract Address |
-|:-:|:-:|
-| Pyth contract              | [https://explorer.evm.iota.org/address/0x8D254a21b3C86D32F7179855531CE99164721933](https://explorer.evm.iota.org/address/0x8D254a21b3C86D32F7179855531CE99164721933) |
-| Supra Pull Contract        | [https://explorer.evm.iota.org/address/0x2FA6DbFe4291136Cf272E1A3294362b6651e8517](https://explorer.evm.iota.org/address/0x2FA6DbFe4291136Cf272E1A3294362b6651e8517) |
-| Supra Storage Contract     | [https://explorer.evm.iota.org/address/0xD02cc7a670047b6b012556A88e275c685d25e0c9](https://explorer.evm.iota.org/address/0xD02cc7a670047b6b012556A88e275c685d25e0c9) |
-| Supra Pull Contract        | [https://explorer.evm.iota.org/address/0xD02cc7a670047b6b012556A88e275c685d25e0c9](https://explorer.evm.iota.org/address/0xD02cc7a670047b6b012556A88e275c685d25e0c9) |
+import { AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
+import { Networks } from '@theme/constant';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId='network'>
+<TabItem value='iota' label='IOTA EVM'>
+
+|     Contract Type      |                                                                           Contract Address                                                                           |
+|:----------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|     Pyth contract      | [https://explorer.evm.iota.org/address/0x8D254a21b3C86D32F7179855531CE99164721933](https://explorer.evm.iota.org/address/0x8D254a21b3C86D32F7179855531CE99164721933) |
+|  Supra Pull Contract   | [https://explorer.evm.iota.org/address/0x2FA6DbFe4291136Cf272E1A3294362b6651e8517](https://explorer.evm.iota.org/address/0x2FA6DbFe4291136Cf272E1A3294362b6651e8517) |
+| Supra Storage Contract | [https://explorer.evm.iota.org/address/0xD02cc7a670047b6b012556A88e275c685d25e0c9](https://explorer.evm.iota.org/address/0xD02cc7a670047b6b012556A88e275c685d25e0c9) |
+|  Supra Push Contract   | [https://explorer.evm.iota.org/address/0xD02cc7a670047b6b012556A88e275c685d25e0c9](https://explorer.evm.iota.org/address/0xD02cc7a670047b6b012556A88e275c685d25e0c9) |
+
+</TabItem>
+<TabItem value='shimmer' label='ShimmerEVM'>
+
+|     Contract Type      |                                                                           Contract Address                                                                           |
+|:----------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|     Pyth contract      | [https://explorer.evm.shimmer.network/address/0x290f23E4a034Db5237edCb5aA2D94Acb4DD19fD2](https://explorer.evm.shimmer.network/address/0x290f23E4a034Db5237edCb5aA2D94Acb4DD19fD2) |
+|  Supra Pull Contract   | [https://explorer.evm.shimmer.network/address/0xe41444462709484272F54371F3f53bBF900Ec49E](https://explorer.evm.shimmer.network/address/0xe41444462709484272F54371F3f53bBF900Ec49E) |
+| Supra Storage Contract | [https://explorer.evm.shimmer.network/address/0x3E5E89d14576cE9f20a8347aA682517fe65B4ACB](https://explorer.evm.shimmer.network/address/0x3E5E89d14576cE9f20a8347aA682517fe65B4ACB) |
+|  Supra Push Contract   | [https://explorer.evm.shimmer.network/address/0x3df842b27c997cEc63160E79CB4398c82645A1c3](https://explorer.evm.shimmer.network/address/0x3df842b27c997cEc63160E79CB4398c82645A1c3) |
+
+
+</TabItem>
+</Tabs>
