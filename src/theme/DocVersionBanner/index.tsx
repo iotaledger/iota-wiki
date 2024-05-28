@@ -40,9 +40,7 @@ function UnreleasedVersionLabel({
         versionLabel: <b>{versionMetadata.label}</b>,
       }}
     >
-      {
-        'This is unreleased documentation for {versionLabel} version.'
-      }
+      {'This is unreleased documentation for {versionLabel} version.'}
     </Translate>
   );
 }
