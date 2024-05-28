@@ -1,6 +1,7 @@
 /**
  * SWIZZLED VERSION: 2.4.3
  * REASONS:
+ *  - Remove use of siteTitle as it is irrelevant in our setup.
  *  - Link to our own latest version.
  */
 import React, { type ComponentType } from 'react';
@@ -29,7 +30,6 @@ type BannerLabelComponentProps = {
 };
 
 function UnreleasedVersionLabel({
-  siteTitle,
   versionMetadata,
 }: BannerLabelComponentProps) {
   return (
@@ -37,19 +37,17 @@ function UnreleasedVersionLabel({
       id='theme.docs.versions.unreleasedVersionLabel'
       description="The label used to tell the user that he's browsing an unreleased doc version"
       values={{
-        siteTitle,
         versionLabel: <b>{versionMetadata.label}</b>,
       }}
     >
       {
-        'This is unreleased documentation for {siteTitle} {versionLabel} version.'
+        'This is unreleased documentation for {versionLabel} version.'
       }
     </Translate>
   );
 }
 
 function UnmaintainedVersionLabel({
-  siteTitle,
   versionMetadata,
 }: BannerLabelComponentProps) {
   return (
@@ -57,12 +55,11 @@ function UnmaintainedVersionLabel({
       id='theme.docs.versions.unmaintainedVersionLabel'
       description="The label used to tell the user that he's browsing an unmaintained doc version"
       values={{
-        siteTitle,
         versionLabel: <b>{versionMetadata.label}</b>,
       }}
     >
       {
-        'This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.'
+        'This is documentation for {versionLabel}, which is no longer actively maintained.'
       }
     </Translate>
   );
