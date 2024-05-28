@@ -11,7 +11,7 @@ import { Collapsible, useCollapsible } from '@docusaurus/theme-common';
 
 import './styles.css';
 
-import { NormalizedOptions as Tutorial } from '@iota-wiki/plugin-tutorial';
+import { NormalizedOptions as Tutorial } from '../../plugins/tutorial';
 import { TagCategories } from '@site/src/utils/tags';
 
 type UserState = {

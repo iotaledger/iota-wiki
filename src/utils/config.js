@@ -129,8 +129,8 @@ async function create_doc_plugin({ ...options }) {
   }
 
   return [
-    '@iota-wiki/plugin-docs',
-    /** @type {import('@iota-wiki/plugin-docs').Options} */
+    './src/plugins/docs',
+    /** @type {import('../plugins/docs').Options} */
     ({
       ...setting,
       ...options,

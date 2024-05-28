@@ -1,4 +1,5 @@
 const path = require('path');
+const pluginTutorial = require('../src/plugins/tutorial');
 
 module.exports = {
   plugins: [
@@ -11,7 +12,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title: 'Run a Wasp Node',
         description: 'In this tutorial you will learn how to run a wasp node.',
@@ -21,7 +22,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title: 'Run a Wasp Chain',
         description: 'In this tutorial you will learn how to run a wasp chain.',
@@ -31,7 +32,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title: 'Deploy a WASM Smart Contract',
         description:
@@ -42,7 +43,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title: 'Deploy a Solidity Smart Contract Using Remix + Metamask',
         description:
@@ -53,7 +54,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title: 'Generate a WASM Smart Contract Using the Schema Tool',
         description:
@@ -64,7 +65,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title:
           'Generate a WASM Smart Contract Using the Schema Tool in Typescript',
@@ -76,7 +77,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title: 'Interact with IOTA Node Extension (INX)',
         description:
@@ -87,7 +88,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title: 'Tokenless Data Notarization',
         description:
@@ -98,7 +99,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title: 'Set Up a Testnet Address and Receive Funds From the Faucet',
         description:
@@ -109,7 +110,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title: 'How to Set Up iota.js for Development',
         description:
@@ -120,7 +121,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title:
           'Connect to Shimmer EVM Testnet and Deploy a Solidity Smart Contract',
@@ -140,7 +141,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title:
           'Tutorial - Deploy a Solidity Smart Contract on ShimmerEVM Testnet Using Hardhat',
@@ -160,7 +161,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title: 'Create a Simple Voting dApp on ShimmerEVM',
         description:
@@ -171,7 +172,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title: 'Set Up WASP locally Using Docker',
         description:
@@ -182,7 +183,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title: 'Create an NFT with the IOTA SDK and IPFS in NodeJs',
         description:
@@ -201,7 +202,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title: 'Send Shimmer Tokens with IOTA SDK in NodeJs',
         description:
@@ -212,7 +213,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title: 'Connect to Shimmer EVM and Deploy a Solidity Smart Contract',
         description:
@@ -231,7 +232,7 @@ module.exports = {
       },
     ],
     [
-      '@iota-wiki/plugin-tutorial',
+      pluginTutorial,
       {
         title:
           'Tutorial - Deploy a Solidity Smart Contract on ShimmerEVM Using Hardhat',
