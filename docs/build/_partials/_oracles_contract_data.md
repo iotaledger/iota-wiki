@@ -23,6 +23,15 @@ import TabItem from '@theme/TabItem';
 | Supra Storage Contract | [https://explorer.evm.shimmer.network/address/0x3E5E89d14576cE9f20a8347aA682517fe65B4ACB](https://explorer.evm.shimmer.network/address/0x3E5E89d14576cE9f20a8347aA682517fe65B4ACB) |
 |  Supra Push Contract   | [https://explorer.evm.shimmer.network/address/0x3df842b27c997cEc63160E79CB4398c82645A1c3](https://explorer.evm.shimmer.network/address/0x3df842b27c997cEc63160E79CB4398c82645A1c3) |
 
-
 </TabItem>
 </Tabs>
+
+:::tip Oracle Documentation
+
+You can find detailed documentation on the Oracles in their official documentation:
+
+* [Pyth Oracle Docs](https://docs.pyth.network/price-feeds/contract-addresses/evm) 
+* [Supra Pull Docs](https://gb-docs.supraoracles.com/docs/data-feeds/pull-model/networks)
+* [Supra Push Docs](https://gb-docs.supraoracles.com/docs/data-feeds/decentralized/networks)
+
+:::
