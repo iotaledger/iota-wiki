@@ -1,5 +1,5 @@
 ---
-description: 'Learn about the role of in subgraphs in smart, how they can provide indexed blockchain data to your smart contracts.'
+description: 'Learn about the role of subgraphs in smart contracts and how they can provide indexed blockchain data to your smart contracts.'
 image: /img/logo/WASP_logo_dark.png
 tags:
   - Blockchain subgraphs
@@ -84,6 +84,12 @@ enhancing application security and resilience.
 
 [Goldsky](https://goldsky.com/products/subgraphs) [supports IOTA EVM](https://docs.goldsky.com/chains/supported-networks).
 You can use their public API endpoints to access subgraph data.
+
+:::tip Run a Local Graph Node
+
+You can use [Nakama's Graph Node GitHub repository](https://github.com/nakamaio/graph-node) to run your own Graph Node.
+
+:::
 
 :::tip Blast API Archival Nodes
 

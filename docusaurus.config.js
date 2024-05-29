@@ -165,8 +165,8 @@ module.exports = async () => {
     },
     plugins: [
       // Temporarily disabled because of Cookiebot blocking required scripts.
-      // path.resolve(__dirname, 'plugins', 'cookiebot'),
-      path.resolve(__dirname, 'plugins', 'matomo'),
+      // require('./src/plugins/cookiebot'),
+      require('./src/plugins/matomo'),
       [
         '@docusaurus/plugin-google-gtag',
         {
@@ -256,6 +256,7 @@ module.exports = async () => {
           'docusaurus-plugin-openapi-docs',
           {
             id: 'openapi',
+            docsPlugin: './src/plugins/docs',
             docsPluginId: 'apis', // e.g. "classic" or the plugin-content-docs id
             config: {
               coreApiV2: {
@@ -453,7 +454,6 @@ module.exports = async () => {
       themes: [
         'docusaurus-theme-openapi-docs',
         '@saucelabs/theme-github-codeblock',
-        '@iota-wiki/theme',
       ],
       staticDirectories: [path.resolve(__dirname, 'static')],
     },

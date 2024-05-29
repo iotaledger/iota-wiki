@@ -1,0 +1,180 @@
+---
+title: Creating a Decentralized Identity
+sidebar_label: Create and Publish
+description: Create DID Documents and publish them to the Tangle
+image: /img/Identity_icon.png
+tags:
+  - Documents
+  - DID
+  - Tangle
+  - Create
+  - Publish
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+If you want to benefit from Self-Sovereign Identity,
+you need to create a [Decentralized Identity](../../explanations/decentralized-identifiers.mdx).
+This identity consists of many parts that have different functions.
+
+:::note DID method Specification
+
+Note that the Iota Identity Framework follows [IOTA DID Method Specification](../../references/specifications/iota-did-method-spec.mdx).
+
+:::
+
+## Identity Generation Process
+
+
+### 1. Get Funds to Cover the Storage Deposit
+
+The first thing you will need to generate an identity is an address with enough funds to cover
+the [Storage Deposit](../../explanations/about-alias-outputs.mdx#storage-deposit).
+In test networks, you can use a [faucet](https://faucet.testnet.shimmer.network/) to request funds.
+
+:::tip
+
+If you want to use the main Shimmer or IOTA networks,
+you will need an output with actual Shimmer or IOTA funds to create a new Alias Output that represents a DID.
+
+:::
+
+<div className={'hide-code-block-extras'}>
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.3.0/examples/0_basic/0_create_did.rs#L52
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.3.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L40-L51
+```
+
+</TabItem>
+</Tabs>
+</div>
+
+### 2. Create the Content for the DID Document
+
+As a bare minimum, a [DID document](../../explanations/decentralized-identifiers.mdx) needs at least one verification method.
+
+At this point, the DID itself is unknown since the Alias Output is not published yet and didn't get an `Alias ID` assigned.
+
+:::tip
+
+You can use a placeholder `did:iota:0x0000000000000000000000000000000000000000000000000000000000000000` to reference
+the DID inside the document.
+
+:::
+
+<div className={'hide-code-block-extras'}>
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.3.0/examples/0_basic/0_create_did.rs#L59-L71
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.3.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L55C44-L65
+```
+
+</TabItem>
+</Tabs>
+</div>
+
+### 3. Construct a New Alias Output
+
+Next, you need to construct a new [Alias Output](../../explanations/about-alias-outputs.mdx) that includes the
+DID Document in the [State Metadata](../../explanations/about-alias-outputs.mdx).
+The created Alias Output contains an encoded version of the DID Document in its `State Metadata`, and has the state
+controller and the governor set to the generated Ed25519 address.
+
+Note that controllers don't need to be Ed25519 addresses, they can be any type of output.
+However, they must be unlocked in order perform a state or governance transition when the DID Document is updated or destroyed.
+
+
+<div className={'hide-code-block-extras'}>
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.3.0/examples/0_basic/0_create_did.rs#L75
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.3.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L70
+```
+
+</TabItem>
+</Tabs>
+</div>
+
+### 4. Publish the generated Alias Output.
+
+The byte cost for the document is automatically calculated and a new transaction is published that includes
+the Basic Output as input and the newly generated Alias Output as output, as well as another Basic Output which contains
+the remaining tokens.
+
+The DID is only known once the [Alias Output](../../explanations/about-alias-outputs.mdx) is successfully published,
+since the DID's [Tag](../../references/specifications/iota-did-method-spec.mdx#iota-tag) contains the
+[Alias ID](../../explanations/about-alias-outputs.mdx#alias-id).
+Once the transaction is confirmed, the `Alias ID` is assigned, and the DID can be derived from it,
+the DID Document is stored on the ledger and can be [resolved](resolve.mdx) using any node.
+
+
+<div className={'hide-code-block-extras'}>
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.3.0/examples/0_basic/0_create_did.rs#L78
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.3.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L74
+```
+
+</TabItem>
+</Tabs>
+</div>
+
+## Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.3.0/examples/0_basic/0_create_did.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.3.0/bindings/wasm/examples/src/0_basic/0_create_did.ts
+```
+
+</TabItem>
+</Tabs>
+
+## Running Examples Locally
+
+In order to run the examples, you will need to run the [IOTA Sandbox](/iota-sandbox/welcome/) locally.
+
+If you want to use something different, you will need to modify the API and faucet endpoints in the examples to match your
+setup.
