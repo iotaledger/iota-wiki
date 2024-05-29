@@ -190,6 +190,11 @@ module.exports = {
                   label: 'Use as ERC721',
                   id: 'how-tos/core-contracts/nft/use-as-erc721',
                 },
+                {
+                  type: 'doc',
+                  label: 'Get NFT Metadata',
+                  id: 'how-tos/core-contracts/nft/get-nft-metadata',
+                },
               ],
             },
             {
