@@ -18,7 +18,7 @@ const {
   IntegrationServices,
   IotaCore,
   PickAWallet,
-  Shimmer,
+  IotaEVM,
   Search,
   Tips,
   Tutorials,
@@ -85,6 +85,12 @@ export default function HomeLayout() {
                 >
                   Start building
                 </Link>
+                <Link
+                  to='/isc/getting-started/quick-start/'
+                  className='intro__button button button--primary'
+                >
+                  Build your dApp on IOTA EVM
+                </Link>
               </div>
             </div>
           </div>
@@ -106,18 +112,16 @@ export default function HomeLayout() {
                 </p>
               </div>
             </Link>
-            <Link
-              to='/get-started/introduction/shimmer/introduction'
-              className='about__card'
-            >
+            <Link to='/isc/getting-started/quick-start' className='about__card'>
               <div className='about__section'>
                 <div className='about__icon'>
-                  <Shimmer />
+                  <IotaEVM />
                 </div>
-                <h3 className='about__header'>What is Shimmer?</h3>
+                <h3 className='about__header'>Build on IOTA EVM</h3>
                 <p className='about__description'>
-                  A scalable and feeless network enabling frictionless
-                  decentralized and scalable Web3 economies.
+                  Experience seamless dApp development with IOTA EVM's oracles,
+                  subgraphs, Layer 0 interoperability, and robust Blast API
+                  endpoints.{' '}
                 </p>
               </div>
             </Link>

@@ -144,6 +144,15 @@ module.exports = async () => {
         defaultMode: 'dark',
       },
       switcher: switcherConfig,
+
+      announcementBar: {
+        id: 'support_us',
+        content:
+          'Experience seamless dApp development with <a target="/isc/getting-started/quick-start/" rel="noopener noreferrer" href="#">IOTA EVM</a>.',
+        backgroundColor: 'var(--ifm-color-primary)',
+        textColor: 'var(--ifm-font-color-base-inverse);',
+        isCloseable: true,
+      },
     },
   };
 
