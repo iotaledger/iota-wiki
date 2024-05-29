@@ -16,7 +16,6 @@ tags:
 import { AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
 import { Networks } from '@theme/constant';
 import NetworkInfo from '@theme/NetworkInfo';
-import { ChainId } from '@theme/ChainId';
 
 # Networks & Endpoints
 
@@ -76,6 +75,7 @@ This network is subject to occasional resets (no data retention) which are usual
 <AddToMetaMaskButton {...Networks['iota_testnet']} />
 
 <NetworkInfo.Evm {...Networks['iota_testnet']}/>
+
 #### Additional Info
 
 <NetworkInfo.EvmCustom {...Networks['iota_testnet']}/>
