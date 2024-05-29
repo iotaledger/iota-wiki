@@ -85,6 +85,16 @@ module.exports = {
               id: 'subgraphs',
             },
             {
+              label: 'IOTA Safe Wallet',
+              type: 'doc',
+              id: 'safe',
+            },
+            {
+              label: 'Multicall3',
+              type: 'doc',
+              id: 'multicall',
+            },
+            {
               type: 'category',
               label: 'ShimmerEVM',
               collapsed: true,
@@ -127,11 +137,6 @@ module.exports = {
                   href: 'https://evm-toolkit.evm.testnet.shimmer.network/',
                 },
               ],
-            },
-            {
-              label: 'Oracles for IOTA EVM and ShimmerEVM',
-              type: 'doc',
-              id: 'oracles',
             },
             {
               type: 'link',
