@@ -3,6 +3,7 @@
  * REASONS:
  *  - Remove use of siteTitle as it is irrelevant in our setup.
  *  - Link to our own latest version.
+ *  - Update text pointing to latest version
  */
 import React, { type ComponentType } from 'react';
 import clsx from 'clsx';
@@ -106,7 +107,7 @@ function LatestVersionSuggestionLabel({
       }}
     >
       {
-        'For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).'
+        'For the latest stable release, see the {latestVersionLink} ({versionLabel}).'
       }
     </Translate>
   );
