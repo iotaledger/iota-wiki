@@ -25,7 +25,7 @@ This invalidates all credentials that were signed with that verification method.
 ## Revocation methods
 The IOTA Identity Framework supports two different revocation methods: `RevocationBitmap2022` and `StatusList2021`. 
 ### Revocation Bitmap
-[RevocationBitmap2022](/identity.rs/references/specifications/revocation-bitmap-2022/) is the default credential revocation method used in the IOTA Identity Framework. It allows
+[RevocationBitmap2022](../../references/specifications/revocation-bitmap-2022.mdx) is the default credential revocation method used in the IOTA Identity Framework. It allows
 issuers to control whether a credential is _valid_ or _revoked_. To do so, a revocation list (represented
 as a bitmap) is stored in the issuer's DID document.
 When a credential is issued, a unique index from the issuer's revocation list

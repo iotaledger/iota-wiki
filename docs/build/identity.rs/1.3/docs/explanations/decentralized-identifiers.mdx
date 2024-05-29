@@ -26,7 +26,7 @@ while facilitating encrypted communication.
 A DID is a unique identifier that can be resolved to a DID Document. This document contains data such as public keys, enabling the holder to prove ownership over their personal data, but also URIs that link to public information about the identity. DIDs are the fundamental building blocks of decentralized digital identity.
 This implementation complies with the [DID specifications v1.0](https://www.w3.org/TR/did-core//) from the World Wide Web Consortium (W3C).
 
-In the IOTA Identity framework, we have implemented the DID standard according to the `iota` [DID Method Specification](/identity.rs/references/specifications/iota-did-method-spec/). Other implementations of DID on IOTA must follow the `iota` DID Method Specification if they want to use the `iota` method name. Libraries implementing the `iota` DID Method Specification are provided for [Rust](../getting-started/rust.mdx) and [WASM](../getting-started/wasm.mdx).
+In the IOTA Identity framework, we have implemented the DID standard according to the `iota` [DID Method Specification](../references/specifications/iota-did-method-spec.mdx). Other implementations of DID on IOTA must follow the `iota` DID Method Specification if they want to use the `iota` method name. Libraries implementing the `iota` DID Method Specification are provided for [Rust](../getting-started/rust.mdx) and [WASM](../getting-started/wasm.mdx).
 
 An example of a DID conforming to the `iota` method specification:
 `did:iota:0xe4edef97da1257e83cbeb49159cfdd2da6ac971ac447f233f8439cf29376ebfe`
@@ -52,7 +52,7 @@ The identifier contains all information to resolve a DID, providing the latest D
 The first three characters `did` indicate that the DID standard from W3C must be used to resolve the identifier.
 It is followed by a unique method name, in our case `iota`, to indicate that the IOTA method is used.
 
-The IOTA method is a specific implementation following the [IOTA DID Method Specification](/identity.rs/references/specifications/iota-did-method-spec/).
+The IOTA method is a specific implementation following the [IOTA DID Method Specification](../references/specifications/iota-did-method-spec.mdx).
 This provides unique rules for the protocol to follow in order to manage a DID Document.
 In our case, it describes how DID Documents are uploaded and queried to and from the IOTA ledger.
 
