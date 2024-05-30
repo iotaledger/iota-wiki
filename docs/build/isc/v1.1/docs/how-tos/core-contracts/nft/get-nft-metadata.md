@@ -10,7 +10,7 @@ import GetNftMetadata from '../../../_partials/how-tos/token/_get-nft-metadata.m
 
 # Get NFT Metadata
 
-This guide explains how to use the [`getIRC27NFTData`](../../../reference/magic-contract/ISCSandbox/#getirc27nftdata) function within a smart contract to fetch information about a specific IRC27 NFT on the IOTA Network.
+This guide explains how to use the [`getIRC27NFTData`](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCSandbox.sol#L118) function within a smart contract to fetch information about a specific IRC27 NFT on the IOTA Network.
 
 <GetNftMetadata />
 
