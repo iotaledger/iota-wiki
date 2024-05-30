@@ -10,39 +10,45 @@ import GetNftMetadata from '../../../_partials/how-tos/token/_get-nft-metadata.m
 
 # Get NFT Metadata
 
-This guide explains how to utilize the `getIRC27NFTData` function within a smart contract to fetch information about a specific IRC27 NFT on the IOTA Network. The function resides in the ISCSandbox contract and returns details pertaining to the requested NFT.
+This guide explains how to use the [`getIRC27NFTData`](../../../reference/magic-contract/ISCSandbox/#getirc27nftdata) function within a smart contract to fetch information about a specific IRC27 NFT on the IOTA Network.
+
+<GetNftMetadata />
 
 ## Understanding the `getIRC27NFTData` Function
 
 The `getIRC27NFTData` function retrieves metadata for an IRC27 NFT based on its identifier. IRC27 is a series of standards to support interoperable and universal NFT systems throughout the IOTA ecosystem.
 
-## Function Signature:
+### Function Signature:
+
 ```solidity
 function getIRC27NFTData(bytes memory nftID) public view returns (IRC27NFT memory irc27NftData);
 ```
-## Parameters:
+
+### Parameters:
+
 `NFTID id`: This parameter represents the unique identifier of the IRC27 NFT you intend to retrieve information about.
-## Return Value:
+
+### Return Value:
+
 The function returns a data structure of type IRC27NFT. This structure incorporates two elements:
 *  `nft`: This element provides details regarding the underlying on-chain NFT. It's of type `ISCNFT`.
 *  `metadata`: This element offers information specific to the IRC27 standard. It's of type `IRC27NFTMetadata`.
 
-### Here's a step-by-step breakdown of how to leverage getIRC27NFTData to acquire IRC27 NFT metadata:
+## How To Use `getIRC27NFTData`
 
-1. Fetching IRC27 NFT Metadata:
+### 1. Fetch IRC27 NFT Metadata
 
-Create a function called fetchNFTData in your contract that calls getIRC27NFTData and processes its return value.
+Create a function called `fetchNFTData` in your contract that calls `getIRC27NFTData` and processes its return value.
 
 ```solidity
-// Function to get NFT data
-    function fetchNFTData(bytes memory nftID) public view returns (IRC27NFT memory irc27NftData) {
-        bytes32 id = bytes32(nftID);
-        NFTID nftIDTyped = NFTID.wrap(id);
-        irc27NftData = ISC.sandbox.getIRC27NFTData(nftIDTyped);
-        return irc27NftData;
-    }
+function fetchNFTData(bytes memory nftID) public view returns (IRC27NFT memory irc27NftData) {
+    bytes32 id = bytes32(nftID);
+    NFTID nftIDTyped = NFTID.wrap(id);
+    irc27NftData = ISC.sandbox.getIRC27NFTData(nftIDTyped);
+    return irc27NftData;
+}
 ```
-2. Encoding URI Data in IRC27NFTMetadata
+### 2. Encode the URI Data in `IRC27NFTMetadata`
 
 The `IRC27NFTMetadata` struct holds detailed metadata, including the URI and other fields like name and description. Encoding this data correctly is crucial for ensuring the integrity and accessibility of the NFT's metadata.
 
@@ -50,11 +56,10 @@ The `IRC27NFTMetadata` struct holds detailed metadata, including the URI and oth
 struct IRC27NFTMetadata {string uri; string name;string description;}
 ```
 
-3. Implementing URI Encoding
+### 3. Implement URI Encoding
 
-The OpenZeppelin Contracts library provides a `Base64` utility that simplifies encoding URI data. Here's how to implement URI encoding:
+The [OpenZeppelin Contracts](https://www.openzeppelin.com/) library provides a `Base64` utility that simplifies encoding URI data. Here's how to implement URI encoding:
 
-## Implementation:
 
 ```solidity
 function encodeNFTMetadata(string memory _standard, string memory _version, 
@@ -64,7 +69,6 @@ function encodeNFTMetadata(string memory _standard, string memory _version,
     string memory _description
 ) public pure returns (IRC27NFTMetadata memory) 
 {
-    // Create JSON representation
     string memory json = string(abi.encodePacked(
         '{"name":"', _name,
         '","description":"', _description,
@@ -72,13 +76,11 @@ function encodeNFTMetadata(string memory _standard, string memory _version,
         '"}'
     ));
 
-    // Base64 encode the JSON string
     string memory encodedURI = string(abi.encodePacked(
         "data:application/json;base64,", 
         Base64.encode(bytes(json))
     ));
 
-    // Return the metadata struct
     return IRC27NFTMetadata({
         standard: _standard,
         version: _version,
@@ -91,6 +93,7 @@ function encodeNFTMetadata(string memory _standard, string memory _version,
 ```
 
 ## Full Example Contract
+
 Combining all the above steps, here’s a complete example:
 
 ```solidity
@@ -121,7 +124,6 @@ function encodeNFTMetadata(
 ) 
     public pure returns (IRC27NFTMetadata memory) 
 {
-    // Create JSON representation
     string memory json = string(abi.encodePacked(
         '{"name":"', _name,
         '","description":"', _description,
@@ -129,13 +131,11 @@ function encodeNFTMetadata(
         '"}'
     ));
 
-    // Base64 encode the JSON string
     string memory encodedURI = string(abi.encodePacked(
         "data:application/json;base64,", 
         Base64.encode(bytes(json))
     ));
 
-    // Return the metadata struct
     return IRC27NFTMetadata({
         standard: _standard,
         version: _version,
@@ -149,5 +149,3 @@ function encodeNFTMetadata(
 ## Example Usage
 
 To mint a new NFT and fetch its metadata, you would use the above functions within a larger contract that handles NFT minting and management.
-
-<GetNftMetadata />
