@@ -41,7 +41,7 @@ multiple data points to validate the information's accuracy. This process ensure
 contracts is relevant and timely, maintaining the integrity and deterministic nature of the blockchain
 operations.
 
-## Oracles on IOTA EVM
+## Oracle Providers in IOTA Ecosystem
 
 ### Pyth
 

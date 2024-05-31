@@ -132,7 +132,7 @@ module.exports = {
                   href: 'https://explorer.evm.testnet.shimmer.network',
                 },
                 {
-                  label: 'EVM Testnet Toolkit & Faucet',
+                  label: 'Toolkit & Faucet',
                   type: 'link',
                   href: 'https://evm-toolkit.evm.testnet.shimmer.network/',
                 },
