@@ -14,12 +14,12 @@ import ExampleCodeIntro from '../../../_partials/how-tos/token/_example_code_int
 
 # Create a Native Token
 
-This guide will show you how you can efficiently mint new tokens and register them for use as ERC20 tokens with the `createNativeTokenFoundry` function in one seamless operation. It will create a foundry on L1 and registers it as a ERC20 on L2. This method ensures that only the foundry owner can mint tokens, maintaining security and control over the token creation process.
+This guide will show you how you can efficiently mint new tokens and register them for use as ERC20 tokens with the `createNativeTokenFoundry` function in one seamless operation. It will create a foundry on L1 and register it as an ERC20 on L2. This method ensures that only the foundry owner can mint tokens, maintaining security and control over the token creation process.
 
 ## About Foundries
 
 The Stardust update allows you to create your own native tokens. Native tokens are minted by a [Foundry](/tips/tips/TIP-0018/#foundry-output). 
-The Foundry allows you to specify your native token's maximum supply **once** and change the circulating supply.
+The Foundry lets you specify your native token's maximum supply **once** and change the circulating supply.
 
 ## Example Code
 
@@ -27,7 +27,7 @@ The Foundry allows you to specify your native token's maximum supply **once** an
 
 ### 2. Define the Token Scheme
 
-Define the `NativeTokenScheme` by specifying its mintedTokens, meltedTokens and maximumSupply. For simplicity, in this how-to we mint the whole maximum supply at creation.
+Define the `NativeTokenScheme` by specifying its `mintedTokens`, `meltedTokens`, and `maximumSupply`. For simplicity, in this guide we mint the whole maximum supply at creation.
 
 ```solidity
 NativeTokenScheme memory nativeTokenScheme = NativeTokenScheme({
