@@ -93,7 +93,63 @@ the target chain to the sender SC's L2 account on the origin chain.
 
 :::
 
+### `nativeTokenCreate(t TokenScheme, tn TokenName, ts TokenSymbol, td TokenDecimal) s SerialNumber`
+
+Creates a new foundry and registers it as a ERC20 and IRC30 token.
+
+You can call this end point from the CLI using `wasp-cli chain create-native-token -h`
+
+#### Parameters
+
+- `t` ([`iotago::TokenScheme`](https://github.com/iotaledger/iota.go/blob/develop/token_scheme.go)): The token scheme
+  for the new foundry.
+- `tn` (`string`): The token name
+- `ts` (`string`): The token symbol
+- `td` (`uint8`): The token decimals
+
+The storage deposit for the new foundry must be provided via allowance (only the minimum required will be used).
+
+#### Returns
+
+- `s` (`uint32`): The serial number of the newly created foundry
+
+### `nativeTokenModifySupply(s SerialNumber, d SupplyDeltaAbs, y DestroyTokens)`
+
+Mints or destroys tokens for the given foundry, which must be controlled by the caller.
+
+#### Parameters
+
+- `s` (`uint32`): The serial number of the foundry.
+- `d` (positive `big.Int`): Amount to mint or destroy.
+- `y` (optional `bool` - default: `false`): Whether to destroy tokens (`true`) or not (`false`).
+
+When minting new tokens, the storage deposit for the new output must be provided via an allowance.
+
+When destroying tokens, the tokens to be destroyed must be provided via an allowance.
+
+### `nativeTokenDestroy(s SerialNumber)`
+
+Destroys a given foundry output on L1, reimbursing the storage deposit to the caller. The foundry must be owned by the
+caller.
+
+:::warning
+
+This operation cannot be reverted.
+
+:::
+
+#### Parameters
+
+- `s` (`uint32`): The serial number of the foundry.
+
+
 ### `foundryCreateNew(t TokenScheme) s SerialNumber`
+
+:::warning Deprecated
+
+This function is deprecated, please use [`nativeTokenCreate`](#nativetokencreatet-tokenscheme-s-serialnumber) instead
+
+:::
 
 Creates a new foundry with the specified token scheme, and assigns the foundry to the sender.
 
@@ -110,34 +166,6 @@ The storage deposit for the new foundry must be provided via allowance (only the
 
 - `s` (`uint32`): The serial number of the newly created foundry
 
-### `foundryModifySupply(s SerialNumber, d SupplyDeltaAbs, y DestroyTokens)`
-
-Mints or destroys tokens for the given foundry, which must be controlled by the caller.
-
-#### Parameters
-
-- `s` (`uint32`): The serial number of the foundry.
-- `d` (positive `big.Int`): Amount to mint or destroy.
-- `y` (optional `bool` - default: `false`): Whether to destroy tokens (`true`) or not (`false`).
-
-When minting new tokens, the storage deposit for the new output must be provided via an allowance.
-
-When destroying tokens, the tokens to be destroyed must be provided via an allowance.
-
-### `foundryDestroy(s SerialNumber)`
-
-Destroys a given foundry output on L1, reimbursing the storage deposit to the caller. The foundry must be owned by the
-caller.
-
-:::warning
-
-This operation cannot be reverted.
-
-:::
-
-#### Parameters
-
-- `s` (`uint32`): The serial number of the foundry.
 
 ### `mintNFT(I ImmutableData, a AgentID, C CollectionID, w WithdrawOnMint)`
 
@@ -221,7 +249,7 @@ Returns a list of all native tokenIDs that are owned by the chain.
 
 A map of [`TokenID`](#tokenid) => `0x01`
 
-### `foundryOutput(s FoundrySerialNumber)`
+### `nativeToken(s FoundrySerialNumber)`
 
 #### Parameters
 
