@@ -27,8 +27,13 @@ exports.buildPluginsConfig = [
     subsection: 'build-layer-2',
     versions: [
       {
-        label: 'v1.0.0-rc.6',
-        badges: ['Shimmer'],
+        label: 'v1.1',
+        badges: ['IOTA', 'Shimmer'],
+      },
+      {
+        label: 'v1.3-alpha',
+        badges: ['Testnet'],
+        banner: 'unreleased',
       },
     ],
   },
@@ -145,8 +150,13 @@ exports.maintainPluginsConfig = [
     subsection: 'maintain-layer-2',
     versions: [
       {
-        label: 'v1.0.0-rc.6',
-        badges: ['Shimmer'],
+        label: 'v1.1',
+        badges: ['IOTA', 'Shimmer'],
+      },
+      {
+        label: 'v1.3-alpha',
+        badges: ['Testnet'],
+        banner: 'unreleased',
       },
     ],
   },

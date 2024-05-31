@@ -1,0 +1,99 @@
+---
+tags:
+  - function descriptor
+  - return values
+  - request
+  - post
+  - smart contract chain
+  - Asynchronous function
+description: Asynchronous function calls between smart contracts are posted as requests on the Tangle. They allow you to invoke any smart contract function that is not a View on any smart contract chain.
+image: /img/logo/WASP_logo_dark.png
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Post Asynchronous Requests
+
+Asynchronous requests enable interactions between different contracts.
+Learn how to navigate the subtleties of posting asynchronous requests on the Tangle,
+and how to effectively manage tokens and delays in execution.
+
+## Overview of Asynchronous Function Calls
+
+### Posting Requests on the Tangle
+
+Asynchronous function calls occur through requests posted on the Tangle.
+These calls can invoke any function that is not a [View](views.mdx) on any smart contract chain.
+
+### Function Descriptor Methods
+
+To post a request, use the following methods from the function descriptor:
+
+- `post()`: Posts to the current chain.
+- `postToChain()`: Allows specifying the chain through the chain ID parameter.
+
+### Delayed Execution
+
+You can set a delay in the execution using the `delay()` method,
+enhancing smart contracts with timed actions or time-lock functionalities.
+
+<Tabs groupId="language" queryString>
+
+<TabItem value="go" label="Go">
+
+```go
+eor := ScFuncs.EndOfRound(ctx)
+eor.Func.Delay(3600).Post()
+```
+
+</TabItem>
+<TabItem value="rust" label="Rust">
+
+```rust
+let eor = ScFuncs::end_of_round(ctx);
+eor.func.delay(3600).post();
+```
+
+</TabItem>
+<TabItem value="typescript" label="Typescript">
+
+```ts
+let eor = sc.ScFuncs.endOfRound(ctx);
+eor.func.delay(3600).post();
+```
+
+</TabItem>
+</Tabs>
+
+## Managing Tokens in Asynchronous Calls
+
+### Mandatory Token Transfer
+
+Asynchronous requests require a minimum token transfer to cover the gas for function call execution.
+Unused tokens return to the caller's account on the chain.
+
+### Specifying Tokens
+
+You can specify tokens:
+
+- Explicitly, as in to synchronous calls.
+- Automatically, letting WasmLib determine the minimum requisite amount.
+
+### Prohibited `delay()` with [`call()`](call.mdx)
+
+Using `delay()` before a [`call()`](call.mdx) will cause a panic due to indeterminate user intentions at compile-time
+without substantial overhead.
+
+## Handling Return Values
+
+If you need some return values,
+you will have to create a mechanism that can do so.
+For example,
+you can provide a callback chain/contract/function combination as part of the input parameters of the requested function so that upon completion,
+that function can asynchronously post the results to the indicated function.
+It will require a certain degree of cooperation between both smart contracts.
+
+### Future Prospects
+
+Future developments aim to facilitate a generic mechanism for seamless return value communication in asynchronous function calls.
