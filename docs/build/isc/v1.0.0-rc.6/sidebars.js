@@ -152,7 +152,7 @@ module.exports = {
                 {
                   type: 'doc',
                   label: 'Create a Native Token',
-                  id: 'how-tos/core-contracts/token/create-native-token-foundary',
+                  id: 'how-tos/core-contracts/token/create-native-token',
                 },
                 {
                   type: 'doc',
