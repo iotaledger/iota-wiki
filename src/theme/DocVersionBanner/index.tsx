@@ -49,9 +49,7 @@ function UnreleasedVersionLabel({
   );
 }
 
-function StagingVersionLabel({
-  versionMetadata,
-}: BannerLabelComponentProps) {
+function StagingVersionLabel({ versionMetadata }: BannerLabelComponentProps) {
   return (
     <Translate
       id='theme.docs.versions.stagingVersionLabel'
