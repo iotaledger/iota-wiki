@@ -156,6 +156,11 @@ module.exports = {
                 },
                 {
                   type: 'doc',
+                  label: 'Mint Native Tokens',
+                  id: 'how-tos/core-contracts/token/mint-token',
+                },
+                {
+                  type: 'doc',
                   label: 'Custom ERC20 Functions',
                   id: 'how-tos/core-contracts/token/erc20-native-token',
                 },
@@ -163,11 +168,6 @@ module.exports = {
                   type: 'doc',
                   label: 'Create a Foundry',
                   id: 'how-tos/core-contracts/token/create-foundry',
-                },
-                {
-                  type: 'doc',
-                  label: 'Mint a Native Token using a Foundry',
-                  id: 'how-tos/core-contracts/token/mint-token',
                 },
                 {
                   type: 'doc',

@@ -27,11 +27,11 @@ The Foundry lets you specify your native token's maximum supply **once** and cha
 
 ### 2. Define the Token Scheme
 
-Define the `NativeTokenScheme` by specifying its `mintedTokens`, `meltedTokens`, and `maximumSupply`. For simplicity, in this guide we mint the whole maximum supply at creation.
+Define the `NativeTokenScheme` by specifying the `maximumSupply`.
 
 ```solidity
 NativeTokenScheme memory nativeTokenScheme = NativeTokenScheme({
-    mintedTokens: _maximumSupply,
+    mintedTokens: 0,
     meltedTokens: 0,
     maximumSupply: _maximumSupply
 });
@@ -73,7 +73,7 @@ contract MyToken {
           allowance.baseTokens = _storageDeposit;
 
           NativeTokenScheme memory nativeTokenScheme = NativeTokenScheme({
-              mintedTokens: _maximumSupply,
+              mintedTokens: 0,
               meltedTokens: 0,
               maximumSupply: _maximumSupply
           });
