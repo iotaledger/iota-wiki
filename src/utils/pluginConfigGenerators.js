@@ -23,7 +23,7 @@ function generatePluginConfig(pluginConfig, basePath) {
 
     return doc.versions.map((version) => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { label, badges, ...rest } = version;
+      const { label, badges, banner, ...rest } = version;
 
       // TODO: This could be removed once we don't use points in paths anymore.
       const plugin_name_path = doc.routeBasePath ? doc.routeBasePath : doc.id;
@@ -43,6 +43,7 @@ function generatePluginConfig(pluginConfig, basePath) {
                   label,
                   path: mainVersion.label === label ? undefined : label,
                   badge: true,
+                  banner,
                 },
               },
             }

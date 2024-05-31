@@ -43,57 +43,21 @@ var __importStar =
     __setModuleDefault(result, mod);
     return result;
   };
-var __importDefault =
-  (this && this.__importDefault) ||
-  function (mod) {
-    return mod && mod.__esModule ? mod : { default: mod };
-  };
+Object.defineProperty(exports, '__esModule', { value: true });
+exports.validateOptions = void 0;
 const plugin_content_docs_1 = __importStar(
   require('@docusaurus/plugin-content-docs'),
 );
-const promises_1 = __importDefault(require('fs/promises'));
-const path_1 = __importDefault(require('path'));
 async function pluginDocs(context, options) {
   // Destructure to separate the Docusaurus docs plugin options
   // and initialize the Docusaurus docs plugin to wrap.
-  const { bannerPath, globalSidebars, ...docsOptions } = options;
+  const { globalSidebars, ...docsOptions } = options;
   const plugin = await (0, plugin_content_docs_1.default)(context, docsOptions);
   return {
     ...plugin,
-    getPathsToWatch: () => {
-      const pathsToWatch = plugin.getPathsToWatch();
-      if (bannerPath)
-        pathsToWatch.push(path_1.default.resolve(context.siteDir, bannerPath));
-      return pathsToWatch;
-    },
-    loadContent: async () => {
-      const docsLoadedContent = await plugin.loadContent();
-      return {
-        ...docsLoadedContent,
-        // Load banner content from file
-        bannerContent: bannerPath
-          ? await promises_1.default.readFile(bannerPath, {
-              encoding: 'utf-8',
-            })
-          : undefined,
-      };
-    },
-    translateContent: ({ content, ...args }) => {
-      // Propagate banner content
-      const { bannerContent, ...docsContent } = content;
-      const docsContentLoaded = plugin.translateContent({
-        content: docsContent,
-        ...args,
-      });
-      return {
-        ...docsContentLoaded,
-        bannerContent,
-      };
-    },
     // Override the `contentLoaded` function to add sidebars to the
     // global data exposed by the Docusaurus docs plugin.
     contentLoaded: async ({ actions, content, ...args }) => {
-      const { bannerContent, ...docsContent } = content;
       const globalSidebarEntries = [];
       const createData = async (name, data) => {
         // Hook into the `createData` call to extract the sidebars we need.
@@ -105,18 +69,7 @@ async function pluginDocs(context, options) {
             .filter(([sidebarId]) => globalSidebars.includes(sidebarId))
             .forEach((entry) => globalSidebarEntries.push(entry));
         }
-        return await actions.createData(
-          name,
-          // Expose banner content to be used by the DocBanner theme component
-          JSON.stringify(
-            {
-              ...versionMetadata,
-              bannerContent,
-            },
-            null,
-            2,
-          ),
-        );
+        return await actions.createData(name, data);
       };
       const setGlobalData = (data) => {
         actions.setGlobalData({
@@ -126,7 +79,7 @@ async function pluginDocs(context, options) {
       };
       await plugin.contentLoaded({
         ...args,
-        content: docsContent,
+        content,
         actions: {
           ...actions,
           createData,
@@ -136,15 +89,46 @@ async function pluginDocs(context, options) {
     },
   };
 }
-pluginDocs.validateOptions = ({ validate, options }) => {
-  const { bannerPath, globalSidebars = [], ...docsOptions } = options;
+exports.default = pluginDocs;
+function validateOptions({ validate, options }) {
+  const { versions = {}, globalSidebars = [], ...docsOptions } = options;
+  const versionEntries = Object.entries(versions);
+  if (versionEntries.length > 1)
+    throw 'Multiple Docusuaurus doc versions not allowed in the Wiki';
+  // Handle version banner.
+  const versionBannerMap = {};
+  const docsVersionEntries = versionEntries.map(
+    ([versionLabel, versionOptions]) => {
+      // TODO: validate banner
+      const { banner, ...docsVersionOptions } = versionOptions;
+      versionBannerMap[versionLabel] = banner;
+      return [versionLabel, docsVersionOptions];
+    },
+  );
+  const validatedDocsOptions = (0, plugin_content_docs_1.validateOptions)({
+    validate,
+    options: {
+      ...docsOptions,
+      versions: Object.fromEntries(docsVersionEntries),
+    },
+  });
+  // Re-add banner.
+  validatedDocsOptions.versions = Object.fromEntries(
+    Object.entries(validatedDocsOptions.versions).map(
+      ([versionLabel, versionOptions]) => {
+        return [
+          versionLabel,
+          {
+            ...versionOptions,
+            banner: versionBannerMap[versionLabel],
+          },
+        ];
+      },
+    ),
+  );
   return {
-    ...(0, plugin_content_docs_1.validateOptions)({
-      validate,
-      options: docsOptions,
-    }),
+    ...validatedDocsOptions,
     globalSidebars,
-    bannerPath,
   };
-};
-module.exports = pluginDocs;
+}
+exports.validateOptions = validateOptions;
