@@ -16,7 +16,7 @@ Since the pattern assumes trusted access to the network, we recommend that both 
 
 Please note that this pattern does not rely on a Permanode storing the entire Tangle history, as it was the case in almost all data-related use cases in the past. In comparison to a Permanode, storing selected blocks with their proof of inclusion to the Tangle, drastically reduces the node operator's storage requirements.
 
-![PoI-Architecture](/proof-inclusion-of-a-block-architecture.png)
+![PoI-Architecture](/img/tutorials/proof-inclusion-of-a-block-architecture.png)
 
 ---
 

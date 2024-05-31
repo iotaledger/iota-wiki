@@ -337,4 +337,4 @@ let tx = contractSigner.vote(i);
 ## Result
 
 If you followed everything above, it should look something like this:
-![Voting Demo](/voting-dapp.jpg 'Voting dApp UI')
+![Voting Demo](/img/tutorials/voting-dapp.jpg 'Voting dApp UI')

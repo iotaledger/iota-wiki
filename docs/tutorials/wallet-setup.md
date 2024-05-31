@@ -395,7 +395,7 @@ The 'Request' button will become clickable as soon as a valid Shimmer address is
 
 :::
 
-![Shimmer Testnet Faucet](/shimmer-testnet-faucet.png)
+![Shimmer Testnet Faucet](/img/tutorials/shimmer-testnet-faucet.png)
 
 ---
 
