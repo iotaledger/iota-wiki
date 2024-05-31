@@ -10,7 +10,7 @@ jobs:
   tag:
     strategy:
       matrix:
-        package: [core, cli, plugin-tutorial]
+        package: [core, cli]
         include:
           - package: core
             path: 'package.json'
@@ -18,9 +18,6 @@ jobs:
           - package: cli
             path: 'cli/package.json'
             workspace: '@iota-wiki/cli'
-          - package: plugin-tutorial
-            path: 'plugins/tutorial/package.json'
-            workspace: '@iota-wiki/plugin-tutorial'
     uses: ./.github/workflows/tag.reusable.yaml
     with:
       path: ${{ matrix.path }}

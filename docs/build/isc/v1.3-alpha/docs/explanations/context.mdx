@@ -1,0 +1,50 @@
+---
+description: The call context is a predefined parameter to each smart contract function, which allows you to access the functionality that the call environment provides.
+tags:
+  - WasmLib
+  - smart contract setup
+  - Func and View functions
+  - ScFuncContext
+  - ScViewContext
+  - Schema Tool
+image: /img/logo/WASP_logo_dark.png
+---
+
+# Call Context
+
+Understanding the call context is vital in leveraging the Wasm code within a sandboxed host environment effectively. The following section explains the distinction between different function calls and the role of WasmLib in setting up a smart contract.
+
+## Function Calls: Func and View
+
+Smart contract function calls come in two types, each having specific access levels to the smart contract state:
+
+### Funcs
+
+Func functions grants full mutable access, resulting in a state update. They accommodate both on-ledger and off-ledger requests, finalized once the state update is registered in the Tangle ledger.
+
+### Views
+
+View functions allow limited immutable access, **no state update occurs**. Views are ideal for quickly querying the contract's current state, they only facilitate off-ledger calls.
+
+## Using Func and View
+
+WasmLib offers distinct contexts for these function types, namely `ScFuncContext` for Func and `ScViewContext` for View, controlling the accessible functionality and enforcing usage constraints through compile-time type-checking.
+
+## Smart Contract Setup with WasmLib
+
+Setting up a smart contract requires the following:
+
+### Defining Funcs and Views
+
+Outline available Funcs and Views and communicate them to the host through WasmLib.
+It ensures the correct dispatch of function calls and maintains necessary restrictions.
+
+### Parameter and Return Value Determination
+
+Establish the parameters and return values for each function. ISC uses simple dictionaries to store details, necessitating consistent (de)serialization handled adeptly by WasmLib.
+
+### Utilizing Schema Tool
+
+Although you can use the WasmLib directly, the Schema Tool is recommended for automatically generating and updating the smart contract framework in a type-safe manner, using the preferred language.
+
+Grasping these concepts will facilitate a secure and efficient smart contract setup, steering clear of potential pitfalls while making the most of what WasmLib offers.

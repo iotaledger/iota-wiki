@@ -1,13 +1,14 @@
 const { glob, merge } = require('./src/utils/config');
 const path = require('path');
 const { create_doc_plugin } = require('./src/utils/config');
-const contentConfigs = require('./contentPlugins');
-const articleRedirectsFile = require('./articleRedirects');
-const switcherConfig = require('./switcherConfig');
+const contentConfigs = require('./config/contentPlugins');
+const articleRedirectsFile = require('./config/articleRedirects');
+const switcherConfig = require('./config/switcherConfig');
+const tutorials = require('./config/tutorials');
 const {
   buildPluginsConfig,
   maintainPluginsConfig,
-} = require('./versionedConfig');
+} = require('./config/versionedConfig');
 const {
   createVersionRedirects,
 } = require('./src/utils/pluginConfigGenerators');
@@ -156,8 +157,8 @@ module.exports = async () => {
     },
     plugins: [
       // Temporarily disabled because of Cookiebot blocking required scripts.
-      // path.resolve(__dirname, 'plugins', 'cookiebot'),
-      path.resolve(__dirname, 'plugins', 'matomo'),
+      // require('./src/plugins/cookiebot'),
+      require('./src/plugins/matomo'),
       [
         '@docusaurus/plugin-google-gtag',
         {
@@ -210,6 +211,7 @@ module.exports = async () => {
         ],
       ],
       plugins: [
+        ...tutorials,
         ...contentPlugins,
         [
           '@docusaurus/plugin-content-docs',
@@ -247,6 +249,7 @@ module.exports = async () => {
           'docusaurus-plugin-openapi-docs',
           {
             id: 'openapi',
+            docsPlugin: './src/plugins/docs',
             docsPluginId: 'apis', // e.g. "classic" or the plugin-content-docs id
             config: {
               coreApiV2: {
@@ -432,19 +435,9 @@ module.exports = async () => {
         ],
         'plugin-image-zoom',
       ],
-      stylesheets: [
-        {
-          href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-          type: 'text/css',
-          integrity:
-            'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-          crossorigin: 'anonymous',
-        },
-      ],
       themes: [
         'docusaurus-theme-openapi-docs',
         '@saucelabs/theme-github-codeblock',
-        '@iota-wiki/theme',
       ],
       staticDirectories: [path.resolve(__dirname, 'static')],
     },
