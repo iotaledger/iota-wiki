@@ -1,0 +1,62 @@
+# The Schema Tool
+
+Smart contracts need robustness, combining both flexibility and stringent regulation to prevent mistakes and foster efficiency.
+Using the Schema Tool ensures consistency, and simplifies smart contract development.
+
+## Why Use the Schema Tool?
+
+### Ensure Robustness and Consistency
+
+By employing a code generator rooted in a schema definition file, you achieve:
+
+- **Reliability**: Through debugged, trustworthy generated code.
+- **Adaptability**: Facilitating modifications in the smart contract interface.
+- **Intent Reflection**: Enforcing defined smart contract behavior at compile-time.
+- **Multilingual Support**: Accommodating various programming languages.
+
+### Prevent Repetitive Coding
+
+Initial experiences illustrated repetitive coding in:
+
+- `on_load` function setup and maintenance.
+- Function access rights verification.
+- Function parameter type and presence confirmation.
+- Establishing access to State, Params, and Results maps.
+- Common string constant definitions.
+
+The schema tool diminishes redundancy and ensures up-to-date functionalities.
+
+## The Schema Definition File
+
+### Defining a Clear Interface
+
+The schema definition file serves as a single source of truth, encompassing crucial details like:
+
+- State Storage Variables.
+- [Funcs and Views](../../explanations/context).
+- [Access rights](how-tos/access.mdx).
+- [Input parameters](how-tos/params.mdx) and [output results](how-tos/results.mdx) .
+- Additional Data Structures.
+
+### Automation with Schema Tool
+
+Using the [Schema Tool](how-tos/usage.mdx), the file facilitates:
+
+- **Skeleton Generation**: Crafting a smart contract framework that needs function implementations.
+- **Interface Generation**: Creating interfaces to functions with stringent compile-time type-checking, thereby reducing errors.
+
+## Benefits of Schema Tool in Smart Contracts
+
+### Centralized Information
+
+Having all pertinent details in one place allows:
+
+- **Uniform Function Calls**: Through a generated interface used by client-side code.
+- **Error Minimization**: Via compile-time type-checking.
+
+### Efficiency and Simplicity
+
+Knowledge of all essential aspects leads to:
+
+- **Constant Generation**: Avoiding typo-prone key strings repetition and precalculating essential values like `Hnames`.
+- **Informative Code**: Generating code to correctly notify the host about available `Funcs` and `Views`.
