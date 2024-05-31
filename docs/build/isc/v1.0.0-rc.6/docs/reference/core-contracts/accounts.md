@@ -101,7 +101,7 @@ You can call this end point from the CLI using `wasp-cli chain create-native-tok
 
 #### Parameters
 
-- `t` ([`bytes`](https://github.com/iotaledger/iota.go/blob/develop/token_scheme.go)): The token scheme
+- `t` ([`iotago::TokenScheme`](https://github.com/iotaledger/iota.go/blob/develop/token_scheme.go)): The token scheme
   for the new foundry.
 - `tn` (`string`): The token name
 - `ts` (`string`): The token symbol
