@@ -33,6 +33,7 @@ exports.buildPluginsConfig = [
       {
         label: 'v1.1-rc',
         badges: ['Shimmer'],
+        banner: 'staging',
       },
       {
         label: 'v1.2-alpha',
@@ -160,6 +161,7 @@ exports.maintainPluginsConfig = [
       {
         label: 'v1.1-rc',
         badges: ['Shimmer'],
+        banner: 'staging',
       },
       {
         label: 'v1.2-alpha',
