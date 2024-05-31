@@ -82,7 +82,7 @@ enhancing application security and resilience.
 
 ### Goldsky
 
-[Goldsky](https://goldsky.com/products/subgraphs) [supports IOTA EVM](https://docs.goldsky.com/chains/supported-networks).
+[Goldsky](https://goldsky.com/products/subgraphs) [supports IOTA EVM](https://docs.goldsky.com/chains/iota).
 You can use their public API endpoints to access subgraph data.
 
 :::tip Run a Local Graph Node
