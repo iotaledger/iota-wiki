@@ -67,9 +67,7 @@ contract MyToken {
           uint8 _tokenDecimals, 
           uint256 _maximumSupply,
           uint64 _storageDeposit
-      ) 
-          public payable 
-      {
+      ) payable {
           require(msg.value == _storageDeposit * (10**12), "Please send exact funds to pay for storage deposit");
           ISCAssets memory allowance;
           allowance.baseTokens = _storageDeposit;
