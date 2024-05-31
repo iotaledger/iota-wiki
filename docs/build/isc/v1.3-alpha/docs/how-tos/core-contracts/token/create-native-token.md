@@ -14,7 +14,7 @@ import ExampleCodeIntro from '../../../_partials/how-tos/token/_example_code_int
 
 # Create a Native Token
 
-This guide will show you how you can efficiently mint new tokens and register them for use as ERC20 tokens with the `createNativeTokenFoundry` function in one seamless operation. It will create a foundry on L1 and register it as an ERC20 on L2. This method ensures that only the foundry owner can mint tokens, maintaining security and control over the token creation process.
+This guide will show you how you can efficiently mint new tokens and register them for use as ERC20 tokens with the [`createNativeTokenFoundry`](../../../reference/magic-contract/ISCAccounts.md#createnativetokenfoundry) function in one seamless operation. It will create a foundry on L1 and register it as an ERC20 on L2. This method ensures that only the foundry owner can mint tokens, maintaining security and control over the token creation process.
 
 ## About Foundries
 
@@ -27,7 +27,7 @@ The Foundry lets you specify your native token's maximum supply **once** and cha
 
 ### 2. Define the Token Scheme
 
-Define the `NativeTokenScheme` by specifying the `maximumSupply`.
+Define the [`NativeTokenScheme`](../../../reference/magic-contract/ISCTypes.md#nativetokenscheme) by specifying the `maximumSupply`.
 
 ```solidity
 NativeTokenScheme memory nativeTokenScheme = NativeTokenScheme({
@@ -39,7 +39,7 @@ NativeTokenScheme memory nativeTokenScheme = NativeTokenScheme({
 
 ### 3. Mint and Register Native Token 
 
-Minting native tokens and registering them as ERC20 tokens using `createNativeTokenFoundry` method
+Minting native tokens and registering them as ERC20 tokens using [`createNativeTokenFoundry`](../../../reference/magic-contract/ISCAccounts.md#createnativetokenfoundry) method
 
 ```solidity
 uint32 foundrySN = ISC.accounts.createNativeTokenFoundry(
