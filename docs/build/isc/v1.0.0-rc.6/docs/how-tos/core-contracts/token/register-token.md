@@ -7,12 +7,11 @@ tags:
   - how-to
 ---
 import ExampleCodeIntro from '../../../_partials/how-tos/token/_example_code_intro.md';
+import ObsoleteTokenCreation from '../../../_partials/how-tos/token/_obsolete_token_creation.md';
 
 # Register Tokens
 
-:::caution
-this method is now deprecated, use new [`createNativeTokenFoundry`](./create-native-token-foundary.md) method instead.
-:::
+<ObsoleteTokenCreation/>
 
 To properly use your native tokens, you should register them as ERC20 using the `registerERC20NativeToken` function from the ISC magic contract.
 

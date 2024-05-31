@@ -156,6 +156,11 @@ module.exports = {
                 },
                 {
                   type: 'doc',
+                  label: 'Custom ERC20 Functions',
+                  id: 'how-tos/core-contracts/token/erc20-native-token',
+                },
+                {
+                  type: 'doc',
                   label: 'Create a Foundry',
                   id: 'how-tos/core-contracts/token/create-foundry',
                 },
@@ -168,11 +173,6 @@ module.exports = {
                   type: 'doc',
                   label: 'Register Token as ERC20',
                   id: 'how-tos/core-contracts/token/register-token',
-                },
-                {
-                  type: 'doc',
-                  label: 'Custom ERC20 Functions',
-                  id: 'how-tos/core-contracts/token/erc20-native-token',
                 },
               ],
             },

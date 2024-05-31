@@ -7,8 +7,12 @@ tags:
   - how-to
 ---
 import ExampleCodeIntro from '../../../_partials/how-tos/token/_example_code_intro.md';
+import ObsoleteTokenCreation from '../../../_partials/how-tos/token/_obsolete_token_creation.md';
 
 # Create a Foundry
+
+<ObsoleteTokenCreation/>
+
 ## About Foundries
 
 The Stardust update allows you to create your own native tokens. Native tokens are minted by a [Foundry](/tips/tips/TIP-0018/#foundry-output). 
