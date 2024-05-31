@@ -1,0 +1,152 @@
+---
+title: Key Storage
+sidebar_label: Key Storage
+description: Explain the use of the storage interfaces and how they can be implemented
+image: /img/Identity_icon.png
+tags:
+  - key storage
+  - storage interfaces
+  - json web key
+  - json web algorithm
+  - signing
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## Introduction
+
+The `JwkDocumentExt` API allows you to modify a DID document, for example, adding new verification methods.
+It enables storing the secrets that verification methods represent securely.
+It does so using the two storage interfaces, the `JwkStorage` and `KeyIdStorage`.
+We refer to both of these as the **key storage**.
+
+The main idea behind the key storage is strongly inspired by the architecture of key management systems (KMS)
+or secure enclaves: once private keys are entered into the system, they can never be retrieved again.
+Instead, all operations using the key will have to go through that system.
+
+This approach allows the key storage to be architected more securely than simply storing and loading private keys from
+a regular database.
+Of course, security is directly dependent on the concrete implementation,
+which is why we provide [Stronghold](https://github.com/iotaledger/stronghold.rs/), a best-effort in-software enclave, by default.
+
+However, there are cases where one cannot use `Stronghold`,
+or may want to integrate key management of identities into their own KMS or similar,
+which is why the key storage is an abstraction over such systems.
+Any implementation of a key storage can be used by the `JwkDocumentExt` API.
+
+The two interfaces making up the key storage have two respective responsibilities.
+
+:::info
+
+Even though there are two separate interfaces, you can implement them using the same backing storage.
+
+:::
+
+## Function Overview
+
+A brief overview of those functions:
+
+- `JwkStorage`: CRUD and signing operations on [JSON Web Keys](https://www.rfc-editor.org/rfc/rfc7517).
+  - `generate`: Generate a new key represented as a JSON Web Key.
+  - `insert`: Insert an existing JSON Web Key into the storage.
+  - `sign`: Signs the provided data using the stored private key.
+  - `delete`: Permanently deletes a key.
+  - `exists`: Returns whether a key exists.
+- `KeyIdStorage`: Stores the mappings from verification methods to their corresponding key identifier in the `JwkStorage`.
+  - `insert_key_id`: Inserts a mapping from a verification method identifier to a key identifier.
+  - `get_key_id`: Returns the key identifier for a given verification method identifier.
+  - `delete_key_id`: Deletes a mapping.
+
+## Key Identifier
+
+A `JwkStorage` stores and operates on keys, so they must be identified.
+In general, Key Management Systems use some form of an identifier for their keys.
+To abstract over those, the `JwkStorage` interface has a general-purpose `KeyId` type,
+which is effectively a wrapper around a string.
+
+A `KeyIdStorage` is needed to store the key id that represents the private key for a given verification method.
+To that end, a verification method itself must be identified.
+
+While within a document, each fragment must be unique, the same is not true given multiple documents,
+so we cannot rely only on fragments if we don't want to partition the `KeyIdStorage` by DID.
+The solution to this is using a `MethodDigest`, a hash over a verification method.
+
+When following best security practices, each verification method has its own associated key and, thus, a unique public key.
+That, plus the fragment of a method, ensures the `MethodDigest` is unique.
+
+So, in essence, a `JwkStorage` stores a `KeyId -> JWK` mapping while a `KeyIdStorage` stores a `MethodDigest -> KeyId` mapping.
+
+:::caution
+
+Given the construction and limitations of the method digest,
+no two documents should contain a method that shares both the same fragment and public key.
+This should not happen under typical circumstances, but it is good to keep it in mind.
+
+:::
+
+## Key Types
+
+To express what key types a given `JwkStorage` implementation supports, you should use the `KeyType`,
+which is another simple wrapper around a string.
+
+The reason for this design might seem odd in Rust, given the existence of associated types.
+This more simplistic design is necessary to accommodate implementing the interface via the bindings to the library.
+
+Implementations are expected to export constants of the key types they support,
+so users have an easy way to discover the supported types.
+In general, storage implementations are free to support any [JSON Web Algorithm](https://www.rfc-editor.org/rfc/rfc7518.html)-compatible key.
+However, the recommended default used by IOTA Identity is the `EdDSA` algorithm with curve `Ed25519`.
+
+## Implementation
+
+The IOTA Identity library ships two implementations of key storage.
+The `JwkMemStore` and `KeyIdMemstore` are insecure in-memory implementations
+intended as example implementations and for testing.
+
+The default key storage implementation is `Stronghold`,
+which is an example of a storage that implements both storage interfaces simultaneously.
+[`Stronghold`](https://github.com/iotaledger/stronghold.rs/) may be interesting for implementers to look at,
+as it needs to deal with some challenges the in-memory version does not have to deal with. Note that the `Stronghold` implementation is only available in Rust.
+
+## Examples
+
+This section shows the Rust and TypeScript `Memstore` implementations.
+
+### `JwkMemStore`
+
+<Tabs groupId="language" queryString>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.3.0/bindings/wasm/lib/jwk_storage.ts
+```
+
+</TabItem>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.3.0/identity_storage/src/key_storage/memstore.rs
+```
+
+</TabItem>
+</Tabs>
+
+### `KeyIdMemstore`
+
+<Tabs groupId="language" queryString>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.3.0/bindings/wasm/lib/key_id_storage.ts
+```
+
+</TabItem>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.3.0/identity_storage/src/key_id_storage/memstore.rs
+```
+
+</TabItem>
+</Tabs>

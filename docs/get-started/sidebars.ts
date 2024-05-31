@@ -20,7 +20,6 @@ module.exports = {
           items: [
             'introduction/iota/introduction',
             'introduction/iota/iota-token',
-            'introduction/iota/staking',
           ],
         },
         {
@@ -52,11 +51,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Programs & Funding',
-      items: [
-        'programs/touchpoint',
-        'programs/bug-bounties',
-        'programs/community-treasury',
-      ],
+      items: ['programs/touchpoint', 'programs/community-treasury'],
     },
     {
       type: 'category',

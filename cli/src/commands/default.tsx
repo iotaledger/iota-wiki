@@ -21,11 +21,6 @@ const DefaultComponent: FC<DefaultComponentProps> = (props) => {
       label: 'Check the current directory for broken links.',
       value: 'check',
     },
-    {
-      label:
-        'Configure the tutorial settings to properly list it on the IOTA Wiki.',
-      value: 'configure',
-    },
   ];
 
   const onSelect = (item) => {
@@ -37,9 +32,6 @@ const DefaultComponent: FC<DefaultComponentProps> = (props) => {
     }
     if (item.value === 'check') {
       props.command.cli.run(['check']);
-    }
-    if (item.value === 'configure') {
-      props.command.cli.run(['tutorial', 'configure']);
     }
   };
 
