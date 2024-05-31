@@ -43,7 +43,7 @@ function generatePluginConfig(pluginConfig, basePath) {
                   label,
                   path: mainVersion.label === label ? undefined : label,
                   badge: true,
-                  banner: banner,
+                  banner,
                 },
               },
             }
