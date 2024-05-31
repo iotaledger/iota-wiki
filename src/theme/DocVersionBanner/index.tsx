@@ -4,6 +4,7 @@
  *  - Remove use of siteTitle as it is irrelevant in our setup.
  *  - Link to our own latest version.
  *  - Update text pointing to latest version
+ *  - Add `staging` banner.
  */
 import React, { type ComponentType } from 'react';
 import clsx from 'clsx';
@@ -25,6 +26,8 @@ import {
   useCurrentDocPlugins,
 } from '@site/src/utils/wikiVersion';
 
+type WikiVersionBanner = VersionBanner & 'staging';
+
 type BannerLabelComponentProps = {
   siteTitle: string;
   versionMetadata: PropVersionMetadata;
@@ -42,6 +45,24 @@ function UnreleasedVersionLabel({
       }}
     >
       {'This is unreleased documentation for {versionLabel} version.'}
+    </Translate>
+  );
+}
+
+function StagingVersionLabel({
+  versionMetadata,
+}: BannerLabelComponentProps) {
+  return (
+    <Translate
+      id='theme.docs.versions.stagingVersionLabel'
+      description="The label used to tell the user that he's browsing a staging doc version"
+      values={{
+        versionLabel: <b>{versionMetadata.label}</b>,
+      }}
+    >
+      {
+        'This is documentation for {versionLabel} version wich is currently running on our staging network.'
+      }
     </Translate>
   );
 }
@@ -65,9 +86,10 @@ function UnmaintainedVersionLabel({
 }
 
 const BannerLabelComponents: {
-  [banner in VersionBanner]: ComponentType<BannerLabelComponentProps>;
+  [banner in WikiVersionBanner]: ComponentType<BannerLabelComponentProps>;
 } = {
   unreleased: UnreleasedVersionLabel,
+  staging: StagingVersionLabel,
   unmaintained: UnmaintainedVersionLabel,
 };
 
