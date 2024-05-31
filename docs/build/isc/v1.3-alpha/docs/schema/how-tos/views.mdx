@@ -1,0 +1,133 @@
+---
+description: "Explore the characteristics and constraints of view-only functions in smart contracts,
+illustrated through a 'getFactor' function example."
+tags:
+- View-Only Functions
+- Smart Contracts
+- Call Context
+- Immutable Proxies
+- Cross-Chain Requests
+image: /img/logo/WASP_logo_dark.png
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Use View-Only Functions
+
+View-only functions, also known as "views",
+are smart contract functions specialized in retrieving state information without altering the smart contract's state.
+
+## Characteristics
+
+### Immutable Proxies
+
+All state storage accesses occur through immutable proxies, ensuring the state remains unchanged.
+
+### Restricted Functionalities
+
+Views have a limited [Call Context](../../explanations/context.mdx),
+disabling any function that might induce state changes, including token transactions.
+
+### Intra-chain Calls
+
+While they can [`call()`](call.mdx) other views within the same chain,
+they cannot initiate non-view functions or [`post()`](post.mdx) cross-chain requests.
+
+### Return Data
+
+These functions are designed to return data to the caller, as they can't induce any other external effects.
+
+## Use Case: 'getFactor' Function
+
+To illustrate the use of view-only functions, consider the `getFactor()` function integrated in the `dividend` smart contract:
+
+<Tabs groupId="language" queryString>
+
+<TabItem value="go" label="Go">
+
+```go
+
+// 'getFactor' is a simple View function. It will retrieve the factor
+// associated with the (mandatory) address parameter it was provided with.
+func viewGetFactor(_ wasmlib.ScViewContext, f *GetFactorContext) {
+	// Since we are sure that the 'address' parameter actually exists we can
+	// retrieve its actual value into an ScAddress value type.
+	var address wasmtypes.ScAddress = f.Params.Address().Value()
+
+	// Create an ScImmutableMap proxy to the 'members' map in the state storage.
+	// Note that for views this is an *immutable* map as opposed to the *mutable*
+	// map we can access from the *mutable* state that gets passed to funcs.
+	var members MapAddressToImmutableUint64 = f.State.Members()
+
+	// Retrieve the factor associated with the address parameter.
+	var factor uint64 = members.GetUint64(address).Value()
+
+	// Set the factor in the results map of the function context.
+	// The contents of this results map is returned to the caller of the function.
+	f.Results.Factor().SetValue(factor)
+}
+```
+
+</TabItem>
+<TabItem value="rust" label="Rust">
+
+```rust
+// 'getFactor' is a simple View function. It will retrieve the factor
+// associated with the (mandatory) address parameter it was provided with.
+pub fn view_get_factor(_ctx: &ScViewContext, f: &GetFactorContext) {
+
+    // Since we are sure that the 'address' parameter actually exists we can
+    // retrieve its actual value into an ScAddress value type.
+    let address: ScAddress = f.params.address().value();
+
+    // Create an ScImmutableMap proxy to the 'members' map in the state storage.
+    // Note that for views this is an *immutable* map as opposed to the *mutable*
+    // map we can access from the *mutable* state that gets passed to funcs.
+    let members: MapAddressToImmutableUint64 = f.state.members();
+
+    // Retrieve the factor associated with the address parameter.
+    let factor: u64 = members.get_uint64(&address).value();
+
+    // Set the factor in the results map of the function context.
+    // The contents of this results map is returned to the caller of the function.
+    f.results.factor().set_value(factor);
+}
+```
+
+</TabItem>
+<TabItem value="typescript" label="Typescript">
+
+```ts
+// 'getFactor' is a simple View function. It will retrieve the factor
+// associated with the (mandatory) address parameter it was provided with.
+export function viewGetFactor(
+  ctx: wasmlib.ScViewContext,
+  f: sc.GetFactorContext,
+): void {
+  // Since we are sure that the 'address' parameter actually exists we can
+  // retrieve its actual value into an ScAddress value type.
+  let address: wasmlib.ScAddress = f.params.address().value();
+
+  // Create an ScImmutableMap proxy to the 'members' map in the state storage.
+  // Note that for views this is an *immutable* map as opposed to the *mutable*
+  // map we can access from the *mutable* state that gets passed to funcs.
+  let members: sc.MapAddressToImmutableUint64 = f.state.members();
+
+  // Retrieve the factor associated with the address parameter.
+  let factor: u64 = members.getUint64(address).value();
+
+  // Set the factor in the results map of the function context.
+  // The contents of this results map is returned to the caller of the function.
+  f.results.factor().setValue(factor);
+}
+```
+
+</TabItem>
+</Tabs>
+
+The return values are passed to the caller through the predefined [Results](results.mdx) map
+associated with the [Call Context](../../explanations/context.mdx).
+Again, this works the same as for Funcs, although Funcs do not necessarily return values to the caller. The
+[Schema Tool](usage.mdx) will generate a function-specific [Results](results.mdx)
+structure with type-safe proxies to the result fields in this map.

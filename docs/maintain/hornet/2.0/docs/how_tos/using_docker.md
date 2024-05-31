@@ -65,6 +65,13 @@ mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-s
 ```
 
 </TabItem>
+<TabItem value="iotatestnet" label="IOTA Testnet">
+
+```sh
+mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/iota-testnet | tar -zx
+```
+
+</TabItem>
 <TabItem value="shimmer" label="Shimmer">
 
 ```sh
@@ -72,10 +79,10 @@ mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-s
 ```
 
 </TabItem>
-<TabItem value="testnet" label="Testnet">
+<TabItem value="shimmer_testnet" label="Shimmer Testnet">
 
 ```sh
-mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/testnet | tar -zx
+mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/shimmer-testnet | tar -zx
 ```
 
 </TabItem>
@@ -134,6 +141,13 @@ https://github.com/iotaledger/node-docker-setup/blob/main/iota/env_template
 ```
 
 </TabItem>
+<TabItem value="iota_testnet" label="IOTA Testnet">
+
+```sh reference
+https://github.com/iotaledger/node-docker-setup/blob/main/iota-testnet/env_template
+```
+
+</TabItem>
 <TabItem value="shimmer" label="Shimmer">
 
 ```sh reference
@@ -141,10 +155,10 @@ https://github.com/iotaledger/node-docker-setup/blob/main/shimmer/env_template
 ```
 
 </TabItem>
-<TabItem value="testnet" label="Testnet">
+<TabItem value="shimmer_testnet" label="Shimmer Testnet">
 
 ```sh reference
-https://github.com/iotaledger/node-docker-setup/blob/main/testnet/env_template
+https://github.com/iotaledger/node-docker-setup/blob/main/shimmer-testnet/env_template
 ```
 
 </TabItem>
@@ -172,6 +186,12 @@ To create this directory with correct permissions run the contained script:
 ```
 
 ## Run
+
+:::info Wasp Access Node
+
+If your are coming from the `Running an ISC Access Node` how-to, this guide ends here and you have to continue with the access node setup [here](/wasp/how-tos/running-an-access-node#download-the-chain-state).
+
+:::
 
 ### Starting the node
 
