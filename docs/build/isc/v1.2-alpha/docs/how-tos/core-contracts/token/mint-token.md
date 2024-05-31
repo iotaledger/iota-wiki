@@ -12,8 +12,7 @@ import ExampleCodeIntro from '../../../_partials/how-tos/token/_example_code_int
 
 # Mint Native Tokens
 
-To mint tokens from a [foundry](/tips/tips/TIP-0018/#foundry-output), you first need to be aware that only the foundry owner can mint token,
-so you should execute the `ISC.accounts.mintNativeTokens` function in the same contract that [created the foundry](./create-foundry.md).
+To mint tokens from a [foundry](/tips/tips/TIP-0018/#foundry-output), you first need to be aware that only the foundry owner can mint token, so you should execute the `ISC.accounts.mintNativeTokens` function in the same contract where you also [created the native token](./create-native-token.md).
 
 ## Example Code
 
