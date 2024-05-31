@@ -109,10 +109,10 @@ project. Here's a step-by-step guide:
    ```
 5. Create a Hardhat Project by running the following command:
    ```bash
-   npx hardhat
+   npx hardhat init
    ```
 
-   Select "Create a basic sample project" when prompted and answer the setup questions (you can just press enter to
+   Select `Create a JavaScript project` (or whatever applies to your project) when prompted and answer the setup questions (you can press enter to
    accept defaults).
 
 ### 2. Add Your Contract
@@ -130,9 +130,7 @@ project. Here's a step-by-step guide:
        const Counter = await ethers.getContractFactory("Counter");
        const counter = await Counter.deploy();
    
-       await counter.deployed();
-   
-       console.log("Counter deployed to:", counter.address);
+       console.log("Counter deployed to:", await counter.getAddress());
    }
    
    main()
@@ -148,6 +146,19 @@ project. Here's a step-by-step guide:
 1. Add your preferred network parameters to the `hardhat.config.js`, for example:
 
 <HardhatConfig/>
+
+:::info Export the Metamask Private Key
+
+1. Click on the Metamask logo in the upper right corner.
+2. Select the account you want to export.
+3. On the account page, click the menu (three dots) in the upper right corner, then click the "Account Details" button.
+4. Click on "Export Private Key".
+5. Enter your wallet password to access your private key and click `Confirm` to continue.
+6. Your private key will now be displayed. Click to copy it and save it in a safe place. 
+
+You can find more information in the [official Metamask Documentation](https://support.metamask.io/managing-my-wallet/secret-recovery-phrase-and-private-keys/how-to-export-an-accounts-private-key/).
+
+:::
 
 :::caution
 
