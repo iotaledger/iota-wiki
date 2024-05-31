@@ -1,4 +1,4 @@
-const pluginTutorial = require('./src/plugins/tutorial');
+const pluginTutorial = require('../src/plugins/tutorial');
 
 module.exports = [
   [

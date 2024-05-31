@@ -4,7 +4,7 @@ import { toTitleCase } from '@artsy/to-title-case';
 import { clsx } from 'clsx';
 
 export default function Glossary() {
-  const glossary = require('@site/common/jargon.js');
+  const glossary = require('@site/config/jargon.js');
   const parse = require('html-react-parser');
 
   const sortedGlossary = Object.keys(glossary)

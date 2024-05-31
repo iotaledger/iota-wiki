@@ -1,13 +1,13 @@
 // @ts-check
 const {
   generateSwitcherConfig,
-} = require('./src/utils/pluginConfigGenerators');
+} = require('../src/utils/pluginConfigGenerators');
 const {
   buildPluginsConfig,
   maintainPluginsConfig,
 } = require('./versionedConfig');
 
-/** @type {import('./src/common/components/Switcher').Config} */
+/** @type {import('../src/components/Switcher').Config} */
 const config = {
   docs: [
     ...generateSwitcherConfig(buildPluginsConfig),

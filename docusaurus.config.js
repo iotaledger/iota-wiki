@@ -1,14 +1,14 @@
 const { glob, merge } = require('./src/utils/config');
 const path = require('path');
 const { create_doc_plugin } = require('./src/utils/config');
-const contentConfigs = require('./contentPlugins');
-const articleRedirectsFile = require('./articleRedirects');
-const switcherConfig = require('./switcherConfig');
-const tutorials = require('./tutorials');
+const contentConfigs = require('./config/contentPlugins');
+const articleRedirectsFile = require('./config/articleRedirects');
+const switcherConfig = require('./config/switcherConfig');
+const tutorials = require('./config/tutorials');
 const {
   buildPluginsConfig,
   maintainPluginsConfig,
-} = require('./versionedConfig');
+} = require('./config/versionedConfig');
 const {
   createVersionRedirects,
 } = require('./src/utils/pluginConfigGenerators');

@@ -28,14 +28,17 @@ function generatePluginConfig(pluginConfig, basePath) {
       // TODO: This could be removed once we don't use points in paths anymore.
       const plugin_name_path = doc.routeBasePath ? doc.routeBasePath : doc.id;
 
-      const extended_base_path =
-        basePath + plugin_name_path + '/' + (label ? label : '');
+      const extended_base_path = [
+        basePath,
+        plugin_name_path,
+        ...(label ? [label] : []),
+      ].join('/');
 
       plugin = {
         id: doc.id + (label ? '-' + label.replace(/\./g, '-') : ''),
-        path: path.resolve(extended_base_path + '/docs'),
+        path: path.resolve(extended_base_path, 'docs'),
         routeBasePath: plugin_name_path,
-        sidebarPath: path.resolve(extended_base_path + '/sidebars.js'),
+        sidebarPath: path.resolve(extended_base_path, 'sidebars.js'),
         ...(doc.versions.length > 1
           ? {
               versions: {
