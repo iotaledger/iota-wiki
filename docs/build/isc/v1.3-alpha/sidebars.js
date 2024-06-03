@@ -91,6 +91,11 @@ module.exports = {
         },
         {
           type: 'doc',
+          label: 'Send NFTs Across Chains',
+          id: 'how-tos/send-NFTs-across-chains',
+        },
+        {
+          type: 'doc',
           label: 'Test Smart Contracts',
           id: 'how-tos/test-smart-contracts',
         },
@@ -208,11 +213,6 @@ module.exports = {
               id: 'how-tos/core-contracts/call-view',
             },
           ],
-        },
-        {
-          type: 'doc',
-          label: 'Send NFTs Across Chains',
-          id: 'how-tos/send-NFTs-across-chains',
         },
       ],
     },
