@@ -162,6 +162,14 @@ export interface Toolkit {
   hasFaucet: boolean;
 }
 
+export interface EVMChainParameters extends AddEthereumChainParameter {
+  blastApiUrls?: Array<string | object>;
+  toolkit: Toolkit;
+  api: string;
+}
+
+// This is just a copy of https://github.com/MetaMask/metamask-sdk/blob/890ec432439705af4c8d02281b7447a1a4f94de3/packages/sdk-react-ui/src/hooks/MetaMaskWagmiHooks.ts#L25-L36
+// and should not be touched
 export interface AddEthereumChainParameter {
   chainId: string; // A 0x-prefixed hexadecimal string
   chainName: string;
@@ -173,9 +181,6 @@ export interface AddEthereumChainParameter {
   rpcUrls?: string[];
   blockExplorerUrls?: string[];
   iconUrls?: string[]; // Currently ignored.
-  blastApiUrls?: Array<string | object>;
-  toolkit: Toolkit;
-  api: string;
 }
 
 export interface NetworkProps {
@@ -186,7 +191,7 @@ export interface NetworkProps {
   permaNodeApi: string;
   faucet?: string;
   explorer: string;
-  evm: AddEthereumChainParameter;
+  evm: EVMChainParameters;
   evmCustom: {
     chainAddress: string;
     aliasId: string;
