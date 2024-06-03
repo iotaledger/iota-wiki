@@ -27,6 +27,11 @@ export const Networks = {
             'https://iota-mainnet-evm.blastapi.io/e7596858-fc63-4a54-8727-b885a2af4ec8',
         },
       ],
+      toolkit: {
+        url: 'https://evm-toolkit.evm.iotaledger.net',
+        hasFaucet: false
+      },
+      api: 'https://api.evm.iotaledger.net',
     },
     evmCustom: {
       chainAddress:
@@ -73,6 +78,11 @@ export const Networks = {
             'https://iota-testnet-evm.blastapi.io/e7596858-fc63-4a54-8727-b885a2af4ec8',
         },
       ],
+      toolkit: {
+        url: 'https://evm-toolkit.evm.testnet.iotaledger.net',
+        hasFaucet: true
+      },
+      api: 'https://api.evm.testnet.iotaledger.net',
     },
     evmCustom: {
       chainAddress:
@@ -101,6 +111,11 @@ export const Networks = {
         'wss://ws.json-rpc.evm.shimmer.network',
       ],
       blockExplorerUrls: ['https://explorer.evm.shimmer.network/'],
+      toolkit: {
+        url: 'https://evm-toolkit.evm.shimmer.network',
+        hasFaucet: false
+      },
+      api: 'https://api.evm.shimmer.network',
     },
     evmCustom: {
       chainAddress:
@@ -127,6 +142,11 @@ export const Networks = {
       },
       rpcUrls: ['https://json-rpc.evm.testnet.shimmer.network'],
       blockExplorerUrls: ['https://explorer.evm.testnet.shimmer.network/'],
+      toolkit: {
+        url: 'https://evm-toolkit.evm.testnet.shimmer.network',
+        hasFaucet: true
+      },
+      api: 'https://api.evm.testnet.shimmer.network',
     },
     evmCustom: {
       chainAddress:
@@ -137,6 +157,11 @@ export const Networks = {
   },
 };
 
+export interface Toolkit {
+  url: string;
+  hasFaucet: boolean;
+}
+
 export interface AddEthereumChainParameter {
   chainId: string; // A 0x-prefixed hexadecimal string
   chainName: string;
@@ -146,9 +171,11 @@ export interface AddEthereumChainParameter {
     decimals: number;
   };
   rpcUrls?: string[];
-  blastApiUrls?: Array<string | object>;
   blockExplorerUrls?: string[];
   iconUrls?: string[]; // Currently ignored.
+  blastApiUrls?: Array<string | object>;
+  toolkit: Toolkit;
+  api: string;
 }
 
 export interface NetworkProps {

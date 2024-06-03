@@ -109,6 +109,24 @@ function Evm(props: NetworkProps) {
             </a>
           </td>
         </tr>
+        <tr>
+          <th>{props.evm.toolkit.hasFaucet ? 'Toolkit & Faucet' : 'Toolkit'}</th>
+          <td>
+            <a
+              href={props.evm.toolkit.url}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {props.evm.toolkit.url}
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th>WASP API</th>
+          <td>
+            <CodeBlock> {props.evm.api} </CodeBlock>
+          </td>
+        </tr>
       </tbody>
     </table>
   );
