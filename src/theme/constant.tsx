@@ -38,10 +38,10 @@ export const Networks = {
           '0x971dc160d5ae8c457f7eddc15a39035b6190130b4dbb5663550795575ae19db5',
         toolkit: {
           url: 'https://evm-toolkit.evm.iotaledger.net',
-          hasFaucet: false
+          hasFaucet: false,
         },
         api: 'https://api.evm.iotaledger.net',
-      }
+      },
     },
   },
   iota_2_testnet: {
@@ -93,7 +93,7 @@ export const Networks = {
           '0x8d018fdd082cd10b518b4935ed8672c8cb3d450c4abcd24fdc620d16babfbb61',
         toolkit: {
           url: 'https://evm-toolkit.evm.testnet.iotaledger.net',
-          hasFaucet: true
+          hasFaucet: true,
         },
         api: 'https://api.evm.testnet.iotaledger.net',
       },
@@ -128,7 +128,7 @@ export const Networks = {
           '0xccc7018e4fa63e5014332f45ddc8a5450da89572676d12d4d5e51c98d64155b3',
         toolkit: {
           url: 'https://evm-toolkit.evm.shimmer.network',
-          hasFaucet: false
+          hasFaucet: false,
         },
         api: 'https://api.evm.shimmer.network',
       },
@@ -161,7 +161,7 @@ export const Networks = {
           '0x42f7da9bdb55b3ec87e5ac1a1e6d88e16768663fde5eca3429eb6f579cc538ac',
         toolkit: {
           url: 'https://evm-toolkit.evm.testnet.shimmer.network',
-          hasFaucet: true
+          hasFaucet: true,
         },
         api: 'https://api.evm.testnet.shimmer.network',
       },
@@ -187,7 +187,7 @@ export interface AddEthereumChainParameter {
   rpcUrls?: string[];
   blockExplorerUrls?: string[];
   iconUrls?: string[]; // Currently ignored.
-};
+}
 
 export interface EVMProps {
   core: AddEthereumChainParameter;

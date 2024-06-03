@@ -24,7 +24,9 @@ function L1(props: NetworkProps) {
         </tr>
         <tr>
           <th>Event API</th>
-          <td><CodeBlock>{props.eventApi}</CodeBlock></td>
+          <td>
+            <CodeBlock>{props.eventApi}</CodeBlock>
+          </td>
         </tr>
         <tr>
           <th>Permanode API</th>
@@ -36,13 +38,9 @@ function L1(props: NetworkProps) {
           <tr>
             <th>Faucet</th>
             <td>
-              <a
-                href={props.faucet}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
+              <a href={props.faucet} target='_blank' rel='noopener noreferrer'>
                 {props.faucet}
-              </a> 
+              </a>
             </td>
           </tr>
         )}
@@ -112,7 +110,11 @@ function Evm(props: NetworkProps) {
           </td>
         </tr>
         <tr>
-          <th>{props.evm.custom.toolkit.hasFaucet ? 'Toolkit & Faucet' : 'Toolkit'}</th>
+          <th>
+            {props.evm.custom.toolkit.hasFaucet
+              ? 'Toolkit & Faucet'
+              : 'Toolkit'}
+          </th>
           <td>
             <a
               href={props.evm.custom.toolkit.url}
