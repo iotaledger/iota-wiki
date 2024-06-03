@@ -19,31 +19,33 @@ function L1(props: NetworkProps) {
         <tr>
           <th>HTTP REST API</th>
           <td>
-            <a
-              href={props.httpRestApi}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <p>{props.httpRestApi}</p>
-            </a>
+            <CodeBlock>{props.httpRestApi}</CodeBlock>
           </td>
         </tr>
         <tr>
           <th>Event API</th>
-          <td>{props.eventApi}</td>
+          <td><CodeBlock>{props.eventApi}</CodeBlock></td>
         </tr>
         <tr>
           <th>Permanode API</th>
           <td>
-            <a
-              href={props.permaNodeApi}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              {props.permaNodeApi}
-            </a>
+            <CodeBlock>{props.permaNodeApi}</CodeBlock>
           </td>
         </tr>
+        {props.faucet && (
+          <tr>
+            <th>Faucet</th>
+            <td>
+              <a
+                href={props.faucet}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                {props.faucet}
+              </a> 
+            </td>
+          </tr>
+        )}
       </tbody>
     </table>
   );
