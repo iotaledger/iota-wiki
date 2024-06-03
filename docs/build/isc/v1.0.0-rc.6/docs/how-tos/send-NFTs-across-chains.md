@@ -363,5 +363,3 @@ Wait for cross-chain tx finalization by LayerZero ...
 sendONFTBack - received tx on destination chain: 0xb05fa2de194153819b26d17893278c485abbaf355fa24f26fbc7a4c759994cde
 Done in 212.16s.
 ```
-
-
