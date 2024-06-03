@@ -41,7 +41,7 @@ If you are launching a new ERC721 token, you can use the ONFT standard to enable
 - [ONFT721](https://docs.layerzero.network/v1/developers/evm-guides/contract-standards/721#onft721sol)
 - [ONFT1155](https://docs.layerzero.network/v1/developers/evm-guides/contract-standards/1155#onft1155sol)
 
-- :::
+:::
 
 ## Scripts
 
@@ -83,7 +83,7 @@ Both the `ProxyONFT` and the `ONFT` contract instanceS need to be set for minimu
 
 You can set his using the [`setMinDstGas`](https://github.com/LayerZero-Labs/solidity-examples/blob/main/contracts/lzApp/LzApp.sol#L159) method.
 
-:::notice
+:::info
 
 It is required that `minDstGas` <= `providedGasLimit`, which is to be set via `adapterParams` upon cross-chain sending on
 the source chain.
