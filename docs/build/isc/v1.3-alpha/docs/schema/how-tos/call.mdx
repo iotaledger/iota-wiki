@@ -1,0 +1,178 @@
+---
+description: "Explore how synchronous function calls work between smart contracts, highlighting the role of function descriptors in parameter and token passage, and understanding the ISC host's role in this procedure."
+tags:
+  - Synchronous Calls
+  - Smart Contracts
+  - Function Descriptors
+  - ISC Host
+  - Function Parameters
+  - Smart Contract Memory
+image: /img/logo/WASP_logo_dark.png
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Call Functions
+
+Synchronous function calls between smart contracts act very similar to how normal function calls work in any programming language,
+but with a slight twist.
+With normal function calls, you share all the global memory that you can access with every function that you call.
+However, when calling a smart contract function,
+you can only access the memory assigned to that specific smart contract.
+
+## How Synchronous Calls Operate
+
+### Data Sharing
+
+If you want to share data between smart contracts, you will need to use:
+
+- Function [parameters](params.mdx)
+- [Return](results.mdx) values
+
+## The ISC Host Role
+
+Ensuring smooth synchronous calls between contracts on the same chain, the ISC host:
+
+- Recognizes all contracts functioning on a chain.
+- Directs the call appropriately to the destined contract function using function descriptors.
+
+### Function Descriptors
+
+Function descriptors allow:
+
+- Specification of call parameters via the [Params](params.mdx) proxy.
+- Function invocation through the `func` interface.
+- Passing tokens to non-[View](views.mdx) function calls within the same chain.
+
+:::note
+
+The only way to call a function and properly pass tokens to it within the same chain is through the function descriptor.
+Otherwise, the allowance() function will not register any incoming tokens.
+
+:::
+
+### Call Process
+
+During a call:
+
+- The initiator function pauses and awaits the completion of the called function.
+- Post-completion, retrieves potential returned values through the [Results](results.mdx) proxy.
+
+### Calling From View Functions
+
+When a view function initiates a call:
+
+- It can only reach out to other [view](views.mdx) functions.
+- The `ScFuncs` interface mandates an `ScViewContext` for the constructor creating the function descriptor.
+
+## Usage Example
+
+Here's how a smart contract would tell a `dividend` contract on the same chain to divide the 1000 tokens it passes to the function:
+
+<Tabs groupId="language" queryString>
+
+<TabItem value="go" label="Go">
+
+```go
+f := dividend.ScFuncs.Divide(ctx)
+f.Func.TransferBaseTokens(1000).Call()
+```
+
+</TabItem>
+<TabItem value="rust" label="Rust">
+
+```rust
+let f = dividend::ScFuncs::divide(ctx);
+f.func.transfer_base_tokens(1000).call();
+```
+
+</TabItem>
+<TabItem value="typescript" label="Typescript">
+
+```ts
+let f = dividend.ScFuncs.divide(ctx);
+f.func.transferBaseTokens(1000).call();
+```
+
+</TabItem>
+</Tabs>
+
+And here is how a smart contract would ask a `dividend` contract on the same chain to
+return the dispersion factor for a specific address:
+
+<Tabs groupId="language" queryString>
+
+<TabItem value="go" label="Go">
+
+```go
+f := dividend.ScFuncs.GetFactor(ctx)
+f.Params.Address().SetValue(address)
+f.Func.Call()
+factor := f.Results.Factor().Value()
+```
+
+</TabItem>
+<TabItem value="rust" label="Rust">
+
+```rust
+let f = dividend::ScFuncs::get_factor(ctx);
+f.params.address().set_value(&address);
+f.func.call();
+let factor = f.results.factor().value();
+```
+
+</TabItem>
+<TabItem value="typescript" label="Typescript">
+
+```ts
+let f = dividend.ScFuncs.getFactor(ctx);
+f.params.address().setValue(address);
+f.func.call();
+let factor = f.results.factor().value();
+```
+
+</TabItem>
+</Tabs>
+
+1. Create a function descriptor for the desired function.
+2. Use the [Params](params.mdx) proxy in the descriptor to set its parameters.
+3. Direct the `func` member of the descriptor to call the associated function
+4. Use the [Results](results.mdx) proxy in the descriptor to retrieve its results.
+
+The function descriptors assume that the function to be called is associated with the
+default Hname of the contract, in this case ScHname::new("dividend"). If you deployed the
+contract that contains the function you want to call under a different name, then you
+would have to provide its associated Hname to the `func` member through the of_contract()
+member function like this:
+
+<Tabs groupId="language" queryString>
+
+<TabItem value="go" label="Go">
+
+```go
+altContract := NewScHname("alternateName")
+f := dividend.ScFuncs.Divide(ctx)
+f.Func.OfContract(altContract).TransferBaseTokens(1000).Call()
+```
+
+</TabItem>
+<TabItem value="rust" label="Rust">
+
+```rust
+let alt_contract = ScHname::new("alternateName");
+let f = dividend::ScFuncs::divide(ctx);
+f.func.of_contract(alt_contract).transfer_base_tokens(1000).call();
+```
+
+</TabItem>
+<TabItem value="typescript" label="Typescript">
+
+```ts
+let altContract = ScHname.fromString('alternateName');
+let f = dividend.ScFuncs.divide(ctx);
+f.func.ofContract(altContract).transferBaseTokens(1000).call();
+```
+
+</TabItem>
+</Tabs>

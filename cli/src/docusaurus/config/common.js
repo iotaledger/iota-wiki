@@ -31,7 +31,6 @@ const common = {
         ),
       },
     ],
-    '@iota-wiki/theme',
     path.resolve(__dirname, '../theme'),
   ],
   themeConfig: {

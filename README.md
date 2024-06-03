@@ -76,7 +76,7 @@ To preview the Wiki locally, use the following steps. For more detailed scripts,
 
 | Script                    | Explanation                                                                                                                                                                                                         |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `prepare`                 | Prepare the environment by checking out submodules and building local packages needed for the Wiki build.                                                                                                           |
+| `prepare`                 | Prepare the environment by checking out submodules build.                                                                                                           |
 | `start`                   | Start a development server serving the Wiki, with hot reloading on changes.                                                                                                                                         |
 | `start:section:{section}` | Start a development server serving only a section of the Wiki, with hot reloading on changes. Available sections are `build`, `get-started`, `learn`, and `maintain`.                                               |
 | `build`                   | Build the Wiki. To build for production, checkout the latest version of external documentation by running `yarn checkout:remote` and set the `MODE` environment variable to `production`.                           |
