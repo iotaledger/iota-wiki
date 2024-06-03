@@ -86,7 +86,7 @@ export const Networks = {
         },
       ],
       toolkit: {
-        url: 'https://evm-toolkit.evm.iotaledger.net',
+        url: 'https://evm-toolkit.evm.testnet.iotaledger.net',
         hasFaucet: false,
       },
       api: 'https://api.evm.testnet.iotaledger.net',
