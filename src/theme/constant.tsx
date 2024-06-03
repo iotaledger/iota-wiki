@@ -19,7 +19,6 @@ export const Networks = {
         'wss://ws.json-rpc.evm.iotaledger.net',
       ],
       blockExplorerUrls: ['https://explorer.evm.iota.org'],
-
     },
     evmCustom: {
       chainAddress:
