@@ -37,17 +37,90 @@ You can learn more about the available options in the [Layer Zero Documentation]
 To send existing ERC20 tokens, you will need both the OFT Adapter contract on the source chain and the OFT contract on the destination chain. You should then use the following procedure:
 
 1. **Approve the tokens**: The sender must approve their ERC20 tokens for the OFT Adapter contract.
+```typescript 
+const approveTx = await erc20TokenContract.approve(oftAdapterContractAddress, amountInWei);
+```
 2. **Estimate the fee**: The sender calls the function `quoteSend()` of the OFT Adapter contract to estimate the cross-chain fee to be paid in native tokens on the source chain.
-3. **Send the tokens**: The sender calls the function `send()` of the OFT Adapter contract to transfer tokens from the source chain to the destination chain.
-4. **(Optional) Wait for Finalization**: The sender can wait for transaction finalization on the destination chain using the library [@layerzerolabs/scan-client](https://www.npmjs.com/package/@layerzerolabs/scan-client#example-usage).
+```typescript
+ const sendParam = [
+    lzEndpointIdOnDestChain,
+    receiverAddressInBytes32,
+    amountInWei,
+    amountInWei,
+    options, // additional options
+    "0x", // composed message for the send() operation
+    "0x", // OFT command to be executed, unused in default OFT implementations
+  ];
 
+  // https://github.com/LayerZero-Labs/LayerZero-v2/blob/main/oapp/contracts/oft/interfaces/IOFT.sol#L127C60-L127C73
+  // false is set for _payInLzToken Flag indicating whether the caller is paying in the LZ token
+  const [nativeFee] = await myOFTAdapterContract.quoteSend(sendParam as any, false);
+```
+
+3. **Send the tokens**: The sender calls the function `send()` of the OFT Adapter contract to transfer tokens from the source chain to the destination chain.
+```typescript
+  const sendTx = await myOFTAdapterContract.send(
+    sendParam as any,
+    [nativeFee, 0] as any, // set 0 for lzTokenFee
+    sender.address, // refund address
+    {
+      value: nativeFee,
+    },
+  );
+  const sendTxReceipt = await sendTx.wait();
+  console.log("sendOFT - send tx on source chain:", sendTxReceipt?.hash);
+```
+4. **(Optional) Wait for Finalization**: The sender can wait for transaction finalization on the destination chain using the library [@layerzerolabs/scan-client](https://www.npmjs.com/package/@layerzerolabs/scan-client#example-usage).
+```typescript
+  const deliveredMsg = await waitForMessageReceived(
+    Number(lzEndpointIdOnDestChain),
+    sendTxReceipt?.hash as string,
+  );
+  console.log("sendOFT - received tx on destination chain:", deliveredMsg?.dstTxHash);
+```
 To send back the OFT-wrapped tokens on the destination chain to the source chain, the procedure is similar, except that the approval step is not needed:
 
 1. **Estimate the fee**: The sender calls the function `quoteSend()` of the OFT contract to estimate the cross-chain fee to be paid in native tokens on the sender chain.
-2. **Send Tokens**: The sender calls the function `send()` of the OFT contract to transfer tokens from the destination chain back to the source chain.
+```typescript
+ // Set the send param
+  // https://github.com/LayerZero-Labs/LayerZero-v2/blob/main/oapp/contracts/oft/interfaces/IOFT.sol#L10
+  const sendParam = [
+    lzEndpointIdOnSrcChain, // Sepolia
+    receiverAddressInBytes32,
+    amountInWei,
+    amountInWei,
+    options, // additional options
+    "0x", // composed message for the send() operation
+    "0x", // OFT command to be executed, unused in default OFT implementations
+  ];
+
+  // Step 1: call the func quoteSend() to estimate cross-chain fee to be paid in native on the source chain
+  // https://github.com/LayerZero-Labs/LayerZero-v2/blob/main/oapp/contracts/oft/interfaces/IOFT.sol#L127C60-L127C73
+  // false is set for _payInLzToken Flag indicating whether the caller is paying in the LZ token
+  const [nativeFee] = await myOFTContract.quoteSend(sendParam as any, false);
+  console.log("sendOFTBack - estimated nativeFee:", ethers.formatEther(nativeFee));
+  ```
+2. **Send the Tokens**: The sender calls the function `send()` of the OFT contract to transfer tokens from the destination chain back to the source chain.
+```typescript
+const sendTx = await myOFTContract.send(
+    sendParam as any,
+    [nativeFee, 0] as any, // set 0 for lzTokenFee
+    sender.address, // refund address
+    {
+      value: nativeFee,
+    },
+  );
+  const sendTxReceipt = await sendTx.wait();
+  console.log("sendOFTBack - send tx on source chain:", sendTxReceipt?.hash);
+  ```
 3. **(Optional) Wait for Finalization**: The sender can wait for transaction finalization on the destination chain using the library `@layerzerolabs/scan-client`.
-
-
+```typescript
+ const deliveredMsg = await waitForMessageReceived(
+    Number(lzEndpointIdOnDestChain),
+    sendTxReceipt?.hash as string,
+  );
+  console.log("sendOFTBack - received tx on destination chain:", deliveredMsg?.dstTxHash);
+  ```
 
 #### Sample Solidity code for OFT Adapter and OFT contracts in the folder `contracts-standard`
 The [contracts-standard](https://github.com/iota-community/layerzero-oft-v2-utils/tree/main/contracts-standard) contains scripts to:
