@@ -86,6 +86,11 @@ module.exports = {
         },
         {
           type: 'doc',
+          label: 'Send ERC20 Tokens Across Chains',
+          id: 'how-tos/send-ERC20-across-chains',
+        },
+        {
+          type: 'doc',
           label: 'Create NFTs - ERC721',
           id: 'how-tos/ERC721',
         },
@@ -208,11 +213,6 @@ module.exports = {
               id: 'how-tos/core-contracts/call-view',
             },
           ],
-        },
-        {
-          type: 'doc',
-          label: 'Send ERC20 Tokens Across Chains',
-          id: 'how-tos/send-ERC20-across-chains',
         },
       ],
     },
