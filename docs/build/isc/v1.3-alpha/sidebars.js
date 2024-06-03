@@ -209,6 +209,11 @@ module.exports = {
             },
           ],
         },
+        {
+          type: 'doc',
+          label: 'Send NFTs Across Chains',
+          id: 'how-tos/send-NFTs-across-chains',
+        },
       ],
     },
     {
