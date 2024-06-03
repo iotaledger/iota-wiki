@@ -41,7 +41,7 @@ If you are launching a new ERC721 token, you can use the ONFT standard to enable
 - [ONFT721](https://docs.layerzero.network/v1/developers/evm-guides/contract-standards/721#onft721sol)
 - [ONFT1155](https://docs.layerzero.network/v1/developers/evm-guides/contract-standards/1155#onft1155sol)
 
-- :::
+:::
 
 ## Scripts
 
