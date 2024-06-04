@@ -58,7 +58,7 @@ module.exports = async () => {
         '^(/[^/]+)?/isc/.*|' +
         '^(/[^/]+)?/iota-sandbox/.*|' +
         '^(/[^/]+)?/apis/.*|' +
-        '^(/[^/]+)?/cli-wallet/.*'
+        '^(/[^/]+)?/cli-wallet/.*',
     },
     {
       label: 'Maintain',
