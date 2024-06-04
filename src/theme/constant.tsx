@@ -1,4 +1,4 @@
-export const Networks = {
+export const Networks: { [key: string]: NetworkProps } = {
   iota: {
     baseToken: 'IOTA Token',
     protocol: 'Stardust',
@@ -191,7 +191,7 @@ export interface AddEthereumChainParameter {
 
 export interface EVMProps {
   core: AddEthereumChainParameter;
-  tools: {
+  tools?: {
     blastApiUrls: Array<string | object>;
   };
   custom: {
@@ -210,5 +210,5 @@ export interface NetworkProps {
   permaNodeApi: string;
   faucet?: string;
   explorer: string;
-  evm: EVMProps;
+  evm?: EVMProps;
 }
