@@ -19,31 +19,31 @@ function L1(props: NetworkProps) {
         <tr>
           <th>HTTP REST API</th>
           <td>
-            <a
-              href={props.httpRestApi}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <p>{props.httpRestApi}</p>
-            </a>
+            <CodeBlock>{props.httpRestApi}</CodeBlock>
           </td>
         </tr>
         <tr>
           <th>Event API</th>
-          <td>{props.eventApi}</td>
+          <td>
+            <CodeBlock>{props.eventApi}</CodeBlock>
+          </td>
         </tr>
         <tr>
           <th>Permanode API</th>
           <td>
-            <a
-              href={props.permaNodeApi}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              {props.permaNodeApi}
-            </a>
+            <CodeBlock>{props.permaNodeApi}</CodeBlock>
           </td>
         </tr>
+        {props.faucet && (
+          <tr>
+            <th>Faucet</th>
+            <td>
+              <a href={props.faucet} target='_blank' rel='noopener noreferrer'>
+                {props.faucet}
+              </a>
+            </td>
+          </tr>
+        )}
       </tbody>
     </table>
   );
@@ -75,7 +75,7 @@ function Evm(props: NetworkProps) {
             ))}
           </td>
         </tr>
-        {props.evm.blastApiUrls && (
+        {props.evmCustom.blastApiUrls && (
           <tr>
             <th>
               <Admonition type='tip' title='Blast API URLs'>
@@ -84,7 +84,7 @@ function Evm(props: NetworkProps) {
               </Admonition>
             </th>
             <td>
-              {props.evm.blastApiUrls.map((object, index) =>
+              {props.evmCustom.blastApiUrls.map((object, index) =>
                 typeof object === 'string' ? (
                   <CodeBlock key={index}> {object as string} </CodeBlock>
                 ) : (
@@ -107,6 +107,26 @@ function Evm(props: NetworkProps) {
             >
               {props.evm.blockExplorerUrls[0]}
             </a>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            {props.evmCustom.toolkit.hasFaucet ? 'Toolkit & Faucet' : 'Toolkit'}
+          </th>
+          <td>
+            <a
+              href={props.evmCustom.toolkit.url}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {props.evmCustom.toolkit.url}
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th>WASP API</th>
+          <td>
+            <CodeBlock> {props.evmCustom.api} </CodeBlock>
           </td>
         </tr>
       </tbody>

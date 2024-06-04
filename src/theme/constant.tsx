@@ -19,6 +19,12 @@ export const Networks = {
         'wss://ws.json-rpc.evm.iotaledger.net',
       ],
       blockExplorerUrls: ['https://explorer.evm.iota.org'],
+    },
+    evmCustom: {
+      chainAddress:
+        'iota1pzt3mstq6khgc3tl0mwuzk3eqddkryqnpdxmk4nr25re2466uxwm28qqxu5',
+      aliasId:
+        '0x971dc160d5ae8c457f7eddc15a39035b6190130b4dbb5663550795575ae19db5',
       blastApiUrls: [
         'https://iota-mainnet-evm.public.blastapi.io',
         'wss://iota-mainnet-evm.public.blastapi.io',
@@ -27,12 +33,11 @@ export const Networks = {
             'https://iota-mainnet-evm.blastapi.io/e7596858-fc63-4a54-8727-b885a2af4ec8',
         },
       ],
-    },
-    evmCustom: {
-      chainAddress:
-        'iota1pzt3mstq6khgc3tl0mwuzk3eqddkryqnpdxmk4nr25re2466uxwm28qqxu5',
-      aliasId:
-        '0x971dc160d5ae8c457f7eddc15a39035b6190130b4dbb5663550795575ae19db5',
+      toolkit: {
+        url: 'https://evm-toolkit.evm.iotaledger.net',
+        hasFaucet: false,
+      },
+      api: 'https://api.evm.iotaledger.net',
     },
   },
   iota_2_testnet: {
@@ -65,6 +70,12 @@ export const Networks = {
         'wss://ws.json-rpc.evm.testnet.iotaledger.net',
       ],
       blockExplorerUrls: ['https://explorer.evm.testnet.iotaledger.net'],
+    },
+    evmCustom: {
+      chainAddress:
+        'tst1pzxsrr7apqkdzz633dyntmvxwtyvk029p39te5j0m33q6946h7akzv663zu',
+      aliasId:
+        '0x8d018fdd082cd10b518b4935ed8672c8cb3d450c4abcd24fdc620d16babfbb61',
       blastApiUrls: [
         'https://iota-testnet-evm.public.blastapi.io',
         'wss://iota-testnet-evm.public.blastapi.io',
@@ -73,12 +84,11 @@ export const Networks = {
             'https://iota-testnet-evm.blastapi.io/e7596858-fc63-4a54-8727-b885a2af4ec8',
         },
       ],
-    },
-    evmCustom: {
-      chainAddress:
-        'tst1pzxsrr7apqkdzz633dyntmvxwtyvk029p39te5j0m33q6946h7akzv663zu',
-      aliasId:
-        '0x8d018fdd082cd10b518b4935ed8672c8cb3d450c4abcd24fdc620d16babfbb61',
+      toolkit: {
+        url: 'https://evm-toolkit.evm.testnet.iotaledger.net',
+        hasFaucet: false,
+      },
+      api: 'https://api.evm.testnet.iotaledger.net',
     },
   },
   shimmer: {
@@ -107,6 +117,11 @@ export const Networks = {
         'smr1prxvwqvwf7nru5q5xvh5thwg54zsm2y4wfnk6yk56hj3exxkg92mx20wl3s',
       aliasId:
         '0xccc7018e4fa63e5014332f45ddc8a5450da89572676d12d4d5e51c98d64155b3',
+      toolkit: {
+        url: 'https://evm-toolkit.evm.shimmer.network',
+        hasFaucet: false,
+      },
+      api: 'https://api.evm.shimmer.network',
     },
   },
   shimmer_testnet: {
@@ -133,9 +148,19 @@ export const Networks = {
         'rms1ppp00k5mmd2m8my8ukkp58nd3rskw6rx8l09aj35984k74uuc5u2cywn3ex',
       aliasId:
         '0x42f7da9bdb55b3ec87e5ac1a1e6d88e16768663fde5eca3429eb6f579cc538ac',
+      toolkit: {
+        url: 'https://evm-toolkit.evm.testnet.shimmer.network',
+        hasFaucet: true,
+      },
+      api: 'https://api.evm.testnet.shimmer.network',
     },
   },
 };
+
+export interface Toolkit {
+  url: string;
+  hasFaucet: boolean;
+}
 
 export interface AddEthereumChainParameter {
   chainId: string; // A 0x-prefixed hexadecimal string
@@ -146,7 +171,6 @@ export interface AddEthereumChainParameter {
     decimals: number;
   };
   rpcUrls?: string[];
-  blastApiUrls?: Array<string | object>;
   blockExplorerUrls?: string[];
   iconUrls?: string[]; // Currently ignored.
 }
@@ -163,5 +187,8 @@ export interface NetworkProps {
   evmCustom: {
     chainAddress: string;
     aliasId: string;
+    blastApiUrls?: Array<string | object>;
+    toolkit?: Toolkit;
+    api?: string;
   };
 }
