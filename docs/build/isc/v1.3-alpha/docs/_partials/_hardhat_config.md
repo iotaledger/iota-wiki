@@ -3,7 +3,7 @@ import { Networks } from '@theme/constant';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs groupId='network'>
+<Tabs groupId='network' queryString>
 <TabItem value='iota_testnet' label='IOTA EVM Testnet'>
 
 <CodeBlock language="js">
@@ -24,9 +24,9 @@ networks: {
 <CodeBlock language="js">
 {`
 networks: {
-    'shimmerevm-testnet': {
-        url: '${Networks['shimmer_testnet'].evm.core.rpcUrls[0]}',
-        chainId: ${parseInt(Networks['shimmer_testnet'].evm.core.chainId)},
+    'iotaevm-testnet': {
+        url: '${Networks['iota_testnet'].evm.core.rpcUrls[0]}',
+        chainId: ${parseInt(Networks['iota_testnet'].evm.core.chainId)},
         accounts: [YOUR PRIVATE KEY],
     },
 }

@@ -192,7 +192,7 @@ export interface AddEthereumChainParameter {
 export interface EVMProps {
   core: AddEthereumChainParameter;
   tools?: {
-    blastApiUrls: Array<string | object>;
+    blastApiUrls?: Array<string | object>;
   };
   custom: {
     chainAddress: string;

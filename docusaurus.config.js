@@ -55,9 +55,10 @@ module.exports = async () => {
         '^(/[^/]+)?/iota-sdk/.*|' +
         '^(/[^/]+)?/identity.rs/.*|' +
         '^(/[^/]+)?/stronghold.rs/.*|' +
-        '^(/[^/]+)?/wasp-cli/.*|' +
-        '^(/[^/]+)?/wasp-wasm/.*|' +
-        '^(/[^/]+)?/wasp-evm/.*',
+        '^(/[^/]+)?/isc/.*|' +
+        '^(/[^/]+)?/iota-sandbox/.*|' +
+        '^(/[^/]+)?/apis/.*|' +
+        '^(/[^/]+)?/cli-wallet/.*',
     },
     {
       label: 'Maintain',
@@ -65,6 +66,7 @@ module.exports = async () => {
       activeBaseRegex:
         '^(/[^/]+)?/maintain/.*|' +
         '^(/[^/]+)?/hornet/.*|' +
+        '^(/[^/]+)?/iota-core/.*|' +
         '^(/[^/]+)?/wasp/.*|' +
         '^(/[^/]+)?/chronicle/.*',
     },
@@ -149,7 +151,7 @@ module.exports = async () => {
       announcementBar: {
         id: 'support_us',
         content:
-          'Experience seamless dApp development with <a target="/isc/getting-started/quick-start/" rel="noopener noreferrer" href="#">IOTA EVM</a>.',
+          'Experience seamless dApp development with <a rel="noopener noreferrer" href="/isc/getting-started/quick-start/">IOTA EVM</a>.',
         backgroundColor: 'var(--ifm-color-primary)',
         textColor: 'var(--ifm-font-color-base-inverse);',
         isCloseable: true,
