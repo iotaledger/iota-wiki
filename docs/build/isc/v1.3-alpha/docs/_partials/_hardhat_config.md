@@ -3,7 +3,7 @@ import { Networks } from '@theme/constant';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs groupId='network'>
+<Tabs groupId='network' queryString>
 <TabItem value='iota_testnet' label='IOTA EVM Testnet'>
 
 <CodeBlock language="js">
