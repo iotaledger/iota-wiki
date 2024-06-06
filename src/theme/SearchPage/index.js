@@ -125,6 +125,12 @@ function SearchPageContent() {
   const documentsFoundPlural = useDocumentsFoundPlural();
   const docsSearchVersionsHelpers = useDocsSearchVersionsHelpers();
   const [searchQuery, setSearchQuery] = useSearchQueryString();
+  const [footerStyle, setFooterStyle] = useState({
+    position: 'relative',
+    width: '100%',
+    bottom: '0%',
+  });
+
   const { selectedFacets, setSelectedFacets } = useContext(SearchContext);
   const initialSearchResultState = {
     items: [],
@@ -299,8 +305,20 @@ function SearchPageContent() {
     }
     makeSearch(searchResultState.lastPage);
   }, [makeSearch, searchResultState.lastPage]);
+
+  useEffect(() => {
+    const handleResultState = () => {
+      if (searchResultState.loading || !searchResultState.totalResults) {
+        setFooterStyle({ position: 'absolute', width: '100%', bottom: '0%' });
+      } else {
+        setFooterStyle({ position: 'relative', width: '100%', bottom: '0%' });
+      }
+    };
+    handleResultState();
+    return () => handleResultState();
+  }, [JSON.stringify(searchResultState)]);
   return (
-    <Layout>
+    <Layout footerStyleProps={footerStyle}>
       <Head>
         <title>{useTitleFormatter(getTitle())}</title>
         {/*
@@ -309,20 +327,15 @@ function SearchPageContent() {
         */}
         <meta property='robots' content='noindex, follow' />
       </Head>
-      <FilterDropdown
-        styleProps={
-          window.innerWidth < 1279
-            ? { right: '10%', top: '22.5%' }
-            : window.innerWidth < 1500
-            ? { right: '15.5%', top: '22.5%' }
-            : { right: '20%', top: '15.5%' }
-        }
-        selectedFacets={selectedFacets}
-        setSelectedFacets={setSelectedFacets}
-      />
       <div className='container margin-vert--lg'>
-        <h1>{getTitle()}</h1>
-
+        <div className={styles.heading}>
+          <h1>{getTitle()}</h1>
+          <FilterDropdown
+            styleProps={{ position: 'relative' }}
+            selectedFacets={selectedFacets}
+            setSelectedFacets={setSelectedFacets}
+          />
+        </div>
         <form className='row' onSubmit={(e) => e.preventDefault()}>
           <div
             className={clsx('col', styles.searchQueryColumn, {
@@ -357,7 +370,6 @@ function SearchPageContent() {
             />
           )}
         </form>
-
         <div className='row'>
           <div className={clsx('col', 'col--8', styles.searchResultsColumn)}>
             {!!searchResultState.totalResults &&
@@ -401,7 +413,6 @@ function SearchPageContent() {
             </a>
           </div>
         </div>
-
         {searchResultState.items.length > 0 ? (
           <main>
             {searchResultState.items.map(
@@ -450,7 +461,11 @@ function SearchPageContent() {
         ) : (
           [
             searchQuery && !searchResultState.loading && (
-              <p key='no-results'>
+              <p
+                key='no-results'
+                className={clsx(styles.searchResults)}
+                style={{ marginBottom: '45%' }}
+              >
                 <Translate
                   id='theme.SearchPage.noResultsText'
                   description='The paragraph for empty search result'
@@ -464,7 +479,6 @@ function SearchPageContent() {
             ),
           ]
         )}
-
         {searchResultState.hasMore && (
           <div className={styles.loader} ref={setLoaderRef}>
             <Translate

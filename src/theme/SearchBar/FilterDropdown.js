@@ -22,6 +22,10 @@ export const FilterDropdown = forwardRef(
         ? [...selectedFacets[1], value]
         : selectedFacets[1].filter((facet) => facet !== value);
 
+      if (!checked && updatedFacetList.length === 0) {
+        return;
+      }
+
       if (checked) {
         // If a parent filter is checked, add its child filters
         if (value === 'docusaurus_tag:docs-build-current') {

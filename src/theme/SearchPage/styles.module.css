@@ -110,3 +110,9 @@
   background: rgb(255 215 142 / 25%);
   padding: 0.09em 0;
 }
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 125%;
+}
