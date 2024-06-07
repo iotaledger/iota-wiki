@@ -11,6 +11,7 @@ tags:
   - fees
   - reference
 ---
+import QueryGasFees from '../_admonitions/_query_gas_fees.md';
 
 # EVM Compatibility in IOTA Smart Contracts
 
@@ -43,4 +44,11 @@ functionalities, introducing commands like `isc.send(...)` for token transfers.
 
 ### Gas Fees
 
-Gas fees are set by the chain.
+As in [Ethereum](https://ethereum.org/en/developers/docs/gas), gas fees depend on the current network usage. As in an 
+auction, if there is a high demand, users will compete and try to outbid each other's transactions. This means gas prices
+increase in periods of high usage and decrease when the usage goes down.  However, unlike Ethereum, the chain owner can set
+the minimum gas fee.
+
+<QueryGasFees />
+
+

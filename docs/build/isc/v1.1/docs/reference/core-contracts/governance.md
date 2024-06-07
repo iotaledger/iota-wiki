@@ -325,8 +325,6 @@ A ratio between two values `x` and `y`, expressed as two `int32` numbers `a:b`, 
 
 `FeePolicy` is encoded as the concatenation of:
 
-- The [`TokenID`](accounts.md#tokenid) of the token used to charge for gas. (`iotago.NativeTokenID`)
-  - If this value is `nil`, the gas fee token is the base token.
 - Gas per token ([`Ratio32`](#ratio32)): expressed as an `a:b` (`gas/token`) ratio, meaning how many gas units each token pays for.
 - Validator fee share. Must be between 0 and 100, meaning the percentage of the gas fees distributed to the
   validators. (`uint8`)
