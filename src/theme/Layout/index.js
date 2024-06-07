@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
 import {
@@ -14,6 +15,7 @@ import Footer from '@theme/Footer';
 import LayoutProvider from '@theme/Layout/Provider';
 import ErrorPageContent from '@theme/ErrorPageContent';
 import styles from './styles.module.css';
+
 export default function Layout(props) {
   const {
     children,
@@ -23,7 +25,9 @@ export default function Layout(props) {
     title,
     description,
   } = props;
+
   useKeyboardNavigation();
+
   return (
     <LayoutProvider>
       <PageMetadata title={title} description={description} />
@@ -51,3 +55,12 @@ export default function Layout(props) {
     </LayoutProvider>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+  noFooter: PropTypes.bool,
+  wrapperClassName: PropTypes.string,
+  footerStyleProps: PropTypes.object,
+  title: PropTypes.string,
+  description: PropTypes.string,
+};

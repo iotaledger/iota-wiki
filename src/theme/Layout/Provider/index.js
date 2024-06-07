@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { composeProviders } from '@docusaurus/theme-common';
 import {
   ColorModeProvider,
@@ -8,6 +9,7 @@ import {
   NavbarProvider,
   PluginHtmlClassNameProvider,
 } from '@docusaurus/theme-common/internal';
+
 const Provider = composeProviders([
   ColorModeProvider,
   AnnouncementBarProvider,
@@ -16,6 +18,13 @@ const Provider = composeProviders([
   PluginHtmlClassNameProvider,
   NavbarProvider,
 ]);
-export default function LayoutProvider({ children }) {
+
+function LayoutProvider({ children }) {
   return <Provider>{children}</Provider>;
 }
+
+LayoutProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default LayoutProvider;
