@@ -29,13 +29,25 @@ ISC.accounts.mintNativeTokens(_foundrySN, _amount, allowance);
 ## Full Example Code
 
 ```solidity
-event MintedNativeTokens(uint32 foundrySN, uint amount);
+// SPDX-License-Identifier: MIT
 
-function mintNativeTokens(uint32 _foundrySN, uint _amount, uint64 _storageDeposit) public payable {
-    require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
-    ISCAssets memory allowance;
-    allowance.baseTokens = _storageDeposit;
-    ISC.accounts.mintNativeTokens(_foundrySN, _amount, allowance);
-    emit MintedNativeTokens(_foundrySN, _amount);
+pragma solidity ^0.8.0;
+
+import "@iota/iscmagic/ISC.sol";
+
+contract NativeTokenMinter {
+    event MintedNativeTokens(uint32 foundrySN, uint amount);
+
+    function mintNativeTokens(uint32 _foundrySN, uint _amount, uint64 _storageDeposit) public payable {
+        require(msg.value == _storageDeposit * (10 ** 12), "Please send exact funds to pay for storage deposit");
+        
+        ISC.ISCAssets memory allowance;
+        allowance.baseTokens = _storageDeposit;
+        
+        ISC.accounts.mintNativeTokens(_foundrySN, _amount, allowance);
+        
+        emit MintedNativeTokens(_foundrySN, _amount);
+    }
 }
+
 ```

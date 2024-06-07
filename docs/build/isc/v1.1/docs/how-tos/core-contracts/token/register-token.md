@@ -43,14 +43,31 @@ address erc20address = ISC.sandbox.erc20NativeTokensAddress(_foundrySN);
 ### Full Example Code
 
 ```solidity
-event ERC20Address(address erc20address);
+// SPDX-License-Identifier: MIT
 
-function registerERC20NativeToken(uint32 _foundrySN, string calldata _name, string calldata _symbol, uint8 _decimals, uint64 _storageDeposit) public payable {
-require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
-ISCAssets memory allowance;
-allowance.baseTokens = _storageDeposit;
-ISC.sandbox.registerERC20NativeToken(_foundrySN, _name, _symbol, _decimals, allowance);
-address erc20address = ISC.sandbox.erc20NativeTokensAddress(_foundrySN);
-emit ERC20Address(erc20address);
+pragma solidity ^0.8.0;
+
+import "@iota/iscmagic/ISC.sol";
+
+contract ERC20NativeTokenRegistry {
+
+    event ERC20Address(address erc20address);
+
+    function registerERC20NativeToken(
+        uint32 _foundrySN,
+        string calldata _name,
+        string calldata _symbol,
+        uint8 _decimals,
+        uint64 _storageDeposit
+    ) public payable {
+        require(msg.value == _storageDeposit * (10 ** 12), "Please send exact funds to pay for storage deposit");
+
+        ISCAssets memory allowance;
+        allowance.baseTokens = _storageDeposit;
+
+        ISC.registerERC20NativeToken(_foundrySN, _name, _symbol, _decimals, allowance);
+        address erc20address = ISC.erc20NativeTokensAddress(_foundrySN);
+        emit ERC20Address(erc20address);
+    }
 }
 ```
