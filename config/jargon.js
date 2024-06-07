@@ -478,4 +478,6 @@ module.exports = {
     'Measure of approval of each block using the voting power of the validation blocks" issuer.',
   'writing to the ledger':
     'The act of creating blocks containing transactions.',
+  blocktime:
+  'Block Time refers to the average amount of time it takes for a new block to be added to a blockchain. This metric is critical as it determines the network speed and efficiency in processing transactions and maintaining consensus.',
 };
