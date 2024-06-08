@@ -33,8 +33,8 @@ Here are some of the most important properties and limitations of EVM support in
 
 ### No Enforced Block Time
 
-There is no guaranteed _blocktime_. A new EVM "block" will be created only when an ISC block is created, and ISC does
-not enforce an average block time. This means that block times are variable; a new block will be created as soon as needed. 
+There is no guaranteed _block time_. A new EVM "_block_" will be created only when an ISC block is created, and ISC does
+not enforce an average _block time_. This means that block times are variable; a new block will be created as soon as needed. 
 
 ### The Magic Contract
 
