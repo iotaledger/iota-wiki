@@ -75,7 +75,7 @@ function Evm(props: NetworkProps) {
             ))}
           </td>
         </tr>
-        {props.evm.tools.blastApiUrls && (
+        {props.evm.tools && props.evm.tools.blastApiUrls && (
           <tr>
             <th>
               <Admonition type='tip' title='Blast API URLs'>
@@ -111,7 +111,9 @@ function Evm(props: NetworkProps) {
         </tr>
         <tr>
           <th>
-            {props.evm.custom.toolkit.hasFaucet ? 'Toolkit & Faucet' : 'Toolkit'}
+            {props.evm.custom.toolkit.hasFaucet
+              ? 'Toolkit & Faucet'
+              : 'Toolkit'}
           </th>
           <td>
             <a

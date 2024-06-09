@@ -24,9 +24,9 @@ networks: {
 <CodeBlock language="js">
 {`
 networks: {
-    'iotaevm-testnet': {
-        url: '${Networks['iota_testnet'].evm.core.rpcUrls[0]}',
-        chainId: ${parseInt(Networks['iota_testnet'].evm.core.chainId)},
+    'shimmerevm-testnet': {
+        url: '${Networks['shimmer_testnet'].evm.core.rpcUrls[0]}',
+        chainId: ${parseInt(Networks['shimmer_testnet'].evm.core.chainId)},
         accounts: [YOUR PRIVATE KEY],
     },
 }
