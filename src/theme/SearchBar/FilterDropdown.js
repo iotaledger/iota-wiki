@@ -11,9 +11,11 @@ import {
 } from '../../utils/searchConstant';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import { useAnnouncementBar } from '@docusaurus/theme-common/internal';
 
 export const FilterDropdown = forwardRef(
   ({ selectedFacets, setSelectedFacets, styleProps = {} }, ref) => {
+    const { isActive: isAnnouncementBarActive } = useAnnouncementBar();
     const actualFacets = allFacets[1];
 
     const handleCheckboxChange = (event) => {
@@ -96,7 +98,9 @@ export const FilterDropdown = forwardRef(
 
     return (
       <div
-        className={clsx('dropdown dropdown--hoverable', styles.dropdown)}
+        className={clsx('dropdown dropdown--hoverable', styles.dropdown, {
+          [styles.activeAnnouncementBar]: isAnnouncementBarActive,
+        })}
         style={styleProps}
         ref={ref}
       >

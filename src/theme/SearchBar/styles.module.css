@@ -6,6 +6,9 @@
   font-size: 14px;
   font-weight: var(--ifm-font-weight-semibold);
 }
+.activeAnnouncementBar {
+  top: 200%;
+}
 .dropdownMenu {
   color: var(--ifm-navbar-link-color);
   width: 210px;
@@ -36,7 +39,9 @@
     right: 665%;
     top: 459%;
   }
-
+  .activeAnnouncementBar {
+    top: 340%;
+  }
   .dropdownMenu {
     left: 65%;
   }
@@ -48,7 +53,9 @@
     right: 396%;
     top: 253%;
   }
-
+  .activeAnnouncementBar {
+    top: 128%;
+  }
   .dropdownMenu {
     position: absolute;
     top: 101%;
