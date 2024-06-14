@@ -65,8 +65,9 @@ contract ERC20NativeTokenRegistry {
         ISCAssets memory allowance;
         allowance.baseTokens = _storageDeposit;
 
-        ISC.registerERC20NativeToken(_foundrySN, _name, _symbol, _decimals, allowance);
-        address erc20address = ISC.erc20NativeTokensAddress(_foundrySN);
+        ISC.sandbox.registerERC20NativeToken(_foundrySN, _name, _symbol, _decimals, allowance);
+
+        address erc20address = ISC.sandbox.erc20NativeTokensAddress(_foundrySN);
         emit ERC20Address(erc20address);
     }
 }

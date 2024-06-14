@@ -41,14 +41,15 @@ pragma solidity ^0.8.0;
 
 import "@iota/iscmagic/ISC.sol";
 
-contract NativeToken {
+contract MyNativeToken {
 
     function nativeTokenID(uint32 _foundrySN) public view returns (bytes memory) {
         ERC20NativeTokens token = ERC20NativeTokens(
             ISC.sandbox.erc20NativeTokensAddress(_foundrySN)
         );
-        ISC.NativeTokenID memory id = token.nativeTokenID();
+        NativeTokenID memory id = token.nativeTokenID();
         return id.data;
     }
 }
+
 ```

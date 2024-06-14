@@ -41,7 +41,7 @@ contract NativeTokenMinter {
     function mintNativeTokens(uint32 _foundrySN, uint _amount, uint64 _storageDeposit) public payable {
         require(msg.value == _storageDeposit * (10 ** 12), "Please send exact funds to pay for storage deposit");
         
-        ISC.ISCAssets memory allowance;
+        ISCAssets memory allowance;
         allowance.baseTokens = _storageDeposit;
         
         ISC.accounts.mintNativeTokens(_foundrySN, _amount, allowance);
