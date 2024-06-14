@@ -30,7 +30,7 @@ Create a function called `fetchIRC27NFTData` in your contract that calls `getIRC
 
 ```solidity
 function fetchIRC27NFTData(uint256 tokenId) public view returns (IRC27NFT memory irc27NftData) {
-    irc27NftData = ISC.sandbox.getIRC27NFTData(tokenId.asNFTID());
+    irc27NftData = ISC.sandbox.getIRC27NFTData(ISCTypes.asNFTID(tokenId));
     return irc27NftData;
 }
 ```
@@ -49,7 +49,7 @@ import "@iota/iscmagic/ISCTypes.sol";
 contract IRCNFTMetadata {
 
 function fetchIRC27NFTData(uint256 tokenId) public view returns (IRC27NFT memory irc27NftData) {
-    irc27NftData = ISC.sandbox.getIRC27NFTData(tokenId.asNFTID());
+    irc27NftData = ISC.sandbox.getIRC27NFTData(ISCTypes.asNFTID(tokenId));
     return irc27NftData;
     }
 }
