@@ -9,6 +9,9 @@
 .activeAnnouncementBar {
   top: 200%;
 }
+.isScrolled {
+  top: 250%;
+}
 .dropdownMenu {
   color: var(--ifm-navbar-link-color);
   width: 210px;
@@ -41,6 +44,9 @@
   }
   .activeAnnouncementBar {
     top: 340%;
+  }
+  .isScrolled {
+    top: 470%;
   }
   .dropdownMenu {
     left: 65%;

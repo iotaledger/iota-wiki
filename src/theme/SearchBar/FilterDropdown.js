@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { forwardRef, useEffect } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import {
   facetNamesJson,
   allFacets,
@@ -17,6 +17,7 @@ export const FilterDropdown = forwardRef(
   ({ selectedFacets, setSelectedFacets, styleProps = {} }, ref) => {
     const { isActive: isAnnouncementBarActive } = useAnnouncementBar();
     const actualFacets = allFacets[1];
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const handleCheckboxChange = (event) => {
       const { value, checked } = event.target;
@@ -96,10 +97,20 @@ export const FilterDropdown = forwardRef(
       });
     }, [selectedFacets, setSelectedFacets]);
 
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 28) {
+          setIsScrolled(true);
+        }
+      };
+      handleScroll();
+    }, [window.scrollY]);
+
     return (
       <div
         className={clsx('dropdown dropdown--hoverable', styles.dropdown, {
           [styles.activeAnnouncementBar]: isAnnouncementBarActive,
+          [styles.isScrolled]: isScrolled,
         })}
         style={styleProps}
         ref={ref}
@@ -110,7 +121,7 @@ export const FilterDropdown = forwardRef(
             styles.filterButton,
           )}
         >
-          filter↓
+          filter
         </button>
         <ul className={clsx('dropdown__menu', styles.dropdownMenu)}>
           <label>
