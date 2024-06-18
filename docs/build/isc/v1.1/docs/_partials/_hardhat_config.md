@@ -10,8 +10,8 @@ import TabItem from '@theme/TabItem';
 {`
 networks: {
     'iotaevm-testnet': {
-        url: '${Networks['iota_testnet'].evm.rpcUrls[0]}',
-        chainId: ${parseInt(Networks['iota_testnet'].evm.chainId)},
+        url: '${Networks['iota_testnet'].evm.core.rpcUrls[0]}',
+        chainId: ${parseInt(Networks['iota_testnet'].evm.core.chainId)},
         accounts: [YOUR PRIVATE KEY],
     },
 }
@@ -25,8 +25,8 @@ networks: {
 {`
 networks: {
     'shimmerevm-testnet': {
-        url: '${Networks['shimmer_testnet'].evm.rpcUrls[0]}',
-        chainId: ${parseInt(Networks['shimmer_testnet'].evm.chainId)},
+        url: '${Networks['shimmer_testnet'].evm.core.rpcUrls[0]}',
+        chainId: ${parseInt(Networks['shimmer_testnet'].evm.core.chainId)},
         accounts: [YOUR PRIVATE KEY],
     },
 }
@@ -40,8 +40,8 @@ networks: {
 {`
 networks: {
     'iotaevm': {
-        url: '${Networks['iota'].evm.rpcUrls[0]}',
-        chainId: ${parseInt(Networks['iota'].evm.chainId)},
+        url: '${Networks['iota'].evm.core.rpcUrls[0]}',
+        chainId: ${parseInt(Networks['iota'].evm.core.chainId)},
         accounts: [YOUR PRIVATE KEY],
     },
 }
@@ -55,8 +55,8 @@ networks: {
 {`
 networks: {
     'shimmerevm': {
-        url: '${Networks['shimmer'].evm.rpcUrls[0]}',
-        chainId: ${parseInt(Networks['shimmer'].evm.chainId)},
+        url: '${Networks['shimmer'].evm.core.rpcUrls[0]}',
+        chainId: ${parseInt(Networks['shimmer'].evm.core.chainId)},
         accounts: [YOUR PRIVATE KEY],
     },
 }

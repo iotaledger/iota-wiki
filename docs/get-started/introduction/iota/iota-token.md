@@ -72,11 +72,14 @@ using so you don't get tricked into selling/buying under/over the current market
 
 IOTA is listed on most major _cryptocurrency_ exchanges:
 
-- [Binance.US](https://www.binance.us/en/home)
 - [Binance](https://www.binance.com)
+- [Binance.US](https://www.binance.us/en/home)
 - [Bitfinex](https://www.bitfinex.com/)
 - [Bitpanda](https://www.bitpanda.com)
 - [Bitvavo](https://bitvavo.com)
+- [Gate.io](https://www.gate.io/)
+- [HTX](https://www.htx.com/)
+- [OKX](https://www.okx.com/)
 - [Coinmerce](https://coinmerce.io/)
 - [Indodax](https://indodax.com/)
 - [KuCoin](https://www.kucoin.com/)

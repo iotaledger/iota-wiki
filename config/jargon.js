@@ -50,6 +50,8 @@ module.exports = {
     'The process of receiving blocks, either created locally by a node or received from a neighbor.',
   'block signature':
     'Digital signatures attached to blocks to ensure their authenticity.',
+  'block time':
+    'Block Time refers to the average amount of time it takes for a new block to be added to a blockchain. This metric is critical as it determines the network speed and efficiency in processing transactions and maintaining consensus.',
   'block wrapper':
     'The block wrapper is additional data around the typical blocks giving  important metadata, including the version, time, and block issuer. This  metadata allows nodes to follow the right version of the Tangle, to verify the timestamp of blocks, and to identify the creator of each  block.',
   'blockchain bottleneck':
