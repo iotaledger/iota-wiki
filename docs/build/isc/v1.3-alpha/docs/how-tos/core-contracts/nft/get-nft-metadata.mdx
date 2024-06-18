@@ -47,10 +47,9 @@ import "@iota/iscmagic/ISC.sol";
 import "@iota/iscmagic/ISCTypes.sol";
 
 contract IRCNFTMetadata {
-
-function fetchIRC27NFTData(uint256 tokenId) public view returns (IRC27NFT memory irc27NftData) {
-    irc27NftData = ISC.sandbox.getIRC27NFTData(ISCTypes.asNFTID(tokenId));
-    return irc27NftData;
+    function fetchIRC27NFTData(uint256 tokenId) public view returns (IRC27NFT memory irc27NftData) {
+        irc27NftData = ISC.sandbox.getIRC27NFTData(ISCTypes.asNFTID(tokenId));
+        return irc27NftData;
     }
 }
 ```
