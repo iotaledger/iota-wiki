@@ -1,0 +1,118 @@
+---
+description: How to Send Native Tokens Across Chains.
+image: /img/logo/WASP_logo_dark.png
+tags:
+  - EVM
+  - how-to
+  - native tokens
+  - cross-chain
+---
+import ExampleCodeIntro from '../../../_partials/how-tos/token/_example_code_intro.md';
+import DemoTokenSetup from '../../../_admonitions/_token-demo-setup.md';
+import CreateNativeToken from '../../../_admonitions/_create-native-token.md';
+
+# Send Native Token Across Chains
+
+## Introduction
+
+Cross-chain token transfers are crucial in the evolving decentralized finance (DeFi) landscape. In this guide, you'll learn how to send L1 native Tokens from L1 to an L2 EVM account on a destination chain using the `sendCrossChain` function of the [`NativeTokenController.sol`](https://github.com/iotaledger/isc-cross-chain/blob/master/contracts/NativeTokenController.sol) contract.
+
+<CreateNativeToken/>
+
+## Understanding the `sendCrossChain` Function
+
+First, let’s take a look at the `sendCrossChain` function in the `NativeTokenController.sol` file:
+
+```solidity
+function sendCrossChain(
+    address destinationChain,
+    bytes memory destinationAddress,
+    uint256 amount,
+    ISCChainID chainID,
+    uint64 storageDeposit
+) external {
+    // Function implementation
+}
+```
+This function facilitates the transfer of native tokens from a Layer 1 (L1) address to a specified Layer 2 (L2) EVM account. It requires the L1 address of the destination chain (`chainAddress`), the recipient address on the destination chain (`_destination`), the destination chain's ID (`_chainID`), the amount of native tokens to be sent (`_amount`), and the amount of base tokens to cover the storage deposit (`_storageDeposit`).
+The `sendCrossChain` wrapper function invokes the `ISC.sandbox.send` function, which manages the actual cross-chain message transmission.
+
+## Setting Up the Development Environment
+
+<DemoTokenSetup/>
+
+## Using the `sendCrossChain` Function
+
+To send native tokens across chains, you need to provide the following transaction details to the `sendCrossChain` function:
+
+* `ChainAddress` - The L1 address of the destination chain.
+* `Destination` - The address on the destination chain that will receive the tokens.
+* `chainID` - The ID of the destination chain.
+* `amount` - The amount of native tokens to sent.
+* `storageDeposit` - The base tokens to cover storage deposit.
+
+## Example Code
+<ExampleCodeIntro/>
+
+### 2. Send Token to Another Chain
+
+Let's define a function named `sendCrossChainMessage` in our contract, which will interact with the `sendCrossChain` function in the `NativeTokenController` contract.
+
+```solidity
+function sendCrossChainMessage(
+    address destinationChain,
+    bytes memory destinationAddress,
+    uint256 amount,
+    ISCChainID chainID,
+    uint64 storageDeposit
+) external {
+    // Ensure the sender has enough tokens (assuming a balanceOf function exists)
+    uint256 senderBalance = IERC20(tokenAddress).balanceOf(msg.sender);
+    require(senderBalance >= amount, "Insufficient token balance");
+
+    // Call the sendCrossChain function from NativeTokenController
+    nativeTokenController.sendCrossChain(destinationChain, destinationAddress, amount, chainID, storageDeposit);
+}
+```
+
+## Full Example Code
+
+```solidity
+
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
+
+import "./NativeTokenController.sol";  // Adjust the path as necessary
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+
+contract CrossChainMessenger {
+
+    NativeTokenController public nativeTokenController;
+
+    constructor(address _nativeTokenControllerAddress) {
+    nativeTokenController = NativeTokenController(_nativeTokenControllerAddress);
+}
+
+function sendCrossChainMessage(
+    address destinationChain,
+    bytes memory destinationAddress,
+    uint256 amount,
+    ISCChainID chainID,
+    uint64 storageDeposit,
+    tokenAddress
+) external {
+    // Ensure the sender has enough tokens (assuming a balanceOf function exists)
+    uint256 senderBalance = IERC20(tokenAddress).balanceOf(msg.sender);
+    require(senderBalance >= amount, "Insufficient token balance");
+
+    // Call the sendCrossChain function from NativeTokenController
+    nativeTokenController.sendCrossChain(destinationChain, destinationAddress, amount, chainID, storageDeposit);
+    }
+}
+```
+## Conclusion
+
+By following this guide, you have learned how to set up your development environment and use the `sendCrossChain` function in the [`NativeTokenController.sol`](https://github.com/iotaledger/isc-cross-chain/blob/master/contracts/NativeTokenController.sol) contract to send native tokens across chains. You can now interact with the `sendCrossChain` function within your own smart contracts to facilitate cross-chain token transfers.
+
+By leveraging cross-chain capabilities, you can create more interoperable and versatile decentralized applications, paving the way for a more connected blockchain ecosystem.

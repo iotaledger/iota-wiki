@@ -184,6 +184,11 @@ module.exports = {
                   label: 'Register Token as ERC20',
                   id: 'how-tos/core-contracts/token/register-token',
                 },
+                {
+                  type: 'doc',
+                  label: 'Send Token Across Chains',
+                  id: 'how-tos/core-contracts/token/send-token-across-chains',
+                },
               ],
             },
             {
