@@ -67,7 +67,7 @@ contract GetBalance {
         emit GotNativeTokenBalance(nativeTokens);
 
         uint256 nfts = ISC.accounts.getL2NFTAmount(agentID);
-        emit GotNativeTokenBalance(nfts);
+        emit GotNFTIDs(nfts);
     }
 }
 ```
