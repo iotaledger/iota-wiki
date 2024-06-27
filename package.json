@@ -117,7 +117,7 @@
     "svgo": "^2.8.0",
     "typescript": "^4.5.4"
   },
-  "packageManager": "yarn@3.2.0",
+  "packageManager": "yarn@4.3.1",
   "workspaces": [
     "cli",
     "plugins/**",
