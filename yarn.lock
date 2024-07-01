@@ -2768,7 +2768,7 @@ __metadata:
     react-flickity-component: ^3.6.3
     react-image-gallery: ^1.3.0
     react-markdown: 6
-    react-player: ^2.11.2
+    react-player: ^2.16.0
     react-popper: ^2.3.0
     react-select: ^5.7.7
     recharts: ^2.11.0
@@ -15517,9 +15517,9 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"react-player@npm:^2.11.2":
-  version: 2.15.1
-  resolution: "react-player@npm:2.15.1"
+"react-player@npm:^2.16.0":
+  version: 2.16.0
+  resolution: "react-player@npm:2.16.0"
   dependencies:
     deepmerge: ^4.0.0
     load-script: ^1.0.0
@@ -15528,7 +15528,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
     react-fast-compare: ^3.0.1
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 8e065dd7effcbec0bb770393b676145aa8bd46e4d2f9c46b1c15f5c1dff3f1a334f619aa3cc8525f82e6772b773fb9e96745d5e835b5264cd9ce1166ed9e1492
+  checksum: 9cc78a6099fdf06bbb2e1db75aa57461fb152eb6207a00e6e026dde0675b6f4ad02a45cab7b6c18a9f19e001bf9695a5be0cbe7606eca57a0af501ced717fbe9
   languageName: node
   linkType: hard
 
