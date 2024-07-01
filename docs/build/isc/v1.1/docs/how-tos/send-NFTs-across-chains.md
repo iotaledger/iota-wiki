@@ -36,10 +36,10 @@ If you are launching a new ERC721 token, you can use the ONFT standard to enable
 
 :::info Contract Documentation
 
-- [ProxyONFT721](https://docs.layerzero.network/v1/developers/evm-guides/contract-standards/721#proxyonft721sol)
-- [ProxyONFT1155](https://docs.layerzero.network/v1/developers/evm-guides/contract-standards/1155#proxyonft1155sol)
-- [ONFT721](https://docs.layerzero.network/v1/developers/evm-guides/contract-standards/721#onft721sol)
-- [ONFT1155](https://docs.layerzero.network/v1/developers/evm-guides/contract-standards/1155#onft1155sol)
+- [ProxyONFT721](https://docs.layerzero.network/v1/developers/evm/evm-guides/contract-standards/721#proxyonft721sol)
+- [ProxyONFT1155](https://docs.layerzero.network/v1/developers/evm/evm-guides/contract-standards/1155#proxyonft1155sol)
+- [ONFT721](https://docs.layerzero.network/v1/developers/evm/evm-guides/contract-standards/721#onft721sol)
+- [ONFT1155](https://docs.layerzero.network/v1/developers/evm/evm-guides/contract-standards/1155#onft1155sol)
 
 :::
 
@@ -131,7 +131,8 @@ approve step is also required, but the operations will happen on the `ONFT` cont
 
 ##### LayerZero
 
-- [LayerZero Endpoint V1](https://docs.layerzero.network/v1/developers/technical-reference/mainnet/mainnet-addresses)
+- [LayerZero Endpoint V1 (Testnet)](https://docs.layerzero.network/v1/developers/evm/technical-reference/testnet/testnet-addresses)
+- [layerZero Endpoint V1 (Mainnet)](https://docs.layerzero.network/v1/developers/evm/technical-reference/mainnet/mainnet-addresses)
 - [LayerZero explorer](https://Testnet.layerzeroscan.com/)
 
 ### Install the Library
