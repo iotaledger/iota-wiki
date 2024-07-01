@@ -61,7 +61,7 @@
     "react-flickity-component": "^3.6.3",
     "react-image-gallery": "^1.3.0",
     "react-markdown": "6",
-    "react-player": "^2.11.2",
+    "react-player": "^2.16.0",
     "react-popper": "^2.3.0",
     "react-select": "^5.7.7",
     "recharts": "^2.11.0",
