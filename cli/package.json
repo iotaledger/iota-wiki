@@ -36,7 +36,7 @@
     "isomorphic-git": "^1.25.3",
     "link-check": "^5.2.0",
     "markdownlint-cli2": "^0.8.1",
-    "node-html-parser": "^6.1.10",
+    "node-html-parser": "^6.1.13",
     "prettier": "2.8.8",
     "remark": "^14.0.2",
     "remark-lint-no-dead-urls": "^1.1.0",
