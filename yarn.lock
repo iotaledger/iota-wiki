@@ -2696,7 +2696,7 @@ __metadata:
     isomorphic-git: ^1.25.3
     link-check: ^5.2.0
     markdownlint-cli2: ^0.8.1
-    node-html-parser: ^6.1.10
+    node-html-parser: ^6.1.13
     nodemon: ^2.0.16
     prettier: 2.8.8
     raw-loader: ^4.0.2
@@ -13293,13 +13293,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-html-parser@npm:^6.1.10":
-  version: 6.1.12
-  resolution: "node-html-parser@npm:6.1.12"
+"node-html-parser@npm:^6.1.13":
+  version: 6.1.13
+  resolution: "node-html-parser@npm:6.1.13"
   dependencies:
     css-select: ^5.1.0
     he: 1.2.0
-  checksum: 452147bd6e17a988a26eac2895993196d87eaf3b376076d4469d96c90d771818846890cdf864084543f0fa20423179e3f6028a79402af7e935f152778c197675
+  checksum: bf172147f5bee7ab3dbef4dce0308a2c02264bac178ebd6375cd460e0a120e916451b93601aabdd59331c467bed0e3f9bb5b362a74050254846135d5cd5dd66d
   languageName: node
   linkType: hard
 
