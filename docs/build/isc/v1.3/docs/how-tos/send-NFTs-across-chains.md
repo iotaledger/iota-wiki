@@ -135,7 +135,7 @@ approve step is also required, but the operations will happen on the `ONFT` cont
 - [layerZero Endpoint V1 (Mainnet)](https://docs.layerzero.network/v1/developers/evm/technical-reference/mainnet/mainnet-addresses)
 - [LayerZero explorer](https://Testnet.layerzeroscan.com/)
 
-### Install and compile the Library
+### Install and Compile the Library
 
 After you have cloned
 the [IOTA Community Utilities for LayerZero ONFT V1 repository](https://github.com/iota-community/layerzero-onft-v1-utils),
