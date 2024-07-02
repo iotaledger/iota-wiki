@@ -1,0 +1,55 @@
+---
+description: How to get NFT metadata from a L1 NFT
+image: /img/logo/WASP_logo_dark.png
+tags:
+  - NFT
+  - EVM
+  - how-to
+---
+import GetNftMetadata from '../../../_partials/how-tos/token/_get-nft-metadata.md';
+import ERC721Admonition from '../../../_admonitions/_ERC721.md';
+import IRC27Admonition from '../../../_admonitions/_IRC27.md';
+
+# Get IRC27 NFT Metadata
+
+<ERC721Admonition />
+
+This guide explains how to use the [`getIRC27NFTData`](../../../reference/magic-contract/ISCSandbox.md#getirc27nftdata) function within a smart contract to fetch information about a specific IRC27 NFT on the IOTA Network.
+
+<GetNftMetadata />
+
+## Understanding the `getIRC27NFTData` Function
+
+The [`getIRC27NFTData`](../../../reference/magic-contract/ISCSandbox.md#getirc27nftdata) function retrieves metadata for an IRC27 NFT based on its identifier. IRC27 is a series of standards to support interoperable and universal NFT systems throughout the IOTA ecosystem.
+
+## How To Use `getIRC27NFTData`
+
+Create a function called `fetchIRC27NFTData` in your contract that calls `getIRC27NFTData` and processes its return value. `getIRC27NFTData` returns a struct of type [`IRC27NFTMetadata`](../../../reference/magic-contract/ISCTypes.md#irc27nftmetadata) which contains properties like the NFT name, uri and more.
+
+<IRC27Admonition/>
+
+```solidity
+function fetchIRC27NFTData(uint256 tokenId) public view returns (IRC27NFT memory irc27NftData) {
+    irc27NftData = ISC.sandbox.getIRC27NFTData(ISCTypes.asNFTID(tokenId));
+    return irc27NftData;
+}
+```
+
+## Full Example Contract
+
+Combining all the above steps, here’s a complete example:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@iota/iscmagic/ISC.sol";
+import "@iota/iscmagic/ISCTypes.sol";
+
+contract IRCNFTMetadata {
+    function fetchIRC27NFTData(uint256 tokenId) public view returns (IRC27NFT memory irc27NftData) {
+        irc27NftData = ISC.sandbox.getIRC27NFTData(ISCTypes.asNFTID(tokenId));
+        return irc27NftData;
+    }
+}
+```

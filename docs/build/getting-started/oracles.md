@@ -4,10 +4,15 @@ image: /img/logo/WASP_logo_dark.png
 tags:
 - Blockchain Oracles
 - Smart Contracts
+- IOTA EVM
 - Shimmer EVM
 - Pyth Network
 - Supra Oracles
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import OraclesContractData from '../_partials/_oracles_contract_data.mdx'
+
 
 # Introduction to Oracles in Blockchain
 
@@ -36,19 +41,7 @@ multiple data points to validate the information's accuracy. This process ensure
 contracts is relevant and timely, maintaining the integrity and deterministic nature of the blockchain
 operations.
 
-## Oracles on Shimmer EVM
-
-### Supra
-
-Supra Oracles validate and report prices derived from up to 21 data sources with Byzantine Fault Tolerant algorithms
-for a wide array of assets and commodities using its own Distributed Oracle Agreement (DORA) to provide data for crypto
-prices, forex, equities, and even Web3 data from other blockchains. Its feed gets updated from a minimum of 3 to 8 sources; if a data pair fails to meet this criterion, it gets deprecated to ensure data reliability.
-
-:::tip
-
-You can learn more about Supra Oracles in their [official documentation](https://supraoracles.com/docs/overview).
-
-:::
+## Oracle Providers in IOTA Ecosystem
 
 ### Pyth
 
@@ -63,25 +56,41 @@ You can learn more about Pyth Oracles in their [official documentation](https://
 
 :::
 
+### Supra
+
+Supra Oracles validate and report prices derived from up to 21 data sources with Byzantine Fault Tolerant algorithms
+for a wide array of assets and commodities using its own Distributed Oracle Agreement (DORA) to provide data for crypto
+prices, forex, equities, and even Web3 data from other blockchains. Its feed gets updated from a minimum of 3 to 8 sources; if a data pair fails to meet this criterion, it gets deprecated to ensure data reliability.
+
+:::tip
+
+You can learn more about Supra Oracles in their [official documentation](https://supraoracles.com/docs/overview).
+
+:::
+
+<OraclesContractData/>
+
 #### Example Code
 
-You can use the following example code to get data from Pyth Oracles in Shimmer EVM:
+<Tabs groupId="language" queryString>
+<TabItem value="Pyth" label="Pyth">
 
+You can use the following example code to get data from Pyth Oracles in IOTA EVM:
 
 ```typescript
 import {ethers} from "ethers";
 import fetch from "node-fetch";
 
 // Provider
-const providerURL = "https://json-rpc.evm.shimmer.network"
+const providerURL = "https://json-rpc.evm.iota.network"
 const provider = new ethers.JsonRpcProvider(providerURL);
 
-//  Pyth Oracle contract on ShimmerEVM Mainnet
-const contractAddress = '0xA2aa501b19aff244D90cc15a4Cf739D2725B5729';
+//  Pyth Oracle contract on IOTA EVM Mainnet
+const contractAddress = '0x8D254a21b3C86D32F7179855531CE99164721933';
 
 // Add Price Feed Ids obtained from https://pyth.network/developers/price-feed-ids#pyth-evm-stable
 const priceFeedIds = [
-    //SMR/USD
+    //IOTA/USD
     '0xaf5b9ac426ae79591fde6816bc3f043b5e06d5e442f52112f76249320df22449',
     //BTC/USD
     '0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43'
@@ -121,3 +130,7 @@ async function main() {
 }
 
 main();
+```
+
+</TabItem>
+</Tabs>

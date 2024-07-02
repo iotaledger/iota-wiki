@@ -21,10 +21,9 @@ It is not for creating production-ready networks.
 
 :::
 
-:::tip Public Testnet
+:::tip Testnet
 
-If possible, 
-you should use the [public testnet](https://wiki.iota.org/build/networks-endpoints/#public-testnet)
+If possible, you should use one of the testnets(/build/networks-endpoints)
 where you can experiment with confidence and community support.
 
 :::

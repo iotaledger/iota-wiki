@@ -1,0 +1,242 @@
+---
+description: 'Explore methods in the Call Context that facilitate the handling and transfer of asset balances in smart contracts using the `dividend` example.'
+tags:
+  - Call Context
+  - Asset Balances
+  - ScBalances Proxy
+  - ScTransfer Proxy
+  - Dividend Smart Contract
+image: /img/logo/WASP_logo_dark.png
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Transfer Tokens
+
+The [Call Context](../../explanations/context.mdx) in smart contracts introduces two vital methods -
+`balances()` and `allowance()` - to manage token balances efficiently.
+Understanding how to use these can be foundational in setting up smart contracts,
+as demonstrated in the `dividend` smart contract example.
+
+## Methods Overview
+
+### 1. **`balances()` Method**:
+
+- **Functionality**: Fetch the present asset balances regulated by the smart contract.
+- **Access**: Through the `ScBalances` proxy.
+
+### 2. **`allowance()` Method**:
+
+- **Functionality**: Verify the caller assets that the current smart contract function can use.
+- **Transfer Requirement**: Assets are not automatically transferred;
+  the function must instigate the transfer explicitly within the allowed limit.
+- **Access**: Through the `ScBalances` proxy.
+
+### 3. **`transfer_allowed()` Method**:
+
+- **Functionality**: Facilitate asset transfers from the caller's on-chain account to another on-chain account.
+- **Proxy**: uses the `ScTransfer` proxy, a mutable variant of `ScBalances`.
+- **Application**: In the `dividend` contract, it aids in distributing iotas to member accounts.
+
+## Dividend Smart Contract Example
+
+The `dividend` smart contract operates on a principle of equitable asset distribution to its members based on predefined factors.
+Here's how it works:
+
+1. **Setup**: Establish a list of members with associated address/factor pairs and calculate the total factor sum.
+2. **Function**: The `divide()` function manages the dividend distribution.
+3. **Dividend Allocation**:
+   - **Input**: Iotas sent to the `divide()` function.
+   - **Distribution**: Proportional to the individual's factor.
+   - **Example**: For factors A:50, B:30, and C:20 (total 100):
+     - **A receives**: 50/100 of the input iotas.
+     - **B receives**: 30/100 of the input iotas.
+     - **C receives**: 20/100 of the input iotas.
+
+In this system, asset distribution is transparent, fair, and automated, ensuring a streamlined division process.
+
+Here is the `divide` function:
+
+<Tabs groupId="language" queryString>
+
+<TabItem value="go" label="Go">
+
+```go
+// 'divide' is a function that will take any iotas it receives and properly
+// disperse them to the accounts in the member list according to the dispersion
+// factors associated with these accounts.
+// Anyone can send iotas to this function and they will automatically be
+// divided over the member list. Note that this function does not deal with
+// fractions. It simply truncates the calculated amount to the nearest lower
+// integer and keeps any remaining tokens in the sender account.
+func funcDivide(ctx wasmlib.ScFuncContext, f *DivideContext) {
+	// Create an ScBalances proxy to the allowance balances for this
+	// smart contract.
+	var allowance *wasmlib.ScBalances = ctx.Allowance()
+
+	// Retrieve the amount of plain iota tokens from the account balance.
+	var amount uint64 = allowance.BaseTokens()
+
+	// Retrieve the pre-calculated totalFactor value from the state storage.
+	var totalFactor uint64 = f.State.TotalFactor().Value()
+
+	// Get the proxy to the 'members' map in the state storage.
+	var members MapAddressToMutableUint64 = f.State.Members()
+
+	// Get the proxy to the 'memberList' array in the state storage.
+	var memberList ArrayOfMutableAddress = f.State.MemberList()
+
+	// Determine the current length of the memberList array.
+	var size uint32 = memberList.Length()
+
+	// Loop through all indexes of the memberList array.
+	for i := uint32(0); i < size; i++ {
+		// Retrieve the next indexed address from the memberList array.
+		var address wasmtypes.ScAddress = memberList.GetAddress(i).Value()
+
+		// Retrieve the factor associated with the address from the members map.
+		var factor uint64 = members.GetUint64(address).Value()
+
+		// Calculate the fair share of tokens to disperse to this member based on the
+		// factor we just retrieved. Note that the result will been truncated.
+		var share uint64 = amount * factor / totalFactor
+
+		// Is there anything to disperse to this member?
+		if share > 0 {
+			// Yes, so let's set up an ScTransfer map proxy that transfers the
+			// calculated amount of tokens.
+			var transfer *wasmlib.ScTransfer = wasmlib.NewScTransferBaseTokens(share)
+
+            // Perform the actual transfer of tokens from the caller allowance
+            // to the member account.
+            ctx.TransferAllowed(address.AsAgentID(), transfer)
+		}
+	}
+}
+```
+
+</TabItem>
+<TabItem value="rust" label="Rust">
+
+```rust
+// 'divide' is a function that will take any iotas it receives and properly
+// disperse them to the accounts in the member list according to the dispersion
+// factors associated with these accounts.
+// Anyone can send iotas to this function and they will automatically be
+// divided over the member list. Note that this function does not deal with
+// fractions. It simply truncates the calculated amount to the nearest lower
+// integer and keeps any remaining tokens in its own account. They will be added
+// to any next round of tokens received prior to calculation of the new
+// dividend amounts.
+pub fn func_divide(ctx: &ScFuncContext, f: &DivideContext) {
+
+    // Create an ScBalances proxy to the allowance balances for this
+    // smart contract.
+    let allowance: ScBalances = ctx.allowance();
+
+    // Retrieve the amount of plain iota tokens from the account balance.
+    let amount: u64 = allowance.base_tokens();
+
+    // Retrieve the pre-calculated totalFactor value from the state storage.
+    let total_factor: u64 = f.state.total_factor().value();
+
+    // Get the proxy to the 'members' map in the state storage.
+    let members: MapAddressToMutableUint64 = f.state.members();
+
+    // Get the proxy to the 'memberList' array in the state storage.
+    let member_list: ArrayOfMutableAddress = f.state.member_list();
+
+    // Determine the current length of the memberList array.
+    let size: u32 = member_list.length();
+
+    // Loop through all indexes of the memberList array.
+    for i in 0..size {
+        // Retrieve the next indexed address from the memberList array.
+        let address: ScAddress = member_list.get_address(i).value();
+
+        // Retrieve the factor associated with the address from the members map.
+        let factor: u64 = members.get_uint64(&address).value();
+
+        // Calculate the fair share of tokens to disperse to this member based on the
+        // factor we just retrieved. Note that the result will be truncated.
+        let share: u64 = amount * factor / total_factor;
+
+        // Is there anything to disperse to this member?
+        if share > 0 {
+            // Yes, so let's set up an ScTransfer map proxy that transfers the
+            // calculated amount of tokens.
+            let transfers: ScTransfer = ScTransfer::base_tokens(share);
+
+            // Perform the actual transfer of tokens from the caller allowance
+            // to the member account.
+            ctx.transfer_allowed(&address.as_agent_id(), &transfers, true);
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="typescript" label="Typescript">
+
+```ts
+// 'divide' is a function that will take any iotas it receives and properly
+// disperse them to the accounts in the member list according to the dispersion
+// factors associated with these accounts.
+// Anyone can send iotas to this function and they will automatically be
+// divided over the member list. Note that this function does not deal with
+// fractions. It simply truncates the calculated amount to the nearest lower
+// integer and keeps any remaining tokens in its own account. They will be added
+// to any next round of tokens received prior to calculation of the new
+// dividend amounts.
+export function funcDivide(
+  ctx: wasmlib.ScFuncContext,
+  f: sc.DivideContext,
+): void {
+  // Create an ScBalances proxy to the allowance balances for this
+  // smart contract.
+  let allowance: wasmlib.ScBalances = ctx.allowance();
+
+  // Retrieve the allowed amount of plain iota tokens from the account balance.
+  let amount: u64 = allowance.baseTokens();
+
+  // Retrieve the pre-calculated totalFactor value from the state storage.
+  let totalFactor: u64 = f.state.totalFactor().value();
+
+  // Get the proxy to the 'members' map in the state storage.
+  let members: sc.MapAddressToMutableUint64 = f.state.members();
+
+  // Get the proxy to the 'memberList' array in the state storage.
+  let memberList: sc.ArrayOfMutableAddress = f.state.memberList();
+
+  // Determine the current length of the memberList array.
+  let size: u32 = memberList.length();
+
+  // Loop through all indexes of the memberList array.
+  for (let i: u32 = 0; i < size; i++) {
+    // Retrieve the next indexed address from the memberList array.
+    let address: wasmlib.ScAddress = memberList.getAddress(i).value();
+
+    // Retrieve the factor associated with the address from the members map.
+    let factor: u64 = members.getUint64(address).value();
+
+    // Calculate the fair share of tokens to disperse to this member based on the
+    // factor we just retrieved. Note that the result will be truncated.
+    let share: u64 = (amount * factor) / totalFactor;
+
+    // Is there anything to disperse to this member?
+    if (share > 0) {
+      // Yes, so let's set up an ScTransfer proxy that transfers the
+      // calculated amount of tokens.
+      let transfers: wasmlib.ScTransfer = wasmlib.ScTransfer.baseTokens(share);
+
+      // Perform the actual transfer of tokens from the caller allowance
+      // to the member account.
+      ctx.transferAllowed(address.asAgentID(), transfers);
+    }
+  }
+}
+```
+
+</TabItem>
+</Tabs>

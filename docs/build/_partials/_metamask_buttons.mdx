@@ -3,7 +3,10 @@ import { Networks } from '@theme/constant';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs groupId='network'>
+<Tabs groupId='network' queryString>
+<TabItem value='iota' label='IOTA EVM'>
+<AddToMetaMaskButton {...Networks['iota']}/>
+</TabItem>
 <TabItem value='iota_testnet' label='IOTA EVM Testnet'>
 <AddToMetaMaskButton {...Networks['iota_testnet']}/>
 </TabItem>

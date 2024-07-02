@@ -16,7 +16,6 @@ tags:
 import { AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
 import { Networks } from '@theme/constant';
 import NetworkInfo from '@theme/NetworkInfo';
-import { ChainId } from '@theme/ChainId';
 
 # Networks & Endpoints
 
@@ -41,6 +40,18 @@ This network runs under a [Coordinator PoA scheme](/learn/protocols/coordinator/
 
 <NetworkInfo.L1 {...Networks['iota']}/>
 
+### IOTA EVM
+
+[IOTA EVM](https://explorer.evm.iota.org) is the L2 EVM running on top of the IOTA network.
+
+<AddToMetaMaskButton {...Networks['iota']} />
+
+<NetworkInfo.Evm {...Networks['iota']}/>
+
+#### Additional Info
+
+<NetworkInfo.EvmCustom {...Networks['iota']}/>
+
 ## IOTA Testnet
 
 [The IOTA Testnet](https://explorer.iota.org/iota-testnet) acts as a test bed for builders without any real world value.
@@ -64,6 +75,7 @@ This network is subject to occasional resets (no data retention) which are usual
 <AddToMetaMaskButton {...Networks['iota_testnet']} />
 
 <NetworkInfo.Evm {...Networks['iota_testnet']}/>
+
 #### Additional Info
 
 <NetworkInfo.EvmCustom {...Networks['iota_testnet']}/>

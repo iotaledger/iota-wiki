@@ -1,0 +1,189 @@
+---
+description: 'Existing EVM tooling is compatible and can be used directly with an IOTA Smart Contracts chain running EVM.
+You can configure hardhat, metamask, remix, Ether.js and Web3.js among others.'
+image: /img/logo/WASP_logo_dark.png
+tags:
+
+- smart contracts
+- chain
+- EVM
+- Solidity
+- tooling
+- wasp-cli
+- hardhat
+- metamask
+- JSON-RPC
+- reference
+
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
+import HardhatConfig from '../_partials/_hardhat_config.md';
+import { Networks } from '@theme/constant';
+import DeployAdmonition from '../_admonitions/_deploy_a_smart_contract.md';
+import { ChainId } from '@theme/ChainId';
+import NetworkInfo from '@theme/NetworkInfo';
+import OraclesContractData from '../../../../_partials/_oracles_contract_data.mdx';
+
+# Compatible Tools
+
+EVM on IOTA Smart Contracts has been integrated in a way that the existing EVM tooling is compatible and can be used
+directly with an IOTA Smart Contracts chain running EVM as long as you take a couple of things into account.
+
+## Tooling Considerations
+
+1. Please make sure you use the correct JSON-RPC endpoint URL in your tooling for your chain. If you're running your own chain, you can find the JSON-RPC
+endpoint URL in the Wasp dashboard (`[URL]/wasp/dashboard` when using `node-docker-setup`).
+2. Please ensure you use the correct `Chain ID` configured while starting the JSON-RPC service. If you did not explicitly define this while starting the service, the default Chain ID will be <ChainId url='https://json-rpc.evm.iotaledger.net'/>
+for IOTA EVM, <ChainId url='https://json-rpc.evm.shimmer.network'/>
+for ShimmerEVM or <ChainId url='https://json-rpc.evm.testnet.shimmer.network' /> for the EVM Testnet.
+3. Fees are handled on the IOTA Smart Contracts chain level, not the EVM level. The chain will reject any requests with a different gas price than specified by the chain.
+
+:::caution
+
+Re-using an existing Chain ID is not recommended and can be a security risk. For production usage, register a unique Chain
+ID on [Chainlist](https://chainlist.org/) and use that instead of the default. **It is not possible to change the EVM
+chain ID after deployment.**
+
+:::
+
+## Network RPCs
+
+<Tabs groupId='network' queryString>
+  <TabItem value='iota' label='IOTA EVM'>
+    <AddToMetaMaskButton {...Networks['iota']}/>
+    <NetworkInfo.Evm {...Networks['iota']}/>
+  </TabItem>
+  <TabItem value='iota_testnet' label='IOTA EVM Testnet'>
+    <AddToMetaMaskButton {...Networks['iota_testnet']}/>
+    <NetworkInfo.Evm {...Networks['iota_testnet']}/>
+  </TabItem>
+  <TabItem value='shimmer' label='ShimmerEVM'>
+    <AddToMetaMaskButton {...Networks['shimmer']}/>
+    <NetworkInfo.Evm {...Networks['shimmer']}/>
+  </TabItem>
+  <TabItem value='shimmer_testnet' label='ShimmerEVM Testnet'>
+    <AddToMetaMaskButton {...Networks['shimmer_testnet']}/>
+    <NetworkInfo.Evm {...Networks['shimmer_testnet']}/>
+  </TabItem>
+</Tabs>
+
+## IOTA EVM Tools
+
+The following tools are **only available on IOTA EVM**.
+
+### Blast API
+
+The [Blast API](/build/blastAPI) is a decentralized platform that provides reliable and scalable node infrastructure
+for accessing blockchain data. You can find the Blast API URLs in the [Network RPCs](#network-rpcs)
+
+### EVM Toolkit
+
+You can use the [IOTA EVM Toolkit](https://evm-toolkit.evm.iotaledger.net) to withdraw assets from IOTA EVM to IOTA L1.
+It also includes a wrapper IOTA <-> wIOTA.
+
+### Multicall3
+
+If you need to aggregate results from multiple contract reads into a single JSON-RPC request or execute multiple
+state-changing calls in a single transaction, you can use the [Multicall3 contract](https://explorer.evm.iota.org/address/0xcA11bde05977b3631167028862bE2a173976CA11?tab=contract).
+
+## IOTA EVM and ShimmerEVM Tools
+
+The following tools are available on both IOTA EVM end ShimmerEVM.
+
+### MultiSig Wallets
+
+If you require and additional level of security, you can use the [Safe{} Wallet](https://safe.iotaledger.net/) as a
+Multisig solution on IOTA EVM.
+
+### Oracles
+
+If your project requires [Oracles](/build/oracles/) to provide data from the outside world, you find both Pyth and Supra have integrated IOTA EVM.
+
+<OraclesContractData />
+
+### Subgraphs
+
+[Subgraphs](/build/subgraphs/) provide a streamlined way for developers to access blockchain data relevant to their applications,
+significantly enhancing developer efficiency and user experience. IOTA EVM subgraphs available via [Goldsky](https://goldsky.com).
+
+## MetaMask
+
+[MetaMask](https://metamask.io/) is a popular EVM wallet which runs in a browser extension that allows you to
+interact with EVM chains and their applications (dApps).
+
+To use your EVM chain with MetaMask, simply open up MetaMask and click on the network drop-down list at the very top. At
+the bottom of this list, you will see the option `Add network`. On the new page you will see a list of popular network with the option `Add a network manually`.
+For example this would be the configs to add our different [EVM chains](/build/networks-endpoints):
+
+<Tabs groupId='network' queryString>
+<TabItem value='iota' label='IOTA EVM'>
+<AddToMetaMaskButton {...Networks['iota']}/>
+<NetworkInfo.Evm {...Networks['iota']}/>
+</TabItem>
+<TabItem value='iota_testnet' label='IOTA EVM Testnet'>
+<AddToMetaMaskButton {...Networks['iota_testnet']}/>
+<NetworkInfo.Evm {...Networks['iota_testnet']}/>
+</TabItem>
+<TabItem value='shimmer' label='ShimmerEVM'>
+<AddToMetaMaskButton {...Networks['shimmer']}/>
+<NetworkInfo.Evm {...Networks['shimmer']}/>
+</TabItem>
+<TabItem value='shimmer_testnet' label='ShimmerEVM Testnet'>
+<AddToMetaMaskButton {...Networks['shimmer_testnet']}/>
+<NetworkInfo.Evm {...Networks['shimmer_testnet']}/>
+</TabItem>
+</Tabs>
+
+Ensure that your `RPC Url` and `Chain ID` are set correctly and match the dashboard values. The `Network Name` can be
+whatever you see fit. Click "Save" to add the chain to MetaMask.
+
+If you wish to use additional EVM chains with Metamask, you can add more Custom RPC networks, as long as they have a
+unique `Chain ID` and `RPC Url`. Once you have done this, you can start using MetaMask to manage your EVM wallet or
+issue/sign transactions with any dApp running on that network.
+
+### Remix
+
+If you also want to use the [Remix IDE](https://remix.ethereum.org/) to deploy any regular Solidity Smart Contract, you
+should set the environment as **Injected Provider - Metamask**, which should then connect with your MetaMask wallet.
+
+Click on the _Deploy & Run transactions_ button in the menu on the left and select `Injected Web3` from
+the `Environment` dropdown.
+
+![Select Injected Provider from the Environment dropdown](/img/evm/remix-injected-provider-metamask.png)
+
+<DeployAdmonition/>
+
+Metamask will ask to connect to Remix, and once connected, it will set the `Environment` to `Injected Web3` with
+the "Custom (Chain ID) network".
+
+![Environment will be set to Injected Web3](/img/evm/remix-injected-provider-set.png)]
+
+## Hardhat
+
+[Hardhat](https://hardhat.org/) is a command line toolbox that allows you to deploy, test, verify, and interact with
+Solidity smart contracts on an EVM chain. EVM chains running on IOTA Smart Contracts are compatible with Hardhat; simply
+make sure you add the correct network parameters to your `hardhat.config.js`, for example:
+
+<HardhatConfig/>
+
+<DeployAdmonition/>
+
+:::caution
+
+Currently, there is no validation service available for EVM/Solidity smart contracts on IOTA Smart Contracts, which is
+often offered through block explorer APIs.
+
+:::
+
+## Ethers.js/Web3.js
+
+If you input the correct configuration parameters for the JSON-RPC endpoint to talk to,
+[Ethers.js](https://docs.ethers.io/) and [Web3.js](https://web3js.readthedocs.io/) are also compatible with EVM chains on IOTA Smart Contracts.
+Alternatively, you can let both interact through MetaMask instead so that it uses the
+network configured in MetaMask. For more information on this, read their documentation.
+
+## Other Tooling
+
+Most tools available will be compatible if you enter the correct `Chain ID` and `RPC Url`.

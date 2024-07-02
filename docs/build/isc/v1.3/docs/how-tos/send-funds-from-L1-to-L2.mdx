@@ -1,0 +1,102 @@
+---
+description: How to send funds from L1 to L2.
+image: /img/logo/WASP_logo_dark.png
+tags:
+  - configure
+  - using
+  - EVM
+  - Ethereum
+  - Solidity
+  - deploy
+  - hardhat
+  - metamask
+  - JSON
+  - RPC
+  - how to
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
+import MetamaskButtons from '../../../../_partials/_metamask_buttons.mdx';
+import { Networks } from '@theme/constant';
+
+# Send Funds From L1 to L2
+
+There are multiple types of assets available on both IOTA L1 and L2, here we discuss a few of them, and how to get them
+onto L2.
+
+:::tip Testnet
+
+If you want to fund your EVM Testnet account using the EVM Toolkit, please refer to our [Testnet Quickstart Guide](../getting-started/quick-start.mdx)
+
+:::
+
+## Fund an Ethereum Account on a IOTA Smart Contracts Chain
+
+To send EVM transactions, you need to have an Ethereum address that owns tokens on the ISC chain (L2). These tokens will
+be used to cover gas fees.
+
+<Tabs groupId='wallet' queryString>
+<TabItem value='firefly' label='Firefly'>
+
+You can use your [Firefly Wallet](https://firefly.iota.org/) to easily send L1 IOTA or SMR to your L2 IOTA EVM or ShimmerEVM account.
+
+#### Requirements
+
+* [IOTA Tokens](/get-started/introduction/iota/iota-token/) or [Shimmer Tokens](/get-started/introduction/shimmer/shimmer-token/)
+* [Firefly Wallet](https://firefly.iota.org/)
+* [Metamask](https://metamask.io/)
+
+1. The first thing you will need to do is add the EVM to Metamask by hitting the following button.
+
+<MetamaskButtons/>
+
+2. Once you have added the EVM to Metamask, you can get your address:
+
+   ![Copy your Metamask address](/img/evm/how-tos/get-funds/copy-your-address.png)
+
+3. Next, you will need to open your [Firefly Wallet](https://firefly.iota.org/) and click on `Send Assets`.
+
+   ![Click send assets](/img/evm/how-tos/get-funds/firefly/select-send-assets.png)
+
+4. Select the EVM chain you want to use in the network dropdown.
+
+   ![Select the EVM network](/img/evm/how-tos/get-funds/firefly/select-shimmer-evm.png)
+
+5. Enter the amount of tokens you want to transfer, and the Metamask address from step 2, and click on `Next`
+
+   ![Enter the amount of tokens and metamask address](/img/evm/how-tos/get-funds/firefly/enter-your-desired-amount-and-metamask-address.png)
+ 
+6. Review the transaction details and click on `Send`.
+
+   ![Hit Send](/img/evm/how-tos/get-funds/firefly/hit-send.png)
+
+
+</TabItem>
+<TabItem value='bloom-wallet' label='Bloom Wallet'>
+
+You can use your [Bloom Wallet](https://bloomwallet.io/) to easily send L1 base token to your L2 EVM account.
+
+1. First, you will need to open your [Bloom Wallet](https://firefly.iota.org/) and click on `Send`.
+
+   ![Click send](/img/evm/how-tos/get-funds/bloom/select-send.png)
+
+2. Select an account with base tokens.
+
+   ![Select an account with base tokens](/img/evm/how-tos/get-funds/bloom/select-the-smr-token.png)
+
+3. Bloom will automatically create an EVM address for you, so you can send funds to that address from the 
+EVM dropdown. Alternatively, you can input any other EVM address.
+
+   ![Select you EVM Address](/img/evm/how-tos/get-funds/bloom/enter-the-recipient-address.png)
+
+4. Enter the amount of base tokens you want to transfer.
+   
+   ![Enter the amount of base tokens you want to transfer](/img/evm/how-tos/get-funds/bloom/enter-the-amount.png)
+
+5. Review the transaction details and click on `Confirm`.
+
+   ![Hit Send](/img/evm/how-tos/get-funds/bloom/review-and-confirm-the-transaction.png)
+
+</TabItem>
+</Tabs>
