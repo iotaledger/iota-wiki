@@ -36,10 +36,10 @@ If you are launching a new ERC721 token, you can use the ONFT standard to enable
 
 :::info Contract Documentation
 
-- [ProxyONFT721](https://docs.layerzero.network/v1/developers/evm-guides/contract-standards/721#proxyonft721sol)
-- [ProxyONFT1155](https://docs.layerzero.network/v1/developers/evm-guides/contract-standards/1155#proxyonft1155sol)
-- [ONFT721](https://docs.layerzero.network/v1/developers/evm-guides/contract-standards/721#onft721sol)
-- [ONFT1155](https://docs.layerzero.network/v1/developers/evm-guides/contract-standards/1155#onft1155sol)
+- [ProxyONFT721](https://docs.layerzero.network/v1/developers/evm/evm-guides/contract-standards/721#proxyonft721sol)
+- [ProxyONFT1155](https://docs.layerzero.network/v1/developers/evm/evm-guides/contract-standards/1155#proxyonft1155sol)
+- [ONFT721](https://docs.layerzero.network/v1/developers/evm/evm-guides/contract-standards/721#onft721sol)
+- [ONFT1155](https://docs.layerzero.network/v1/developers/evm/evm-guides/contract-standards/1155#onft1155sol)
 
 :::
 
@@ -131,26 +131,20 @@ approve step is also required, but the operations will happen on the `ONFT` cont
 
 ##### LayerZero
 
-- [LayerZero Endpoint V1](https://docs.layerzero.network/v1/developers/technical-reference/mainnet/mainnet-addresses)
+- [LayerZero Endpoint V1 (Testnet)](https://docs.layerzero.network/v1/developers/evm/technical-reference/testnet/testnet-addresses)
+- [layerZero Endpoint V1 (Mainnet)](https://docs.layerzero.network/v1/developers/evm/technical-reference/mainnet/mainnet-addresses)
 - [LayerZero explorer](https://Testnet.layerzeroscan.com/)
 
-### Install the Library
+### Install and compile the Library
 
 After you have cloned
-the [IOTA Community Utilities for LayerZero ONFT V2 repository](https://github.com/iota-community/layerzero-onft-v1-utils),
+the [IOTA Community Utilities for LayerZero ONFT V1 repository](https://github.com/iota-community/layerzero-onft-v1-utils),
 you should run the following command to install:
 
 ```bash
 yarn
 ```
-
-### Compile the Contracts
-
-If you want to use the standard implementation for ERC20, copy
-the [`contracts-standard`](https://github.com/iota-community/layerzero-oft-V1-utils/tree/main/contracts-standard) folder
-to `contracts`. If you want to use a custom implementation, copy
-the  [`contracts-wiota`](https://github.com/iota-community/layerzero-oft-V1-utils/tree/main/contracts-wiota)
-to `contracts`. Then, run the following command to compile the contracts:
+then compile the contracts:
 
 ```bash
 yarn compile
