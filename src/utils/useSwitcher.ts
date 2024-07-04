@@ -137,7 +137,9 @@ export default function useSwitcher(): SwitcherProps {
         // Resolve the doc link to the first MAIN_BADGE version.
         let to = versionLinks[0].to;
         const foundVersion = versionLinks.find((version) =>
-          version.badges.some((b) => b.includes(MAIN_BADGE)),
+          version.badges
+            ? version.badges.some((b) => b.includes(MAIN_BADGE))
+            : false,
         );
         if (foundVersion) to = foundVersion.to;
 
