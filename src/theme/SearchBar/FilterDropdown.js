@@ -12,12 +12,14 @@ import {
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import { useAnnouncementBar } from '@docusaurus/theme-common/internal';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
 export const FilterDropdown = forwardRef(
   ({ selectedFacets, setSelectedFacets, styleProps = {} }, ref) => {
     const { isActive: isAnnouncementBarActive } = useAnnouncementBar();
     const actualFacets = allFacets[1];
     const [isScrolled, setIsScrolled] = useState(false);
+    const isBrowser = useIsBrowser();
 
     const handleCheckboxChange = (event) => {
       const { value, checked } = event.target;
@@ -99,12 +101,12 @@ export const FilterDropdown = forwardRef(
 
     useEffect(() => {
       const handleScroll = () => {
-        if (window.scrollY > 28) {
+        if (isBrowser && window.scrollY > 28) {
           setIsScrolled(true);
         }
       };
       handleScroll();
-    }, [window.scrollY]);
+    }, [isBrowser && window.scrollY]);
 
     return (
       <div
