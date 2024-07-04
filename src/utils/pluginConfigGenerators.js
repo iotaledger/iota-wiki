@@ -4,17 +4,18 @@ const MAIN_BADGE = 'IOTA';
 
 /**
  * Find main version of a plugin by resolving it to the first version with the corresponding batch.
- * @param {import('../common/components/Switcher').Doc} plugin
+ * @param {import('../components/Switcher').Doc} plugin
+ * @param {string} badge
  */
 function findMainVersion(plugin, badge = MAIN_BADGE) {
   return plugin.versions.find((version) =>
-    version.badges.some((b) => b.includes(badge)),
+    version.badges ? version.badges.some((b) => b.includes(badge)) : false,
   );
 }
 
 /**
  * Generate the plugin config from the versioned config.
- * @param {import('../common/components/Switcher').Doc[]} pluginConfig
+ * @param {import('../components/Switcher').Doc[]} pluginConfig
  * @param {string} basePath
  */
 function generatePluginConfig(pluginConfig, basePath) {

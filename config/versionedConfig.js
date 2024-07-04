@@ -28,7 +28,6 @@ exports.buildPluginsConfig = [
     versions: [
       {
         label: 'v1.1',
-        badges: [],
         banner: 'unmaintained',
       },
       {
@@ -155,7 +154,6 @@ exports.maintainPluginsConfig = [
     versions: [
       {
         label: 'v1.1',
-        badges: [],
         banner: 'unmaintained',
       },
       {
