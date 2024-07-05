@@ -1,3 +1,9 @@
+/**
+ * SWIZZLED VERSION: 2.4.3
+ * REASONS:
+ *  - Ejected to fix the fotter alignment
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
