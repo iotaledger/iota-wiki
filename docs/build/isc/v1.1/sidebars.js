@@ -220,6 +220,11 @@ module.exports = {
                   label: 'Get NFTs Owned by an Account',
                   id: 'how-tos/core-contracts/nft/get-L2-nfts',
                 },
+                {
+                  type: 'doc',
+                  label: 'Get NFTs in Collection',
+                  id: 'how-tos/core-contracts/nft/get-nft-in-collection',
+                },
               ],
             },
             {
