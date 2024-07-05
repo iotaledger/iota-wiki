@@ -1,0 +1,53 @@
+---
+description: How to get the L2 NFTs owned by an account.
+image: /img/logo/WASP_logo_dark.png
+tags:
+  - EVM
+  - how-to
+  - native tokens
+  - L2 NFTs
+---
+import GetNftMetadata from '../../../_partials/how-tos/token/_get-nft-metadata.md';
+import ISCAgentID from '../../../_admonitions/_AgentID.md';
+
+# Get NFTs Owned by an Account
+
+This guide will show you how to get the L2 NFTs owned by an account using the [`ISCAccounts.getL2NFTs`](../../../reference/magic-contract/ISCAccounts.md#getl2nfts) function from the [`ISCAccounts`](../../../reference/magic-contract/ISCAccounts.md) [magic contract](../../../reference/magic-contract/introduction.md).
+<GetNftMetadata/>
+
+## Understanding the `getL2NFTs` Function
+
+The `getL2NFTs` function is a view function provided by the `ISCAccounts` interface. It takes an `ISCAgentID` as an argument and returns an array of `NFTID` objects. This function allows users to query and retrieve the list of L2 NFTs owned by a specified agent.
+<ISCAgentID/>
+
+The returned array contains the identifiers of the NFTs, which can then be used to fetch more details about each NFT if needed.
+
+## Implement the `getL2NFTs` Function
+
+Here’s a sample implementation to retrieve L2 NFTs owned by an account:
+
+```solidity
+function getOwnedNFTs(ISCAgentID memory agentID) public view returns (NFTID[] memory) {
+    // Call the getL2NFTs function from the ISCAccounts contract
+    NFTID[] memory ownedNFTs = ISC.accounts.getL2NFTs(agenID);
+    return ownedNFTs;
+}
+```
+
+## Full Example Contract
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.8.24;
+
+import "@iota/iscmagic/ISC.sol";
+
+contract MyNFTContract {
+
+function getOwnedNFTs(ISCAgentID memory agentID) public view returns (NFTID[] memory) {
+    // Call the getL2NFTs function from the ISCAccounts contract
+    NFTID[] memory ownedNFTs = ISC.accounts.getL2NFTs(agenID);
+    return ownedNFTs;
+    }
+}
+```
