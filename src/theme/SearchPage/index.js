@@ -1,3 +1,9 @@
+/**
+ * SWIZZLED VERSION: 2.4.3
+ * REASONS:
+ *  - Ejected to add search filters using facets
+ */
+
 /* eslint-disable */
 /* eslint-disable jsx-a11y/no-autofocus */
 import React, {
