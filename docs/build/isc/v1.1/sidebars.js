@@ -54,6 +54,11 @@ module.exports = {
         },
         {
           type: 'doc',
+          label: 'Contracts',
+          id: 'getting-started/contracts',
+        },
+        {
+          type: 'doc',
           label: 'Tools',
           id: 'getting-started/tools',
         },
