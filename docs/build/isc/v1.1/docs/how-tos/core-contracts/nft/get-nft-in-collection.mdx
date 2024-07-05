@@ -12,45 +12,10 @@ import GetNftMetadata from '../../../_partials/how-tos/token/_get-nft-metadata.m
 
 #  Get NFTs of a Given Collection
 
-This guide will show you how to get the L2 NFTs of a given collection owned by an account using the [`ISCAccounts.getL2NFTsInCollection`](../../../reference/magic-contract/ISCAccounts.md#getl2nftsincollection) function from the [`ISCAccounts.getL2NFTsInCollection`](../../../reference/magic-contract/ISCAccounts.md) [magic contract](../../../reference/magic-contract/introduction.md).
-
+This guide will show you how to get the L2 NFTs of a given collection owned by an account using the [`ISCAccounts.getL2NFTsInCollection`](../../../reference/magic-contract/ISCAccounts.md#getl2nftsincollection) function from the [`ISCAccounts`](../../../reference/magic-contract/ISCAccounts.md) [magic contract](../../../reference/magic-contract/introduction.md).
 <GetNftMetadata />
 
-## Understanding the `getL2NFTsInCollection` Function
-
-The `getL2NFTsInCollection` function is a view function provided by the `ISCAccounts` interface. It takes two parameters: an `ISCAgentID` representing the owner of the NFTs, and an `NFTID` representing the collection. It returns an array of `NFTID` objects, representing the NFTs in the specified collection owned by the agent.
-
-## Why Retrieve NFTs in a Collection?
-
-Retrieving the NFTs in a collection can serve several purposes:
-
-- ### Portfolio Management:
-
-  - Helps users manage their NFT collections effectively.
-
-- ### Market Analysis:
-
-  - Enables users to analyze the contents of their collections for trading or valuation purposes.
-
-- ### Display Collections:
-
-  - Users can display specific collections on platforms or personal galleries.
-
-- ### Organization:
-
-  - Helps in organizing NFTs into different categories or collections for better accessibility and management.
-
-## Prerequisites
-
-### 1. Install the ISC Magic Library:
-
-Ensure you have the ISC Magic library installed in your project.
-
-```bash
-npm install @iota/iscmagic
-```
-
-### 2. Import the ISCAccounts Interface:
+### Import the ISCAccounts Interface:
 
 In your Solidity file, import the ISCAccounts interface.
 
@@ -102,7 +67,3 @@ function getNFTsInCollection(bytes memory agentData, NFTID memory collectionId) 
     }
 }
 ```
-
-## Conclusion
-
-Using the `getL2NFTsInCollection` function from the `ISCAccounts` interface provides an efficient way to retrieve and manage NFTs within a specific collection owned by an account. By integrating this functionality into your smart contracts, you can enhance user experience by enabling features such as [portfolio management](#portfolio-management), [market analysis](#market-analysis), and [display collections](#display-collections). With this guide, you now have the foundational knowledge to implement and utilize the `getL2NFTsInCollection` function in your own projects, allowing for seamless interaction with `ISC` Magic and its associated NFTs.
