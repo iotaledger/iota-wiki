@@ -8,60 +8,19 @@ tags:
   - L2 NFTs
 ---
 import GetNftMetadata from '../../../_partials/how-tos/token/_get-nft-metadata.md';
+import ISCAgentID from '../../../_admonitions/_AgentID.md';
 
 # Get NFTs Owned by an Account
 
-This guide will show you how to get the L2 NFTs owned by an account using the [`ISCAccounts.getL2NFTs`](../../../reference/magic-contract/ISCAccounts.md#getl2nfts) function from the [`ISCAccounts.getL2NFTs`](../../../reference/magic-contract/ISCAccounts.md) [magic contract](../../../reference/magic-contract/introduction.md).
-
-<GetNftMetadata />
+This guide will show you how to get the L2 NFTs owned by an account using the [`ISCAccounts.getL2NFTs`](../../../reference/magic-contract/ISCAccounts.md#getl2nfts) function from the [`ISCAccounts`](../../../reference/magic-contract/ISCAccounts.md) [magic contract](../../../reference/magic-contract/introduction.md).
+<GetNftMetadata/>
 
 ## Understanding the `getL2NFTs` Function
 
-The `getL2NFTs` function is a view function provided by the `ISCAccounts` interface. It takes an `ISCAgentID` as an argument and returns an array of `NFTID` objects. This function allows users to query and retrieve the list of L2 NFTs owned by a specified agent. The `ISCAgentID` represents the identifier of the agent (user or contract) whose NFTs you want to retrieve. The returned array contains the identifiers of the NFTs, which can then be used to fetch more details about each NFT if needed.
+The `getL2NFTs` function is a view function provided by the `ISCAccounts` interface. It takes an `ISCAgentID` as an argument and returns an array of `NFTID` objects. This function allows users to query and retrieve the list of L2 NFTs owned by a specified agent.
+<ISCAgentID/>
 
-## Why Would a User Need to Retrieve Owned NFTs?
-
-Retrieving the NFTs owned by a user can serve several purposes:
-
-- ### Portfolio Management
-
-  - Users can manage their digital assets effectively by viewing all their NFTs in one place.
-
-- ### Marketplace Listing
-
-  - Users can list their NFTs on various marketplaces by verifying their ownership.
-
-- ### Collection Display
-
-  - Users can showcase their NFT collections on social media, personal websites, or within specific applications.
-
-- ### Trading and Transfers
-
-  - Knowing the NFTs owned helps users decide which assets to trade or transfer to other users.
-
-- ### Application Integration
-
-  - Applications can provide customized experiences based on the NFTs a user owns, such as granting access to special content or features.
-
-## Prerequisites
-
-### 1. Install the ISC Magic Library
-
-   Ensure you have the ISC Magic library installed in your project:
-
-   ```bash
-   npm install @iota/iscmagic
-   ```
-
-### 2. Import the ISC Library
-
-   In your Solidity file, import the ISC Library:
-
-   ```solidity
-   pragma solidity >=0.8.24;
-
-   import "@iota/iscmagic/ISC.sol";
-   ```
+The returned array contains the identifiers of the NFTs, which can then be used to fetch more details about each NFT if needed.
 
 ## Implement the `getL2NFTs` Function
 
@@ -92,6 +51,3 @@ function getOwnedNFTs(ISCAgentID memory agentID) public view returns (NFTID[] me
     }
 }
 ```
-## Conclusion
-
-Using the `getL2NFTs` function from the `ISCAccounts` interface provides an efficient way to retrieve and manage the Layer 2 NFTs owned by an account. By integrating this functionality into your smart contracts, you can enhance user experience by enabling features such as [portfolio management](#portfolio-management), [marketplace listings](#marketplace-listing), [collection displays](#collection-display), and more. With this guide, you have the foundational knowledge to implement and utilize the `getL2NFTs` function in your projects, allowing for seamless interaction with `ISC Magic` and its associated NFTs.
