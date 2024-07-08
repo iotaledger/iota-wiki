@@ -225,6 +225,11 @@ module.exports = {
                   label: 'Get NFTs in Collection',
                   id: 'how-tos/core-contracts/nft/get-nft-in-collection',
                 },
+                {
+                  type: 'doc',
+                  label: 'Get On-Chain NFT Data',
+                  id: 'how-tos/core-contracts/nft/get-nft-data',
+                },
               ],
             },
             {
