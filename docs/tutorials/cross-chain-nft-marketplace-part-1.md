@@ -185,50 +185,8 @@ https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/ab1186650
 
 A standard ERC721-compatible contract that allows minting and transferring of NFTs, used as an example for the tutorial. The full contract code is as follows:
 
-```solidity
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.22;
-
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-
-contract MyERC721 is ERC721Enumerable, Ownable {
-    string public _baseTokenURI;
-    uint32 public _tokenId = 0;
-
-    event EventSetBaseURI(string baseURI);
-
-    constructor(
-        string memory _name,
-        string memory _symbol,
-        string memory _baseTokenLink
-    ) ERC721(_name, _symbol) {
-        _baseTokenURI = _baseTokenLink;
-    }
-
-    function _baseURI() internal view virtual override returns (string memory) {
-        return _baseTokenURI;
-    }
-
-    function setBaseURI(string memory baseURI) external onlyOwner {
-        _baseTokenURI = baseURI;
-
-        emit EventSetBaseURI(baseURI);
-    }
-
-    function mint() external onlyOwner {
-        _safeMint(msg.sender, _tokenId, "");
-        _tokenId++;
-    }
-
-    function transfer(address to, uint tokenId) external {
-        _safeTransfer(msg.sender, to, tokenId, "");
-    }
-
-    function isApprovedOrOwner(address spender, uint tokenId) external view virtual returns (bool) {
-        return _isApprovedOrOwner(spender, tokenId);
-    }
-}
+```solidity reference
+https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/contracts/MyERC721.sol
 ```
 
 After adding the contracts, compile them by running:
@@ -282,46 +240,10 @@ npx hardhat run scripts/mint_nft.js --network shimmerevm-testnet
 ### approve_myERC721_for_marketplace.js
 
 To allow the NFTMarketplace contract to transfer the NFT from the seller to the buyer, the seller must approve the marketplace contract to transfer the NFT on their behalf.
-```javascript
-const fs = require('fs');
-const path = require('path');
-const { ethers } = require('hardhat');
-
-async function approveNFTTransfer(marketplaceAddress, myERC721Address, tokenId) {
-    // Attach to the deployed MyERC721 contract
-    const MyERC721 = await ethers.getContractFactory("MyERC721");
-    const myERC721 = await MyERC721.attach(myERC721Address);
-
-    // Approve the marketplace to transfer the NFT
-    const tx = await myERC721.approve(marketplaceAddress, tokenId);
-    await tx.wait(); // Wait for the transaction to be mined
-
-    console.log(`Approved marketplace at address ${marketplaceAddress} to transfer tokenId ${tokenId}`);
-}
-
-async function main() {
-    // Load the marketplace address
-    const marketplaceAddressPath = path.join(__dirname, 'addresses', 'NFTMarketplace.txt');
-    const marketplaceAddress = fs.readFileSync(marketplaceAddressPath, 'utf8').trim();
-
-    // Load the MyERC721 contract address
-    const myERC721AddressPath = path.join(__dirname, 'addresses', 'MyERC721.txt');
-    const myERC721Address = fs.readFileSync(myERC721AddressPath, 'utf8').trim();
-
-    // Specify the tokenId you want to approve for transfer
-    const tokenId = 0; // Example token ID, change this to the actual token ID you want to approve
-
-    await approveNFTTransfer(marketplaceAddress, myERC721Address, tokenId);
-}
-
-main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-        console.error(error);
-        process.exit(1);
-    });
+```javascript reference
+https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scripts/approve_myERC721_for_marketplace.js
 ```
-execute the script by running:
+You can run the script by executing the following command:
 
 ```bash
 npx hardhat run scripts/approve_myERC721_for_marketplace.js --network shimmerevm-testnet
@@ -331,97 +253,23 @@ npx hardhat run scripts/approve_myERC721_for_marketplace.js --network shimmerevm
 
 After approving the NFT transfer, let's list the NFT for sale on the marketplace by running the following script:
 
-```javascript
-const fs = require('fs');
-const path = require('path');
-const { ethers } = require('hardhat');
-
-async function createListing(marketplaceAddress, myERC721Address, tokenId, price) {
-    // Attach to the deployed MyERC721 contract
-    const NFTMarketPlace = await ethers.getContractFactory("NFTMarketPlace");
-    const marketplace = await NFTMarketPlace.attach(marketplaceAddress);
-
-    // Approve the marketplace to transfer the NFT
-    const tx = await marketplace.listItem(myERC721Address, tokenId, price);
-    await tx.wait(); // Wait for the transaction to be mined
-
-    console.log(`Created listing for tokenId ${tokenId} with price ${price}`);
-}
-
-async function main() {
-    // Load the marketplace address
-    const marketplaceAddressPath = path.join(__dirname, 'addresses', 'NFTMarketplace.txt');
-    const marketplaceAddress = fs.readFileSync(marketplaceAddressPath, 'utf8').trim();
-
-    // Load the MyERC721 contract address
-    const myERC721AddressPath = path.join(__dirname, 'addresses', 'MyERC721.txt');
-    const myERC721Address = fs.readFileSync(myERC721AddressPath, 'utf8').trim();
-
-    // Specify the tokenId you want to approve for transfer
-    const tokenId = 0; // Example token ID, change this to the actual token ID you want to approve
-    const price = 1;
-
-    await createListing(marketplaceAddress, myERC721Address, tokenId, price);
-}
-
-main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-        console.error(error);
-        process.exit(1);
-    });
+```javascript reference
+https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scripts/create_listing.js
 ```
-execute the script by running:
+You can run the script by executing the following command:
 
 ```bash
 npx hardhat run scripts/create_listing.js --network shimmerevm-testnet
 ```
 
-
 ### buy_item.js
 
 Finally, let's buy the NFT by running the following script:
 
-```javascript
-const fs = require('fs');
-const path = require('path');
-const { ethers } = require('hardhat');
-
-async function buyItem(marketplaceAddress, nftAddress, tokenId) {
-    // Attach to the deployed NFTMarketPlace contract
-    const NFTMarketPlace = await ethers.getContractFactory("NFTMarketPlace");
-    const marketplace = await NFTMarketPlace.attach(marketplaceAddress);
-
-    // Call the buyItem function
-    const tx = await marketplace.buyItem(nftAddress, tokenId, { value: 1 }); // Assuming 1 ETH as payment, adjust accordingly
-    await tx.wait(); // Wait for the transaction to be mined
-
-    console.log(`Bought item with tokenId ${tokenId} from ${nftAddress}`);
-}
-
-async function main() {
-    // Load the marketplace address
-    const marketplaceAddressPath = path.join(__dirname, 'addresses', 'NFTMarketplace.txt');
-    const marketplaceAddress = fs.readFileSync(marketplaceAddressPath, 'utf8').trim();
-
-    // Load the NFT contract address (assuming you're buying an NFT from MyERC721 contract)
-    const nftAddressPath = path.join(__dirname, 'addresses', 'MyERC721.txt');
-    const nftAddress = fs.readFileSync(nftAddressPath, 'utf8').trim();
-
-    // Specify the tokenId of the NFT you want to buy
-    const tokenId = 0; // Example token ID, change this to the actual token ID you want to buy
-
-    await buyItem(marketplaceAddress, nftAddress, tokenId);
-}
-
-main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-        console.error(error);
-        process.exit(1);
-    });
+```javascript reference
+https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scripts/buy_item.js
 ```
-execute the script by running:
+You can run the script by executing the following command:
 
 ```bash
 npx hardhat run scripts/buy_item.js --network shimmerevm-testnet
