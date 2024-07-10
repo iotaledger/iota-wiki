@@ -249,24 +249,4 @@ module.exports = [
       ],
     },
   ],
-  [
-    pluginTutorial,
-    {
-      title:
-        'Tutorial - Create a cross-chain NFT market place on ShimmerEVM using Hardhat, Layer0 bridge and IOTA L1',
-      description:
-        'This tutorial is meant to showcase NFT cross-chain functionlity on ISC network',
-      preview: '/img/tutorials/shimmerevm-hardhat.jpg',
-      route: 'tutorials/cross-chain-nft-marketplace-part-1',
-      tags: [
-        'text',
-        'shimmer',
-        'solidity',
-        'shimmerevm',
-        'hardhat',
-        'iscp',
-        'video',
-      ],
-    },
-  ],
 ];
