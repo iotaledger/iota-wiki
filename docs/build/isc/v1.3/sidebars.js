@@ -241,9 +241,10 @@ module.exports = {
         },
       ],
     },
-    { type: 'category',
+    {
+      type: 'category',
       label: 'Tutorials',
-      items: ['tutorials/cross-chain-nft-marketplace-part-1'] 
+      items: ['tutorials/cross-chain-nft-marketplace-part-1'],
     },
     {
       type: 'category',
