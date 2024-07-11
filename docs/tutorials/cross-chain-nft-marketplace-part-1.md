@@ -206,14 +206,16 @@ The `deploy_marketplace_shimmer.js` script will deploy the NFTMarketplace contra
 ```javascript reference
 https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scripts/deploy_marketplace_shimmer.js
 ```
-This will deploy the NFTMarketplace contract to the ShimmerEVM Testnet and save the contract address to a file.
-run it by executing:
+
+You can run this script with the following command:
 
 ```bash
 npx hardhat run scripts/deploy_marketplace_shimmer.js --network shimmerevm-testnet
 ```
 
 ### deploy_er721_shimmer.js
+This script will deploy the `MyERC721` contract to the ShimmerEVM Testnet and save the contract's address to a file called `MyERC721.txt`.
+
 This script will deploy the `MyERC721` contract to the ShimmerEVM Testnet and save the contract's address to a file called `MyERC721.txt`.
 
 ```javascript reference
