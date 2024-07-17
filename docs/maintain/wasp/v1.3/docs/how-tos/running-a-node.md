@@ -29,6 +29,8 @@ We recommend that you run the docker image on a server with:
 
 Clone and follow the instructions on the [node-docker-setup repo](/hornet/how_tos/using_docker).
 
-:::note
+:::note IOTA Sandbox
+
 This is aimed at production-ready deployment. If you're looking to spawn a local node for testing/development, please see the [IOTA Sandbox](/iota-sandbox/welcome)
+
 :::
