@@ -23,6 +23,14 @@ export const FilterDropdown = forwardRef(
 
     const handleCheckboxChange = (event) => {
       const { value, checked } = event.target;
+
+      // If selecting an individual item when "Select All" is checked, clear all and select only the clicked item
+      if (actualFacets.every((facet) => selectedFacets[1].includes(facet))) {
+        setSelectedFacets([selectedFacets[0], [value]]);
+        console.log('helloooo');
+        return;
+      }
+
       let updatedFacetList = checked
         ? [...selectedFacets[1], value]
         : selectedFacets[1].filter((facet) => facet !== value);
