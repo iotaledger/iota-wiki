@@ -27,7 +27,6 @@ export const FilterDropdown = forwardRef(
       // If selecting an individual item when "Select All" is checked, clear all and select only the clicked item
       if (actualFacets.every((facet) => selectedFacets[1].includes(facet))) {
         setSelectedFacets([selectedFacets[0], [value]]);
-        console.log('helloooo');
         return;
       }
 
