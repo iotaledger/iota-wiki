@@ -163,7 +163,7 @@ npx hardhat run scripts/deploy_er721_bnb.js --network bnbTestnet
 After you have deployed the `MyERC721` contract, you are ready to mint an NFT using the following script:
 
 ```javascript reference
-https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scripts/mint_nft.js
+https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scripts/mint_nft_bnb.js
 ```
 You can run the script by executing the following command:
 
