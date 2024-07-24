@@ -22,8 +22,15 @@ The Stardust update allows you to create your own NFTs. You can also use [IRC27]
 ```solidity
 ISCAgentID memory agentID = ISC.sandbox.getSenderAccount();
 ```
+:::info ISC AGENT ID 
+The `ISCAgentID` represents the identifier of the agent (user or contract) whose NFTs you want to retrieve. You can get the `AgentID` from the sender by calling `ISC.sandbox.getSenderAccount()`.
+:::
 
 3. Create an `IRC27Metadata` struct  with all the needed data:
+
+:::tip 
+You can refer to [this](https://wiki.iota.org/isc/how-tos/core-contracts/nft/get-nft-metadata/) guide to understand how to create an `IRC27Metadata` 
+:::
 
 ```solidity
 IRC27NFTMetadata memory metadata = IRC27NFTMetadata({
@@ -34,6 +41,7 @@ IRC27NFTMetadata memory metadata = IRC27NFTMetadata({
     name: _name
 });
 ```
+
 
 4. Create all the data for the core contract call. To do so, you should create a new `ISCDict` with 2 parameters like specified in the reference docs for [`mintNFT`](../../../reference/core-contracts/accounts.md#mintnfti-immutabledata-a-agentid-c-collectionid-w-withdrawonmint)
 * `I` is the immutable metadata we fill with the IRC27 metadata and
@@ -179,5 +187,4 @@ contract NFTContract {
             '"}');
     }
 }
-
 ```
