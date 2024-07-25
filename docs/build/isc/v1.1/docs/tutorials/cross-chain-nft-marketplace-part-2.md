@@ -134,14 +134,14 @@ https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/cont
 
 You will add scripts that perform the following tasks in order:
 
-1- Deploy the `MyERC721` contract to the BNB Testnet.
-2- Mint an NFT using the `MyERC721` contract.
-3- Deploy the `MyProxyONFT721` contract to the BNB Testnet.
-4- Deploy the `MyONFT721` contract, the reciever, to the ShimmerEVM Testnet.
-5- Configure the `MyProxyONFT721` contract to send NFTs to the `MyONFT721` contract.
-6- Configure the `MyONFT721` contract to receive NFTs from the `MyProxyONFT721` contract.
-7- Send an NFT from the BNB Testnet to the ShimmerEVM Testnet.
-8- List the received NFT on the NFT marketplace.
+1. Deploy the `MyERC721` contract to the BNB Testnet. [deploy_erc721_bnb.js](#deploy_erc721_bnbjs)
+2. Mint an NFT using the `MyERC721` contract. [mint_nft.js](#mint_nftjs)
+3. Deploy the `MyProxyONFT721` contract to the BNB Testnet. [deploy_proxyonft_bnb.js](#deploy_proxyonft_bnbjs)
+4. Deploy the `MyONFT721` contract, the receiver, to the ShimmerEVM Testnet. [deploy_onft721_shimmer.js](#deploy_onft721_shimmerjs)
+5. Configure the `MyProxyONFT721` contract to send NFTs to the `MyONFT721` contract. [set_trusted_remote_bnb.js](#set_trusted_remote_bnbjs)
+6. Configure the `MyONFT721` contract to receive NFTs from the `MyProxyONFT721` contract. [set_trusted_remote_shimmer.js](#set_trusted_remote_shimmerjs)
+7. Send an NFT from the BNB Testnet to the ShimmerEVM Testnet. [send_nft_bnb_to_shimmer.js](#send_nftjs)
+8. List the received NFT on the NFT marketplace. [list_nft_marketplace.js](#create_listingjs)
 
 :::note
 
@@ -175,7 +175,7 @@ You can run the script by executing the following command:
 ```bash
 npx hardhat run scripts/mint_nft.js --network bnbTestnet
 ```
-### deplpy_proxynftonft_bnb.js
+### deploy_proxyonft_bnb.js
 
 Next, deploy the `MyProxyONFT721` contract to the BNB Testnet and save its address in a file called `MyProxyONFT721_BNB.txt` using the following script:
 
