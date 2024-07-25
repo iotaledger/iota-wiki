@@ -250,7 +250,7 @@ module.exports = {
       type: 'category',
       label: 'Tutorials',
       items: [
-       {
+        {
           type: 'category',
           label: 'Cross-chain NFT Marketplace',
           items: [
@@ -264,8 +264,8 @@ module.exports = {
               label: 'Part II',
               id: 'tutorials/cross-chain-nft-marketplace-part-2',
             },
-          ]
-        }
+          ],
+        },
       ],
     },
     {
