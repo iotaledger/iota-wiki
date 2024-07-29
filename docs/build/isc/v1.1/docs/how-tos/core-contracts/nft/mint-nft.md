@@ -19,18 +19,19 @@ The Stardust update allows you to create your own NFTs. You can also use [IRC27]
 
 2. Get the senders AgentID:
 
+The `ISCAgentID` represents the identifier of the agent (user or contract) whose NFTs you want to retrieve. You can get the `AgentID` from the sender by calling `ISC.sandbox.getSenderAccount()`.
+
 ```solidity
 ISCAgentID memory agentID = ISC.sandbox.getSenderAccount();
 ```
-:::info ISC AGENT ID 
-The `ISCAgentID` represents the identifier of the agent (user or contract) whose NFTs you want to retrieve. You can get the `AgentID` from the sender by calling `ISC.sandbox.getSenderAccount()`.
-:::
 
 3. Create an `IRC27Metadata` struct  with all the needed data:
 
 :::tip 
-You can refer to [this](https://wiki.iota.org/isc/how-tos/core-contracts/nft/get-nft-metadata/) guide to understand how to create an `IRC27Metadata` 
+You can refer to [Get NFT Metadata guide](https://wiki.iota.org/isc/how-tos/core-contracts/nft/get-nft-metadata/) to understand how to create an `IRC27Metadata` 
 :::
+
+The`IRC27Metadata` struct in Solidity is designed to hold the metadata for a Non-Fungible Token (NFT) according to the IRC27 standard. This struct includes various fields that describe the NFT, such as its standard, version, MIME type, URI, and name. Here's how to create and use this struct:
 
 ```solidity
 IRC27NFTMetadata memory metadata = IRC27NFTMetadata({
