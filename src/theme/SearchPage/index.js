@@ -35,7 +35,7 @@ import {
 import Layout from '@theme/Layout';
 import styles from './styles.module.css';
 import { SearchContext } from '@site/src/utils/SearchContext';
-import { FilterDropdown } from '../SearchBar/FilterDropdown';
+import { FilterDropdown } from './FilterDropdown';
 // Very simple pluralization: probably good enough for now
 function useDocumentsFoundPlural() {
   const { selectMessage } = usePluralForm();

@@ -26,7 +26,7 @@ import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { createPortal } from 'react-dom';
 import translations from '@theme/SearchTranslations';
-import { FilterDropdown } from './FilterDropdown';
+import { FilterDropdown } from '../SearchPage/FilterDropdown';
 import { SearchContext } from '@site/src/utils/SearchContext';
 import { allFacets } from '@site/src/utils/searchConstant';
 
@@ -184,14 +184,6 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
         ref={searchButtonRef}
         translations={translations.button}
       />
-      {isOpen && (
-        <FilterDropdown
-          selectedFacets={selectedFacets}
-          setSelectedFacets={setSelectedFacets}
-          ref={filterDropdownMenuRef}
-        />
-      )}
-
       {isOpen &&
         DocSearchModal &&
         searchContainer.current &&
