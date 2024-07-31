@@ -100,13 +100,13 @@ contract NFTContract {
     // Event emitted when a new NFT is minted
     event MintedNFT(bytes mintID);
 
-    /**
-     * @notice Mints a new NFT with the provided metadata and storage deposit
-     * @param _name The name of the NFT
-     * @param _mimeType The MIME type of the NFT
-     * @param _uri The URI where the NFT data is stored
-     * @param _storageDeposit The amount of storage deposit required
-     */
+    
+     /// @notice Mints a new NFT with the provided metadata and storage deposit
+     /// @param _name The name of the NFT
+     /// @param _mimeType The MIME type of the NFT
+     /// @param _uri The URI where the NFT data is stored
+     /// @param _storageDeposit The amount of storage deposit required
+    
     function mintNFT(string memory _name, string memory _mimeType, string memory _uri, uint64 _storageDeposit) public payable {
         require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
 
@@ -143,11 +143,11 @@ contract NFTContract {
         emit MintedNFT(ret.items[0].value);
     }
 
-    /**
-     * @notice Retrieves the NFT ID associated with a given mint ID
-     * @param mintID The mint ID of the NFT
-     * @return The NFT ID associated with the provided mint ID
-     */
+    
+     /// @notice Retrieves the NFT ID associated with a given mint ID
+     /// @param mintID The mint ID of the NFT
+     /// @return The NFT ID associated with the provided mint ID
+
     function getNFTIDFromMintID(bytes memory mintID) public view returns (bytes memory) {
         // Prepare the parameters dictionary for the ISC call
         ISCDict memory params = ISCDict(new ISCDictItem[](1));
@@ -164,11 +164,11 @@ contract NFTContract {
         return ret.items[0].value;
     } 
 
-    /**
-     * @notice Converts an IRC27NFTMetadata struct to a JSON string
-     * @param metadata The metadata to convert
-     * @return The JSON string representation of the metadata
-     */
+    
+     /// @notice Converts an IRC27NFTMetadata struct to a JSON string
+     /// @param metadata The metadata to convert
+     /// @return The JSON string representation of the metadata
+    
     function IRC27NFTMetadataToString(IRC27NFTMetadata memory metadata)
         public
         pure
