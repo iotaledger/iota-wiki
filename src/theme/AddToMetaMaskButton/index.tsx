@@ -20,7 +20,7 @@ export function AddToMetaMaskButton(props: NetworkProps) {
     try {
       await window.ethereum.request({
         method: 'wallet_addEthereumChain',
-        params: [props.evm],
+        params: [props.evm.core],
       });
     } catch (error) {
       console.error(error);

@@ -21,8 +21,8 @@
     "prepack": "yarn build"
   },
   "dependencies": {
-    "@babel/generator": "^7.21.5",
-    "@babel/parser": "^7.23.9",
+    "@babel/generator": "^7.24.7",
+    "@babel/parser": "^7.24.7",
     "@babel/types": "^7.23.6",
     "@iota-wiki/core": "workspace:^",
     "@yarnpkg/shell": "^3.3.0",
@@ -36,7 +36,7 @@
     "isomorphic-git": "^1.25.3",
     "link-check": "^5.2.0",
     "markdownlint-cli2": "^0.8.1",
-    "node-html-parser": "^6.1.10",
+    "node-html-parser": "^6.1.13",
     "prettier": "2.8.8",
     "remark": "^14.0.2",
     "remark-lint-no-dead-urls": "^1.1.0",
@@ -50,7 +50,7 @@
     "copyfiles": "^2.4.1",
     "nodemon": "^2.0.16",
     "raw-loader": "^4.0.2",
-    "tsc-alias": "^1.8.8",
+    "tsc-alias": "^1.8.10",
     "typescript-plugin-css-modules": "^4.1.1"
   },
   "peerDependencies": {
