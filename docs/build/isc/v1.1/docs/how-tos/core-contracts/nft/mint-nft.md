@@ -28,7 +28,7 @@ ISCAgentID memory agentID = ISC.sandbox.getSenderAccount();
 3. Create an `IRC27Metadata` struct  with all the needed data:
 
 :::tip 
-You can refer to [Get NFT Metadata guide](https://wiki.iota.org/isc/how-tos/core-contracts/nft/get-nft-metadata/) to understand how to create an `IRC27Metadata` 
+You can refer to [Get NFT Metadata guide](get-nft-metadata.md) to understand how to create an `IRC27Metadata` 
 :::
 
 The`IRC27Metadata` struct in Solidity is designed to hold the metadata for a Non-Fungible Token (NFT) according to the IRC27 standard. This struct includes various fields that describe the NFT, such as its standard, version, MIME type, URI, and name. Here's how to create and use this struct:
