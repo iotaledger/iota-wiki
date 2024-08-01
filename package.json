@@ -73,7 +73,7 @@
     "remark-math": "^3.0.1",
     "remark-remove-comments": "^0.2.0",
     "url-loader": "^4.1.1",
-    "utf-8-validate": "^6.0.3",
+    "utf-8-validate": "^6.0.4",
     "web3": "^4.2.2",
     "webpack": "^5.89.0",
     "webpack-node-externals": "^3.0.0",
