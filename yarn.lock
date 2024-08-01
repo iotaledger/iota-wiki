@@ -2817,7 +2817,7 @@ __metadata:
     react-player: ^2.16.0
     react-popper: ^2.3.0
     react-select: ^5.7.7
-    recharts: ^2.11.0
+    recharts: ^2.12.7
     rehype-jargon: 3.0.0
     rehype-katex: 4
     rehype-lodash-template: ^0.2.1
@@ -15838,9 +15838,9 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"recharts@npm:^2.11.0":
-  version: 2.12.2
-  resolution: "recharts@npm:2.12.2"
+"recharts@npm:^2.12.7":
+  version: 2.12.7
+  resolution: "recharts@npm:2.12.7"
   dependencies:
     clsx: ^2.0.0
     eventemitter3: ^4.0.1
@@ -15853,7 +15853,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 513e47033329e057ee99ffb6074299478524e3c75e6602638a4b2c7e21f2e390223fbfdcb2db8a1acd563a6a80e22a6b7aec3278b22fc1142dcb374b70ac2550
+  checksum: c6f6b6d7de51dde17827f77f5dadfa0548422b1aa55c79d7104606dc47f8f4aabd7c6a226d9a8f6edf863788f33c99aafead784c842d2852b2bd9dac176460ea
   languageName: node
   linkType: hard
 
