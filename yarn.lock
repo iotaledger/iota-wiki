@@ -236,17 +236,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@argos-ci/cli@npm:^1.0.11":
-  version: 1.0.11
-  resolution: "@argos-ci/cli@npm:1.0.11"
+"@argos-ci/cli@npm:^1.0.12":
+  version: 1.0.12
+  resolution: "@argos-ci/cli@npm:1.0.12"
   dependencies:
-    "@argos-ci/core": 1.5.4
+    "@argos-ci/core": 1.5.5
     commander: ^11.0.0
     ora: ^7.0.1
     update-notifier: ^6.0.2
   bin:
     argos: bin/argos-cli.js
-  checksum: e4712d5797e9adb6b778ff90ad6315be687e6cd0c203a4bad4e95b2cc87a45310647665745e986b51e5c135e565f30a6808074736d1c77c93f6957a1303a5860
+  checksum: 9d90e35ed7394a14a0027f1efa425fc8a46e6bd5e79290ee0224a6a7a3a0640a9805d2ba893352d83f63fa5c72b9648a03c2fb1c233e73ae39d3da7054194426
   languageName: node
   linkType: hard
 
@@ -262,6 +262,21 @@ __metadata:
     sharp: ^0.32.5
     tmp: ^0.2.1
   checksum: 9a13c05032118e56f475fdc63abda7a44965c5294c84a858e0e9a9bae28ef92e1b02fc1f54f834b8c2bf478d63b931089c0540de66dc3c24fd18a7c7bf2d1dee
+  languageName: node
+  linkType: hard
+
+"@argos-ci/core@npm:1.5.5":
+  version: 1.5.5
+  resolution: "@argos-ci/core@npm:1.5.5"
+  dependencies:
+    "@argos-ci/util": 1.2.1
+    axios: ^1.5.0
+    convict: ^6.2.4
+    debug: ^4.3.4
+    fast-glob: ^3.3.1
+    sharp: ^0.32.5
+    tmp: ^0.2.1
+  checksum: ccc290322a6eb6cfc5335f24a93fd0e27d7ad0511231273d06983fd2d99db7d152e4da88cf7fe249a2a057eb5107494a5a6f85252a2e0082afb0e9752a9f59d6
   languageName: node
   linkType: hard
 
@@ -2765,7 +2780,7 @@ __metadata:
   resolution: "@iota-wiki/core@workspace:."
   dependencies:
     "@algolia/client-search": ^4.22.1
-    "@argos-ci/cli": ^1.0.11
+    "@argos-ci/cli": ^1.0.12
     "@argos-ci/playwright": ^1.9.3
     "@artsy/to-title-case": ^1.1.0
     "@docusaurus/core": 2.4.3
