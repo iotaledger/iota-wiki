@@ -55,7 +55,6 @@
     "humanize-duration": "^3.30.0",
     "infima": "^0.2.0-alpha.43",
     "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
-    "prop-types": "^15.8.1",
     "raw-loader": "^4.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
