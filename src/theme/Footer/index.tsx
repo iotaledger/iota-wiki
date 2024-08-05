@@ -6,19 +6,17 @@
 
 import React from 'react';
 import Footer from '@theme-original/Footer';
+import type FooterType from '@theme/Footer';
+import type { WrapperProps } from '@docusaurus/types';
 import Social from '@site/src/components/Social';
 
-type FooterProps = {
-  footerStyleProps?: React.CSSProperties;
-};
+type Props = WrapperProps<typeof FooterType>;
 
-const FooterWrapper = ({ footerStyleProps }: FooterProps) => {
+export default function FooterWrapper(props: Props): JSX.Element {
   return (
-    <div style={footerStyleProps}>
-      <Footer />
+    <>
+      <Footer {...props} />
       <Social />
-    </div>
+    </>
   );
-};
-
-export default FooterWrapper;
+}
