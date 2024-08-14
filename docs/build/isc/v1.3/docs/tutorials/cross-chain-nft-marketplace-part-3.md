@@ -1,4 +1,4 @@
-#  Cross-chain NFT Marketplace: Part II
+#  Cross-chain NFT Marketplace: Part II
 
 This is the third part of the Cross-chain NFT Marketplace tutorial series, that will guide you to how to evolve the marketplace to handle cross-chain NFT transfers.
 
@@ -6,22 +6,22 @@ This is the third part of the Cross-chain NFT Marketplace tutorial series, that 
 
 [Part II](https://wiki.iota.org/isc/tutorials/cross-chain-nft-marketplace-part-2/) guided you on how to manually bridge NFTs from the BNB Testnet to the ShimmerEVM Testnet and list them on the NFT marketplace.
 
-In this part, we will evolve the archtiecture of the marketplace to handle cross-chain NFT transfers. We will deploy the necessary contracts on the BNB Testnet and the ShimmerEVM Testnet, and configure them to send and receive NFTs across chains. We will also create scripts to automate the process of sending and receiving NFTs across chains.
+In this part, we will evolve the architecture of the marketplace to handle cross-chain NFT transfers. We will deploy the necessary contracts on the BNB Testnet and the ShimmerEVM Testnet, and configure them to send and receive NFTs across chains. We will also create scripts to automate sending and receiving NFTs across chains.
 
 
 
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org) >=  v18.0
+- [Node.js](https://nodejs.org) >=  v18.0
 - [Hardhat](https://hardhat.org) >= v2.0.0
-- [npx](https://www.npmjs.com/package/npx)  >= v7.1.0.
+- [npx](https://www.npmjs.com/package/npx)  >= v7.1.0.
 - Followed the steps in [Part I](https://wiki.iota.org/isc/tutorials/cross-chain-nft-marketplace-part-1/) and [Part II](https://wiki.iota.org/isc/tutorials/cross-chain-nft-marketplace-part-2/) of the tutorial series.
 
 
 ## Configuration
 
-There are no extra configurations needed for this part of the tutorial. You can use the same `hardhat.config.js` file from [Part I](https://wiki.iota.org/isc/tutorials/cross-chain-nft-marketplace-part-1/).
+No extra configurations are needed for this part of the tutorial. You can use the same `hardhat.config.js` file from [Part I](https://wiki.iota.org/isc/tutorials/cross-chain-nft-marketplace-part-1/).
 
 ```javascript reference
 https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/hardhat.config.js
@@ -32,21 +32,21 @@ https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/hard
 
 ![alt text](../../../../../../static/img/tutorials/cross_chain_marketplace/Architecture-V3.png)
 
-Next to the marketplace contract, you will deploy additional contracts to handle cross-chain NFT transfers and messages. To put things into prespective, here is the flow of the cross-chain NFT buying process from a user on BNB Testnet to the marketplace on ShimmerEVM Testnet:
+Next to the marketplace contract, you will deploy additional contracts to handle cross-chain NFT transfers and messages. To put things into perspective, here is the flow of the cross-chain NFT buying process from a user on BNB Testnet to the marketplace on ShimmerEVM Testnet:
 
 ### Flow
-1- A user `Alice` on ShimmerEVM Testnet lists an NFT on the marketplace. The NFT is an `ONFT`, so that the NFT can be transferred across chains. The NFT can also be a normal ERC721 token, but in this case, a proxy contract must be used to transfer the NFT across chains.
+1- A user `Alice` on ShimmerEVM Testnet lists an NFT on the marketplace. The NFT is an `ONFT` so that the NFT can be transferred across chains. The NFT can also be a normal ERC721 token, but in this case, a proxy contract must be used to transfer the NFT across chains.
 
 2- A user `Bob` with some ERC20 tokens, an `OFT`, on the BNB Testnet wants to buy an NFT listed on the marketplace on the ShimmerEVM Testnet.
-3- `Bob` allows the `CrossChainAgent` contract on the BNB Testnet to transfer the required amount of ERC20 to iteself. Note that ERC20 tokens are itself an `OFT` which can be transferred across chains itself.
-4- The user calls `buyCrossChain` on `CrossChainAgent` contract with the required amount of ERC20 tokens and the NFT ID.
+3- `Bob` allows the `CrossChainAgent` contract on the BNB Testnet to transfer the required amount of ERC20 to itself. Note that ERC20 tokens are an `OFT` that can be transferred across chains themselves.
+4- The user calls `buyCrossChain` on the `CrossChainAgent` contract with the required amount of ERC20 tokens and the NFT ID.
 5- The `CrossChainAgent` contract sends a message to the `CrossChainAgent` contract on the ShimmerEVM Testnet with the user's address and the NFT Address and token ID.
-6- The `CrossChainAgent` contract on the ShimmerEVM Testnet receives the message, do some checks, and then calls the `buyItemCrossChain` function on the marketplace contract to complete the purchase.
-7- The marketplace contract interacts with the corrsponding ONFT contract to transfer the NFT to the user.
+6- The `CrossChainAgent` contract on the ShimmerEVM Testnet receives the message, does some checks, and then calls the `buyItemCrossChain` function on the marketplace contract to complete the purchase.
+7- The marketplace contract interacts with the corresponding ONFT contract to transfer the NFT to the user.
 
 :::note
 
-The flow doesn't include transferring ERC20 tokens across chains. The `CrossChainAgent` contract recieves the ERC20 tokens on the BNB Testnet and sends a message to the `CrossChainAgent` contract on the ShimmerEVM Testnet. This can be done, but it would add more complexity to the flow.
+The flow doesn't include transferring ERC20 tokens across chains. The `CrossChainAgent` contract receives the ERC20 tokens on the BNB Testnet and sends a message to the `CrossChainAgent` contract on the ShimmerEVM Testnet. This can be done, but it would add more complexity to the flow.
 
 :::
 
@@ -67,64 +67,64 @@ The `CrossChainAgent` contract is responsible for sending and receiving messages
 
 ```Solidity
 /// @notice this function is to be called by the user to buy an NFT on BNB
-    function buyCrossChain(
-        uint16 _dstChainId,
-        address _user,
-        address _tokenAddress,
-        address _nftAddress,
-        uint256 _amount,
-        uint256 _tokenId,
-        address payable refundAddress,
-        bytes memory adapterParams
-    ) public payable {
+    function buyCrossChain(
+        uint16 _dstChainId,
+        address _user,
+        address _tokenAddress,
+        address _nftAddress,
+        uint256 _amount,
+        uint256 _tokenId,
+        address payable refundAddress,
+        bytes memory adapterParams
+ ) public payable {
 
-        IERC20(_tokenAddress).transferFrom(_user, address(this), _amount);
+        IERC20(_tokenAddress).transferFrom(_user, address(this), _amount);
 
-        // Update user balance on this chain
-        balances[_user] += _amount;
+        // Update user balance on this chain
+ balances[_user] += _amount;
 
-        // Encode the payload with the required data
-        bytes memory payload = abi.encode(
-            abi.encodePacked(_user),
-            _amount,
-            _nftAddress,
-            _tokenId
-        );
+        // Encode the payload with the required data
+        bytes memory payload = abi.encode(
+            abi.encodePacked(_user),
+ _amount,
+ _nftAddress,
+ _tokenId
+ );
 
-        // Send the payload to the agent on Shimmer
-        _lzSend(_dstChainId, payload, refundAddress, address(0x0), adapterParams, msg.value);
-    }
+        // Send the payload to the agent on Shimmer
+        _lzSend(_dstChainId, payload, refundAddress, address(0x0), adapterParams, msg.value);
+ }
 ```
 
 2. `_nonblockingLzReceive`: This function is called by the LayerZero endpoint on the destination chain upon the receipt of a message. We override this function in the `CrossChainAgent` contract Testnet to call the `_notifyMarketPlace` function on the marketplace contract to complete the purchase.
 
 ```solidity
 /// @notice This function is called by LayerZero when a cross-chain message is received
-    function _nonblockingLzReceive(
-        uint16 ,
-        bytes memory ,
-        uint64 _nonce,
-        bytes memory _payload
-    ) internal override {
-        // Decode the payload
-        (bytes memory toAddressBytes, uint256 amount, address tokenAddress, uint256 tokenId) = abi.decode(_payload, (bytes, uint256, address, uint256));
+    function _nonblockingLzReceive(
+        uint16 ,
+        bytes memory ,
+        uint64 _nonce,
+        bytes memory _payload
+ ) internal override {
+        // Decode the payload
+ (bytes memory toAddressBytes, uint256 amount, address tokenAddress, uint256 tokenId) = abi.decode(_payload, (bytes, uint256, address, uint256));
 
-        // Convert toAddressBytes to an address
-        address to;
-        assembly {
-            to := mload(add(toAddressBytes, 20))
-        }
+        // Convert toAddressBytes to an address
+        address to;
+        assembly {
+ to := mload(add(toAddressBytes, 20))
+ }
 
-        // Increment the user's balance
-        balances[to] += amount;
+        // Increment the user's balance
+ balances[to] += amount;
 
-        // Emit events
-        emit CustomMessageReceived(amount, tokenAddress, tokenId, to);
-        emit EmitPayload(_payload);
+        // Emit events
+        emit CustomMessageReceived(amount, tokenAddress, tokenId, to);
+        emit EmitPayload(_payload);
 
-        // Notify the marketplace that the balance is updated (this could be another cross-chain message)
-        _notifyMarketplace(tokenAddress, tokenId, to, balances[to]);
-    }
+        // Notify the marketplace that the balance is updated (this could be another cross-chain message)
+        _notifyMarketplace(tokenAddress, tokenId, to, balances[to]);
+ }
 ```
 
 The full contract code is as follows:
@@ -137,33 +137,33 @@ https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/cont
 
 The `NFTMarketPlaceV2` contract is an updated version of the `NFTMarketPlace` contract that you deployed in [Part I](https://wiki.iota.org/isc/tutorials/cross-chain-nft-marketplace-part-1/). This version includes a new function `buyItemCrossChain` that is called by the `CrossChainAgent` contract on the ShimmerEVM Testnet to complete the purchase of an NFT.
 
-The function checks if the item is listed, available, and if the user has enough balance to complete the purchase. It then transfers the NFT to the user by making a call to the NFT's proxy contract (The contract responsible for tranferring the NFT cross-chain). The user's balance is updated, and the item's availability is set to false.
+The function checks if the item is listed, and available, and if the user has enough balance to complete the purchase. It then transfers the NFT to the user by making a call to the NFT's proxy contract (The contract responsible for transferring the NFT cross-chain). The user's balance is updated, and the item's availability is set to false.
 
 ```solidity
-    function buyItemCrossChain(
-        address nftAddress,
-        uint256 tokenId,
-        address payable buyer,
-        uint256 amount
-    ) external nonReentrant isListed(nftAddress, tokenId) {
-        Listing memory listedItem = s_listings[nftAddress][tokenId];
+    function buyItemCrossChain(
+        address nftAddress,
+        uint256 tokenId,
+        address payable buyer,
+        uint256 amount
+ ) external nonReentrant isListed(nftAddress, tokenId) {
+ Listing memory listedItem = s_listings[nftAddress][tokenId];
 
-        _validateAmount(amount, listedItem.price, nftAddress, tokenId);
+        _validateAmount(amount, listedItem.price, nftAddress, tokenId);
 
-        delete s_listings[nftAddress][tokenId];
+        delete s_listings[nftAddress][tokenId];
 
-        _approveNFT(listedItem.proxyContract, nftAddress, tokenId);
+        _approveNFT(listedItem.proxyContract, nftAddress, tokenId);
 
-        bytes memory adapterParams = _createAdapterParams(buyer);
+        bytes memory adapterParams = _createAdapterParams(buyer);
 
-        uint256 fee = _estimateFee(listedItem.proxyContract, buyer, tokenId, adapterParams);
+        uint256 fee = _estimateFee(listedItem.proxyContract, buyer, tokenId, adapterParams);
 
-        _sendNFT(listedItem, buyer, tokenId, adapterParams, fee);
+        _sendNFT(listedItem, buyer, tokenId, adapterParams, fee);
 
-        s_proceeds[listedItem.seller] += amount;
+ s_proceeds[listedItem.seller] += amount;
 
-        emit ItemBought(msg.sender, nftAddress, tokenId, listedItem.price);
-    }
+        emit ItemBought(msg.sender, nftAddress, tokenId, listedItem.price);
+ }
 ```
 
 The full contract code is as follows:
@@ -220,7 +220,7 @@ You can run both scripts by executing the following commands:
 
 ```bash
 npx hardhat run scripts/deploy_onft_shimmer.js --network shimmerevm-testnet
-npx hardhat run scripts/deploy_onft_bnb.js  --network bnbTestnet
+npx hardhat run scripts/deploy_onft_bnb.js  --network bnbTestnet
 ```
 
 ### Set trusted remote of ONFT on BNB and Shimmer
@@ -296,7 +296,7 @@ https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scri
 You can run the scripts by executing the following commands:
 
 ```bash
-npx hardhat run scripts/set_trusted_remote_agent_bnb.js  --network bnbTestnet
+npx hardhat run scripts/set_trusted_remote_agent_bnb.js  --network bnbTestnet
 npx hardhat run scripts/set_trusted_remote_agent_shimmer.js --network shimmerevm-testnet
 ```
 
@@ -310,7 +310,7 @@ https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scri
 You can run the script by executing the following command:
 
 ```bash
-npx hardhat run scripts/send_msg_bnb.js  --network bnbTestnet
+npx hardhat run scripts/send_msg_bnb.js  --network bnbTestnet
 ```
 
 
@@ -321,4 +321,4 @@ For the OFTs, we are using the `MyOFT` contract, which is a simple ERC20 token c
 
 
 ## Conclusion
-In the third part of the tutorial, we have automated the buy flow of the cross chain NFT marketplace. We have deployed the necessary contracts on the BNB Testnet and the ShimmerEVM Testnet, and configured them to send and receive NFTs across chains. 
+In the third part of the tutorial, we have automated the buy flow of the cross-chain NFT marketplace. We have deployed the necessary contracts on the BNB Testnet and the ShimmerEVM Testnet and configured them to send and receive NFTs across chains. 
