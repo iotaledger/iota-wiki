@@ -34,6 +34,14 @@ function L1(props: NetworkProps) {
             <CodeBlock>{props.permaNodeApi}</CodeBlock>
           </td>
         </tr>
+        <tr>
+          <th>Explorer</th>
+          <td>
+            <a href={props.explorer} target='_blank' rel='noopener noreferrer'>
+              {props.explorer}
+            </a>
+          </td>
+        </tr>
         {props.faucet && (
           <tr>
             <th>Faucet</th>
