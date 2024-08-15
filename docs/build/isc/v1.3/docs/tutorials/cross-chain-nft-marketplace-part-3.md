@@ -1,4 +1,4 @@
-#  Cross-chain NFT Marketplace: Part II
+#  Cross-chain NFT Marketplace: Part III
 
 This is the third part of the Cross-chain NFT Marketplace tutorial series, that will guide you to how to evolve the marketplace to handle cross-chain NFT transfers.
 
@@ -6,31 +6,27 @@ This is the third part of the Cross-chain NFT Marketplace tutorial series, that 
 
 [Part II](https://wiki.iota.org/isc/tutorials/cross-chain-nft-marketplace-part-2/) guided you on how to manually bridge NFTs from the BNB Testnet to the ShimmerEVM Testnet and list them on the NFT marketplace.
 
-In this part, we will evolve the architecture of the marketplace to handle cross-chain NFT transfers. We will deploy the necessary contracts on the BNB Testnet and the ShimmerEVM Testnet, and configure them to send and receive NFTs across chains. We will also create scripts to automate sending and receiving NFTs across chains.
-
-
-
+This final part will evolve the marketplace's architecture to handle cross-chain NFT transfers. You will deploy the necessary contracts on the BNB Testnet and the ShimmerEVM Testnet and configure them to send and receive NFTs across chains. You will also create scripts to automate sending and receiving NFTs across chains.
 
 ## Prerequisites
 
 - [Node.js](https://nodejs.org) >=  v18.0
 - [Hardhat](https://hardhat.org) >= v2.0.0
 - [npx](https://www.npmjs.com/package/npx)  >= v7.1.0.
-- Followed the steps in [Part I](https://wiki.iota.org/isc/tutorials/cross-chain-nft-marketplace-part-1/) and [Part II](https://wiki.iota.org/isc/tutorials/cross-chain-nft-marketplace-part-2/) of the tutorial series.
+- The code for this part of the tutorial is based on [Part I](https://wiki.iota.org/isc/tutorials/cross-chain-nft-marketplace-part-1/) and [Part II](https://wiki.iota.org/isc/tutorials/cross-chain-nft-marketplace-part-2/) of the tutorial series.
 
 
 ## Configuration
 
-No extra configurations are needed for this part of the tutorial. You can use the same `hardhat.config.js` file from [Part I](https://wiki.iota.org/isc/tutorials/cross-chain-nft-marketplace-part-1/).
+You can use the same `hardhat.config.js` file from [Part I](https://wiki.iota.org/isc/tutorials/cross-chain-nft-marketplace-part-1/).
 
 ```javascript reference
 https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/hardhat.config.js
 ```
 
-
 ## Contracts Architecture
 
-![alt text](../../../../../../static/img/tutorials/cross_chain_marketplace/Architecture-V3.png)
+![Contract Archicteture](../../../../../../static/img/tutorials/cross_chain_marketplace/Architecture-V3.png)
 
 Next to the marketplace contract, you will deploy additional contracts to handle cross-chain NFT transfers and messages. To put things into perspective, here is the flow of the cross-chain NFT buying process from a user on BNB Testnet to the marketplace on ShimmerEVM Testnet:
 
@@ -96,7 +92,7 @@ The `CrossChainAgent` contract is responsible for sending and receiving messages
  }
 ```
 
-2. `_nonblockingLzReceive`: This function is called by the LayerZero endpoint on the destination chain upon the receipt of a message. We override this function in the `CrossChainAgent` contract Testnet to call the `_notifyMarketPlace` function on the marketplace contract to complete the purchase.
+2. `_nonblockingLzReceive`: This function is called by the LayerZero endpoint on the destination chain upon the receipt of a message. You should override this function in the `CrossChainAgent` contract Testnet to call the `_notifyMarketPlace` function on the marketplace contract to complete the purchase.
 
 ```solidity
 /// @notice This function is called by LayerZero when a cross-chain message is received
@@ -137,7 +133,7 @@ https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/cont
 
 The `NFTMarketPlaceV2` contract is an updated version of the `NFTMarketPlace` contract that you deployed in [Part I](https://wiki.iota.org/isc/tutorials/cross-chain-nft-marketplace-part-1/). This version includes a new function `buyItemCrossChain` that is called by the `CrossChainAgent` contract on the ShimmerEVM Testnet to complete the purchase of an NFT.
 
-The function checks if the item is listed, and available, and if the user has enough balance to complete the purchase. It then transfers the NFT to the user by making a call to the NFT's proxy contract (The contract responsible for transferring the NFT cross-chain). The user's balance is updated, and the item's availability is set to false.
+The function checks if the item is listed and available and if the user has enough balance to complete the purchase. It then transfers the NFT to the user by calling the NFT's proxy contract (the contract responsible for transferring the NFT cross-chain). The user's balance is updated, and the item's availability is set to false.
 
 ```solidity
     function buyItemCrossChain(
@@ -189,9 +185,8 @@ You will add scripts that perform the following tasks in order:
 
 6. Call the `buyCrossChain` function on the `CrossChainAgent` contract on the BNB Testnet to buy the NFT listed on the marketplace on the ShimmerEVM Testnet.
 
-
-
 ### Deploy NFTMarketPlaceV2
+
 This script will deploy the `MarketPlaceV2` contract to the Shimmer Testnet, and save the contract's address to a file called `MarketplaceV2_Shimmer.txt`.
 
 
@@ -223,7 +218,7 @@ npx hardhat run scripts/deploy_onft_shimmer.js --network shimmerevm-testnet
 npx hardhat run scripts/deploy_onft_bnb.js  --network bnbTestnet
 ```
 
-### Set trusted remote of ONFT on BNB and Shimmer
+### Set the Trusted Remote Addresses of ONFT on BNB and Shimmer
 
 After deploying the ONFT contracts, you need to wire them up by caling `setTrustedRemoteAddress` on the `ONFT721` contract on the ShimmerEVM Testnet and BNB Testnet.
 
@@ -235,16 +230,16 @@ https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scri
 https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scripts/set_trusted_remote_bnb.js
 ```
 
-You can run the script by executing the following command:
+You can run the script by executing the following commands:
 
 ```bash
 npx hardhat run scripts/set_trusted_remote_bnb.js --network bnbTestnet
 npx hardhat run scripts/set_trusted_remote_shimmer.js --network shimmerevm-testnet
 ```
 
-### Mint an NFT and list it on the marketplace
+### Mint an NFT and List It on the Marketplace
 
-After deployment and configuration of the `ONFT721` contracts, you can mint an NFT, allow the marketplace to spend it, and list it on the marketplace.
+After you deploy and configure the `ONFT721` contracts, you can mint an NFT, allow the marketplace to spend it, and list it on the marketplace using the following scripts:
 
 ```javascript reference
 https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scripts/mint_nft_shimmer.js
@@ -261,9 +256,9 @@ npx hardhat run scripts/mint_nft_shimmer.js --network shimmerevm-testnet
 npx hardhat run scripts/approve_myERC721_for_marketplace.js --network shimmerevm-testnet
 ```
 
-### Deploy CrossChainAgent
+### Deploy the `CrossChainAgent` Contract
 
-Now that we have an NFT listed on the marketplace, we need to deploy the `CrossChainAgent` contract to the BNB Testnet and the ShimmerEVM Testnet.
+Once you have an NFT listed on the marketplace, you need to deploy the `CrossChainAgent` contract to the BNB Testnet and the ShimmerEVM Testnet.
 
 
 ```javascript reference
@@ -321,4 +316,5 @@ For the OFTs, we are using the `MyOFT` contract, which is a simple ERC20 token c
 
 
 ## Conclusion
-In the third part of the tutorial, we have automated the buy flow of the cross-chain NFT marketplace. We have deployed the necessary contracts on the BNB Testnet and the ShimmerEVM Testnet and configured them to send and receive NFTs across chains. 
+
+In the third part of the tutorial, you have automated the buy flow of the cross-chain NFT marketplace. You deployed the necessary contracts on the BNB Testnet and the ShimmerEVM Testnet and configured them to send and receive NFTs across chains. 
