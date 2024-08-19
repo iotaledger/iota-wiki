@@ -207,10 +207,6 @@ The next step is to deploy the `ONFT721` contract to the ShimmerEVM Testnet and 
 https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scripts/deploy_onft_shimmer.js
 ```
 
-```javascript reference
-https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scripts/deploy_onft_shimmer.js
-```
-
 You can run both scripts by executing the following commands:
 
 ```bash
@@ -276,7 +272,7 @@ npx hardhat run scripts/deploy_messanger_shimmer.js --network shimmerevm-testnet
 npx hardhat run scripts/deploy_messanger_bnb.js --network bnbTestnet
 ```
 
-### Configure CrossChainAgent
+### Configure the `CrossChainAgent` Contracts
 
 After deploying the `CrossChainAgent` contracts, you need to configure the `CrossChainAgent` contract on the BNB Testnet to send messages to the `CrossChainAgent` contract on the ShimmerEVM Testnet. This is the same process as setting the trusted remote address for the `ONFT721` contracts.
 
