@@ -28,7 +28,7 @@ https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/hard
 
 ![Contract Archicteture](../../../../../../static/img/tutorials/cross_chain_marketplace/Architecture-V3.png)
 
-Next to the marketplace contract, you will deploy additional contracts to handle cross-chain NFT transfers and messages. To put things into perspective, here is the flow of the cross-chain NFT buying process from a user on BNB Testnet to the marketplace on ShimmerEVM Testnet:
+In addition to the marketplace contract, you will deploy additional contracts to handle cross-chain NFT transfers and messages. To put things into perspective, here is the flow of the cross-chain NFT buying process from a user on BNB Testnet to the marketplace on ShimmerEVM Testnet:
 
 ### Flow
 1- A user `Alice` on ShimmerEVM Testnet lists an NFT on the marketplace. The NFT is an `ONFT` so that the NFT can be transferred across chains. The NFT can also be a normal ERC721 token, but in this case, a proxy contract must be used to transfer the NFT across chains.
@@ -173,17 +173,17 @@ https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/cont
 
 You will add scripts that perform the following tasks in order:
 
-1. Deploy the `NFTMarketPlaceV2` contract to the ShimmerEVM Testnet.
+1. [Deploy the `NFTMarketPlaceV2` contract to the ShimmerEVM Testnet.](#deploy-nftmarketplacev2)
 
-2. Deploy an `ONFT721` contract on ShimmerEVM Testnet and BNB Testnet, and configure them to send and receive NFTs across chains.
+2. [Deploy an `ONFT721` contract on ShimmerEVM Testnet and BNB Testnet, and configure them to send and receive NFTs across chains.](#deploy-onft721)
 
-3. Mint an NFT (from the `ONFT` contract), allow the marketplace to spend it then list it on the marketplace.
+3. [Mint an NFT (from the `ONFT` contract), allow the marketplace to spend it then list it on the marketplace.](#mint-an-nft-and-list-it-on-the-marketplace)
 
-4. Deploy the `CrossChainAgent` contract to the BNB Testnet and the ShimmerEVM Testnet.
+4. [Deploy the `CrossChainAgent` contract to the BNB Testnet and the ShimmerEVM Testnet.](#deploy-the-crosschainagent-contract)
 
-5. Configure the `CrossChainAgent` contract on the BNB Testnet to send messages to the `CrossChainAgent` contract on the ShimmerEVM Testnet.
+5. [Configure the `CrossChainAgent` contract on the BNB Testnet to send messages to the `CrossChainAgent` contract on the ShimmerEVM Testnet.](#configure-crosschainagent)
 
-6. Call the `buyCrossChain` function on the `CrossChainAgent` contract on the BNB Testnet to buy the NFT listed on the marketplace on the ShimmerEVM Testnet.
+6. [Call the `buyCrossChain` function on the `CrossChainAgent` contract on the BNB Testnet to buy the NFT listed on the marketplace on the ShimmerEVM Testnet.](#call-buycrosschain-to-buy-the-nft)
 
 ### Deploy NFTMarketPlaceV2
 
@@ -220,7 +220,7 @@ npx hardhat run scripts/deploy_onft_bnb.js  --network bnbTestnet
 
 ### Set the Trusted Remote Addresses of ONFT on BNB and Shimmer
 
-After deploying the ONFT contracts, you need to wire them up by caling `setTrustedRemoteAddress` on the `ONFT721` contract on the ShimmerEVM Testnet and BNB Testnet.
+After deploying the ONFT contracts, you need to connect them by caling `setTrustedRemoteAddress` on the `ONFT721` contract on the ShimmerEVM Testnet and BNB Testnet.
 
 ```javascript reference
 https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scripts/set_trusted_remote_shimmer.js
