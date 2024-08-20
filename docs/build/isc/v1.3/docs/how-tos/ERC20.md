@@ -86,7 +86,7 @@ Once you have deployed your contract, you can add your new custom token to your 
 
 ## 3. Have some Fun
 
-Now you should see your token in MetaMask. You can send them to your friends without any fees or gas costs.
+Now you should see your token in MetaMask.
 
 ![Copy contract address](/img/evm/how-tos/ERC20/metamask-erc20-balance.png)
 
