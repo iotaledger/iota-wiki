@@ -23,7 +23,7 @@ The current Coordinator is based on the Tendermint Core BFT consensus, which ena
 
 :::info
 
-In the current Shimmer network, all instances of the Coordinator are run by the IOTA Foundation. In the IOTA Mainnet they are run by [Akkodis](https://www.akkodis.com), [ETO GRUPPE](https://www.etogruppe.com/), [Software AG](https://softwareag.com/), [University of Zurich](https://www.uzh.ch/cmsssl/en.html), [Imperial College London](https://www.imperial.ac.uk) and the IOTA Foundation.
+In the current Shimmer network, all instances of the Coordinator are run by the IOTA Foundation. In the IOTA Mainnet they are run by [Akkodis](https://www.akkodis.com), [ETO GRUPPE](https://www.etogruppe.com/), [Software AG](https://softwareag.com/), [Imperial College London](https://www.imperial.ac.uk) and the IOTA Foundation.
 
 :::
 
