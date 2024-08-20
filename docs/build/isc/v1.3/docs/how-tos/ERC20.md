@@ -27,8 +27,7 @@ import RemixIDE from '../_admonitions/_remix-IDE.md';
 ERC20 is a standard for fungible tokens and is defined in
 the [EIP-20 Token Standard](https://eips.ethereum.org/EIPS/eip-20) by Ethereum.
 
-With the ERC20 standard, you can create your own tokens and transfer them to the EVM on IOTA Smart Contracts without
-fees.
+With the ERC20 standard, you can create your own tokens and transfer them to the EVM on IOTA Smart Contracts.
 
 <RemixIDE />
 
