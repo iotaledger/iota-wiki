@@ -10,11 +10,11 @@ tags:
 
 import DeployAdmonition from '../_admonitions/_deploy_a_smart_contract.md';
 
-# Building a Yield Farming DApp on IOTA EVM Testnet with Pyth Oracle Price Feed
+# Yield Farming DApp with Pyth Network Price Feeds
 
 ## Introduction
 
-In this tutorial, we will guide you through the process of building a yield farming decentralized application (DApp) using [Solidity](https://docs.soliditylang.org/en/v0.8.26/), one of the most widely adopted programming languages for [Ethereum](https://ethereum.org/en/) smart contracts, and the [Hardhat](https://hardhat.org/) development environment, a powerful and flexible framework for building on the Ethereum blockchain. Additionally, we will use the Pyth Oracle Price Feed to retrieve the IOTA/USD price feed, which will be used to calculate rewards for stakers.
+In this tutorial, we will guide you through the process of building a yield farming decentralized application (DApp) using [Solidity](https://docs.soliditylang.org/en/v0.8.26/), one of the most widely adopted programming languages for [Ethereum](https://ethereum.org/en/) smart contracts, and the [Hardhat](https://hardhat.org/) development environment, a powerful and flexible framework for building on the Ethereum blockchain. Additionally, we will use the Pyth Network Price Feeds to retrieve the IOTA/USD price feed, which will be used to calculate rewards for stakers.
 
 ## What is Yield Farming
 
