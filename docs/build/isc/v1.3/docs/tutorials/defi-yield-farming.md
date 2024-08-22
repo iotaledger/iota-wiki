@@ -147,7 +147,6 @@ import "@pythnetwork/pyth-sdk-solidity/PythUtils.sol";
 
 /**
  * @title IOTA Yield Farming Contract
- * @author [Your Name]
  * @notice This contract allows users to stake IOTATokens and earn rewards in DappTokens
  * @dev Implements staking, unstaking, and reward distribution mechanisms
  */
@@ -413,7 +412,7 @@ You can verify your contract by visiting
 the [EVM Testnet Explorer](https://explorer.evm.testnet.shimmer.network/),
 and searching for the address from the previous step. If you access the `Contract` tab, you should be able to see your code and interact with your contract.
 
-Feel free to [fork this repository](https://github.com/iota-community/Defi-yield-farming), contribute with pull requests, or customize it to suit your needs.
+Feel free to [fork this repository](https://github.com/iota-community/Defi-yield-farming), contribute with pull requests, or customize it to suit your needs. We have a React [frontend](https://github.com/iota-community/Defi-yield-farming/tree/main/frontend) on the repository that you can use to interact with Token Farm smart contract.
 
 ### Key Concepts Covered:
 
