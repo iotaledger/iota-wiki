@@ -14,7 +14,7 @@ import DeployAdmonition from '../_admonitions/_deploy_a_smart_contract.md';
 
 ## Introduction
 
-In this tutorial, we will guide you through the process of building a yield farming decentralized application (DApp) using [Solidity](https://docs.soliditylang.org/en/v0.8.26/), one of the most widely adopted programming languages for [Ethereum](https://ethereum.org/en/) smart contracts, and the [Hardhat](https://hardhat.org/) development environment, a powerful and flexible framework for building on the Ethereum blockchain. Additionally, we will use the Pyth Network Price Feeds to retrieve the IOTA/USD price feed, which will be used to calculate rewards for stakers.
+In this tutorial, we will guide you through the process of building a basic yield farming decentralized application (DApp) using [Solidity](https://docs.soliditylang.org/en/v0.8.26/), one of the most widely adopted programming languages for [Ethereum](https://ethereum.org/en/) smart contracts, and the [Hardhat](https://hardhat.org/) development environment, a powerful and flexible framework for building on the Ethereum blockchain. Additionally, we will use the Pyth Network Price Feeds to retrieve the IOTA/USD price feed, which will be used to calculate rewards for stakers.
 
 ## What is Yield Farming
 
@@ -244,7 +244,7 @@ contract TokenFarm {
      * @param priceUpdate An array of price update data required by the Pyth Oracle.
      * @return iotaToUsdPrice The current price of IOTA in USD with 18 decimal places.
      */
-    function getIOTA2USDPriceFeed(
+    function getIotaToUsdPriceFeed(
         bytes[] calldata priceUpdate
     ) public payable returns (uint256) {
         /// Calculate the fee required to fetch the price update from the Pyth Oracle.
@@ -288,7 +288,7 @@ contract TokenFarm {
         );
 
         /// Fetch the current IOTA/USD price from the Pyth Oracle.
-        uint256 iotaToUSDPrice = getIOTA2USDPriceFeed(priceUpdate);
+        uint256 iotaToUSDPrice = getIotaToUsdPriceFeed(priceUpdate);
 
 
         /// Loop through all stakers and distribute rewards based on their staked amount
