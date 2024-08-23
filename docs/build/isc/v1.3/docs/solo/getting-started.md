@@ -75,6 +75,6 @@ You can run `*_test` files by moving to their directory and running the followin
 go test
 ```
 
-If you run this command from the `/documentation/tutorial-examples` folder, you will run the
+If you run this command from the `/documentation/tutorial-examples/test` folder, you will run the
 [Tutorial Test](https://github.com/iotaledger/wasp/blob/develop/documentation/tutorial-examples/test/tutorial_test.go),
 which contains all the examples explained in the following sections.
