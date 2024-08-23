@@ -96,7 +96,7 @@
     ]
   },
   "devDependencies": {
-    "@argos-ci/cli": "^1.0.11",
+    "@argos-ci/cli": "^1.0.12",
     "@argos-ci/playwright": "^1.9.3",
     "@docusaurus/module-type-aliases": "2.4.3",
     "@docusaurus/plugin-google-gtag": "2.4.3",
