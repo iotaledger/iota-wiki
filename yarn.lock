@@ -2820,7 +2820,7 @@ __metadata:
     hast-util-is-element: 1.1.0
     html-react-parser: ^4.2.10
     humanize-duration: ^3.30.0
-    infima: ^0.2.0-alpha.43
+    infima: ^0.2.0-alpha.45
     plugin-image-zoom: flexanalytics/plugin-image-zoom
     prettier: ^2.8.8
     raw-loader: ^4.0.2
@@ -10704,10 +10704,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"infima@npm:0.2.0-alpha.43, infima@npm:^0.2.0-alpha.43":
+"infima@npm:0.2.0-alpha.43":
   version: 0.2.0-alpha.43
   resolution: "infima@npm:0.2.0-alpha.43"
   checksum: fc5f79240e940eddd750439511767092ccb4051e5e91d253ec7630a9e7ce691812da3aa0f05e46b4c0a95dbfadeae5714fd0073f8d2df12e5aaff0697a1d6aa2
+  languageName: node
+  linkType: hard
+
+"infima@npm:^0.2.0-alpha.45":
+  version: 0.2.0-alpha.45
+  resolution: "infima@npm:0.2.0-alpha.45"
+  checksum: 23e5a33b147cb3940194c23e249001e7988327bb27896b121883442bce42a532248387649eec74d008dadadcddc790fb6842f043f33c78fda35e29f0b720cf8c
   languageName: node
   linkType: hard
 
