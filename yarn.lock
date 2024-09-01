@@ -85,6 +85,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@algolia/cache-common@npm:4.24.0":
+  version: 4.24.0
+  resolution: "@algolia/cache-common@npm:4.24.0"
+  checksum: bc1d0f8731713f7e6f10cd397b7d8f7464f14a2f4e1decc73a48e99ecbc0fe41bd4df1cc3eb0a4ecf286095e3eb3935b2ea40179de98e11676f8e7d78c622df8
+  languageName: node
+  linkType: hard
+
 "@algolia/cache-in-memory@npm:4.22.1":
   version: 4.22.1
   resolution: "@algolia/cache-in-memory@npm:4.22.1"
@@ -127,6 +134,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@algolia/client-common@npm:4.24.0":
+  version: 4.24.0
+  resolution: "@algolia/client-common@npm:4.24.0"
+  dependencies:
+    "@algolia/requester-common": 4.24.0
+    "@algolia/transporter": 4.24.0
+  checksum: 19c6615f9e1b0bbda7dd8ecd285c5bdf48d7067223b06e385a6c69a20a6d6500086619fa0f9e63403cf33220d5d7a288360df55452fdf00f5feca8ca9852758a
+  languageName: node
+  linkType: hard
+
 "@algolia/client-personalization@npm:4.22.1":
   version: 4.22.1
   resolution: "@algolia/client-personalization@npm:4.22.1"
@@ -138,7 +155,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@algolia/client-search@npm:4.22.1, @algolia/client-search@npm:^4.22.1":
+"@algolia/client-search@npm:4.22.1":
   version: 4.22.1
   resolution: "@algolia/client-search@npm:4.22.1"
   dependencies:
@@ -146,6 +163,17 @@ __metadata:
     "@algolia/requester-common": 4.22.1
     "@algolia/transporter": 4.22.1
   checksum: 0477f003c19cf1dbb6190fd491136927bc7174fa9d5a27dead218a51807da9c519be114000bd035265c018682fd8654d110cab07f74004c8c8d069db19800c3d
+  languageName: node
+  linkType: hard
+
+"@algolia/client-search@npm:^4.24.0":
+  version: 4.24.0
+  resolution: "@algolia/client-search@npm:4.24.0"
+  dependencies:
+    "@algolia/client-common": 4.24.0
+    "@algolia/requester-common": 4.24.0
+    "@algolia/transporter": 4.24.0
+  checksum: 2d19823994e92490885115188d75994fbcc7a407fbe14f52034b191607a51081ed476e367a65c889666f6b337b00d700203204d55666f182809f01fbd29fd1fb
   languageName: node
   linkType: hard
 
@@ -160,6 +188,13 @@ __metadata:
   version: 4.22.1
   resolution: "@algolia/logger-common@npm:4.22.1"
   checksum: 3ac5430f73e8eabb4e7561b271d38151fb7f128491437c202dac3d54f7c3a83ebc96818532746422ea4abdf9d68a6ccb716dc8b97f69101ff642afaff12057e5
+  languageName: node
+  linkType: hard
+
+"@algolia/logger-common@npm:4.24.0":
+  version: 4.24.0
+  resolution: "@algolia/logger-common@npm:4.24.0"
+  checksum: 668fb5a2cbb6aaea7648ae522b5d088241589a9da9f8abb53e2daa89ca2d0bc04307291f57c65de7a332e092cc054cc98cc21b12af81620099632ca85c4ef074
   languageName: node
   linkType: hard
 
@@ -188,6 +223,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@algolia/requester-common@npm:4.24.0":
+  version: 4.24.0
+  resolution: "@algolia/requester-common@npm:4.24.0"
+  checksum: 8f4a49ef0fb4aca42fa3703ddf97ff7f6e9c8492928aa66704ca2f54d3785d2338b64917860a01a42dedb1621279558ca7d549c5b1eb5b7f2742f952fb9865e5
+  languageName: node
+  linkType: hard
+
 "@algolia/requester-node-http@npm:4.22.1":
   version: 4.22.1
   resolution: "@algolia/requester-node-http@npm:4.22.1"
@@ -205,6 +247,17 @@ __metadata:
     "@algolia/logger-common": 4.22.1
     "@algolia/requester-common": 4.22.1
   checksum: 737e787ac77215f30db54ebab3431e06cfee1790ab7cf45222546470546ecb276eedfaa0aedf78b2c95efa9d5550ea7d47c947535f143d7002a22f781d8721ce
+  languageName: node
+  linkType: hard
+
+"@algolia/transporter@npm:4.24.0":
+  version: 4.24.0
+  resolution: "@algolia/transporter@npm:4.24.0"
+  dependencies:
+    "@algolia/cache-common": 4.24.0
+    "@algolia/logger-common": 4.24.0
+    "@algolia/requester-common": 4.24.0
+  checksum: 2c026a777de5dcb6f3cc94a0cf5f4650fbc7067f56eb98a1ae9b5750815179a73eb2b1d8ae75853a99823afd13584b62430d7649c65a456b2623123f355955b1
   languageName: node
   linkType: hard
 
@@ -2779,7 +2832,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@iota-wiki/core@workspace:."
   dependencies:
-    "@algolia/client-search": ^4.22.1
+    "@algolia/client-search": ^4.24.0
     "@argos-ci/cli": ^1.0.12
     "@argos-ci/playwright": ^1.9.3
     "@artsy/to-title-case": ^1.1.0
