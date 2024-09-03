@@ -135,7 +135,7 @@ With the release process, we can deliver versions of our software to the communi
 
 The final list of changes from the [changelog](#changelog) informs the version of the release. If at least one change mapping to a major version is included, the major version needs to be incremented. In that case, the minor and patch versions are set to `0`. If there are no changes related to a major version, but changes related to a minor version are present, the minor version needs to be incremented while the patch version is set to `0`. Otherwise, only the patch version is incremented. Determining the version of the release is the responsibility of the person performing the release.
 
-The determined version of the release is used to create the [hotfix](#hotfix) or [release](#release) branch. For example, a major release from the previous version `v2.3.1` will create the `release/v3.0.0` branch.
+The determined version of the release is used to create the hotfix or [release](#release) branch. For example, a major release from the previous version `v2.3.1` will create the `release/v3.0.0` branch.
 
 Notice the `v` in front of the version. We [tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) all release in git in the form of `vMAJOR.MINOR.PATCH`. For bindings, we prefix the tag with the binding name, so a tag for Wasm would look like `wasm-v1.2.3`. Bindings and the core Rust library are versioned and released independently.
 
