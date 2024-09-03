@@ -1,0 +1,187 @@
+---
+tags:
+  - state
+  - access
+  - storage
+  - key
+  - data
+  - value
+
+description: The smart contract state storage on the host consists of a single key/value map, as long as you access the data in the same way that you used to store it, you will always get valid data back.
+
+image: /img/logo/WASP_logo_dark.png
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Define the State
+
+In smart contract state storage, there is only a single key/value map,
+where both the key and value are constituted of raw data bytes.
+To ensure the retrieval of valid data, access it in the manner it was stored.
+
+The [Schema Tool](usage.mdx) facilitates this by generating a type-safe layer
+that oversees the consistent utilization of the expected data type during _data storage_ and retrieval.
+
+## State Section in Schema Definition File
+
+In the schema definition file the `state` section hosts field definitions,
+delineating the variables stored in the state storage.
+Each field is defined with a YAML key/value pair, indicating its name and data type.
+This pair can optionally be followed by a descriptive comment.
+
+With these details, the [Schema Tool](usage.mdx) creates specific code to type-safely access state variables.
+Take a closer look at the `state` section in the `dividend` example to understand this better:
+
+<Tabs groupId="schema" queryString>
+<TabItem value="yaml" label="YAML">
+
+```yaml
+state:
+  memberList: Address[] # array with all the recipients of this dividend
+
+  # factors per member
+
+  members: map[Address]Uint64 # map with all the recipient factors of this dividend
+  owner: AgentID # owner of contract, the only one who can call 'member' func
+  totalFactor: Uint64 # sum of all recipient factors
+```
+
+</TabItem>
+</Tabs>
+
+### Simple Variables
+
+Starting with straightforward state variables, `totalFactor`,
+and `owner` are characterized as Uint64 and AgentID, respectively.
+These represent predefined [WasmLib value types](../../reference/wasm-lib-data-types.mdx).
+
+### Arrays and Maps
+
+Next, the `memberList` variable denoted by empty brackets `[]`, symbolizing an array.
+This array accommodates elements of a homogenous predefined Address value type.
+
+Lastly, the `members` variable, signified as a map with `map[]`, houses keys of a uniform predefined Address type.
+Following the brackets, the homogenous value type, here `Uint64`, is mentioned.
+
+<Tabs groupId="language" queryString>
+
+<TabItem value="go" label="Go">
+
+```go
+type MutableDividendState struct {
+	proxy wasmtypes.Proxy
+}
+
+func (s MutableDividendState) AsImmutable() ImmutableDividendState {
+	return ImmutableDividendState(s)
+}
+
+// array with all the recipients of this dividend
+func (s MutableDividendState) MemberList() ArrayOfMutableAddress {
+	return ArrayOfMutableAddress{proxy: s.proxy.Root(StateMemberList)}
+}
+
+// map with all the recipient factors of this dividend
+func (s MutableDividendState) Members() MapAddressToMutableUint64 {
+	return MapAddressToMutableUint64{proxy: s.proxy.Root(StateMembers)}
+}
+
+// owner of contract, the only one who can call 'member' func
+func (s MutableDividendState) Owner() wasmtypes.ScMutableAgentID {
+	return wasmtypes.NewScMutableAgentID(s.proxy.Root(StateOwner))
+}
+
+// sum of all recipient factors
+func (s MutableDividendState) TotalFactor() wasmtypes.ScMutableUint64 {
+	return wasmtypes.NewScMutableUint64(s.proxy.Root(StateTotalFactor))
+}
+```
+
+</TabItem>
+<TabItem value="rust" label="Rust">
+
+```rust
+#[derive(Clone)]
+pub struct MutableDividendState {
+	pub(crate) proxy: Proxy,
+}
+
+impl MutableDividendState {
+    pub fn as_immutable(&self) -> ImmutableDividendState {
+		ImmutableDividendState { proxy: self.proxy.root("") }
+	}
+
+    // array with all the recipients of this dividend
+    pub fn member_list(&self) -> ArrayOfMutableAddress {
+		ArrayOfMutableAddress { proxy: self.proxy.root(STATE_MEMBER_LIST) }
+	}
+
+    // map with all the recipient factors of this dividend
+    pub fn members(&self) -> MapAddressToMutableUint64 {
+		MapAddressToMutableUint64 { proxy: self.proxy.root(STATE_MEMBERS) }
+	}
+
+    // owner of contract, the only one who can call 'member' func
+    pub fn owner(&self) -> ScMutableAgentID {
+		ScMutableAgentID::new(self.proxy.root(STATE_OWNER))
+	}
+
+    // sum of all recipient factors
+    pub fn total_factor(&self) -> ScMutableUint64 {
+		ScMutableUint64::new(self.proxy.root(STATE_TOTAL_FACTOR))
+	}
+}
+```
+
+</TabItem>
+<TabItem value="typescript" label="Typescript">
+
+```ts
+export class MutableDividendState extends wasmtypes.ScProxy {
+  asImmutable(): sc.ImmutableDividendState {
+    return new sc.ImmutableDividendState(this.proxy);
+  }
+
+  // array with all the recipients of this dividend
+  memberList(): sc.ArrayOfMutableAddress {
+    return new sc.ArrayOfMutableAddress(this.proxy.root(sc.StateMemberList));
+  }
+
+  // map with all the recipient factors of this dividend
+  members(): sc.MapAddressToMutableUint64 {
+    return new sc.MapAddressToMutableUint64(this.proxy.root(sc.StateMembers));
+  }
+
+  // owner of contract, the only one who can call 'member' func
+  owner(): wasmtypes.ScMutableAgentID {
+    return new wasmtypes.ScMutableAgentID(this.proxy.root(sc.StateOwner));
+  }
+
+  // sum of all recipient factors
+  totalFactor(): wasmtypes.ScMutableUint64 {
+    return new wasmtypes.ScMutableUint64(this.proxy.root(sc.StateTotalFactor));
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Generated Code Overview
+
+Examining the `state.xx`code, generated by the [Schema Tool](usage.mdx),
+you can find the `MutableDividendState` struct.
+This interface allows type-safe access to each state variable through mutable [proxies](../../schema/proxies.mdx),
+establishing a one-to-one relationship with the `state` section in the schema definition file.
+
+### Proxy Interfaces
+
+Note the generated proxy interface named `MutableDividendState` for mutable `dividend` state.
+It enables type-safe proxy object access for each corresponding variable.
+Moreover, the tool auto-generates intermediate map and array proxy types,
+such as `ArrayOfMutableAddress` and `MapAddressToMutableUint64`,
+enforcing the utilization of respective homogenous types.
+
+See the full `state.xx` for more details.

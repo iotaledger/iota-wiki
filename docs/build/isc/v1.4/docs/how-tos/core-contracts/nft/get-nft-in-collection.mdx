@@ -1,0 +1,55 @@
+---
+description: How to get the L2 NFTs in a collection.
+image: /img/logo/WASP_logo_dark.png
+tags:
+  - EVM
+  - how-to
+  - native tokens
+  - L2 NFTs
+  - Collection
+---
+import GetNftMetadata from '../../../_partials/how-tos/token/_get-nft-metadata.md';
+
+#  Get NFTs of a Given Collection
+
+This guide will show you how to get the L2 NFTs of a given collection owned by an account using the [`ISCAccounts.getL2NFTsInCollection`](../../../reference/magic-contract/ISCAccounts.md#getl2nftsincollection) function from the [`ISCAccounts`](../../../reference/magic-contract/ISCAccounts.md) [magic contract](../../../reference/magic-contract/introduction.md).
+<GetNftMetadata />
+
+## Implement the `getL2NFTsInCollection` Function
+
+Here’s a sample implementation to retrieve L2 NFTs within a specific collection owned by an account:
+
+```solidity
+function getNFTsInCollection(NFTID memory collectionId) public view returns (NFTID[] memory) {
+    // Get the ISCAgentID
+    ISCAgentID memory agentID = ISC.sandbox.getSenderAccount();
+
+    // Call the getL2NFTsInCollection function from the ISCAccounts contract
+    NFTID[] memory nftsInCollection = ISC.accounts.getL2NFTsInCollection(agentID, collectionId);
+    
+    return nftsInCollection;
+}
+```
+
+## Full Example Contract
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.8.24;
+
+import "@iota/iscmagic/ISCAccounts.sol";
+import "@iota/iscmagic/ISCSandbox.sol";
+
+contract MyNFTContract {
+
+function getNFTsInCollection(NFTID memory collectionId) public view returns (NFTID[] memory) {
+    // Get the ISCAgentID
+    ISCAgentID memory agentID = ISC.sandbox.getSenderAccount();
+
+    // Call the getL2NFTsInCollection function from the ISCAccounts contract
+    NFTID[] memory nftsInCollection = ISC.accounts.getL2NFTsInCollection(agentID, collectionId);
+    
+    return nftsInCollection;
+    }
+}
+```

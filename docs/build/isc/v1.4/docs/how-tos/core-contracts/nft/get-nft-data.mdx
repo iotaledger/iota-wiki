@@ -1,0 +1,37 @@
+---
+description: How to get information about an on-chain NFT.
+image: /img/logo/WASP_logo_dark.png
+tags:
+  - EVM
+  - how-to
+  - native tokens
+  - L2 NFTs
+---
+import GetNftMetadata from '../../../_partials/how-tos/token/_get-nft-metadata.md';
+
+# Get On-Chain NFT Data
+
+This guide explains how to use the [`getNFTData`](../../../reference/magic-contract/ISCSandbox.md#getnftdata) function within a smart contract to fetch information about a specific on-chain NFT on the IOTA network.
+
+<GetNftMetadata />
+
+## How to Use the `getNFTData` Function
+
+The `getNFTData` function retrieves data for an NFT based on its identifier. It returns a struct of type [`ISCNFT`](../../../reference/magic-contract/ISCTypes.md#iscnft), which contains various properties of the NFT like the issuer, metadata, owner, and NFTID. To use this function, you need to create a function in your smart contract that calls `getNFTData` and processes its return value, as shown in the example contract below:
+
+## Example Code
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@iota/iscmagic/ISC.sol";
+import "@iota/iscmagic/ISCTypes.sol";
+
+contract NFTMetadata {
+    function fetchNFTData(uint256 tokenId) public view returns (ISCNFT memory nftData) {
+        nftData = ISC.sandbox.getNFTData(ISCTypes.asNFTID(tokenId));
+        return nftData;
+    }
+}
+```

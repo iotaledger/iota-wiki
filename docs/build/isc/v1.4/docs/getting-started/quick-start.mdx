@@ -1,0 +1,83 @@
+---
+description: This guide will help you quickly get started with the EVM
+image: /img/logo/WASP_logo_dark.png
+tags:
+  - quickstart
+  - developer
+  - using
+  - EVM
+  - Ethereum
+  - Solidity
+  - metamask
+  - JSON
+  - RPC
+---
+import DeployAdmonition from '../_admonitions/_deploy_a_smart_contract.md';
+import MetamaskButtons from '../../../../_partials/_metamask_buttons.mdx';
+import { Networks } from '@theme/constant';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Link from '@docusaurus/Link';
+
+# EVM Quickstart Guide
+
+This guide will help you quickly get started with our EVM, where you can deploy and interact with EVM-compatible smart contracts.
+
+## Prerequisites
+
+- [MetaMask](https://metamask.io/) browser extension installed
+
+## Setup MetaMask
+
+Click this button:
+
+<MetamaskButtons/>
+
+:::tip
+
+Please read [the MetaMask  section in the tools guide](tools.mdx#metamask) for a detailed guide.
+
+:::
+
+## Deploy and Interact with Smart Contracts
+
+:::tip Fund your testnet account
+
+If you are using one of the testnets you can just use the the toolkit to get testnet tokens.
+
+1. Go to the [IOTA EVM](https://evm-toolkit.evm.testnet.iotaledger.net) or [ShimmerEVM](https://evm-toolkit.evm.testnet.shimmer.network/) Testnet Toolkit.
+2. Connect your MetaMask wallet by clicking "Connect Wallet" or paste an EVM address.
+3. Select the account you want to receive testnet tokens.
+4. Click "Send funds" to get testnet tokens.
+
+:::
+
+You can now deploy and interact with smart contracts. Utilize popular development tools and frameworks, such as [Hardhat](https://hardhat.org/), or [Remix](https://remix.ethereum.org/), to build, test, and deploy your smart contracts.
+
+<DeployAdmonition />
+
+## Explore the Network
+
+Visit the corresponding Block Explorer to monitor the chain, track transactions, and explore deployed smart contracts.
+
+<Tabs groupId='network' queryString>
+<TabItem value='iota' label='IOTA EVM'>
+<Link to={Networks['iota'].evm.core.blockExplorerUrls[0]}>Explorer</Link>
+</TabItem>
+<TabItem value='iota_testnet' label='IOTA EVM Testnet'>
+<Link to={Networks['iota_testnet'].evm.core.blockExplorerUrls[0]}>Explorer</Link>
+</TabItem>
+<TabItem value='shimmer' label='ShimmerEVM'>
+<Link to={Networks['shimmer'].evm.core.blockExplorerUrls[0]}>Explorer</Link>
+</TabItem>
+<TabItem value='shimmer_testnet' label='ShimmerEVM Testnet'>
+<Link to={Networks['shimmer_testnet'].evm.core.blockExplorerUrls[0]}>Explorer</Link>
+</TabItem>
+</Tabs>
+
+## Additional Resources
+
+- [GitHub issues page for Wasp](https://github.com/iotaledger/wasp/issues)
+- [Firefly](https://firefly.iota.org)
+
+With this quickstart guide, you should now be able to set up and start exploring the EVM. As you begin to deploy and interact with smart contracts, remember to provide feedback on any issues or improvements you discover to help make our EVM even better. Happy developing!
