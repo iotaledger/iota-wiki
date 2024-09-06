@@ -179,6 +179,10 @@ npx hardhat run scripts/deploy.js --network evm-testnet
 
 You can verify your contract by visiting
 the [EVM Testnet Explorer](https://explorer.evm.testnet.shimmer.network/),
-and searching for the address from the previous step. If you access the `Contract` tab, you should be able to see your code and interact with your contract.
+and searching for the address from the previous step. If you access the `Contract` tab, you should be able to see your code and interact with your contract or you can use the below command to verify the contracts through hardhat :
+
+```bash
+npx hardhat verify --network iota_evm_testnet CONTRACT_ADDRESS_HERE "CONSTRUCTOR_ARGUMENTS_IF_ANY"
+```
 
 Feel free to [fork this repository](https://github.com/iota-community/Defi-yield-farming), contribute with pull requests, or customize it to suit your needs. We have a React [frontend](https://github.com/iota-community/Defi-yield-farming/tree/main/frontend) on the repository that you can use to interact with Token Farm smart contract.
