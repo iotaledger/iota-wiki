@@ -269,6 +269,11 @@ module.exports = {
               label: 'Part II',
               id: 'tutorials/cross-chain-nft-marketplace-part-2',
             },
+            {
+              type: 'doc',
+              label: 'Part III',
+              id: 'tutorials/cross-chain-nft-marketplace-part-3',
+            },
           ],
         },
       ],
