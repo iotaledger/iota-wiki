@@ -27,10 +27,6 @@ exports.buildPluginsConfig = [
     subsection: 'build-layer-2',
     versions: [
       {
-        label: 'v1.1',
-        banner: 'unmaintained',
-      },
-      {
         label: 'v1.3',
         badges: ['IOTA'],
       },
@@ -156,10 +152,6 @@ exports.maintainPluginsConfig = [
     icon: 'SmartContracts',
     subsection: 'maintain-layer-2',
     versions: [
-      {
-        label: 'v1.1',
-        banner: 'unmaintained',
-      },
       {
         label: 'v1.3',
         badges: ['IOTA'],
