@@ -10,7 +10,7 @@ tags:
 
 # Custom ERC20 Functions
 
-Once you [registered your native token as ERC20](./erc20-native-token.md) you can use it like any other ERC20 token, with functions like
+Once you [created your token](./create-native-token.md) it is automatically registered as ERC20 token and you can use it like any other ERC20 token, with functions like
 `transfer`, `balanceOf`, etc. But, as the ERC20 token maps the native token on L2, there are some additional ISC features 
 you can take advantage of.
 
