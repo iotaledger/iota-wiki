@@ -8,31 +8,22 @@ The second part of the series will focus on bridging NFTs from another EVM netwo
 Finally, in part III, you will deploy another instance of the marketplace on the BNB Testnet, making the marketplace truly cross-chain.
 
 ## Marketplace Architecture Overview
-
 The architecture of the marketplace will evolve as we progress through the tutorials. 
-
 ### Part I
-
 In part I, we will start with this very simple architecture:
-
 ![Cross Chain MarketPlace V1](../../../../../../static/img/tutorials/cross_chain_marketplace/Architecture-V1.png)
 
 ### Part II
-
-In Part II, you will add the contracts and scripts to manually bridge NFTs from the BNB Testnet to the ShimmerEVM Testnet and list them on the marketplace. 
-
-The architecture will evolve to look like this:
-
+In Part II, you will add the contracts and scripts to manually bridge NFTs from the BNB Testnet to the ShimmerEVM Testnet and list them on the marketplace.  The architecture will evolve to look like this:
 ![Cross Chain MarketPlace V2](../../../../../../static/img/tutorials/cross_chain_marketplace/Architecture-V2.png)
 
 ### Part III
-
 Finally, in part III, you will deploy another marketplace instance on the BNB Testnet, where the contract will handle cross-chain transactions. 
 This enables a user on the BNB Testnet, to view and buy an NFT listed on the ShimmerEVM Testnet and vice versa without switching networks.
-
 The architecture will look like this:
-
 ![Cross Chain MarketPlace V3](../../../../../../static/img/tutorials/cross_chain_marketplace/Architecture-V3.png)
+
+
 
 ## Prerequisites
 
@@ -63,6 +54,10 @@ In the `hardhat.config.js` file, update the `networks` object to include the Shi
 https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/ab11866504fe8f72fc54d719a316ec9291839ced/hardhat.config.js
 ```
 
+
+
+
+
 ## Contracts
 
 In the first part of the tutorial, you will only need two contracts: the [NFT Marketplace contract](https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/ab11866504fe8f72fc54d719a316ec9291839ced/contracts/NFTMarketPlace.sol) and an [NFT ERC721-compatible](https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/contracts/MyERC721.sol) contract.
@@ -73,12 +68,10 @@ Create a `contracts` folder in the root of the project and add the following fil
 
 The idea behind a marketplace contract is to allow users to list their NFTs for sale and other users to buy them. The contract will handle the transfer of the NFT from the seller to the buyer and the payment from the buyer to the seller. A seller must first allow the marketplace contract to transfer the NFT on their behalf before listing it for sale.
 
-#### Data Structures
-
 The main data structures and functions in the contract are:
 
-- `struct Listing`: Represents an NFT listing with the seller's price and address. In further parts of the tutorial, `struct Listing` will be expanded to include more details about the NFT being listed, like the chain it resides on.
-
+- `struct Listing`  
+Represents an NFT listing with the price and the address of the seller. In further parts of the tutorial, `struct Listing` will be expanded to include more details about the NFT being listed, like the chain it resides on.
 ```solidity
 struct Listing {
     address seller;
@@ -87,13 +80,15 @@ struct Listing {
 ```
 
 
-- `mapping s_listings` : Maps the token contract address to a mapping of token ID to `Listing.`
+- `mapping s_listings`  
+Maps the token contract address to a mappring of token ID to `Listing`.
 ```solidity
 mapping(address => mapping(uint256 => Listing)) private s_listings;
 ```
-#### Functions
 
-- `function listItem`: Allows a seller to list an NFT for sale by specifying the token contract address, the token ID, and the price. This function will stay the same in Part II, but the `Listing` struct will be expanded to include more details about the NFT being listed, like the chain it resides on.
+
+- `function listItem`  
+Allows a seller to list an NFT for sale by specifying the token contract address, the token ID, and the price. In Part II, this function will stay the same, but the `Listing` struct will be expanded to include more details about the NFT being listed, like the chain it resides on.
 
 ```solidity
     /*
@@ -123,7 +118,11 @@ mapping(address => mapping(uint256 => Listing)) private s_listings;
     }
 ```
 
-- `function buyItem`: This handles the transfer of an NFT from a seller to the buyer. Similar to the `listItem` function, this function will stay the same in Part II because the NFTs will be bridged manually.
+
+
+
+- `function buyItem` 
+This handles the transfer of an NFT from a seller to buyer. Same as the `listItem` function, this function will stay the same in Part II, because the NFTs will be bridged manually.
 
 ```solidity
     /*
@@ -159,7 +158,11 @@ mapping(address => mapping(uint256 => Listing)) private s_listings;
 
 ```
 
-- `function getListing`: Gets an NFT listing by its address and `tokenId`.
+
+
+
+- `function getListing`  
+gets an NFT listing by its address and `tokenId`.
 ```solidity
 function getListing(address nftAddress, uint256 tokenId)
         external
@@ -185,7 +188,6 @@ A standard ERC721-compatible contract that allows minting and transferring of NF
 ```solidity reference
 https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/contracts/MyERC721.sol
 ```
-### Compile the Contracts
 
 After adding the contracts, compile them by running:
 
@@ -199,7 +201,6 @@ npx hardhat compile
 First, create a `scripts` folder in the root of the project and add the following files under it:
 
 ### deploy_marketplace_shimmer.js
-
 The `deploy_marketplace_shimmer.js` script will deploy the NFTMarketplace contract to the ShimmerEVM Testnet and save the contract address to a file called `NFTMarketplace.txt`.
 
 ```javascript reference
@@ -213,13 +214,11 @@ npx hardhat run scripts/deploy_marketplace_shimmer.js --network shimmerevm-testn
 ```
 
 ### deploy_er721_shimmer.js
-
 This script will deploy the `MyERC721` contract to the ShimmerEVM Testnet and save the contract's address to a file called `MyERC721.txt`.
 
 ```javascript reference
 https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scripts/deploy_erc721_shimmer.js
 ```
-
 You can run this script with the following command:
 
 ```bash
@@ -233,7 +232,6 @@ After you have deployed the `MyERC721` contract, you are ready to mint an NFT us
 ```javascript reference
 https://github.com/iota-community/ISC-Cross-Chain-NFT-Marketplace/blob/main/scripts/mint_nft.js
 ```
-
 You can run the script by executing the following command:
 
 ```bash
@@ -279,4 +277,4 @@ npx hardhat run scripts/buy_item.js --network shimmerevm-testnet
 
 
 ## Conclusion
-In this first part of the cross-chain NFT marketplace tutorial, you have set up the project and deployed the NFTMarketplace contract to the ShimmerEVM Testnet. You have also deployed the MyERC721 contract, minted an NFT, and listed it on the marketplace. In the next part, we will manually bridge NFTs from the BNB Testnet and Shimmer Testnet to the ShimmerEVM Testnet and list them on the same marketplace.
+In this first part of the cross-chain NFT marketplace tutorial, we have set up the project and deployed the NFTMarketplace contract to the ShimmerEVM Testnet. We have also deployed the MyERC721 contract, minted an NFT and then listed it on the marketplace. In the next part, we will manually bridge NFTs from BNB Testnet and Shimmer Testnet to the ShimmerEVM Testnet and list them on the same marketplace.

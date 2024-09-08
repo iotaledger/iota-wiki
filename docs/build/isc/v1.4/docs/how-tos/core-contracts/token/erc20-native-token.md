@@ -35,21 +35,11 @@ NativeTokenID memory id =token.nativeTokenID();
 ### Full Example Code
 
 ```solidity
-// SPDX-License-Identifier: MIT
-
-pragma solidity ^0.8.0;
-
-import "@iota/iscmagic/ISC.sol";
-
-contract MyNativeToken {
-
-    function nativeTokenID(uint32 _foundrySN) public view returns (bytes memory) {
-        ERC20NativeTokens token = ERC20NativeTokens(
-            ISC.sandbox.erc20NativeTokensAddress(_foundrySN)
-        );
-        NativeTokenID memory id = token.nativeTokenID();
-        return id.data;
-    }
+function nativeTokenID(uint32 _foundrySN) public view returns (bytes memory) {
+    ERC20NativeTokens token = ERC20NativeTokens(
+        ISC.sandbox.erc20NativeTokensAddress(_foundrySN)
+    );
+    NativeTokenID memory id =token.nativeTokenID();
+    return id.data;
 }
-
 ```
