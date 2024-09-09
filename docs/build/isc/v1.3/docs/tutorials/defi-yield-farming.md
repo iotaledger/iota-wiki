@@ -128,7 +128,7 @@ https://github.com/iota-community/Defi-yield-farming/blob/main/contracts/TokenFa
 
 ## 3. Create a HardHat Deploy Script
 
-Create a deployment script to deploy the contracts to the IOTA EVM testnet.
+Create a deployment script to deploy the contracts to the Shimmer EVM testnet.
 
 In the `scripts` folder, create a file named `deploy.js` with the following content:
 
@@ -136,15 +136,15 @@ In the `scripts` folder, create a file named `deploy.js` with the following cont
 https://github.com/iota-community/Defi-yield-farming/blob/main/scripts/deploy.js
 ```
 
-## 4. Deploy to the IOTA EVM Test
+## 4. Deploy to the Shimmer EVM Test
 
-### 1. Configure Hardhat for IOTA EVM Testnet
+### 1. Configure Hardhat for Shimmer EVM Testnet
 
 Create a `.env` file with the following content, replacing your own private key:
 
 ```bash
 PRIVATE_KEY=your-private-key
-IOTA_RPC_URL=https://json-rpc.evm.testnet.iotaledger.net
+SHIMMER_EVM_TESTNET_URL=https://json-rpc.evm.testnet.shimmer.network
 ```
 
 ### 2. Install the `dotenv` Package to Manage Environment Variables
@@ -155,13 +155,13 @@ npm install dotenv
 
 ### 3. Import the `dotenv` package in your `hardhat.config.js`
 
-Modify `hardhat.config.js` to include the IOTA EVM testnet configuration:
+Modify `hardhat.config.js` to include the Shimmer EVM testnet configuration:
 
 ```javascript reference
 https://github.com/iota-community/Defi-yield-farming/blob/main/hardhat.config.js
 ```
 
-## 5. Deploy to IOTA EVM Testnet
+## 5. Deploy to Shimmer EVM Testnet
 
 <DeployAdmonition />
 
@@ -171,18 +171,18 @@ https://github.com/iota-community/Defi-yield-farming/blob/main/hardhat.config.js
 npx hardhat compile
 ```
 
-### 2. Deploy Your Contracts to the IOTA EVM Testnet
+### 2. Deploy Your Contracts to the Shimmer EVM Testnet
 
 ```bash
-npx hardhat run scripts/deploy.js --network evm-testnet
+npx hardhat run scripts/deploy.js --network shimmer_evm_testnet
 ```
 
 You can verify your contract by visiting
-the [EVM Testnet Explorer](https://explorer.evm.testnet.shimmer.network/),
+the [Shimmmer EVM Testnet Explorer](https://explorer.evm.testnet.shimmer.network/),
 and searching for the address from the previous step. If you access the `Contract` tab, you should be able to see your code and interact with your contract or you can use the below command to verify the contracts through hardhat :
 
 ```bash
-npx hardhat verify --network iota_evm_testnet CONTRACT_ADDRESS_HERE "CONSTRUCTOR_ARGUMENTS_IF_ANY"
+npx hardhat verify --network shimmer_evm_testnet CONTRACT_ADDRESS_HERE "CONSTRUCTOR_ARGUMENTS_IF_ANY"
 ```
 
 Feel free to [fork this repository](https://github.com/iota-community/Defi-yield-farming), contribute with pull requests, or customize it to suit your needs. We have a React [frontend](https://github.com/iota-community/Defi-yield-farming/tree/main/frontend) on the repository that you can use to interact with Token Farm smart contract.
