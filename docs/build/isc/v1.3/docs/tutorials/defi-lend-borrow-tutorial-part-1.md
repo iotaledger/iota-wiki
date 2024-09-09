@@ -15,6 +15,7 @@ DeFi Lend Borrow is a decentralized finance (DeFi) application that enables user
 - [Usage](#usage)
 - [Deployment](#deployment)
 - [Verification](#verification)
+- [Conclusion](#conclusion)
 
 ## Prerequisites
 
@@ -58,7 +59,7 @@ The `IToken` contract is an ERC20 token that represents an interest-bearing asse
   - Returns a boolean indicating whether the minting process was successful.
 
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/b5ca95bc1e11bdff006c0ec963337b1a512e36d3/contracts/IToken.sol#L94-L116
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/IToken.sol#L113-L135
 ```
 - Redeem: This method enables users to redeem `IToken` in exchange for the underlying token.
     
@@ -70,7 +71,7 @@ https://github.com/iota-community/Defi-lend-borrow/blob/b5ca95bc1e11bdff006c0ec9
 
 
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/b5ca95bc1e11bdff006c0ec963337b1a512e36d3/contracts/IToken.sol#L118-L145
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/IToken.sol#L137-L164
 ```
 - Borrow: Borrows the underlying token from the contract. This method allows users to borrow the underlying token from the contract.
     - Calculates the borrow rate and the interest for the specified amount.
@@ -81,7 +82,7 @@ https://github.com/iota-community/Defi-lend-borrow/blob/b5ca95bc1e11bdff006c0ec9
     - Returns a boolean indicating whether the borrowing process was successful.
 
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/b5ca95bc1e11bdff006c0ec963337b1a512e36d3/contracts/IToken.sol#L147-L173
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/IToken.sol#L166-L196
 ```
 - Repay: This method allows users to repay the borrowed underlying token.
   - Ensures the repayment amount does not exceed the user's borrow balance.
@@ -92,15 +93,15 @@ https://github.com/iota-community/Defi-lend-borrow/blob/b5ca95bc1e11bdff006c0ec9
   - Returns a boolean indicating whether the repayment process was successful.
 
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/b5ca95bc1e11bdff006c0ec963337b1a512e36d3/contracts/IToken.sol#L187-L213
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/IToken.sol#L198-L227
 ```
 - `getBorrowRate()`: Returns the current borrow rate per block.
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/b5ca95bc1e11bdff006c0ec963337b1a512e36d3/contracts/IToken.sol#L215-L222
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/IToken.sol#L229-L236
 ```
 - `getSupplyRate()`: Returns the current supply rate per block.
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/b5ca95bc1e11bdff006c0ec963337b1a512e36d3/contracts/IToken.sol#L224-L231
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/IToken.sol#L238-L245
 ```
 
 ### InterestRateModel
@@ -111,15 +112,15 @@ The `InterestRateModel` contract calculates the interest rates for borrowing and
 - `utilizationRate(uint cash, uint borrows, uint reserves)`: Calculates the utilization rate of the market.
 
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/a8d67cd9ff4d567eab2a987de6d30fde94217b02/contracts/InterestRateModel.sol#L41-L55
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/InterestRateModel.sol#L41-L57
 ```
 - `getBorrowRate(uint cash, uint borrows, uint reserves)`: Calculates the current borrow rate per block.
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/b5ca95bc1e11bdff006c0ec963337b1a512e36d3/contracts/InterestRateModel.sol#L59-L68
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/InterestRateModel.sol#L59-L68
 ```
 - `getSupplyRate(uint cash, uint borrows, uint reserves, uint reserveFactorMantissa)`: Calculates the current supply rate per block.
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/b5ca95bc1e11bdff006c0ec963337b1a512e36d3/contracts/InterestRateModel.sol#L70-L82  
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/InterestRateModel.sol#L70-L79
 ``` 
 
 ### ITokenManager Contract
@@ -144,7 +145,7 @@ The `ITokenManager` contract is designed to manage supported tokens and collater
   - **Modifiers:** `onlyOwner`
   - **Events:** Emits `TokenAdded` upon successful addition of the token.
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/6b16b4dac867d9387f5ca080d5ff65c5101911ef/contracts/ITokenManager.sol#L57-L77
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/ITokenManager.sol#L57-L86
 ```
 - `removeToken(address token)` : Removes an `IToken` from the manager.
   - **Parameters:**
@@ -153,15 +154,7 @@ https://github.com/iota-community/Defi-lend-borrow/blob/6b16b4dac867d9387f5ca080
   - **Events:** Emits `TokenRemoved` upon successful removal of the token.
 
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/6b16b4dac867d9387f5ca080d5ff65c5101911ef/contracts/ITokenManager.sol#L79-L102
-```
-
-- `getAllSupportedTokens() → address[]` : Returns an array of all the supported `IToken` addresses.
-
-  - **Returns:** An array containing the addresses of all supported tokens.
-
-```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/6b16b4dac867d9387f5ca080d5ff65c5101911ef/contracts/ITokenManager.sol#L104-L110
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/ITokenManager.sol#L88-L111
 ```
 
 - `preMintChecks(address ITokenAddress)` : Ensures that the token is supported before minting.
@@ -170,7 +163,7 @@ https://github.com/iota-community/Defi-lend-borrow/blob/6b16b4dac867d9387f5ca080
   - **Reverts:** `TokenNotListed` if the token is not supported.
 
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/6b16b4dac867d9387f5ca080d5ff65c5101911ef/contracts/ITokenManager.sol#L112-L116
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/ITokenManager.sol#L113-L122
 ```
 
 - `preRedeemChecks(address iTokenAddress, address redeemer, uint256 amount)`: Ensures that the redeemer has sufficient collateral to redeem tokens.
@@ -182,7 +175,7 @@ https://github.com/iota-community/Defi-lend-borrow/blob/6b16b4dac867d9387f5ca080
 - **Reverts:** `RedeemAmountTooMuch` if the collateral is insufficient.
 
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/bfb658e82611657a50885a2509f21a07da2bbef1/contracts/ITokenManager.sol#L123-L153
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/ITokenManager.sol#L124-L154
 ```
 
 - `preBorrowChecks(address iTokenAddress, address redeemer, uint256 amount)`: Ensures that the redeemer has sufficient collateral to borrow tokens.
@@ -194,7 +187,7 @@ https://github.com/iota-community/Defi-lend-borrow/blob/bfb658e82611657a50885a25
 - **Reverts:** `BorrowAmountTooMuch` if the collateral is insufficient.
 
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/bfb658e82611657a50885a2509f21a07da2bbef1/contracts/ITokenManager.sol#L155-L184
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/ITokenManager.sol#L156-L185
 ```
 
 - `hasLiquidity(address account, address iToken, uint256 redeemTokens, uint256 borrowTokens) → (uint256 totalAccountCollaterals, uint256 totalAccountBorrows)`: Calculates the total collateral and borrow balances for an account, accounting for tokens to be redeemed or borrowed.
@@ -208,7 +201,7 @@ https://github.com/iota-community/Defi-lend-borrow/blob/bfb658e82611657a50885a25
   - `totalAccountBorrows`: The total borrow balance.
 
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/bfb658e82611657a50885a2509f21a07da2bbef1/contracts/ITokenManager.sol#L186-L243
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/ITokenManager.sol#L187-L247
 ```
 - `updateTokenUSDPrice(address token, uint256 newUSDPrice)`: Updates the USD price of a supported token.
 
@@ -229,7 +222,7 @@ https://github.com/iota-community/Defi-lend-borrow/blob/bfb658e82611657a50885a25
 - **Returns:** The USD price of the token as a `uint256`.
 
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/bfb658e82611657a50885a2509f21a07da2bbef1/contracts/ITokenManager.sol#L260-L265
+https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/ITokenManager.sol#L249-L262
 ```
 
 ### Underlying Token
@@ -268,5 +261,5 @@ and searching for the address from the previous step. If you access the `Contrac
 npx hardhat verify --network shimmer_evm_testnet CONTRACT_ADDRESS_HERE "CONSTRUCTOR_ARGUMENTS_IF_ANY"
 ```
 
-### CONCLUSION
+### conclusion
 In this first part of the DeFi Lend Borrow tutorial, we have set up the project and deployed the Itoken contract to the ShimmerEVM Testnet. We have also deployed the Underlying Token's contract and the Itoken Manager contract.Now using Itoken contract you can lend and borrow tokens. In the next part, we will create the DeFi Lend Borrow UI using React.js.
