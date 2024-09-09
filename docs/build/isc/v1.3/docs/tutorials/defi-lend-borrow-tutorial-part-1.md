@@ -244,7 +244,7 @@ First, create a `scripts` folder in the root of the project and add the followin
 
 The `deploy.js` script will deploy the contract to the ShimmerEVM Testnet.
 ```javascript reference
-https://github.com/iota-community/Defi-lend-borrow/blob/ce44e88071272a11eab8e868560599e365c09865/scripts/deploy.js#L1-L51
+https://github.com/iota-community/Defi-lend-borrow/blob/e227092ef1123cf8cff766ee4c786a0c40a62bf3/scripts/deploy.js#L1-L51
 ```
 
 This will deploy the Defi Lend borrow contract to the ShimmerEVM Testnet. run it by executing:
