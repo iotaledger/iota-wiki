@@ -72,6 +72,7 @@ Create a `contracts` folder in the root of the project and add the following fil
 #### Description
 
 This contract represents the reward token (DappToken) that users will earn as a reward for staking their IOTATokens. It is an [ERC20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) token, which is a widely used token standard on EVM compatible blockchains. The contract inherits from [OpenZeppelin’s](https://www.openzeppelin.com/) ERC20 implementation, which provides standard functionalities for a fungible token.
+
 ```solidity reference
 https://github.com/iota-community/Defi-yield-farming/blob/main/contracts/DappToken.sol
 ```
