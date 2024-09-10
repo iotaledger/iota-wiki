@@ -280,6 +280,11 @@ module.exports = {
               label: 'Part I',
               id: 'tutorials/defi-lend-borrow-tutorial-part-1',
             },
+            {
+              type: 'doc',
+              label: 'Part II',
+              id: 'tutorials/defi-lend-borrow-tutorial-part-2',
+            },
           ],
         },
       ],
