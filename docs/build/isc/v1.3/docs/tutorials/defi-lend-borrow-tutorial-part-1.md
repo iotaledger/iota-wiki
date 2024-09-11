@@ -3,19 +3,6 @@
 ## Part I
 DeFi Lend Borrow is a decentralized finance (DeFi) application that enables users to lend and borrow assets on the Shimmer EVM testnet. The project is built using Solidity and Hardhat, with the core functionality provided by smart contracts.
 
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Contracts Overview](#contracts-overview)
-  - [IToken](#itoken)
-  - [InterestRateModel](#interestratemodel)
-  - [ITokenManager](#itokenmanager)
-  - [MockERC20](#mockerc20)
-- [Usage](#usage)
-- [Deployment](#deployment)
-- [Verification](#verification)
-- [Conclusion](#conclusion)
 
 ## Prerequisites
 
@@ -23,23 +10,28 @@ DeFi Lend Borrow is a decentralized finance (DeFi) application that enables user
 - [Hardhat](https://hardhat.org) >= v2.0.0
 - [npx](https://www.npmjs.com/package/npx)  >= v7.1.0.
 
-## Installation
+## Set Up
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/defi-lend-borrow.git
-    cd defi-lend-borrow
-    ```
+First, create a new directory for the project and navigate into it:
 
-2. Install the dependencies:
-    ```bash
-    npm install
-    ```
+```bash
+mkdir defi-lend-borrow
+cd defi-lend-borrow
+```
 
-3. Compile the contracts:
-    ```bash
-    npx hardhat compile
-    ```
+Then [bootsrap a new Hardhat project](https://hardhat.org/tutorial/creating-a-new-hardhat-project), by running:
+
+```bash
+npx hardhat init
+```
+
+## Configuration
+
+In the `hardhat.config.js` file, update the `networks` object to include the ShimmerEVM Testnet network configuration, as well as the BNB Testnet network configuration. 
+
+```javascript reference
+https://github.com/iota-community/Defi-lend-borrow/blob/e227092ef1123cf8cff766ee4c786a0c40a62bf3/hardhat.config.ts#L1-L42
+```
 
 ## Contracts Overview
 
@@ -51,7 +43,7 @@ The `IToken` contract is an ERC20 token that represents an interest-bearing asse
 - **Interest Rate Model:** Determines the interest rates for borrowing and supplying assets.
 - **ITokenManager:** Manages supported tokens and collateralization.
 
-#### Key Functions:
+#### Key Functions
 - Mint: This method allows users to mint `IToken` by depositing a specified amount of the underlying token.
   - Transfers the specified amount of the underlying token from the user to the contract.
   - Mints an equivalent amount of IToken to the user's balance.
@@ -103,12 +95,13 @@ https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad
 ```javascript reference
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/IToken.sol#L238-L245
 ```
+We have now covered all relevant parts and working of the IToken contract, here is the [link](https://github.com/iota-community/Defi-lend-borrow/blob/main/contracts/IToken.sol) for the full contract code for your reference. 
 
 ### InterestRateModel
 
 The `InterestRateModel` contract calculates the interest rates for borrowing and supplying assets based on the utilization of the underlying assets.
 
-#### Key Functions:
+#### Key Functions
 - `utilizationRate(uint cash, uint borrows, uint reserves)`: Calculates the utilization rate of the market.
 
 ```javascript reference
@@ -122,6 +115,8 @@ https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad
 ```javascript reference
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/InterestRateModel.sol#L70-L79
 ``` 
+
+We have now covered all relevant parts and working of the InterestRateModal contract, here is the [link](https://github.com/iota-community/Defi-lend-borrow/blob/main/contracts/InterestRateModel.sol) for the full contract code for your reference.
 
 ### ITokenManager Contract
 
@@ -225,6 +220,8 @@ https://github.com/iota-community/Defi-lend-borrow/blob/bfb658e82611657a50885a25
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/ITokenManager.sol#L249-L262
 ```
 
+We have now covered all relevant parts and working of the iTokenManager contract, here is the [link](https://github.com/iota-community/Defi-lend-borrow/blob/main/contracts/ITokenManager.sol) for the full contract code for your reference.
+
 ### Underlying Token
 
 The `MockERC20` contract is a simple ERC20 token used for testing purposes. It allows minting of an initial supply to the deployer. You can add this token to the `ITokenManager` and mint new ITokens by depositing the MockERC20 tokens as the underlying Token.
@@ -261,5 +258,5 @@ and searching for the address from the previous step. If you access the `Contrac
 npx hardhat verify --network shimmer_evm_testnet CONTRACT_ADDRESS_HERE "CONSTRUCTOR_ARGUMENTS_IF_ANY"
 ```
 
-### conclusion
+### Conclusion
 In this first part of the DeFi Lend Borrow tutorial, we have set up the project and deployed the Itoken contract to the ShimmerEVM Testnet. We have also deployed the Underlying Token's contract and the Itoken Manager contract.Now using Itoken contract you can lend and borrow tokens. In the next part, we will create the DeFi Lend Borrow UI using React.js.
