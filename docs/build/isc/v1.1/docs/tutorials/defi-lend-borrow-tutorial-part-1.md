@@ -1,6 +1,5 @@
-# DeFi Lend Borrow
+# DeFi Lend Borrow : Solidity Contracts
 
-## Part I
 DeFi Lend Borrow is a decentralized finance (DeFi) application that enables users to lend and borrow assets on the Shimmer EVM testnet. The project is built using Solidity and Hardhat, with the core functionality provided by smart contracts.
 
 
@@ -9,6 +8,9 @@ DeFi Lend Borrow is a decentralized finance (DeFi) application that enables user
 - [Node.js](https://nodejs.org) >=  v18.0
 - [Hardhat](https://hardhat.org) >= v2.0.0
 - [npx](https://www.npmjs.com/package/npx)  >= v7.1.0.
+
+## DeFi Lend Borrow contracts architecture Overview
+![architecture diagram](/img/tutorials/defi-lend-borrow/defi-lend-borrow-architecture-diagram.png)
 
 ## Set Up
 
