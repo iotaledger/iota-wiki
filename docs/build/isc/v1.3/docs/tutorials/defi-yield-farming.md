@@ -29,6 +29,10 @@ At its core, yield farming allows cryptocurrency holders to lock up their assets
 3. **Unstaking Mechanism**: Users can withdraw (unstake) their staked tokens at any time.
 4. **Reward Distribution**: The contract periodically distributes DappTokens as rewards to stakers.
 
+## Yield Farming Architecture Overview
+
+![DeFi Yield Farming](../../../../../../static/img/tutorials/defi_yield_farming/Architecture.png)
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org) >=  v18.0
