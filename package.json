@@ -29,7 +29,7 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@algolia/client-search": "^4.22.1",
+    "@algolia/client-search": "^4.24.0",
     "@artsy/to-title-case": "^1.1.0",
     "@docusaurus/core": "2.4.3",
     "@docusaurus/plugin-client-redirects": "2.4.3",
@@ -53,7 +53,7 @@
     "hast-util-is-element": "1.1.0",
     "html-react-parser": "^4.2.10",
     "humanize-duration": "^3.30.0",
-    "infima": "^0.2.0-alpha.43",
+    "infima": "^0.2.0-alpha.45",
     "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
     "raw-loader": "^4.0.2",
     "react": "18.2.0",
@@ -65,7 +65,7 @@
     "react-popper": "^2.3.0",
     "react-select": "^5.7.7",
     "recharts": "^2.12.7",
-    "rehype-jargon": "3.0.0",
+    "rehype-jargon": "3.1.0",
     "rehype-katex": "4",
     "rehype-lodash-template": "^0.2.1",
     "remark-code-import": "^0.4.0",
@@ -77,7 +77,7 @@
     "web3": "^4.2.2",
     "webpack": "^5.94.0",
     "webpack-node-externals": "^3.0.0",
-    "ws": "^8.17.1"
+    "ws": "^8.18.0"
   },
   "resolutions": {
     "@types/react": "18.2.71",

@@ -85,6 +85,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@algolia/cache-common@npm:4.24.0":
+  version: 4.24.0
+  resolution: "@algolia/cache-common@npm:4.24.0"
+  checksum: bc1d0f8731713f7e6f10cd397b7d8f7464f14a2f4e1decc73a48e99ecbc0fe41bd4df1cc3eb0a4ecf286095e3eb3935b2ea40179de98e11676f8e7d78c622df8
+  languageName: node
+  linkType: hard
+
 "@algolia/cache-in-memory@npm:4.22.1":
   version: 4.22.1
   resolution: "@algolia/cache-in-memory@npm:4.22.1"
@@ -127,6 +134,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@algolia/client-common@npm:4.24.0":
+  version: 4.24.0
+  resolution: "@algolia/client-common@npm:4.24.0"
+  dependencies:
+    "@algolia/requester-common": 4.24.0
+    "@algolia/transporter": 4.24.0
+  checksum: 19c6615f9e1b0bbda7dd8ecd285c5bdf48d7067223b06e385a6c69a20a6d6500086619fa0f9e63403cf33220d5d7a288360df55452fdf00f5feca8ca9852758a
+  languageName: node
+  linkType: hard
+
 "@algolia/client-personalization@npm:4.22.1":
   version: 4.22.1
   resolution: "@algolia/client-personalization@npm:4.22.1"
@@ -138,7 +155,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@algolia/client-search@npm:4.22.1, @algolia/client-search@npm:^4.22.1":
+"@algolia/client-search@npm:4.22.1":
   version: 4.22.1
   resolution: "@algolia/client-search@npm:4.22.1"
   dependencies:
@@ -146,6 +163,17 @@ __metadata:
     "@algolia/requester-common": 4.22.1
     "@algolia/transporter": 4.22.1
   checksum: 0477f003c19cf1dbb6190fd491136927bc7174fa9d5a27dead218a51807da9c519be114000bd035265c018682fd8654d110cab07f74004c8c8d069db19800c3d
+  languageName: node
+  linkType: hard
+
+"@algolia/client-search@npm:^4.24.0":
+  version: 4.24.0
+  resolution: "@algolia/client-search@npm:4.24.0"
+  dependencies:
+    "@algolia/client-common": 4.24.0
+    "@algolia/requester-common": 4.24.0
+    "@algolia/transporter": 4.24.0
+  checksum: 2d19823994e92490885115188d75994fbcc7a407fbe14f52034b191607a51081ed476e367a65c889666f6b337b00d700203204d55666f182809f01fbd29fd1fb
   languageName: node
   linkType: hard
 
@@ -160,6 +188,13 @@ __metadata:
   version: 4.22.1
   resolution: "@algolia/logger-common@npm:4.22.1"
   checksum: 3ac5430f73e8eabb4e7561b271d38151fb7f128491437c202dac3d54f7c3a83ebc96818532746422ea4abdf9d68a6ccb716dc8b97f69101ff642afaff12057e5
+  languageName: node
+  linkType: hard
+
+"@algolia/logger-common@npm:4.24.0":
+  version: 4.24.0
+  resolution: "@algolia/logger-common@npm:4.24.0"
+  checksum: 668fb5a2cbb6aaea7648ae522b5d088241589a9da9f8abb53e2daa89ca2d0bc04307291f57c65de7a332e092cc054cc98cc21b12af81620099632ca85c4ef074
   languageName: node
   linkType: hard
 
@@ -188,6 +223,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@algolia/requester-common@npm:4.24.0":
+  version: 4.24.0
+  resolution: "@algolia/requester-common@npm:4.24.0"
+  checksum: 8f4a49ef0fb4aca42fa3703ddf97ff7f6e9c8492928aa66704ca2f54d3785d2338b64917860a01a42dedb1621279558ca7d549c5b1eb5b7f2742f952fb9865e5
+  languageName: node
+  linkType: hard
+
 "@algolia/requester-node-http@npm:4.22.1":
   version: 4.22.1
   resolution: "@algolia/requester-node-http@npm:4.22.1"
@@ -205,6 +247,17 @@ __metadata:
     "@algolia/logger-common": 4.22.1
     "@algolia/requester-common": 4.22.1
   checksum: 737e787ac77215f30db54ebab3431e06cfee1790ab7cf45222546470546ecb276eedfaa0aedf78b2c95efa9d5550ea7d47c947535f143d7002a22f781d8721ce
+  languageName: node
+  linkType: hard
+
+"@algolia/transporter@npm:4.24.0":
+  version: 4.24.0
+  resolution: "@algolia/transporter@npm:4.24.0"
+  dependencies:
+    "@algolia/cache-common": 4.24.0
+    "@algolia/logger-common": 4.24.0
+    "@algolia/requester-common": 4.24.0
+  checksum: 2c026a777de5dcb6f3cc94a0cf5f4650fbc7067f56eb98a1ae9b5750815179a73eb2b1d8ae75853a99823afd13584b62430d7649c65a456b2623123f355955b1
   languageName: node
   linkType: hard
 
@@ -386,15 +439,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/generator@npm:^7.25.0":
-  version: 7.25.0
-  resolution: "@babel/generator@npm:7.25.0"
+"@babel/generator@npm:^7.25.6":
+  version: 7.25.6
+  resolution: "@babel/generator@npm:7.25.6"
   dependencies:
-    "@babel/types": ^7.25.0
+    "@babel/types": ^7.25.6
     "@jridgewell/gen-mapping": ^0.3.5
     "@jridgewell/trace-mapping": ^0.3.25
     jsesc: ^2.5.1
-  checksum: bf25649dde4068bff8e387319bf820f2cb3b1af7b8c0cfba0bd90880656427c8bad96cd5cb6db7058d20cffe93149ee59da16567018ceaa21ecaefbf780a785c
+  checksum: b55975cd664f5602304d868bb34f4ee3bed6f5c7ce8132cd92ff27a46a53a119def28a182d91992e86f75db904f63094a81247703c4dc96e4db0c03fd04bcd68
   languageName: node
   linkType: hard
 
@@ -1872,14 +1925,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.25.0":
-  version: 7.25.2
-  resolution: "@babel/types@npm:7.25.2"
+"@babel/types@npm:^7.25.6":
+  version: 7.25.6
+  resolution: "@babel/types@npm:7.25.6"
   dependencies:
     "@babel/helper-string-parser": ^7.24.8
     "@babel/helper-validator-identifier": ^7.24.7
     to-fast-properties: ^2.0.0
-  checksum: f73f66ba903c6f7e38f519a33d53a67d49c07e208e59ea65250362691dc546c6da7ab90ec66ee79651ef697329872f6f97eb19a6dfcacc026fd05e76a563c5d2
+  checksum: 9b2f84ff3f874ad05b0b9bf06862c56f478b65781801f82296b4cc01bee39e79c20a7c0a06959fed0ee582c8267e1cb21638318655c5e070b0287242a844d1c9
   languageName: node
   linkType: hard
 
@@ -2737,7 +2790,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@iota-wiki/cli@workspace:cli"
   dependencies:
-    "@babel/generator": ^7.25.0
+    "@babel/generator": ^7.25.6
     "@babel/parser": ^7.24.7
     "@babel/types": ^7.23.6
     "@iota-wiki/core": "workspace:^"
@@ -2779,7 +2832,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@iota-wiki/core@workspace:."
   dependencies:
-    "@algolia/client-search": ^4.22.1
+    "@algolia/client-search": ^4.24.0
     "@argos-ci/cli": ^1.0.12
     "@argos-ci/playwright": ^1.9.3
     "@artsy/to-title-case": ^1.1.0
@@ -2820,7 +2873,7 @@ __metadata:
     hast-util-is-element: 1.1.0
     html-react-parser: ^4.2.10
     humanize-duration: ^3.30.0
-    infima: ^0.2.0-alpha.43
+    infima: ^0.2.0-alpha.45
     plugin-image-zoom: flexanalytics/plugin-image-zoom
     prettier: ^2.8.8
     raw-loader: ^4.0.2
@@ -2833,7 +2886,7 @@ __metadata:
     react-popper: ^2.3.0
     react-select: ^5.7.7
     recharts: ^2.12.7
-    rehype-jargon: 3.0.0
+    rehype-jargon: 3.1.0
     rehype-katex: 4
     rehype-lodash-template: ^0.2.1
     remark-code-import: ^0.4.0
@@ -2847,7 +2900,7 @@ __metadata:
     web3: ^4.2.2
     webpack: ^5.94.0
     webpack-node-externals: ^3.0.0
-    ws: ^8.17.1
+    ws: ^8.18.0
   languageName: unknown
   linkType: soft
 
@@ -10704,10 +10757,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"infima@npm:0.2.0-alpha.43, infima@npm:^0.2.0-alpha.43":
+"infima@npm:0.2.0-alpha.43":
   version: 0.2.0-alpha.43
   resolution: "infima@npm:0.2.0-alpha.43"
   checksum: fc5f79240e940eddd750439511767092ccb4051e5e91d253ec7630a9e7ce691812da3aa0f05e46b4c0a95dbfadeae5714fd0073f8d2df12e5aaff0697a1d6aa2
+  languageName: node
+  linkType: hard
+
+"infima@npm:^0.2.0-alpha.45":
+  version: 0.2.0-alpha.45
+  resolution: "infima@npm:0.2.0-alpha.45"
+  checksum: 23e5a33b147cb3940194c23e249001e7988327bb27896b121883442bce42a532248387649eec74d008dadadcddc790fb6842f043f33c78fda35e29f0b720cf8c
   languageName: node
   linkType: hard
 
@@ -16169,13 +16229,13 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"rehype-jargon@npm:3.0.0":
-  version: 3.0.0
-  resolution: "rehype-jargon@npm:3.0.0"
+"rehype-jargon@npm:3.1.0":
+  version: 3.1.0
+  resolution: "rehype-jargon@npm:3.1.0"
   dependencies:
     hast-util-from-html: 2.0.1
     unist-util-visit: 5.0.0
-  checksum: 733f7ab8de68e095087f0c56795d2af11cff8f4b206312eb2ec4900993c8299b5c5f148218028d41c24bda9a1bf7cb6c0f16908fb87c446f4abe17306b27e17f
+  checksum: f32a06ed34cea51199fbee0d8956c257cfc3b18595ed754b6bf659e45fa7df4a0430fcbbb9548443a2e6645684c6b6480fd30d75e2e7e2983a3f61077e23e07e
   languageName: node
   linkType: hard
 
@@ -20244,9 +20304,9 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"ws@npm:^8.17.1":
-  version: 8.17.1
-  resolution: "ws@npm:8.17.1"
+"ws@npm:^8.18.0":
+  version: 8.18.0
+  resolution: "ws@npm:8.18.0"
   peerDependencies:
     bufferutil: ^4.0.1
     utf-8-validate: ">=5.0.2"
@@ -20255,7 +20315,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
       optional: true
     utf-8-validate:
       optional: true
-  checksum: 442badcce1f1178ec87a0b5372ae2e9771e07c4929a3180321901f226127f252441e8689d765aa5cfba5f50ac60dd830954afc5aeae81609aefa11d3ddf5cecf
+  checksum: 91d4d35bc99ff6df483bdf029b9ea4bfd7af1f16fc91231a96777a63d263e1eabf486e13a2353970efc534f9faa43bdbf9ee76525af22f4752cbc5ebda333975
   languageName: node
   linkType: hard
 
