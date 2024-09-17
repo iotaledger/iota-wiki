@@ -291,6 +291,8 @@ module.exports = {
               id: 'tutorials/defi-lend-borrow-tutorial-part-2',
             },
           ],
+        },
+        {
           type: 'doc',
           label: 'Yield Farming',
           id: 'tutorials/defi-yield-farming',
