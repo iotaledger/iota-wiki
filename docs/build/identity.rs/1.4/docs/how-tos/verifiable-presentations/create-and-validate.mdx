@@ -1,0 +1,116 @@
+---
+sidebar_label: Create and Validate
+description: Explain how a VP is created and verified
+image: /img/Identity_icon.png
+tags:
+  - verifiable
+  - presentations
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Create and Validate Verifiable Presentations
+
+The IOTA Identity Framework enables holders to easily construct
+[verifiable presentations](./../../explanations/verifiable-presentations.mdx).
+As demonstrated in the [example](#example-code),
+holders only need to pass in their credentials to create a JWT presentation.
+
+## Properties
+
+You can specify the following properties in a presentation:
+
+- [**ID**](https://www.w3.org/TR/vc-data-model/#identifiers): Optional URI identifier for the presentation.
+- [**Context**](https://www.w3.org/TR/vc-data-model/#contexts): List of JSON-LD context URIs. Includes `"https://www.w3.org/2018/credentials/v1"` by default.
+- [**Types**](https://www.w3.org/TR/vc-data-model/#types): List of types describing the presentation. Includes `"VerifiablePresentation"` by default.
+- [**Credentials**](https://www.w3.org/TR/vc-data-model/#dfn-verifiable-credentials): List of verifiable credentials to present.
+- [**Holder**](https://www.w3.org/TR/vc-data-model/#dfn-holders): Optional URI, typically a DID, of the entity that generated the presentation.
+- [**Refresh Service**](https://www.w3.org/TR/vc-data-model/#refreshing): Optional link to a service where the recipient may refresh the included credentials.
+- [**Terms of Use**](https://www.w3.org/TR/vc-data-model/#terms-of-use): Optional list of policies defining obligations, prohibitions, or permissions of the presentation recipient.
+
+Of the above, **only the list of credentials is required** when creating a presentation using the framework.
+However, the holder property should be included to satisfy [subject-holder relationship](#subject-holder-relationship) checks during validation.
+
+After creation, the holder signs the verifiable presentation using a private key linked to one of the verification
+methods in their DID Document and transmits it to a verifier for validation.
+
+## Creation and Validation
+
+A Verifiable Presentation can be issued as a JWT that provides data integrity,
+and also proves the [DID](../../explanations/decentralized-identifiers.mdx) of the holder.
+
+:::note
+
+Verifiers should always send a challenge
+to [mitigate replay attacks](./../../explanations/verifiable-presentations.mdx#security-considerations).
+:::
+
+
+The IOTA Identity Framework provides several options for verifiers to validate various sections of a verifiable presentation.
+See the [example](#example-code) for a demonstration of how to validate a presentation.
+
+The framework checks:
+
+- **Semantic structure**: Ensures the presentation and its credentials adhere to the specification.
+- **Presentation proof**: Verifies the presentation signature against the holder's DID document.
+- **Credential proofs**: Verifies the credential signatures against the DID Documents of their respective issuers.
+
+
+Currently, the following are **not** checked automatically:
+
+- **Data schemas**: Credentials that specify a [schema](https://www.w3.org/TR/vc-data-model/#data-schemas) property
+should be examined to ensure conformance.
+- **Fitness for purpose**: Whether the credentials in a presentation and the data within them are acceptable and
+valid depends on the context in which they are used. Verifiers should ensure that the credential types, subjects,
+and schemas sent by a holder match what was requested.
+- **Issuer trustworthiness**: Verifiers must check that they trust the issuer on each individual credential in a
+presentation. The framework only verifies that the issuer's signature on each credential is current and valid
+against the given options.
+
+The default validation behavior may be modified by the following options.
+
+## Subject-Holder Relationship
+
+Specifies the expected relationship between the holder that signed the verifiable presentation and the subject
+specified in each [verifiable credential](./../../explanations/verifiable-credentials.mdx).
+This can be restricted by the [`nonTransferable`](https://www.w3.org/TR/vc-data-model/#nontransferable-property) property,
+which indicates that a verifiable credential must only be encapsulated into a verifiable presentation whose holder matches the credential subject.
+
+By default, the framework always enforces that the holder matches the subject.
+
+The following options are available to modify that behavior:
+
+- **`AlwaysSubject` (default)**: The holder DID that signed the presentation must match the [`credentialSubject` `id`](https://www.w3.org/TR/vc-data-model/#credential-subject) field in each of the attached credentials. This is the safest option which ensures holders may only present credentials that were directly issued to their DID. An error is thrown on a mismatch or if no subject `id` is present.
+- **`SubjectOnNonTransferable`**: The holder DID must match the subject only for credentials where the [`nonTransferable`](https://www.w3.org/TR/vc-data-model/#nontransferable-property) property is `true`. This is appropriate for accepting [bearer credentials](https://www.w3.org/TR/vc-data-model/#bearer-credentials) while still adhering to the specification.
+- **`Any`**: The holder DID is not required to have any kind of relationship to any credential subject. This option performs no checks and ignores the [`nonTransferable`](https://www.w3.org/TR/vc-data-model/#nontransferable-property) property.
+
+:::note
+
+See the [Verifiable Credentials Data Model Specification](https://www.w3.org/TR/vc-data-model/#subject-holder-relationships)
+for further discussion on the different subject-holder relationships.
+
+:::
+
+
+## Example Code
+
+The following code demonstrates how to use the IOTA Identity Framework end-to-end to create and sign a verifiable
+presentation as a holder, serialize it to JSON for transmission, deserialize it on the receiving side as a verifier,
+and finally validate it with various options.
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/examples/0_basic/6_create_vp.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/bindings/wasm/examples/src/0_basic/6_create_vp.ts
+```
+
+</TabItem>
+</Tabs>
