@@ -222,7 +222,7 @@ https://github.com/iota-community/Defi-lend-borrow/blob/bfb658e82611657a50885a25
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/ITokenManager.sol#L249-L262
 ```
 
-We have now covered all relevant parts and working of the iTokenManager contract, here is the [link](https://github.com/iota-community/Defi-lend-borrow/blob/main/contracts/ITokenManager.sol) for the full contract code for your reference.
+We have now covered all relevant parts and the functionality of the `ITokenManager` contract. For reference, you can follow the [full contract code](https://github.com/iota-community/Defi-lend-borrow/blob/main/contracts/ITokenManager.sol).
 
 ### Underlying Token
 
