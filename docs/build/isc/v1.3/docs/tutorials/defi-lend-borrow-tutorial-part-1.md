@@ -10,6 +10,7 @@ DeFi Lend Borrow is a decentralized finance (DeFi) application that enables user
 - [npx](https://www.npmjs.com/package/npx)  >= v7.1.0.
 
 ## DeFi Lend Borrow contracts architecture Overview
+
 ![architecture diagram](/img/tutorials/defi-lend-borrow/defi-lend-borrow-architecture-diagram.png)
 
 ## Set Up
@@ -58,19 +59,19 @@ The `IToken` contract is an ERC20 token that represents an interest-bearing asse
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/IToken.sol#L113-L135
 
 ```
-- Redeem: This method enables users to redeem `IToken` in exchange for the underlying token.
-    
+
+- Redeem: This method enables users to redeem `IToken` in exchange for the underlying token.    
     - Ensures the user has enough IToken to redeem.
     - Burns the specified amount of IToken from the user's balance.
     - Transfers the equivalent amount of the underlying token from the contract to the user.
     - Updates the user's collateral in the `ITokenManager`.
     - Returns a boolean indicating whether the redemption process was successful.
 
-
 ```solidity reference
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/IToken.sol#L137-L164
 
 ```
+
 - Borrow: Borrows the underlying token from the contract. This method allows users to borrow the underlying token from the contract.
     - Calculates the borrow rate and the interest for the specified amount.
     - Ensures the contract has enough liquidity and the user has sufficient collateral.
@@ -83,6 +84,7 @@ https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/IToken.sol#L166-L196
 
 ```
+
 - Repay: This method allows users to repay the borrowed underlying token.
   - Ensures the repayment amount does not exceed the user's borrow balance.
   - Transfers the repayment amount from the user to the contract.
@@ -95,16 +97,19 @@ https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/IToken.sol#L198-L227
 
 ```
+
 - `getBorrowRate()`: Returns the current borrow rate per block.
 ```solidity reference
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/IToken.sol#L229-L236
 
 ```
+
 - `getSupplyRate()`: Returns the current supply rate per block.
 ```solidity reference
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/IToken.sol#L238-L245
 
 ```
+
 You can review the full code for the [IToken contract in the tutorial's Repository](https://github.com/iota-community/Defi-lend-borrow/blob/main/contracts/IToken.sol).
 
 ### InterestRateModel
@@ -112,17 +117,20 @@ You can review the full code for the [IToken contract in the tutorial's Reposito
 The `InterestRateModel` contract calculates the interest rates for borrowing and supplying assets based on the utilization of the underlying assets.
 
 #### Key Functions
+
 - `utilizationRate(uint cash, uint borrows, uint reserves)`: Calculates the utilization rate of the market.
 
 ```solidity reference
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/InterestRateModel.sol#L41-L57
 
 ```
+
 - `getBorrowRate(uint cash, uint borrows, uint reserves)`: Calculates the current borrow rate per block.
 ```solidity reference
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/InterestRateModel.sol#L59-L68
 
 ```
+
 - `getSupplyRate(uint cash, uint borrows, uint reserves, uint reserveFactorMantissa)`: Calculates the current supply rate per block.
 ```solidity reference
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/InterestRateModel.sol#L70-L79
@@ -136,6 +144,7 @@ We have now covered all relevant parts and working of the InterestRateModal cont
 The `ITokenManager` contract is designed to manage supported tokens and collateral balances for a decentralized finance (DeFi) platform. It allows for adding, removing, and updating supported tokens, tracking their USD prices, and performing pre-mint, pre-redeem, and pre-borrow checks for liquidity.
 
 #### Key Features
+
 - **Manage supported tokens:** Add, remove, and view the supported `IToken` contracts.
 - **Collateral management:** Track and update collateral balances for each account and token.
 - **USD price tracking:** Maintain USD prices for each supported token.
@@ -145,7 +154,6 @@ The `ITokenManager` contract is designed to manage supported tokens and collater
 #### Key Functions
 
 - `addToken(address token, uint256 tokenUSDPrice, uint256 tokenCollateralFactor)`: Adds a new `IToken` to the manager.
-
   - **Parameters:**
     - `token`: The address of the `IToken` to be added.
     - `tokenUSDPrice`: The USD price of the token.
@@ -156,6 +164,7 @@ The `ITokenManager` contract is designed to manage supported tokens and collater
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/ITokenManager.sol#L57-L86
 
 ```
+
 - `removeToken(address token)` : Removes an `IToken` from the manager.
   - **Parameters:**
     - `token`: The address of the `IToken` to be removed.
@@ -191,7 +200,6 @@ https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad
 ```
 
 - `preBorrowChecks(address iTokenAddress, address redeemer, uint256 amount)`: Ensures that the redeemer has sufficient collateral to borrow tokens.
-
 - **Parameters:**
   - `iTokenAddress`: The address of the `IToken` to be borrowed.
   - `redeemer`: The account attempting to borrow.
@@ -276,6 +284,7 @@ npx hardhat run scripts/deploy.js --network shimmer_evm_testnet
 ```
 
 ### Verfication
+
 You can verify your contract by visiting
 the [EVM Testnet Explorer](https://explorer.evm.testnet.shimmer.network/),
 and searching for the address from the previous step. If you access the `Contract` tab, you should be able to see your code and interact with your contract or you can use the below command to verify the contracts through hardhat :
@@ -286,4 +295,5 @@ npx hardhat verify --network shimmer_evm_testnet CONTRACT_ADDRESS_HERE "CONSTRUC
 ```
 
 ### Conclusion
+
 In this first part of the DeFi Lend Borrow tutorial, we have set up the project and deployed the Itoken contract to the ShimmerEVM Testnet. We have also deployed the Underlying Token's contract and the Itoken Manager contract.Now using Itoken contract you can lend and borrow tokens. In the next part, we will create the DeFi Lend Borrow UI using React.js.
