@@ -9,7 +9,7 @@ DeFi Lend Borrow is a decentralized finance (DeFi) application that enables user
 - [Hardhat](https://hardhat.org) >= v2.0.0
 - [npx](https://www.npmjs.com/package/npx)  >= v7.1.0.
 
-## DeFi Lend Borrow contracts architecture Overview
+## DeFi Lend Borrow Contracts Architecture Overview
 
 ![architecture diagram](/img/tutorials/defi-lend-borrow/defi-lend-borrow-architecture-diagram.png)
 
