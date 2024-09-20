@@ -25,7 +25,9 @@ npm install ethers
 ```
 
 ## Creating the UI
+
 ### Code Structure
+
 - [`Context.js`](https://github.com/iota-community/Defi-lend-borrow/blob/main/lend-borrow-ui/src/context/Context.js): Defines the global context for web3 and other account data.
 - `Components`: Contains the components listed below for the UI :
     - [`NavigationBar`](https://github.com/iota-community/Defi-lend-borrow/blob/main/lend-borrow-ui/src/components/NavigationBar.js)
@@ -44,6 +46,7 @@ npm install ethers
     - [`sendTransactions.js`](https://github.com/iota-community/Defi-lend-borrow/blob/main/lend-borrow-ui/src/utils/sendTransactions.js)
 
 ### `Context`
+
 Create a directory named `context` and a file `Context.js`inside the app.
 This `Context.js` file sets up a context for managing wallet connection, balance information, and transaction details in a React application. It uses `createContext` to create a `Context` object, and the `WalletProvider` component provides this context to child components.
 
@@ -57,6 +60,7 @@ https://github.com/iota-community/Defi-lend-borrow/blob/ee1dd2bd3f94ec594163c153
 ## Components
 
 ### `NavigationBar`
+
 The `Navbar` component manages wallet connection and user interactions. It displays the connected wallet address, balance, and provides a dropdown menu with options to view the balance or disconnect the wallet. It uses `context` to retrieve wallet details and fetches the user's native token balance. The component also includes a button to navigate to the accounts section of the app. 
 
 ```javascript reference
@@ -64,9 +68,11 @@ https://github.com/iota-community/Defi-lend-borrow/blob/ee1dd2bd3f94ec594163c153
 ```
 
 ### Dashboard 
+
 the dashboard page consists of two components, `LendBorrowPlatformDetails` and `AllAssetsList` which shows details of all the supported tokens and details about the tokens and platform.
 
-#### `LendBorrowPlatformDetails` 
+#### `LendBorrowPlatformDetails`
+
 The `LendBorrowPlatformDetails` component displays a summary of the total supplies and total borrows on a lending/borrowing platform. It accepts two props: `totalSuppliesSum` and `totalBorrowsSum`, which represent the sum of all supplied and borrowed assets. The component formats and truncates these values to display the first six digits and shows them in a styled card layout. If no borrow amount is provided, it defaults to "$ 0".
 
 ```javascript reference
@@ -75,6 +81,7 @@ https://github.com/iota-community/Defi-lend-borrow/blob/ee1dd2bd3f94ec594163c153
 
 
 ####  `AllAssetsList`
+
 The AllAssetsList component fetches and displays a list of supported assets (tokens) in a decentralized finance (DeFi) application. It retrieves token data, including their supply, borrow amounts, collateral factor, and price, and renders them in a table format. Here's a breakdown:
 
 1. State Management:
@@ -105,13 +112,15 @@ https://github.com/iota-community/Defi-lend-borrow/blob/ee1dd2bd3f94ec594163c153
 
 
 ### `TransactionsCard` 
+
 This component manages and displays a card for performing different types of transactions (like `Supply` or `Borrow`) based on the selected asset. It uses state named `activeTab` to Keeps track of the currently active transaction type (e.g., "Supply", "Withdraw").
 
  - `TabsPanel`: Allows users to switch between different transaction types.
  - `TransactionForm`: Displays the form for performing the selected transaction on the selectedAsset.
 
  #### `TransactionForm` 
- This component facilitates token transactions (`Supply`, `Withdraw`, `Borrow` or `Repay`) based on the selected asset. It:
+
+This component facilitates token transactions (`Supply`, `Withdraw`, `Borrow` or `Repay`) based on the selected asset. It:
 
 Manages user input for transaction amounts and tracks token balances.
 Updates the UI dynamically based on the active transaction type.
