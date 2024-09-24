@@ -588,7 +588,7 @@ exports.articleRedirects = [
   },
   {
     from: '/identity.rs/libraries/wasm/api_reference/',
-    to: '/identity.rs/references/api/wasm/',
+    to: '/identity.rs/references/wasm/api_ref',
   },
   {
     from: '/identity.rs/libraries/wasm/getting_started/',
