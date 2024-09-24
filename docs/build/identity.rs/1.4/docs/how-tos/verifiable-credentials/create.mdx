@@ -1,0 +1,141 @@
+---
+title: Create a Verifiable Credential
+sidebar_label: Create and Sign
+description: Explain how a VC is created and verified
+image: /img/Identity_icon.png
+tags:
+  - verifiable
+  - credentials
+  - Create
+  - sign
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+A [Verifiable Credential (VC)](./../../explanations/verifiable-credentials.mdx) can represent all
+information that a physical credential represents, such as a passport or university
+degree. However, by allowing other parties to cryptographically verify the authorship
+and integrity of the claims, verifiable credentials can be seen as more tamper-evident
+and more trustworthy than their physical counterparts.
+
+## Verifiable Credential Properties
+
+In the IOTA Identity Framework, you can create a Verifiable Credential with the following properties:
+
+- [**Context**](https://www.w3.org/TR/vc-data-model/#contexts): List of JSON-LD context URIs. Includes `"https://www.w3.org/2018/credentials/v1"` by default.
+- [**Types**](https://www.w3.org/TR/vc-data-model/#types): List of types describing the credential. Includes `"VerifiableCredential"` by default.
+- [**Subject**](https://www.w3.org/TR/vc-data-model/#credential-subject): The issuer's claims; a set of objects that contain one or more properties that are each related to a subject.
+- [**Issuer**](https://www.w3.org/TR/vc-data-model/#issuer): The identifier of the issuer, typically their [DID](../../explanations/decentralized-identifiers.mdx).
+- [**ID**](https://www.w3.org/TR/vc-data-model/#identifiers): Optional URI identifier for the credential.
+- [**Issuance Date**](https://www.w3.org/TR/vc-data-model/#issuance-date): Timestamp for expressing the date and time when a credential becomes valid.
+- [**Expiration Date**](https://www.w3.org/TR/vc-data-model/#expiration): Optional timestamp for expressing the date and time when a credential ceases to be valid.
+- [**Status**](https://www.w3.org/TR/vc-data-model/#status): Optional information used to determine the current status of a credential, i.e. whether or not it has been [revoked](./revocation.mdx).
+- [**Schema**](https://www.w3.org/TR/vc-data-model/#data-schemas): Optional list of objects specifying the schema that the data must conform to.
+- [**Refresh Service**](https://www.w3.org/TR/vc-data-model/#refreshing): Optional link to a service where the recipient may refresh the included credentials.
+- [**Terms of Use**](https://www.w3.org/TR/vc-data-model/#terms-of-use): Optional list of policies defining obligations, prohibitions, or permissions of the presentation recipient.
+- [**Evidence**](https://www.w3.org/TR/vc-data-model/#evidence): Optional list of objects that can be used by the issuer to provide the verifier with additional supporting information in a verifiable credential.
+- [**Non-Transferable**](https://www.w3.org/TR/vc-data-model/#nontransferable-property): Optional flag that indicates that a verifiable credential must only be encapsulated in a [verifiable presentation](./../../explanations/verifiable-presentations.mdx) whose proof was issued by the credential subject.
+
+
+
+
+## Signing
+
+After preparing the verifiable credential, the issuer creates a signed JWT containing VC in the claims using one of their private keys. This is what allows verifiers to validate the credential independently using the corresponding public key from the issuer's DID Document.
+
+## Validation
+
+Verifiers should ensure certain credential properties are valid when receiving one or more in a [verifiable presentation](./../../explanations/verifiable-presentations.mdx). Both issuers and holders may also wish to validate their credentials, particularly directly after creating or receiving one. Validation may be performed at any point in time and can be a useful way of checking whether a credential has expired or been revoked.
+
+### Validation Checks
+
+The IOTA Identity Framework supports the following checks during credential validation:
+
+- **Semantic structure**: Ensures the credential adheres to the specification.
+- **Signature**: Verifies the JWS against the issuer's DID Document.
+- **Optional validations**: Additional checks on credential properties, and the signature can be configured by specifying [Validation Options](#validation-options).
+
+### Validation Options
+
+These options specify conditions that specific properties in a credential must satisfy.
+
+- **Expiration Date**: Check that the [`expirationDate`](https://www.w3.org/TR/vc-data-model/#expiration) property, if present, is not before a specific date-time. Defaults to the current datetime if unset.
+- **Issuance Date**: Check that [`issuanceDate`](https://www.w3.org/TR/vc-data-model/#issuance-date) property, if present, is not after a specific date-time. Defaults to the current datetime if unset.
+- **Verifier Options**: Validates aspects of the credential signature.
+
+## Sharing Verifiable Credentials
+
+A [verifiable presentation](./../../explanations/verifiable-presentations.mdx) is the recommended data format for sharing one or more verifiable credentials,
+as it provides cryptographic means of proving the DID of the holder presenting them,
+and for enforcing [subject-holder relationships](https://www.w3.org/TR/vc-data-model/#subject-holder-relationships).
+
+## Example
+
+The following code showcases how an issuer can [create, sign](#create-and-sign-a-vc),
+and [validate](#validate-a-vc) a verifiable credential.
+In this example, the issuer signs a `UniversityDegreeCredential` with Alice's name and DID.
+
+### Create and Sign a VC
+
+
+<div className={'hide-code-block-extras'}>
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/examples/0_basic/5_create_vc.rs#L67-L98
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/bindings/wasm/examples/src/0_basic/5_create_vc.ts#L51-L74
+```
+
+</TabItem>
+</Tabs>
+</div>
+
+### Validate a VC
+
+<div className={'hide-code-block-extras'}>
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/examples/0_basic/5_create_vc.rs#L105-L113
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/bindings/wasm/examples/src/0_basic/5_create_vc.ts#L83-L88
+```
+
+</TabItem>
+</Tabs>
+</div>
+
+This Verifiable Credential can be [verified by anyone](./../../explanations/verifiable-presentations.mdx),
+allowing Alice to take control of it and share it with anyone.
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/examples/0_basic/5_create_vc.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/bindings/wasm/examples/src/0_basic/5_create_vc.ts
+```
+
+</TabItem>
+</Tabs>

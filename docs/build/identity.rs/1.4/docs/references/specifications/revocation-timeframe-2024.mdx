@@ -1,0 +1,150 @@
+---
+title: Revocation Timeframe 2024
+sidebar_label: Revocation Timeframe 2024
+description: The specification for an embeddable time-based revocation method - `RevocationTimeframe2024`.
+image: /img/Identity_icon.png
+tags:
+  - DID
+  - specs
+  - specifications
+  - revocation
+  - bitmap
+---
+
+# Revocation Timeframe 2024
+
+## Abstract
+
+This specification describes a new revocation mechanism - `RevocationTimeframe2024` - that extends [`RevocationBitmap2022`](../revocation-bitmap-2022)
+to address its linkability security concerns, at least when used in combination with selectively disclosable (SD-able) VCs.
+
+## Introduction
+
+`RevocationBitmap2022` allows for a simple and straightforward way for an issuer to invalidate an issued VC before its expiration. While this method prevents the analysis of usage by the issuer through hosting the revocation information on-chain
+it comes with a high risk of linkability by colluding verifiers as they can store the bitmap index and use it to identify users. Additionally, verifiers can monitor the revocation information and at a later point, outside of any interaction, check the revocation status.
+To address this privacy concern, `RevocationTimeframe2024` was designed as an extension that builds on top of `RevocationBitmap2022`, therefore sharing
+most of its logic.
+
+## Concepts
+`RevocationTimeframe2024` should be used together with selectively disclosable credentials - either [SD-JWT](../../../how-tos/verifiable-credentials/selective-disclosure)
+or [ZK-SD](../../../how-tos/verifiable-credentials/zero-knowledge-selective-disclosure) - in order to conceal to the verifier
+the credential's index in the issuer's revocation bitmap to avoid linkability.
+
+### Validity Timeframe
+
+If the revocation index is concealed from the verifier how can it assert the validity of the presented credential?
+To solve this issue `RevocationTimeframe2024` introduces the concept of a _validity timeframe_, i.e. a limited time span
+in which the credential is guaranteed to be non-revoked. By having a validity timeframe embedded in the credential's status
+the verifier can prove the credential's validity by verifying the credential's signature.
+
+The downside of this mechanism is that the  credential holder using `RevocationTimeframe2024` has to contact the credential's issuer
+to update the signature - i.e. re-issue the credential - at the end of the credentials validity timeframe. Furthermore,
+given how a credentials validity timeframe proves the validity of the credential itself, the updates made by the issuer to the credential's status -
+i.e., revoking or un-revoking it - won't be reflected on the credential until a new validity timeframe starts. For this reason,
+issuers should choose a validity timeframe length with respect to how frequently they expect to change the credential's status;
+frequent updates deem shorter validity timeframes.
+
+:::note
+A credential holder does not need to have its credential re-issued at the end of every validity timeframe, but only when
+they need to present the credential to a verifier and its validity timeframe has expired.
+:::
+
+## Data Model
+
+### Revocation Timeframe Status
+
+For an issuer to enable verifiers to check the status of a verifiable credential, the [`credentialStatus`](https://www.w3.org/TR/vc-data-model/#status) property MUST be specified with the following properties:
+
+| Property                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| :---------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`                    | The constraints on the `id` property are listed in the [Verifiable Credentials Data Model specification](https://www.w3.org/TR/vc-data-model/). The `id` MUST be a [DID URL](https://www.w3.org/TR/did-core/#did-url-syntax) that is the URL to a [Revocation Timeframe Service](#revocation-timeframe-service) in the DID Document of the issuer. |
+| `type`                  | The `type` property MUST be `"RevocationTimeframe2024"`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `revocationBitmapIndex` | The `revocationBitmapIndex` property MUST be an unsigned, 32-bit integer expressed as a string. This is the index of the credential in the issuers revocation bitmap. Each index SHOULD be unique among all credentials linking to the same [Revocation Timeframe Service](#revocation-timeframe-service). To ensure user unlinkability, this value MUST NOT be disclosed to the verifier (this is done by default).                                                                                                                                                                                                                                                                                                                         |
+| `startValidityTimeframe`| The `startValidityTimeframe` property MUST be a [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339)-compliant timestamp. |
+| `endValidityTimeframe`| The `endValidityTimeframe` property MUST be a [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339)-compliant timestamp. |
+
+#### Example
+
+An example of a verifiable credential with a `credentialStatus` of type `RevocationTimeframe2024`.
+
+```json
+{
+  "@context": "https://www.w3.org/2018/credentials/v1",
+  "id": "https://example.edu/credentials/3732",
+  "type": ["VerifiableCredential", "UniversityDegreeCredential"],
+  "credentialSubject": {
+    "id": "did:iota:B8DucnzULJ9E8cmaReYoePU2b7UKE9WKxyEVov8tQA7H",
+    "GPA": "4.0",
+    "degree": "Bachelor of Science and Arts",
+    "name": "Alice"
+  },
+  "issuer": "did:iota:EvaQhPXXsJsGgxSXGhZGMCvTt63KuAFtaGThx6a5nSpw",
+  "issuanceDate": "2022-06-13T08:04:36Z",
+  "credentialStatus": {
+    "id": "did:iota:EvaQhPXXsJsGgxSXGhZGMCvTt63KuAFtaGThx6a5nSpw#my-revocation-service",
+    "type": "RevocationTimeframe2024",
+    "revocationBitmapIndex": "5"
+    "startValidityTimeframe": "2024-05-03T08:00:00Z",
+    "endValidityTimeframe": "2024-05-03T08:05:00Z",
+  },
+}
+```
+
+### Revocation Timeframe Service
+
+To allow verifiers to check the status of a [Revocation Timeframe Status](#revocation-timeframe-status), the DID document of the credential issuer MUST contain a [service](https://www.w3.org/TR/did-core/#services) with the following properties:
+
+| Property          | Description                                                                                                                                                                                                        |
+| :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`              | The constraints on the `id` property are listed in the [DID Core service specification](https://www.w3.org/TR/did-core/#services). The `id` property MUST be a DID URL uniquely identifying the revocation bitmap. |
+| `type`            | The `type` property MUST be `"RevocationTimeframe2024"`.                                                                                                                                                           |
+| `serviceEndpoint` | The `serviceEndpoint` MUST be generated according to the service endpoint generation algorithm described in [`RevocationBitmap2022`](revocation-bitmap-2022.mdx#service-endpoint-generation-algorithm).                                                                                                                    |
+
+#### Example
+
+An example of an issuers DID document where credential `"5"` in the `#revocation` service is revoked:
+
+```json
+{
+  "id": "did:iota:EvaQhPXXsJsGgxSXGhZGMCvTt63KuAFtaGThx6a5nSpw",
+  "verificationMethod": [
+    {
+      "id": "did:iota:EvaQhPXXsJsGgxSXGhZGMCvTt63KuAFtaGThx6a5nSpw#key-1",
+      "controller": "did:iota:EvaQhPXXsJsGgxSXGhZGMCvTt63KuAFtaGThx6a5nSpw",
+      "type": "Ed25519VerificationKey2018",
+      "publicKeyMultibase": "z3hgM9fNkhwgT5mECbj1HdKoFNZgpffwQYEV8WBVHphXq"
+    }
+  ],
+  "capabilityInvocation": [
+    {
+      "id": "did:iota:EvaQhPXXsJsGgxSXGhZGMCvTt63KuAFtaGThx6a5nSpw#sign-0",
+      "controller": "did:iota:EvaQhPXXsJsGgxSXGhZGMCvTt63KuAFtaGThx6a5nSpw",
+      "type": "Ed25519VerificationKey2018",
+      "publicKeyMultibase": "z83F6zbD3KqaxvQhqo25LvSXzoDdpZmp3EpPVonSVACwZ"
+    }
+  ],
+  "service": [
+    {
+      "id": "did:iota:EvaQhPXXsJsGgxSXGhZGMCvTt63KuAFtaGThx6a5nSpw#revocation",
+      "type": "RevocationTimeframe2024",
+      "serviceEndpoint": "data:application/octet-stream;base64,ZUp5ek1tQmdZR1NBQUFFZ1ptVUFBQWZPQUlF"
+    }
+  ]
+}
+```
+
+## Algorithms
+
+For generation and expansion of the service endpoint see [`RevocationBitmap2022`](../revocation-bitmap-2022#algorithms).
+
+### Validation Algorithm
+
+The following steps MUST be followed when checking whether a verifiable credential is revoked:
+
+1. Let **credential** be a verifiable credential containing a `credentialStatus` whose `type` is `RevocationTimeframe2024`.
+2. Let **now** be the string serialization of the RFC3339 timestamp representing the current UTC time.
+3. Let **start validity timeframe** and **end validity timeframe** be the RFC3339 timestamps of the `startValidityTimeframe` and `endValidityTimeframe` (respectively) properties contained in the `credentialStatus` of the **credential**.
+4. Return `true` if `startValidityTimeframe <= now < endValidityTimeframe`, `false` otherwise.
+
+## Test Vectors
+See [`RevocationBitmap2022`](../revocation-bitmap-2022#test-vectors).

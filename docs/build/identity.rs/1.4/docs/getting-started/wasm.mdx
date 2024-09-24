@@ -1,0 +1,339 @@
+---
+sidebar_label: Wasm
+description: Getting started with the IOTA Identity WASM Library.
+image: /img/Identity_icon.png
+tags:
+  - WASM
+  - install
+  - npm
+  - yarn
+  - build
+  - nodejs
+  - webpack
+---
+# Getting Started with Wasm
+
+## Minimum Requirements
+
+- [Node.js](https://nodejs.org/en) (>= `v16`)
+
+## Install the Library
+
+You can install the latest stable version of the library by running the following command:
+
+```bash npm2yarn
+npm install @iota/identity-wasm
+```
+
+## Build the Library
+
+Alternatively, you can build the bindings yourself if you have Rust installed.
+If not, refer to [rustup.rs](https://rustup.rs) for the installation.
+
+### Requirements
+
+- [Node.js](https://nodejs.org/en) (>= `v16`)
+- [Rust](https://www.rust-lang.org/) (>= 1.62)
+- [Cargo](https://doc.rust-lang.org/cargo/) (>= 1.62)
+
+### 1. Install `wasm-bindgen-cli`
+
+If you want to build the library from source,
+you will first need to manually install [`wasm-bindgen-cli`](https://github.com/rustwasm/wasm-bindgen).
+A manual installation is required because we use the [Weak References](https://rustwasm.github.io/wasm-bindgen/reference/weak-references.html) feature,
+which [`wasm-pack` does not expose](https://github.com/rustwasm/wasm-pack/issues/930).
+
+```bash
+cargo install --force wasm-bindgen-cli
+```
+
+### 2. Install Dependencies
+
+After installing `wasm-bindgen-cli`, you can install the necessary dependencies using the following command:
+
+```bash npm2yarn
+npm install
+```
+
+### 3. Build
+
+<Tabs groupId="wasmVersion" queryString>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+
+You can build the bindings for `node.js` using the following command:
+
+```bash npm2yarn
+npm run build:nodejs
+```
+
+
+</TabItem>
+<TabItem value="typescript-web" label="Typescript (Web)">
+
+You can build the bindings for the `web` using the following command:
+
+```bash npm2yarn
+npm run build:web
+```
+
+</TabItem>
+</Tabs>
+
+## NodeJS Usage
+
+The following code creates a new IOTA DID Document suitable for publishing to a local test network, like the
+[IOTA Sandbox](/iota-sandbox/welcome/).
+
+<!--
+Test this example using https://github.com/anko/txm: `txm README.md`
+
+Replace imports with local paths for txm:
+!test program
+cat | sed -e "s#require('@iota/identity-wasm/node')#require('./node')#" | node
+-->
+<!-- !test check Nodejs Example -->
+
+```typescript
+const {
+  KeyPair,
+  KeyType,
+  MethodScope,
+  IotaDocument,
+  IotaVerificationMethod,
+  IotaService,
+  MethodRelationship,
+  IotaIdentityClient,
+} = require('@iota/identity-wasm/node');
+const { Client } = require('@iota/client-wasm/node');
+
+// The endpoint of the IOTA node to use.
+const API_ENDPOINT = 'http://127.0.0.1:14265';
+
+/** Demonstrate how to create a DID Document. */
+async function main() {
+  // Create a new client with the given network endpoint.
+  const client = new Client({
+    primaryNode: API_ENDPOINT,
+    localPow: true,
+  });
+
+  const didClient = new IotaIdentityClient(client);
+
+  // Get the Bech32 human-readable part (HRP) of the network.
+  const networkHrp = await didClient.getNetworkHrp();
+
+  // Create a new DID document with a placeholder DID.
+  // The DID will be derived from the Alias Id of the Alias Output after publishing.
+  const document = new IotaDocument(networkHrp);
+
+  // Insert a new Ed25519 verification method in the DID document.
+  let keypair = new KeyPair(KeyType.Ed25519);
+  let method = new IotaVerificationMethod(
+    document.id(),
+    keypair.type(),
+    keypair.public(),
+    '#key-1',
+  );
+  document.insertMethod(method, MethodScope.VerificationMethod());
+
+  // Attach a new method relationship to the existing method.
+  document.attachMethodRelationship(
+    document.id().join('#key-1'),
+    MethodRelationship.Authentication,
+  );
+
+  // Add a new Service.
+  const service = new IotaService({
+    id: document.id().join('#linked-domain'),
+    type: 'LinkedDomains',
+    serviceEndpoint: 'https://iota.org/',
+  });
+  document.insertService(service);
+
+  console.log(`Created document `, JSON.stringify(document.toJSON(), null, 2));
+}
+
+main();
+```
+
+### Expected Output
+
+```
+Created document  {
+  "doc": {
+    "id": "did:iota:0x0000000000000000000000000000000000000000000000000000000000000000",
+    "verificationMethod": [
+      {
+        "id": "did:iota:0x0000000000000000000000000000000000000000000000000000000000000000#key-1",
+        "controller": "did:iota:0x0000000000000000000000000000000000000000000000000000000000000000",
+        "type": "Ed25519VerificationKey2018",
+        "publicKeyMultibase": "z4SxypezRxr1YdMAJBePfHGxZ9hNZ53WVixZq3PbUcztW"
+      }
+    ],
+    "authentication": [
+      "did:iota:0x0000000000000000000000000000000000000000000000000000000000000000#key-1"
+    ],
+    "service": [
+      {
+        "id": "did:iota:0x0000000000000000000000000000000000000000000000000000000000000000#linked-domain",
+        "type": "LinkedDomains",
+        "serviceEndpoint": "https://iota.org/"
+      }
+    ]
+  },
+  "meta": {
+    "created": "2022-09-09T11:29:32Z",
+    "updated": "2022-09-09T11:29:32Z"
+  }
+}
+```
+
+## Web Usage
+
+### Set Up
+
+The library loads the WASM file with an HTTP GET request, so you must copy the `.wasm` file the root of the `dist` folder.
+
+#### Rollup
+
+- Install `rollup-plugin-copy`:
+
+```bash npm2yarn
+npm install rollup-plugin-copy --save-dev
+```
+
+- Add the copy plugin usage to the `plugins` array under `rollup.config.js`:
+
+```js
+// Include the copy plugin
+import copy from 'rollup-plugin-copy';
+
+// Add the copy plugin to the `plugins` array of your rollup config:
+copy({
+  targets: [
+    {
+      src: 'node_modules/@iota/client-wasm/web/wasm/client_wasm_bg.wasm',
+      dest: 'public',
+      rename: 'client_wasm_bg.wasm',
+    },
+    {
+      src: 'node_modules/@iota/identity-wasm/web/identity_wasm_bg.wasm',
+      dest: 'public',
+      rename: 'identity_wasm_bg.wasm',
+    },
+  ],
+});
+```
+
+#### Webpack
+
+- Install `copy-webpack-plugin`:
+
+```bash npm2yarn
+npm install copy-webpack-plugin --save-dev
+```
+
+```js
+// Include the copy plugin
+const CopyWebPlugin= require('copy-webpack-plugin');
+
+// Add the copy plugin to the `plugins` array of your webpack config:
+
+new CopyWebPlugin({
+  patterns: [
+    {
+      from: 'node_modules/@iota/client-wasm/web/wasm/client_wasm_bg.wasm',
+      to: 'client_wasm_bg.wasm'
+    },
+    {
+      from: 'node_modules/@iota/identity-wasm/web/identity_wasm_bg.wasm',
+      to: 'identity_wasm_bg.wasm'
+    }
+  ]
+}),
+```
+
+### Web Usage Example
+
+```typescript
+import * as client from '@iota/client-wasm/web';
+import * as identity from '@iota/identity-wasm/web';
+
+/** Demonstrate how to create a DID Document. */
+async function createDocument() {
+  // Create a new client with the given network endpoint.
+  const iotaClient = new client.Client({
+    primaryNode: API_ENDPOINT,
+    localPow: true,
+  });
+
+  const didClient = new identity.IotaIdentityClient(iotaClient);
+
+  // Get the Bech32 human-readable part (HRP) of the network.
+  const networkHrp = await didClient.getNetworkHrp();
+
+  // Create a new DID document with a placeholder DID.
+  // The DID will be derived from the Alias Id of the Alias Output after publishing.
+  const document = new identity.IotaDocument(networkHrp);
+
+  // Insert a new Ed25519 verification method in the DID document.
+  let keypair = new identity.KeyPair(identity.KeyType.Ed25519);
+  let method = new identity.IotaVerificationMethod(
+    document.id(),
+    keypair.type(),
+    keypair.public(),
+    '#key-1',
+  );
+  document.insertMethod(method, identity.MethodScope.VerificationMethod());
+
+  // Attach a new method relationship to the existing method.
+  document.attachMethodRelationship(
+    document.id().join('#key-1'),
+    identity.MethodRelationship.Authentication,
+  );
+
+  // Add a new Service.
+  const service = new identity.IotaService({
+    id: document.id().join('#linked-domain'),
+    type: 'LinkedDomains',
+    serviceEndpoint: 'https://iota.org/',
+  });
+  document.insertService(service);
+
+  console.log(`Created document `, JSON.stringify(document.toJSON(), null, 2));
+}
+
+client
+  .init()
+  .then(() => identity.init())
+  .then(() => {
+    await createDocument();
+  });
+
+// or
+
+(async () => {
+  await client.init();
+  await identity.init();
+
+  await createDocument();
+})();
+
+// Default path is "identity_wasm_bg.wasm", but you can override it like this
+await identity.init('./static/identity_wasm_bg.wasm');
+```
+
+You need to call `identity.init().then(<callback>)`,
+or `await identity.init()` to load the Wasm file from the server if not available,
+because of that **it will only be slow for the first time**.
+
+## Examples in the Wild
+
+You may find it useful to see how the WASM bindings are being used in existing applications:
+
+- [Zebra IOTA Edge SDK](https://github.com/ZebraDevs/Zebra-Iota-Edge-SDK) (mobile apps using Capacitor.js + Svelte)
+
+## [API Reference](../references/wasm/api_ref.md)
+
+## [Examples](https://github.com/iotaledger/identity.rs/blob/v1.4.0/bindings/wasm/examples/README.md)

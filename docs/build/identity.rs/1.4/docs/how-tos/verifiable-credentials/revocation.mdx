@@ -1,0 +1,208 @@
+---
+sidebar_label: Revoke
+description: Explain how a VC can be revoked
+image: /img/Identity_icon.png
+tags:
+  - verifiable
+  - credentials
+  - revoke
+  - revocation
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Revoke a Verifiable Credential
+
+The [example](#full-example-code) below demonstrates two methods that an issuer can use to revoke a verifiable credential
+using the IOTA Identity Framework:
+
+1. By using the [`credentialStatus`](https://www.w3.org/TR/vc-data-model/#status) field in a credential and linking
+to a [revocation method](#revocation-methods).
+2. By [removing the verification method](#removing-the-verification-method) that signed the credential.
+This invalidates all credentials that were signed with that verification method.
+
+## Revocation methods
+The IOTA Identity Framework supports two different revocation methods: `RevocationBitmap2022` and `StatusList2021`. 
+### Revocation Bitmap
+[RevocationBitmap2022](../../references/specifications/revocation-bitmap-2022.mdx) is the default credential revocation method used in the IOTA Identity Framework. It allows
+issuers to control whether a credential is _valid_ or _revoked_. To do so, a revocation list (represented
+as a bitmap) is stored in the issuer's DID document.
+When a credential is issued, a unique index from the issuer's revocation list
+is chosen, linking the credential's status to the value of the list entry. To change the status of a credential, the issuer
+simply updates the corresponding entry in its revocation list.
+
+With `RevocationBitmap2022` the `identity.rs` library completely handles the processes required to handle credentials revocation;
+from creation and storage of the revocation list to its lookup. 
+This makes `RevocationBitmap2022` the preferred way for users to handle credential revocation, but it requires sufficient
+funds to rent out the required on-tangle space.
+
+:::note
+
+DLT's size constraints limit the size of the revocation list. With the assumption of only one such revocation list
+per the issuer's DID document, one may expect to be able to handle roughly 50k entries.
+
+:::
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/examples/0_basic/7_revoke_vc.rs#L167
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/bindings/wasm/examples/src/0_basic/7_revoke_vc.ts#L156
+```
+
+</TabItem>
+</Tabs>
+
+If the binary value of the index in the bitmap is 1 (one), the verifiable credential is revoked,
+if it is 0 (zero) it is not revoked.
+
+For example, with this approach the issuer adds an index to a credential in the `credentialStatus` field, such as `"5"`.
+This part of the credential might then look like this:
+
+```json
+"credentialStatus": {
+  "id": "did:iota:EvaQhPXXsJsGgxSXGhZGMCvTt63KuAFtaGThx6a5nSpw#revocation",
+  "type": "RevocationBitmap2022",
+  "revocationBitmapIndex": "5"
+},
+```
+
+The verifier uses the `id` field (`did:iota:EvaQhPXXsJsGgxSXGhZGMCvTt63KuAFtaGThx6a5nSpw#revocation`) to look up the
+service in the issuer's DID document:
+
+```json
+{
+  "id": "did:iota:EvaQhPXXsJsGgxSXGhZGMCvTt63KuAFtaGThx6a5nSpw#revocation",
+  "type": "RevocationBitmap2022",
+  "serviceEndpoint": "data:application/octet-stream;base64,ZUp5ek1tQmdZR1NBQUFFZ1ptVUFBQWZPQUlF"
+}
+```
+
+During verification, the verifier decodes the revocation bitmap embedded in the `data` URL.
+This bitmap written as a bitstring looks like this: `000001`.
+Here, the 5th bit is set, which means the credential with that index is revoked,
+while all other credentials aren't revoked.
+
+### StatusList2021
+[StatusList2021](https://www.w3.org/TR/2023/WD-vc-status-list-20230427) offers similar functionalities to `RevocationBitmap2022`
+but in a more flexible and scalable way. 
+The main difference is that `StatusList2021` is completely agnostic in regards to how the issuer's status list
+is stored and fetched, as long as its location can be encoded through a URL. For instance, the status list
+can be made available over HTTP (e.g. `https://example.com/credentials/status`) or through the
+Interplanetary File System (e.g. `ipfs://QmXDWGdVBhbDoXXzKNMhJk5ejnZgxpMBVzW4EhQaHPD3Mi`).
+
+This flexibility, although it requires the issuer to manually fetch and update its status list, allows for an arbitrary number of
+entries in the status list, in contrast with `RevocationBitmap2022`, where the length of the list is limited by the DLT's constraints.
+
+Furthermore, `StatusList2021` introduces a new credential state: _suspended_. Suspended credentials are credentials that a validator will not accept as _valid_, but that might become valid again in the future. Instead, _revoked_ credentials **cannot** ever
+be valid again, as the _revoked_ state is irreversible.
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/examples/1_advanced/8_status_list_2021.rs#L86-L90
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/bindings/wasm/examples/src/1_advanced/7_status_list_2021.ts#L72-L76
+```
+
+</TabItem>
+</Tabs>
+
+First, an issuer creates a credential that encodes a certain status list, specifying its purpose (either `revocation` or `suspension`)
+and the location at which it will be available (`https://example.com/credentials/status` in this case). After creation, the issuer
+must make the credential available at the chosen URL so that verifiers can fetch it.
+
+Upon issuing a credential, to revoke it or suspend it later, the issuer sets the `credentialStatus` field, linking
+to an entry in its status list. The snippet below shows what `credentialStatus` would look like when linking to the previously created
+status list credential. 
+
+```json
+{
+    "id": "https://example.com/credentials/status#94567",
+    "type": "StatusList2021Entry",
+    "statusPurpose": "revocation",
+    "statusListIndex": "94567",
+    "statusListCredential": "https://example.com/credentials/status"
+}
+```
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/examples/1_advanced/8_status_list_2021.rs#L173
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/bindings/wasm/examples/src/1_advanced/7_status_list_2021.ts#L147
+```
+
+</TabItem>
+</Tabs>
+
+To set the status of a credential, the issuer retrieves the status list credential and sets the value of the chosen entry index.
+
+## Removing the Verification Method
+
+A less efficient alternative is to remove the verification method that signed the credential from the DID Document of
+the issuer.
+This means the VC can no longer be validated.
+
+However, this will also invalidate every VC signed with that verification method,
+meaning that the issuer will have to sign every VC with a different key to retain
+precise control over which credential is revoked.
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/examples/0_basic/7_revoke_vc.rs#L197-L204
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/bindings/wasm/examples/src/0_basic/7_revoke_vc.ts#L192C1-L195
+```
+
+</TabItem>
+</Tabs>
+
+## Full Example Code
+
+The following code exemplifies how you can revoke a [Verifiable Credential (VC)](../../explanations/verifiable-credentials.mdx).
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/examples/0_basic/7_revoke_vc.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/bindings/wasm/examples/src/0_basic/7_revoke_vc.ts
+```
+
+</TabItem>
+</Tabs>
