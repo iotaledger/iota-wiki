@@ -51,19 +51,7 @@ exports.buildPluginsConfig = [
       {
         label: '1.3',
         badges: ['IOTA', 'Shimmer'],
-      },
-      {
-        label: '1.2',
-        badges: ['IOTA', 'Shimmer'],
-      },
-      {
-        label: '1.1',
-        badges: ['IOTA', 'Shimmer'],
-      },
-      {
-        label: '1.0',
-        badges: ['IOTA', 'Shimmer'],
-      },
+      }
     ],
   },
   {
