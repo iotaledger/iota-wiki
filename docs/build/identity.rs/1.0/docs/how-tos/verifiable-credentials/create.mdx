@@ -39,7 +39,7 @@ In the IOTA Identity Framework, you can create a Verifiable Credential with the 
 
 
 
-## Signing {#signing}
+## Signing
 
 After preparing the verifiable credential, the issuer creates a signed JWT containing VC in the claims using one of their private keys. This is what allows verifiers to independently validate the credential using the corresponding public key from the issuer's DID Document.
 
@@ -71,7 +71,7 @@ and for enforcing [subject-holder relationships](https://www.w3.org/TR/vc-data-m
 
 ## Example
 
-The following code showcases how an issuer can [create, sign](#create-and-sign-vc),
+The following code showcases how an issuer can [create, sign](#create-and-sign-a-vc),
 and [validate](#validate-a-vc) a verifiable credential.
 In this example, the issuer signs a `UniversityDegreeCredential` with Alice's name and DID.
 

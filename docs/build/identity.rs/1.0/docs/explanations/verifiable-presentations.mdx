@@ -1,12 +1,12 @@
 # Verifiable Presentations
 
 A verifiable presentation is the recommended data format for sharing one or more [verifiable credentials](./verifiable-credentials.mdx).
-It is constructed and signed by a holder to prove control over their credentials and can be presented to a verifier for [validation](#validation).
+It is constructed and signed by a holder to prove control over their credentials and can be presented to a verifier for validation.
 
-For instance: after an issuer [creates and issues](./../how-tos/verifiable-credentials/create.mdx) a [verifiable credential](./verifiable-credentials.mdx) to a holder, such as a university issuing a degree to a graduate,
+For instance, after an issuer [creates and issues](./../how-tos/verifiable-credentials/create.mdx) a [verifiable credential](./verifiable-credentials.mdx) to a holder, such as a university issuing a degree to a graduate,
 the holder stores it securely until asked to present it.
 A company could then request proof of that university degree: the holder can [create a verifiable presentation](./../how-tos/verifiable-credentials/create.mdx)
-containing their credential, which is already signed by their university, and present it to the company to [validate](./../how-tos/verifiable-credentials/create.mdx#validate-a-vc).
+containing their credential, already signed by their university, and present it to the company to [validate](./../how-tos/verifiable-credentials/create.mdx#validate-a-vc).
 
 Note that verifiable presentations that contain personal data should, as with verifiable credentials, be transmitted and stored securely off-chain to satisfy data privacy regulations such as [GDPR](https://gdpr.eu/).
 
@@ -20,7 +20,7 @@ See the [Verifiable Credentials Data Model Specification](https://www.w3.org/TR/
 
 ### Replay Attacks
 
-A verifiable presentation without a challenge could potentially be stored by a malicious actor
+A malicious actor could potentially store a verifiable presentation without a challenge
 and replayed to a different verifier, impersonating the holder.
 This is because the holder's signature on a presentation would still be seen as valid indefinitely,
 until they [rotate](https://www.w3.org/TR/did-core/#verification-method-rotation) the verification method used.
@@ -35,5 +35,5 @@ The challenge string should be sufficiently random and unique for each verifiabl
 being predicted. 
 
 Holders may additionally specify that their signature on a verifiable presentation expires after a short duration, as
-per `JwtPresentationOptions`. However, verifiers and different implementations could choose to ignore that property,
+per `JwtPresentationOptions`. However, verifiers and different implementations could ignore that property,
 so setting a signature expiration alone should not be relied upon.
