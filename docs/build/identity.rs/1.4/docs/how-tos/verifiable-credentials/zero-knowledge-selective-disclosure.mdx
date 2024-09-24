@@ -13,26 +13,35 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Zero Knowledge Selective Disclosure (ZK-SD-VCs)
+
 ZK-SD-VCs allow holders to verify their VCs without having to disclose the entire VC's claim set to verifiers. 
 This is done through the creation of a Zero Knowledge Proof (ZKP) that guarantees the integrity and authenticity
 of the VC, even when only partially disclosed to the verifier.
 
 :::note
+
 Although ZK-SD-VCs offer similar functionalities to [SD-JWT VCs](../selective-disclosure) - at least on a high level - they rely on completely different
 concepts and security concerns. For a user, the most notable difference is the shifted capability of choosing which fields can
 be concealed from a verifier. For ZK-SD-VCs it's the holder that has total control over which parts of the credential can be 
 undisclosed, whereas for SD-JWT VCs it's the issuer that decides which fields may be concealed by the holder.
+
 :::
 
 ## Concepts
+
 ### Issuance
+
 The issuer of a ZK-SD-VC creates the credential, signs it using the [BBS+](https://www.ietf.org/archive/id/draft-irtf-cfrg-bbs-signatures-05.html) signature scheme
 and sends both the credential and the signature to the holder. To facilitate this process, the credential is first encoded 
 as a [JSON Proof Token](https://www.ietf.org/archive/id/draft-ietf-jose-json-proof-token-02.html) (JPT), which is then used as the payload of a 
 [JSON Web Proof](https://www.ietf.org/archive/id/draft-ietf-jose-json-web-proof-02.html) (JWP) and sent to the holder as JPT. 
+
 :::note
+
 JWPs and JPTs can be reasoned about as the Zero Knowledge (ZK) based counterparts of JWSs and JWTs.
+
 :::
+
 In code, this process would look like the following snippet:
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
@@ -51,7 +60,6 @@ https://github.com/iotaledger/identity.rs/blob/v1.4.0/bindings/wasm/examples/src
 </TabItem>
 </Tabs>
 
-
 Note how the VC issuer makes no prescription whatsoever regarding the disclosability of the VC's fields.
 
 ### Holder presentation
@@ -62,7 +70,6 @@ to conceal any fields from the credentials claims through the creation of a Zero
 The proof value depends on the selected [JSON Proof Algorithm](https://www.ietf.org/archive/id/draft-ietf-jose-json-proof-algorithms-02.html) (JPA).
 
 <Tabs groupId="language" queryString>
-
 <TabItem value="rust" label="Rust">
 
 ```rust reference
@@ -114,7 +121,6 @@ The verifier decodes the received JPT presentation and asserts the validity of t
 authenticity and integrity of the presented credential, without knowledge of any of the undisclosed fields and of the issuer signature.
 
 <Tabs groupId="language" queryString>
-
 <TabItem value="rust" label="Rust">
 
 ```rust reference
