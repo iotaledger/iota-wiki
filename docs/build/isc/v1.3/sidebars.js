@@ -277,6 +277,17 @@ module.exports = {
           ],
         },
         {
+          type: 'category',
+          label: 'DeFi Lend Borrow',
+          items: [
+            {
+              type: 'doc',
+              label: 'Part I',
+              id: 'tutorials/defi-lend-borrow-tutorial-part-1',
+            },
+          ],
+        },
+        {
           type: 'doc',
           label: 'Yield Farming',
           id: 'tutorials/defi-yield-farming',
