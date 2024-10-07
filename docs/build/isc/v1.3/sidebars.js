@@ -282,8 +282,13 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Part I',
+              label: 'Contract',
               id: 'tutorials/defi-lend-borrow-tutorial-part-1',
+            },
+            {
+              type: 'doc',
+              label: 'React UI',
+              id: 'tutorials/defi-lend-borrow-tutorial-part-2',
             },
           ],
         },

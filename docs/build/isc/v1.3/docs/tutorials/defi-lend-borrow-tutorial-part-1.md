@@ -2,7 +2,6 @@
 
 DeFi Lend Borrow is a decentralized finance (DeFi) application that enables users to lend and borrow assets on the Shimmer EVM testnet. The project is built using Solidity and Hardhat, with the core functionality provided by smart contracts.
 
-
 ## Prerequisites
 
 - [Node.js](https://nodejs.org) >=  v18.0
@@ -150,6 +149,7 @@ The `ITokenManager` contract is designed to manage supported tokens and collater
     - `tokenCollateralFactor`: The collateral factor for the token.
   - **Modifiers:** `onlyOwner`
   - **Events:** Emits `TokenAdded` upon successful addition of the token.
+
 ```solidity reference
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/ITokenManager.sol#L57-L86
 ```
@@ -160,7 +160,6 @@ https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad
   - **Modifiers:** `onlyOwner`
   - **Events:** Emits `TokenRemoved` upon successful removal of the token.
 
-```solidity reference
 https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad6bfdd20a2b08fa03/contracts/ITokenManager.sol#L88-L111
 ```
 
@@ -186,6 +185,7 @@ https://github.com/iota-community/Defi-lend-borrow/blob/3a368391f4767d1decb209ad
 ```
 
 - `preBorrowChecks(address iTokenAddress, address redeemer, uint256 amount)`: Ensures that the redeemer has sufficient collateral to borrow tokens.
+
 - **Parameters:**
   - `iTokenAddress`: The address of the `IToken` to be borrowed.
   - `redeemer`: The account attempting to borrow.
