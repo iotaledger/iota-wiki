@@ -1,0 +1,141 @@
+---
+sidebar_label: Selective Disclosure
+description: Explain VC with selective disclosure.
+image: /img/Identity_icon.png
+tags:
+  - verifiable
+  - credentials
+  - SD-JWT
+  - Disclosure
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Selective Disclosure (SD-JWT)
+
+
+Holders of verifiable credentials may prefer to keep all the information contained within the credential private from a verifier. Instead, they may opt only to share a specific subset of the properties included in the VC. The identity library implements the [IETF Specifications](https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-07.html), which outlines a mechanism to enable the selective disclosure of individual properties within the JSON object of JWT claims.
+
+## Concept
+
+### Issuance
+
+During the issuance process, the issuer replaces a subset of the fields in a credential with digests of their salted values and creates a signed JWT. Next, JWT, alongside the plain text disclosures and the salt used for digest creation are sent to the holder. 
+
+### Presentation
+
+At this stage, the holder can selectively choose which fields to disclose to the verifier. The disclosures are sent in plain text, with the JWT containing the digests to the verifier. 
+
+:::note
+Only values replaced by digests through the issuer can be selectively disclosed. The holder **can not** conceal values provided in plain text in the JWT claims.
+:::
+
+
+### Validation
+
+With these values and a valid signature, the verifier is able to reconstruct a Verified Credential (VC) that exclusively contains the information the holder intended to disclose.
+
+## How It Works
+
+A SD JWT can be constructed from the following JWT claim of an address credential in accordance with the [VC Data Model v1.1](https://www.w3.org/TR/vc-data-model/#json-web-token):
+
+
+```json
+{
+  "iss": "did:iota:tst:0x899d07a766f93c2af1a19a3f4583ad338fc94c5d84b6afcadf49b197e1cb693e",
+  "jti": "https://example.com/credentials/3732",
+  "nbf": 1705925652,
+  "sub": "did:iota:tst:0x6c045e1f658197b432cfc7c66350b8781dca50f820e9de0fcdf0029b4b384355",
+  "vc": {
+    "@context": "https://www.w3.org/2018/credentials/v1",
+    "credentialSubject": {
+      "address": {
+        "country": "DE",
+        "locality": "Maxstadt",
+        "postal_code": "12344",
+        "street_address": "Weidenstraße 22"
+      },
+      "name": "Alice"
+    },
+    "type": [
+      "VerifiableCredential",
+      "AddressCredential"
+    ]
+  }
+} 
+
+```
+
+The issuer makes the values of "locality", "postal_code", and "street_address" selectively disclosable, giving the holder the freedom to select what details of the address to be disclosed and presented.
+
+```json
+{
+  "_sd_alg": "sha-256",
+  "iss": "did:iota:tst:0x899d07a766f93c2af1a19a3f4583ad338fc94c5d84b6afcadf49b197e1cb693e",
+  "jti": "https://example.com/credentials/3732",
+  "nbf": 1705925652,
+  "sub": "did:iota:tst:0x6c045e1f658197b432cfc7c66350b8781dca50f820e9de0fcdf0029b4b384355",
+  "vc": {
+    "@context": "https://www.w3.org/2018/credentials/v1",
+    "credentialSubject": {
+      "address": {
+        "_sd": [
+          "8Dai0-GMZgkzmdryGzjYufUaRFkiNWzVsJJdWucwu84",
+          "jemTNaG_wiHauwmwWiWREsirAlr91qugPds4MA8e2xo",
+          "iakC9Dfe2r9fGnOaAr_pGg1b7CwITBjcwE7-O7WlMnY"
+        ],
+        "country": "DE"
+      },
+      "name": "Alice"
+    },
+    "type": [
+      "VerifiableCredential",
+      "AddressCredential"
+    ]
+  }
+}
+```
+
+:::note
+The digests are contained in the `_sd` property in `address`. This allows both keys and values to be concealed.
+:::
+
+For further details, see the [example](#full-example-code) below and the [sd-jwt-payload crate](https://github.com/iotaledger/sd-jwt-payload).
+
+## Presentation format
+
+The SD-JWT is presented in the following [format](https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-07.html#section-5):
+
+> `<Issuer-signed JWT>~<Disclosure 1>~<Disclosure 2>~...~<Disclosure N>~<optional KB-JWT>`
+
+## Key Binding JWT
+
+When a verifier receives an SD-JWT, it may be desirable to verify that the presenter's identity matches the holder of the Credential. For that purpose, a [Key Binding JWT (KB-JWT)](https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-07.html#section-4.3) can be used.
+
+
+- The verifier sends a nonce to the holder.
+- The holder creates a JWT containing the nonce and the digest of the issuer-signed JWT and the disclosures 1→N.
+- The holder sends the KB-JWT to the verifier as a part of the presentation. 
+- By verifying the KB-JWT, the verifier ensures the identity of the holder, the integrity of the data, the freshness of the signature, and the intended audience.
+
+
+
+## Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/examples/1_advanced/7_sd_jwt.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/v1.4.0/bindings/wasm/examples/src/1_advanced/6_sd_jwt.ts
+```
+
+</TabItem>
+</Tabs>
