@@ -149,12 +149,11 @@ module.exports = async () => {
       switcher: switcherConfig,
 
       announcementBar: {
-        id: 'support_us',
+        id: 'iota_rebased_docs',
         content:
-          'Experience seamless dApp development with <a rel="noopener noreferrer" href="/isc/getting-started/quick-start/">IOTA EVM</a>.',
-        backgroundColor: 'var(--ifm-color-primary)',
-        textColor: 'var(--ifm-font-color-base-inverse);',
-        isCloseable: true,
+          'Check out the new <a rel="noopener noreferrer" href="https://docs.iota.org/"> IOTA Rebased Testnet</a>.',
+        backgroundColor: 'rgb(1, 1, 255)',
+        textColor: 'white'
       },
     },
   };
