@@ -153,7 +153,7 @@ module.exports = async () => {
         content:
           'Check out the new <a rel="noopener noreferrer" href="https://docs.iota.org/"> IOTA Rebased Testnet</a>.',
         backgroundColor: 'rgb(1, 1, 255)',
-        textColor: 'white'
+        textColor: 'white',
       },
     },
   };
