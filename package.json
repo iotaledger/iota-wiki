@@ -31,6 +31,7 @@
   "dependencies": {
     "@algolia/client-search": "^4.24.0",
     "@artsy/to-title-case": "^1.1.0",
+    "@cookbookdev/docsbot": "^4.21.23",
     "@docusaurus/core": "2.4.3",
     "@docusaurus/plugin-client-redirects": "2.4.3",
     "@docusaurus/preset-classic": "2.4.3",
