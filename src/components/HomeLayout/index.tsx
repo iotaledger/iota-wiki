@@ -120,7 +120,7 @@ export default function HomeLayout() {
                 <h3 className='about__header'>Build on IOTA EVM</h3>
                 <p className='about__description'>
                   Experience seamless dApp development with IOTA EVM&apos;s
-                  oracles, subgraphs, Layer 0 interoperability, and robust Blast
+                  oracles, subgraphs, Layer 0 interoperability, and robust Ankr and Blast
                   API endpoints.
                 </p>
               </div>
