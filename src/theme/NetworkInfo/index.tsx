@@ -88,7 +88,7 @@ function Evm(props: NetworkProps) {
             <th>
               <Admonition type='tip' title='Ankr API URLs'>
                 <a href={'/build/rpcProviders/'}>Ankr API</a> enterprise-grade
-                globally distributed endpoints 
+                globally distributed endpoints
               </Admonition>
             </th>
             <td>

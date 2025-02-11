@@ -22,9 +22,7 @@ export const Networks: { [key: string]: NetworkProps } = {
         blockExplorerUrls: ['https://explorer.evm.iota.org'],
       },
       tools: {
-        ankrApiUrls: [
-          'https://rpc.ankr.com/iota_evm',
-        ],
+        ankrApiUrls: ['https://rpc.ankr.com/iota_evm'],
         blastApiUrls: [
           'https://iota-mainnet-evm.public.blastapi.io',
           'wss://iota-mainnet-evm.public.blastapi.io',
@@ -80,9 +78,7 @@ export const Networks: { [key: string]: NetworkProps } = {
         blockExplorerUrls: ['https://explorer.evm.testnet.iotaledger.net'],
       },
       tools: {
-        ankrApiUrls: [
-          'https://rpc.ankr.com/iota_evm_testnet',
-        ],
+        ankrApiUrls: ['https://rpc.ankr.com/iota_evm_testnet'],
         blastApiUrls: [
           'https://iota-testnet-evm.public.blastapi.io',
           'wss://iota-testnet-evm.public.blastapi.io',
