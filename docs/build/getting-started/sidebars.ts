@@ -70,9 +70,9 @@ module.exports = {
               ],
             },
             {
-              label: 'Blast API',
+              label: 'RPC Providers',
               type: 'doc',
-              id: 'blastAPI',
+              id: 'rpcProviders',
             },
             {
               label: 'Oracles',
