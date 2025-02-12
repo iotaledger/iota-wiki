@@ -83,11 +83,33 @@ function Evm(props: NetworkProps) {
             ))}
           </td>
         </tr>
+        {props.evm.tools && props.evm.tools.ankrApiUrls && (
+          <tr>
+            <th>
+              <Admonition type='tip' title='Ankr API URLs'>
+                <a href={'/build/rpcProviders/'}>Ankr API</a> enterprise-grade
+                globally distributed endpoints
+              </Admonition>
+            </th>
+            <td>
+              {props.evm.tools.ankrApiUrls.map((object, index) =>
+                typeof object === 'string' ? (
+                  <CodeBlock key={index}> {object as string} </CodeBlock>
+                ) : (
+                  <CodeBlock title={Object.keys(object)[0]} key={index}>
+                    {' '}
+                    {Object.values(object)[0]}{' '}
+                  </CodeBlock>
+                ),
+              )}
+            </td>
+          </tr>
+        )}
         {props.evm.tools && props.evm.tools.blastApiUrls && (
           <tr>
             <th>
               <Admonition type='tip' title='Blast API URLs'>
-                <a href={'/build/blastAPI/'}>Blast API</a> provides highly
+                <a href={'/build/rpcProviders/'}>Blast API</a> provides highly
                 scalable fault-tolerant API endpoints.
               </Admonition>
             </th>
