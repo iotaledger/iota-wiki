@@ -18,7 +18,6 @@ This page deals with the JSON-RPC API used by EVM execution clients.
 | [eth_getBalance]                          | _Returns the balance of the account of given address_                                                            | ✅     |
 | [eth_getBlockByHash]                      | _Returns information about a block by hash_                                                                      | ✅     |
 | [eth_getBlockByNumber]                    | _Returns information about a block by number_                                                                    | ✅     |
-| [eth_getBlockReceipts]                    | _Returns the receipts of a block by number or hash_                                                              | ✅     |
 | [eth_getBlockTransactionCountByHash]      | _Returns the number of transactions in a block from a block matching the given block hash_                       | ✅     |
 | [eth_getBlockTransactionCountByNumber]    | _Returns the number of transactions in a block matching the given block number_                                  | ✅     |
 | [eth_getCode]                             | _Returns code at a given address_                                                                                | ✅     |
@@ -55,9 +54,6 @@ This page deals with the JSON-RPC API used by EVM execution clients.
 | Method                     | Description                                                                                       | Status |
 |----------------------------|---------------------------------------------------------------------------------------------------|:------:|
 | [debug_traceTransaction]   | _Returns tracing results for the specified transaction._                                          | ✅     |
-| [debug_traceBlockByNumber] | _Returns tracing results by executing all transactions in the specified block number._            | ✅     |
-| [debug_traceBlockByHash]   | _Returns tracing results by executing all transactions in the block specified by the block hash._ | ✅     |
-| [debug_getRawBlock]        | _Returns an RLP-encoded block._
 
 ## JSON-RPC methods according to the [Net Module API](https://openethereum.github.io/JSONRPC-net-module)
 
@@ -66,13 +62,6 @@ This page deals with the JSON-RPC API used by EVM execution clients.
 | [net_listening] | _Returns true if client is actively listening for network connections (Response is always `true` on IOTA EVM)__ | ✅     |
 | [net_peerCount] | _Returns number of peers currently connected to the client (Response is always `0x0` on IOTA EVM)__            | ✅     |
 | [net_version]   | _Returns the current network ID._                                      | ✅     |
-
-## JSON-RPC methods according to the [Trace Module API](https://openethereum.github.io/JSONRPC-trace-module)
-
-| Method          | Description                                                            | Status |
-|-----------------|------------------------------------------------------------------------|:------:|
-| [trace_block]   | _Returns traces created at given block_                                | ✅     |
-
 
 ## JSON-RPC methods according to the [Web3 Module API](https://openethereum.github.io/JSONRPC-web3-module)
 
@@ -93,7 +82,6 @@ You can find the complete set of available specs in the [Ethereum API Documentat
 [eth_getBalance]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getbalance
 [eth_getBlockByHash]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblockbyhash
 [eth_getBlockByNumber]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblockbynumber
-[eth_getBlockReceipts]: https://ethereum.github.io/execution-apis/api-documentation/
 [eth_getBlockTransactionCountByHash]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblocktransactioncountbyhash
 [eth_getBlockTransactionCountByNumber]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblocktransactioncountbynumber
 [eth_getCode]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getcode
@@ -125,16 +113,11 @@ You can find the complete set of available specs in the [Ethereum API Documentat
 [eth_syncing]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_syncing
 [eth_uninstallFilter]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_uninstallfilter
 
-[trace_block]: https://openethereum.github.io/JSONRPC-trace-module#trace_block
-
 [web3_clientVersion]: https://openethereum.github.io/JSONRPC-web3-module#web3_clientversion
 [web3_sha]: https://openethereum.github.io/JSONRPC-web3-module#web3_sha3
 
-[debug_traceTransaction]: https://docs.metamask.io/services/reference/mantle/json-rpc-methods/debug/debug_tracetransaction/
-[debug_traceBlockByNumber]: https://docs.metamask.io/services/reference/mantle/json-rpc-methods/debug/debug_traceblockbynumber/
-[debug_traceBlockByHash]: https://docs.metamask.io/services/reference/mantle/json-rpc-methods/debug/debug_traceblockbyhash/
-[debug_getRawBlock]: https://docs.alchemy.com/reference/debug-getrawblock
+[debug_traceTransaction]: https://docs.metamask.io/services/reference/mantle/json-rpc-methods/debug/debug_tracetransaction
 
 [net_listening]: https://openethereum.github.io/JSONRPC-net-module#net_listening
 [net_peerCount]: https://openethereum.github.io/JSONRPC-net-module#net_peercount
-[net_version]: https://docs.metamask.io/services/reference/ethereum/json-rpc-methods/net_version/
+[net_version]: https://docs.metamask.io/services/reference/ethereum/json-rpc-methods/net_version
