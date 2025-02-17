@@ -1,0 +1,104 @@
+---
+tags:
+  - data types
+  - WasmLib
+  - array
+  - proxies
+  - map
+  - reference
+
+description: The WasmLib provides direct support for the basic value data types that are found in all programming languages, and WasmLib versions of ISC-specific value data types.
+image: /img/logo/WASP_logo_dark.png
+---
+
+# WasmLib Data Types
+
+You will need to manipulate data with your smart contracts. We distinguish two groups of
+predefined data types that can be used in schema definition files. The WasmLib
+implementations for each supported programming language provide full support for these
+predefined data types. Each predefined data type can be (de)serialized as byte string or
+as human-readable text string.
+
+## Basic Value Data Types
+
+These are mostly simple built-in scalar data types as provided by most programming
+languages. Each integer data type has a clearly defined storage size. The
+[Schema Tool](../schema/how-tos/usage.mdx) will attempt to use the closest matching built-in data type when
+generating code for a specific language.
+
+- `BigInt` - An arbitrary-length unsigned integer.
+- `Bool` - An 8-bit boolean value (0 or 1).
+- `Bytes` - An arbitrary-length byte array.
+- `Int8` - 8-bit signed integer value.
+- `Int16` - 16-bit signed integer value.
+- `Int32` - 32-bit signed integer value.
+- `Int64` - 64-bit signed integer value.
+- `String` - An arbitrary-length UTF-8 encoded string value.
+- `Uint8` - 8-bit unsigned integer value.
+- `Uint16` - 16-bit unsigned integer value.
+- `Uint32` - 32-bit unsigned integer value.
+- `Uint64` - 64-bit unsigned integer value.
+
+## ISC-specific Value Data Types
+
+These are ISC-specific value data types that are needed in the ISC sandbox function calls.
+WasmLib provides its own implementations for each of the ISC value data types.
+
+- `Address` - A 33-byte encoded _Tangle_ address.
+- `AgentID` - An ISC Agent ID (Address + Hname).
+- `ChainID` - A 32-byte ISC Chain ID.
+- `Hash` - A 32-byte hash value.
+- `Hname` - A 4-byte unsigned integer hash value derived from a name string.
+- `NftID` - A 32-byte ISC NFT ID.
+- `RequestID` - A 34-byte ISC transaction request ID.
+- `TokenID` - A 38-byte ISC token ID.
+
+## Full Matrix of WasmLib Types
+
+WasmLib implements a full set of [value proxies](../schema/proxies.mdx#value-proxies) for each
+predefined value type that provide access to data on the ISC host. But there is one aspect
+of this data that we have not considered yet. Some data provided by the host is mutable,
+whereas other data may be immutable. To facilitate this distinction, each value proxy type
+comes in two flavors that reflect this, and make sure that the data can only be used as
+intended.
+
+The rule is that from an immutable container you can only derive immutable container and
+value proxies. The referenced data can never be changed through immutable proxies.
+Separating these constraints for types into separate value proxy types allows the use of
+compile-time type-checking to enforce these constraints. To guard against client code that
+tries to bypass them, the ISC sandbox will also check these constraints at runtime on the
+host.
+
+| ISC type  | WasmLib type      | Mutable proxy          | Immutable proxy          |
+|-----------|-------------------|------------------------|--------------------------|
+| BigInt    | Sc**BigInt**      | ScMutable**BigInt**    | ScImmutable**BigInt**    |
+| Bool      | _boolean_         | ScMutable**Bool**      | ScImmutable**Bool**      |
+| Bytes     | _byte array_      | ScMutable**Bytes**     | ScImmutable**Bytes**     |
+| Int8      | _8-bit signed_    | ScMutable**Int8**      | ScImmutable**Int8**      |
+| Int16     | _16-bit signed_   | ScMutable**Int16**     | ScImmutable**Int16**     |
+| Int32     | _32-bit signed_   | ScMutable**Int32**     | ScImmutable**Int32**     |
+| Int64     | _64-bit signed_   | ScMutable**Int64**     | ScImmutable**Int64**     |
+| String    | _UTF-8 string_    | ScMutable**String**    | ScImmutable**String**    |
+| Uint8     | _8-bit unsigned_  | ScMutable**Uint8**     | ScImmutable**Uint8**     |
+| Uint16    | _16-bit unsigned_ | ScMutable**Uint16**    | ScImmutable**Uint16**    |
+| Uint32    | _32-bit unsigned_ | ScMutable**Uint32**    | ScImmutable**Uint32**    |
+| Uint64    | _64-bit unsigned_ | ScMutable**Uint64**    | ScImmutable**Uint64**    |
+|           |                   |                        |                          |
+| Address   | Sc**Address**     | ScMutable**Address**   | ScImmutable**Address**   |
+| AgentId   | Sc**AgentId**     | ScMutable**AgentId**   | ScImmutable**AgentId**   |
+| ChainId   | Sc**ChainId**     | ScMutable**ChainId**   | ScImmutable**ChainId**   |
+| Hash      | Sc**Hash**        | ScMutable**Hash**      | ScImmutable**Hash**      |
+| Hname     | Sc**Hname**       | ScMutable**Hname**     | ScImmutable**Hname**     |
+| NftID     | Sc**NftID**       | ScMutable**NftID**     | ScImmutable**NftID**     |
+| RequestId | Sc**RequestId**   | ScMutable**RequestId** | ScImmutable**RequestId** |
+| TokenID   | Sc**TokenID**     | ScMutable**TokenID**   | ScImmutable**TokenID**   |
+
+The consistent naming makes it easy to remember the type names. Bool, Bytes, String, and
+the integer types are the odd ones out. They are implemented in WasmLib by the closest
+equivalents in the chosen WasmLib implementation programming language.
+
+The [Schema Tool](../schema/how-tos/usage.mdx) will automatically generate the proper immutable proxies
+from the schema definition. For example, View functions will only be able to access the
+[State](../schema/how-tos/state.mdx) map through immutable proxies. The same goes for the
+[Params](../schema/how-tos/params.mdx) map that was passed into a Func or View, and for the
+[Results](../schema/how-tos/results.mdx) map that was returned from a call to a Func or View.

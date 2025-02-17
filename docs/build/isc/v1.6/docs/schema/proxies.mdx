@@ -1,0 +1,76 @@
+---
+tags:
+  - proxies
+  - sandbox
+  - wasm
+  - value proxies
+  - container proxies
+  - array proxies
+  - map proxies
+  - explanation
+description: As there is no way for the Wasm code to access any memory outside its own memory space, the WasmLib interface provides a number of proxies to make accessing data within the ISC sandbox as seamless as possible.
+image: /img/wasm_vm/Proxies.png
+---
+# Data Access Proxies
+
+To interact seamlessly with the ISC sandbox's regulated environment and facilitate smart contract data access,
+the WasmLib introduces data access proxies.
+Proxies are objects that can perform the underlying data transfers between the
+separate systems.
+
+## Overview
+
+The restrictive ISC sandbox environment requires an intermediary, or a library, to access sandbox functionalities — a role that the WasmLib fulfills through data access `proxies`.
+These entities stand as bridges, enabling data transfers between segregated systems, providing a streamlined pathway to interact with smart contract data stored on the ISC host.
+
+## The Role of Proxies
+
+Proxies refer to actual objects or values housed in the ISC host,
+essentially acting as data references that understand how to manipulate the data they represent.
+At the core, data is secured in maps on the ISC host with byte strings serving as both keys and values.
+
+The WasmLib recognizes three predefined maps:
+
+- **[State Map](../schema/how-tos/state.mdx):** A repository for all state storage values.
+- **[Params Map](../schema/how-tos/params.mdx):** Holds the parameter values of the current function call.
+- **[Results Map](../schema/how-tos/results.mdx):** Returns the result values of the function call.
+
+Through these maps, a complex,
+JSON-like data structure can be created with the aid of the [Schema Tool](../schema/how-tos/usage.mdx),
+although, fundamentally, this structure is rooted in simple key-value access on the underlying map.
+
+## Proxy Varieties
+
+Proxies are segmented into various categories to facilitate different functionalities, including value proxies and container proxies.
+
+### Value Proxies
+
+Representing a single instance of a predetermined data type,
+value proxies are basic entities facilitating type conversion of the byte string representing the stored value.
+
+The [Schema Tool](../schema/how-tos/usage.mdx) ensures type-safe code generation, always selecting the suitable proxy type.
+
+### Container Proxies
+
+Container proxies offer a virtual nesting system on the underlying map,
+creating paths leading to value proxies housed in a virtual container.
+They use JSON and YAML nesting patterns, and there are two primary types:
+
+#### 1. Map Proxies
+
+- **Root Maps:** Encase any element type but restrict keys to human-readable strings, which are defined in the schema definition file.
+- **Virtual Maps:** Resides under a root map and accommodates values of a single associated data type.
+
+#### 2. Array Proxies
+
+- Operate as a specialized map where the key is an Int32 value, forming a sequence from 0 to N-1 for an array harboring N elements.
+
+## Proxies in Action
+
+![Proxies in WasmLib](/img/wasm_vm/Proxies.png)
+
+In the illustration, we see the key-value combinations (Key 1 to Key 4) in the ISC state storage map. Key 4 directs us to an array containing indexed values ranging from 0 to N.
+
+Notice the precise reflection of these elements in the WasmLib proxies,
+which maintain a container proxy for every container and a value proxy for each stored value.
+However, it is not obligatory for a smart contract function to define a proxy for every value or container in the ISC state storage.
