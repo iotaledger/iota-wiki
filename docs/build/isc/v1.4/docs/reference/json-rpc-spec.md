@@ -23,7 +23,7 @@ This page deals with the JSON-RPC API used by EVM execution clients.
 | [eth_getBlockTransactionCountByHash]      | _Returns the number of transactions in a block from a block matching the given block hash_                       | ✅     |
 | [eth_getBlockTransactionCountByNumber]    | _Returns the number of transactions in a block matching the given block number_                                  | ✅     |
 | [eth_getCode]                             | _Returns code at a given address_                                                                                | ✅     |
-| [eth_getCompilers]                        |
+| [eth_getCompilers]                        | _Returns a list of available compilers in the client (Response is always empty on IOTA EVM).                     | ✅     |
 | [eth_getFilterChanges]                    | _Polling method for a filter, which returns an array of logs which occurred since last poll_                     | ❌     |
 | [eth_getFilterLogs]                       | _Returns an array of all logs matching filter with given id. Can compute the same results with an `eth_getLogs` call_ | ❌     |
 | [eth_getLogs]                             | _Anytime a transaction is mined, we can see event logs for that transaction by making a request to `eth_getLogs` and then take actions based off those results_ | ✅     |
@@ -38,28 +38,27 @@ This page deals with the JSON-RPC API used by EVM execution clients.
 | [eth_getUncleCountByBlockHash]            | _Returns the number of uncles in a block from a block matching the given block hash_                             | ✅     |
 | [eth_getUncleCountByBlockNumber]          | _Returns the number of uncles in a block from a block matching the given block number_                           | ✅     |
 | [eth_hashrate]                            | _Returns the number of hashes per second that the node is mining with_                                           | ✅     |
-| [eth_logs]                                |
 | [eth_mining]                              | _Returns whether the client is actively mining new blocks_                                                       | ✅     |
 | [eth_newBlockFilter]                      | _Creates a filter in the node, to notify when a new block arrives_                                               | ❌     |
 | [eth_newFilter]                           | _Creates a filter object, based on filter options, to notify when the state changes (logs)_                      | ❌     |
-| [eth_NewHeads]                            |
 | [eth_newPendingTransactionFilter]         | _Creates a filter in the node, to notify when new pending transactions arrive_                                   | ❌     |
 | [eth_protocolVersion]                     | _Returns the current Ethereum protocol version_                                                                  | ✅     |
 | [eth_sendRawTransaction]                  | _Submits a raw transaction_                                                                                      | ✅     |
 | [eth_sendTransaction]                     | _Signs and submits a transaction_                                                                                | ✅     |
 | [eth_sign]                                | _Returns an EIP-191 signature over the provided data._                                                           | ✅     |
 | [eth_signTransaction]                     | _Signs and submits a transaction_                                                                                | ✅     |
+| [eth_subscribe]                           | _Creates a new subscription for particular events. The node returns a subscription ID. For each event that matches the subscription, a notification with relevant data is sent together with the subscription ID. Supported events are `newHeads` and `logs`_ | ✅     |
 | [eth_syncing]                             | _Returns an object with data about the sync status or false-copy_                                                | ✅     |
 | [eth_uninstallFilter]                     | _Uninstalls a filter with given id_                                                                              | ❌     |
 
 ## JSON-RPC methods according to the [Debug Module API](https://openethereum.github.io/JSONRPC-debug-module)
 
-| Method                     | Description | Status |
-|----------------------------|-------------|:------:|
-| [debug_traceTransaction]   |
-| [debug_traceBlockByNumber] |
-| [debug_traceBlockByHash]   |
-| [debug_getRawBlock]        |
+| Method                     | Description                                                                                       | Status |
+|----------------------------|---------------------------------------------------------------------------------------------------|:------:|
+| [debug_traceTransaction]   | _Returns tracing results for the specified transaction._                                          | ✅     |
+| [debug_traceBlockByNumber] | _Returns tracing results by executing all transactions in the specified block number._            | ✅     |
+| [debug_traceBlockByHash]   | _Returns tracing results by executing all transactions in the block specified by the block hash._ | ✅     |
+| [debug_getRawBlock]        | _Returns an RLP-encoded block._
 
 ## JSON-RPC methods according to the [Net Module API](https://openethereum.github.io/JSONRPC-net-module)
 
@@ -100,6 +99,7 @@ You can find the complete set of available specs in the [Ethereum API Documentat
 [eth_getBlockTransactionCountByHash]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblocktransactioncountbyhash
 [eth_getBlockTransactionCountByNumber]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblocktransactioncountbynumber
 [eth_getCode]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getcode
+[eth_getCompilers]: https://www.quicknode.com/docs/polygon-zkevm/eth_getCompilers
 [eth_getFilterChanges]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getfilterchanges
 [eth_getFilterLogs]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getfilterlogs
 [eth_getLogs]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getlogs
@@ -123,6 +123,7 @@ You can find the complete set of available specs in the [Ethereum API Documentat
 [eth_sendTransaction]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_sendtransaction
 [eth_sign]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_sign
 [eth_signTransaction]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_signtransaction
+[eth_subscribe]: https://docs.metamask.io/services/reference/ethereum/json-rpc-methods/subscription-methods/eth_subscribe
 [eth_syncing]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_syncing
 [eth_uninstallFilter]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_uninstallfilter
 
@@ -130,6 +131,11 @@ You can find the complete set of available specs in the [Ethereum API Documentat
 
 [web3_clientVersion]: https://openethereum.github.io/JSONRPC-web3-module#web3_clientversion
 [web3_sha]: https://openethereum.github.io/JSONRPC-web3-module#web3_sha3
+
+[debug_traceTransaction]: https://docs.metamask.io/services/reference/mantle/json-rpc-methods/debug/debug_tracetransaction/
+[debug_traceBlockByNumber]: https://docs.metamask.io/services/reference/mantle/json-rpc-methods/debug/debug_traceblockbynumber/
+[debug_traceBlockByHash]: https://docs.metamask.io/services/reference/mantle/json-rpc-methods/debug/debug_traceblockbyhash/
+[debug_getRawBlock]: https://docs.alchemy.com/reference/debug-getrawblock
 
 [net_listening]: https://openethereum.github.io/JSONRPC-net-module#net_listening
 [net_peerCount]: https://openethereum.github.io/JSONRPC-net-module#net_peercount
