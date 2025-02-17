@@ -269,27 +269,6 @@ module.exports = {
               label: 'Part II',
               id: 'tutorials/cross-chain-nft-marketplace-part-2',
             },
-            {
-              type: 'doc',
-              label: 'Part III',
-              id: 'tutorials/cross-chain-nft-marketplace-part-3',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'DeFi Lend Borrow',
-          items: [
-            {
-              type: 'doc',
-              label: 'Contract',
-              id: 'tutorials/defi-lend-borrow-tutorial-part-1',
-            },
-            {
-              type: 'doc',
-              label: 'React UI',
-              id: 'tutorials/defi-lend-borrow-tutorial-part-2',
-            },
           ],
         },
         {
