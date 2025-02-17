@@ -91,9 +91,9 @@ You can use [Nakama's Graph Node GitHub repository](https://github.com/nakamaio/
 
 :::
 
-:::tip Blast API Archival Nodes
+:::tip IOTA EVM RPC providers
 
-You can use the convenient Blast API on IOTA EVM to access [archival nodes](blastAPI.md#archival-nodes).
+You can use one of the convenient RPC Providers on IOTA EVM to access [archival nodes](rpcProviders.md#archival-nodes).
 
 :::
 

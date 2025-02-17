@@ -1,0 +1,70 @@
+---
+description: The ISC Magic Contract allows EVM contracts to access ISC functionality.
+image: /img/logo/WASP_logo_dark.png
+tags:
+  - configure
+  - using
+  - EVM
+  - magic
+  - Ethereum
+  - Solidity
+---
+
+import AboutAccounts from '../../../_admonitions/_about-accounts.md';
+
+# Send Assets and Tokens to L1
+
+<AboutAccounts/>
+
+:::info
+
+IOTA EVM and ShimmerEVM have 18 decimal places, while IOTA and Shimmer have 6. This means that any decimals beyond the 6th will be ignored by IOTA and Shimmer, even though you can see them on IOTA EVM and ShimmerEVM. Please keep this in mind while sending your tokens to L1.
+
+:::
+
+This guide will show you how to use the ISC sandbox interface to send assets from L2 to L1. This includes base tokens, native tokens, and NFTs. Before you can send these assets, you need to know how you get them on L2 and how you allow a contract to use them.
+
+Note that assets on L1 require a storage deposit; therefore, the number of base tokens sent to L1 should cover at least the storage deposit required to hold the assets on L1.
+
+## Explanation
+
+First, you will find out what assets this contract is allowed to take from the caller by calling the `ISC.sandbox.getAllowanceFrom()` function.
+
+```solidity
+ISCAssets memory allowance = ISC.sandbox.getAllowanceFrom(msg.sender);
+```
+
+Then you take the allowance, which will transfer the assets from the caller to the contract.
+
+```solidity
+ISC.sandbox.takeAllowedFunds(msg.sender, allowance);
+```
+
+Finally, you can send the assets to the specified L1 address. This will create an output to hold said assets. You can use additional options to add the [timelock](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#timelock) and [expiration](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#expiration) unlock conditions to the output.
+
+```solidity
+ISCSendMetadata memory metadata;
+ISCSendOptions memory options;
+ISC.sandbox.send(to, allowance, false, metadata, options);
+```
+
+## Full Example Code
+
+```solidity
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
+
+import "@iota/iscmagic/ISC.sol";
+
+contract L1Assets {
+  function withdraw(L1Address memory to) public {
+    ISCAssets memory allowance = ISC.sandbox.getAllowanceFrom(msg.sender);
+    ISC.sandbox.takeAllowedFunds(msg.sender, allowance);
+
+    ISCSendMetadata memory metadata;
+    ISCSendOptions memory options;
+    ISC.sandbox.send(to, allowance, false, metadata, options);
+  }
+}
+```
