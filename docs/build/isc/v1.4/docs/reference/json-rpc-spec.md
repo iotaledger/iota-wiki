@@ -14,7 +14,6 @@ This page deals with the JSON-RPC API used by EVM execution clients.
 | [eth_chainId]                             | _Returns the chain ID of the current network_                                                                    | ✅     |
 | [eth_coinbase]                            | _Returns the client Coinbase address (Response is always the `Common` Address of the IOTA EVM)__                                                                            | ✅     |
 | [eth_estimateGas]                         | _Generates and returns an estimate of how much gas is necessary to allow the transaction to complete._           | ✅     |
-| [eth_feeHistory]                          | _Returns fee history_                                                                                            | ✅     |
 | [eth_gasPrice]                            | _Returns the current price per gas in wei_                                                                       | ✅     |
 | [eth_getBalance]                          | _Returns the balance of the account of given address_                                                            | ✅     |
 | [eth_getBlockByHash]                      | _Returns information about a block by hash_                                                                      | ✅     |
@@ -90,7 +89,6 @@ You can find the complete set of available specs in the [Ethereum API Documentat
 [eth_chainId]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_chainid
 [eth_coinbase]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_coinbase
 [eth_estimateGas]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_estimategas
-[eth_feeHistory]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_feehistory
 [eth_gasPrice]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_gasprice
 [eth_getBalance]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getbalance
 [eth_getBlockByHash]: https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblockbyhash
