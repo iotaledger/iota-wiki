@@ -27,9 +27,6 @@ exports.buildPluginsConfig = [
     subsection: 'build-layer-2',
     versions: [
       {
-        label: 'v1.4',
-      },
-      {
         label: 'v1.5',
         badges: ['Testnet'],
       },
@@ -147,9 +144,6 @@ exports.maintainPluginsConfig = [
     icon: 'SmartContracts',
     subsection: 'maintain-layer-2',
     versions: [
-      {
-        label: 'v1.4',
-      },
       {
         label: 'v1.5',
         badges: ['Testnet'],
