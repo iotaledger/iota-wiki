@@ -45,15 +45,6 @@ export const Networks: { [key: string]: NetworkProps } = {
       },
     },
   },
-  iota_2_testnet: {
-    baseToken: 'Testnet Token (no value)',
-    protocol: 'IOTA 2.0',
-    httpRestApi: 'https://api.nova-testnet.iotaledger.net/',
-    eventApi: 'wss://api.nova-testnet.iotaledger.net:443 (MQTT 3.1, /mqtt)',
-    permaNodeApi: 'https://chronicle.nova-testnet.iotaledger.net',
-    explorer: 'https://explorer.iota.org/iota2-testnet',
-    faucet: 'https://faucet.nova-testnet.iotaledger.net',
-  },
   iota_testnet: {
     baseToken: 'Testnet Token (no value)',
     protocol: 'Stardust',
@@ -133,39 +124,6 @@ export const Networks: { [key: string]: NetworkProps } = {
           hasFaucet: false,
         },
         api: 'https://api.evm.shimmer.network',
-      },
-    },
-  },
-  shimmer_testnet: {
-    baseToken: 'Testnet Token (no value)',
-    protocol: 'Stardust',
-    httpRestApi: 'https://api.testnet.shimmer.network',
-    eventApi: 'wss://api.testnet.shimmer.network:443/api/mqtt/v1 (MQTT 3.1)',
-    permaNodeApi: 'https://chronicle.testnet.shimmer.network',
-    faucet: 'https://faucet.testnet.shimmer.network',
-    explorer: 'https://explorer.shimmer.network/shimmer-testnet',
-    evm: {
-      core: {
-        chainId: '0x431',
-        chainName: 'ShimmerEVM Testnet',
-        nativeCurrency: {
-          name: 'Shimmer',
-          symbol: 'SMR',
-          decimals: 18,
-        },
-        rpcUrls: ['https://json-rpc.evm.testnet.shimmer.network'],
-        blockExplorerUrls: ['https://explorer.evm.testnet.shimmer.network/'],
-      },
-      custom: {
-        chainAddress:
-          'rms1ppp00k5mmd2m8my8ukkp58nd3rskw6rx8l09aj35984k74uuc5u2cywn3ex',
-        aliasId:
-          '0x42f7da9bdb55b3ec87e5ac1a1e6d88e16768663fde5eca3429eb6f579cc538ac',
-        toolkit: {
-          url: 'https://evm-toolkit.evm.testnet.shimmer.network',
-          hasFaucet: true,
-        },
-        api: 'https://api.evm.testnet.shimmer.network',
       },
     },
   },

@@ -1,5 +1,5 @@
 :::tip Online Faucet
 
-You can request test funds from the [Shimmer Testnet Faucet](https://faucet.testnet.shimmer.network/).
+You can request test funds from the [Testnet Faucet](https://faucet.testnet.iotaledger.net/).
 
 :::
