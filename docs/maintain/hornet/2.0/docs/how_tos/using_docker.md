@@ -79,13 +79,6 @@ mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-s
 ```
 
 </TabItem>
-<TabItem value="shimmer_testnet" label="Shimmer Testnet">
-
-```sh
-mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/shimmer-testnet | tar -zx
-```
-
-</TabItem>
 </Tabs>
 
 ## Prepare
@@ -152,13 +145,6 @@ https://github.com/iotaledger/node-docker-setup/blob/main/iota-testnet/env_templ
 
 ```sh reference
 https://github.com/iotaledger/node-docker-setup/blob/main/shimmer/env_template
-```
-
-</TabItem>
-<TabItem value="shimmer_testnet" label="Shimmer Testnet">
-
-```sh reference
-https://github.com/iotaledger/node-docker-setup/blob/main/shimmer-testnet/env_template
 ```
 
 </TabItem>

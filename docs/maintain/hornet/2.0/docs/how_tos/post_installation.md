@@ -23,12 +23,7 @@ The most important configuration files are:
 
 ## Default Configuration
 
-There are default configuration files available that you can use:
-
-- `config_testnet.json` - Includes the default values required to join the Shimmer Testnet.
-- `config_defaults.json` - Includes all default parameters used by HORNET. You can use this file as a reference when customizing your `config.json`
-
-You can pick one of these files and use it as your `config.json` to join the configured network.
+There is a default configuration file (`config_defaults.json`) available that you can use to see the default parameters for Hornet and use as a reference when customizing your `config.json`
 
 Please see the [`config.json`](../references/configuration.md) and [`peering.json`](../references/peering.md) articles for more information about the contents of the configuration files.
 

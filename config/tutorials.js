@@ -121,46 +121,6 @@ module.exports = [
   [
     pluginTutorial,
     {
-      title:
-        'Connect to Shimmer EVM Testnet and Deploy a Solidity Smart Contract',
-      description:
-        'In this tutorial, we will connect to Shimmer EVM Testnet, connect Metamask to it, get funded and deploy a smart contract in Solidity.',
-      preview: '/img/tutorials/connect-shimmerevm-testnet-and-deploy.png',
-      route: 'tutorials/shimmerevm-testnet-setup',
-      tags: [
-        'text',
-        'shimmer',
-        'solidity',
-        'getting-started',
-        'wasp',
-        'iscp',
-        'video',
-      ],
-    },
-  ],
-  [
-    pluginTutorial,
-    {
-      title:
-        'Tutorial - Deploy a Solidity Smart Contract on ShimmerEVM Testnet Using Hardhat',
-      description:
-        'In this tutorial, you will learn how to set up Hardhat and use it to build, test and deploy a simple smart contract on ShimmerEVM.',
-      preview: '/img/tutorials/shimmerevm-hardhat.jpg',
-      route: 'tutorials/shimmerevm-testnet-hardhat',
-      tags: [
-        'text',
-        'shimmer',
-        'solidity',
-        'shimmerevm',
-        'hardhat',
-        'iscp',
-        'video',
-      ],
-    },
-  ],
-  [
-    pluginTutorial,
-    {
       title: 'Create a Simple Voting dApp on ShimmerEVM',
       description:
         'This tutorial will guide you as you write and deploy a voting dApp on ShimmerEVM. You can vote on a few options and view the results; all data will be stored on-chain.',

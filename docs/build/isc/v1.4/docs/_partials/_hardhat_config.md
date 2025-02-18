@@ -19,21 +19,6 @@ networks: {
 </CodeBlock>
 
 </TabItem>
-<TabItem value='shimmer_testnet' label='ShimmerEVM Testnet'>
-
-<CodeBlock language="js">
-{`
-networks: {
-    'shimmerevm-testnet': {
-        url: '${Networks['shimmer_testnet'].evm.core.rpcUrls[0]}',
-        chainId: ${parseInt(Networks['shimmer_testnet'].evm.core.chainId)},
-        accounts: [YOUR PRIVATE KEY],
-    },
-}
-`}
-</CodeBlock>
-
-</TabItem>
 <TabItem value='iota' label='IOTA EVM'>
 
 <CodeBlock language="js">
