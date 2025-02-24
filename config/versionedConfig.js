@@ -28,11 +28,10 @@ exports.buildPluginsConfig = [
     versions: [
       {
         label: 'v1.5',
-        badges: ['Testnet'],
+        badges: ['IOTA', 'Shimmer', 'Testnet'],
       },
       {
         label: 'v1.6',
-        badges: ['IOTA', 'Shimmer'],
       },
     ],
   },
@@ -146,11 +145,10 @@ exports.maintainPluginsConfig = [
     versions: [
       {
         label: 'v1.5',
-        badges: ['Testnet'],
+        badges: ['IOTA', 'Shimmer', 'Testnet'],
       },
       {
         label: 'v1.6',
-        badges: ['IOTA', 'Shimmer'],
       },
     ],
   },
